@@ -9,6 +9,10 @@
 *.user
 *.userosscache
 *.sln.docstates
+<<<<<<< HEAD
+=======
+*.env
+>>>>>>> 66dc73fe8cd13b5fe5e225fe5c81d420aea000c8
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -26,12 +30,28 @@ x86/
 [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
+<<<<<<< HEAD
 bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
 
+=======
+[Aa][Rr][Mm]64[Ee][Cc]/
+bld/
+[Oo]bj/
+[Oo]ut/
+[Ll]og/
+[Ll]ogs/
+
+# Build results on 'Bin' directories
+**/[Bb]in/*
+# Uncomment if you have tasks that rely on *.refresh files to move binaries
+# (https://github.com/github/gitignore/pull/3736)
+#!**/[Bb]in/*.refresh
+
+>>>>>>> 66dc73fe8cd13b5fe5e225fe5c81d420aea000c8
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
@@ -43,12 +63,22 @@ Generated\ Files/
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
+<<<<<<< HEAD
+=======
+*.trx
+>>>>>>> 66dc73fe8cd13b5fe5e225fe5c81d420aea000c8
 
 # NUnit
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
 
+<<<<<<< HEAD
+=======
+# Approval Tests result files
+*.received.*
+
+>>>>>>> 66dc73fe8cd13b5fe5e225fe5c81d420aea000c8
 # Build Results of an ATL Project
 [Dd]ebugPS/
 [Rr]eleasePS/
@@ -75,6 +105,10 @@ StyleCopReport.xml
 *.ilk
 *.meta
 *.obj
+<<<<<<< HEAD
+=======
+*.idb
+>>>>>>> 66dc73fe8cd13b5fe5e225fe5c81d420aea000c8
 *.iobj
 *.pch
 *.pdb
@@ -317,6 +351,7 @@ node_modules/
 _Pvt_Extensions
 
 # Paket dependency manager
+<<<<<<< HEAD
 .paket/paket.exe
 paket-files/
 
@@ -333,6 +368,24 @@ __pycache__/
 # Cake - Uncomment if you are using it
 # tools/**
 # !tools/packages.config
+=======
+**/.paket/paket.exe
+paket-files/
+
+# FAKE - F# Make
+**/.fake/
+
+# CodeRush personal settings
+**/.cr/personal
+
+# Python Tools for Visual Studio (PTVS)
+**/__pycache__/
+*.pyc
+
+# Cake - Uncomment if you are using it
+#tools/**
+#!tools/packages.config
+>>>>>>> 66dc73fe8cd13b5fe5e225fe5c81d420aea000c8
 
 # Tabs Studio
 *.tss
@@ -354,15 +407,29 @@ ASALocalRun/
 
 # MSBuild Binary and Structured Log
 *.binlog
+<<<<<<< HEAD
+=======
+MSBuild_Logs/
+
+# AWS SAM Build and Temporary Artifacts folder
+.aws-sam
+>>>>>>> 66dc73fe8cd13b5fe5e225fe5c81d420aea000c8
 
 # NVidia Nsight GPU debugger configuration file
 *.nvuser
 
 # MFractors (Xamarin productivity tool) working folder
+<<<<<<< HEAD
 .mfractor/
 
 # Local History for Visual Studio
 .localhistory/
+=======
+**/.mfractor/
+
+# Local History for Visual Studio
+**/.localhistory/
+>>>>>>> 66dc73fe8cd13b5fe5e225fe5c81d420aea000c8
 
 # Visual Studio History (VSHistory) files
 .vshistory/
@@ -374,7 +441,11 @@ healthchecksdb
 MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
+<<<<<<< HEAD
 .ionide/
+=======
+**/.ionide/
+>>>>>>> 66dc73fe8cd13b5fe5e225fe5c81d420aea000c8
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
@@ -385,17 +456,30 @@ FodyWeavers.xsd
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+<<<<<<< HEAD
 *.code-workspace
+=======
+!.vscode/*.code-snippets
+>>>>>>> 66dc73fe8cd13b5fe5e225fe5c81d420aea000c8
 
 # Local History for Visual Studio Code
 .history/
 
+<<<<<<< HEAD
+=======
+# Built Visual Studio Code Extensions
+*.vsix
+
+>>>>>>> 66dc73fe8cd13b5fe5e225fe5c81d420aea000c8
 # Windows Installer files from build outputs
 *.cab
 *.msi
 *.msix
 *.msm
 *.msp
+<<<<<<< HEAD
 
 # JetBrains Rider
 *.sln.iml
+=======
+>>>>>>> 66dc73fe8cd13b5fe5e225fe5c81d420aea000c8
