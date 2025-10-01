@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LibraryWeb.API.Entities
 {
+    [Table("Languages")]
     public class Language
     {
         [Key]

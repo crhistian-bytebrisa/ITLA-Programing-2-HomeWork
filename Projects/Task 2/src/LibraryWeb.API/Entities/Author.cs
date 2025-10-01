@@ -1,13 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LibraryWeb.API.Entities
 {
+    [Table("Authors")]
     public class Author
     {
         [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string LastName { get; set; }
+        [Required]
+        public string Name { get; set; } = string.Empty;
+        [Required]
+        public string LastName { get; set; } = string.Empty;
         
         //Navegation one to many with Book
         public IEnumerable<Book> Books { get; set; } = new List<Book>();
