@@ -1,13 +1,24 @@
-﻿namespace LibraryWeb.API.Entities
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace LibraryWeb.API.Entities
 {
+    [Table("Books")]
     public class Book
     {
+        [Key]
         public int Id { get; set; }
+        [Required]
         public string Title { get; set; } = string.Empty;
+        [Required]
         public DateTime PublishedDate { get; set; }
+        [Required]
         public int Pages { get; set; }
+        [Required]
         public bool IsAvailable { get; set; } = true;
 
+        //Relationship with Author
+        [Required]
         public int AuthorId { get; set; }
         public Author Author { get; set; }
 
