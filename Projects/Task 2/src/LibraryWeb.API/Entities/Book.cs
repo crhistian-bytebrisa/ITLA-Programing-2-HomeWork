@@ -28,14 +28,22 @@ namespace LibraryWeb.API.Entities
 
         public Book() { }
 
-        public Book(int id, string title, Author author, DateTime publishedDate, int pages, bool isAvailable)
+        public Book(int id, string title, int authorId, DateTime publishedDate, int pages, bool isAvailable)
         {
             Id = id;
             Title = title;
-            Author = author;
+            AuthorId = authorId;
             PublishedDate = publishedDate;
             Pages = pages;
             IsAvailable = isAvailable;
+        }
+
+        public Book(int id, string title, Author author, IEnumerable<Genre> genres, IEnumerable<Language> languages, DateTime publishedDate, int pages, bool isAvailable)
+            : this(id, title, author.Id, publishedDate, pages, isAvailable)
+        {
+            Author = author;
+            Genres = genres;
+            Languages = languages;
         }
     }
 }
