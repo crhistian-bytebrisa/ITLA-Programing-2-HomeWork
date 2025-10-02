@@ -1,9 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.InteropServices;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryWeb.API.Entities
 {
     [Table("Authors")]
+    [Index(nameof(Name), IsUnique = true)]
     public class Author
     {
         [Key]
@@ -12,7 +15,7 @@ namespace LibraryWeb.API.Entities
         public string Name { get; set; } = string.Empty;
         [Required]
         public string LastName { get; set; } = string.Empty;
-        
+
         //Navegation one to many with Book
         public IEnumerable<Book> Books { get; set; } = new List<Book>();
         public Author() { }
