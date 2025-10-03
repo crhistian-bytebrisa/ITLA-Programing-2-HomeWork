@@ -1,30 +1,26 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Runtime.InteropServices;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibraryWeb.API.Entities
+namespace LibraryWeb.Domain.Entities
 {
-    [Table("Authors")]
+    [Table("Languages")]
     [Index(nameof(Name), IsUnique = true)]
-    public class Author
+    public class Language
     {
         [Key]
         public int Id { get; set; }
         [Required]
         public string Name { get; set; } = string.Empty;
-        [Required]
-        public string LastName { get; set; } = string.Empty;
 
-        //Navegation one to many with Book
+        //Navegation many to many with Book
         public IEnumerable<Book> Books { get; set; } = new List<Book>();
-        public Author() { }
+        public Language() { }
 
-        public Author(int id, string name, string lastName)
+        public Language(int id, string name)
         {
             Id = id;
             Name = name;
-            LastName = lastName;
         }
     }
 }

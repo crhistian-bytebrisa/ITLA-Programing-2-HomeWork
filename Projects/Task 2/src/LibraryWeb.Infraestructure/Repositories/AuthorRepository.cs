@@ -2,13 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LibraryWeb.API.Data.LibraryContext;
-using LibraryWeb.API.Entities;
+using LibraryWeb.Infraestructure.Data.LibraryContext;
+using LibraryWeb.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using LibraryWeb.Domain.Interfaces.Repositories.Base;
+using LibraryWeb.Domain.Interfaces.Repositories;
 
 namespace LibraryWeb.API.Repositories
 {
-    public class AuthorRepostory
+    public class AuthorRepostory : IAuthorRepository
     {
         private readonly DataContext _context;
 
@@ -27,16 +29,19 @@ namespace LibraryWeb.API.Repositories
             return await _context.Authors.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task AddAsync(Author author)
+        public async Task<Author> AddAsync(Author author)
         {
             await _context.Authors.AddAsync(author);
             await _context.SaveChangesAsync();
+            return author;
         }
 
-        public async Task UpdateAsync(Author author)
+        public async Task<Author> UpdateAsync(Author author)
         {
             _context.Authors.Update(author);
             await _context.SaveChangesAsync();
+            return author;
+
         }
 
         public async Task DeleteAsync(int id)

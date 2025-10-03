@@ -6,13 +6,13 @@ using LibraryWeb.API.Data.LibraryContext;
 using LibraryWeb.API.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibraryWeb.API.Repositories
+namespace LibraryWeb.API.Services
 {
-    public class LanguageRepository
+    public class LanguageService
     {
         private readonly DataContext _context;
 
-        public LanguageRepository(DataContext context)
+        public LanguageService(DataContext context)
         {
             _context = context;
         }
@@ -29,6 +29,11 @@ namespace LibraryWeb.API.Repositories
 
         public async Task AddAsync(Language language)
         {
+            if(await LanguageExists(language.Name))
+            {
+                throw new Exception("Existe un lenguaje con el mismo nombre.");
+            }
+
             await _context.Languages.AddAsync(language);
             await _context.SaveChangesAsync();
         }
@@ -39,14 +44,16 @@ namespace LibraryWeb.API.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Language language)
         {
-            var language = await GetByIdAsync(id);
-            if (language != null)
-            {
-                _context.Languages.Remove(language);
-                await _context.SaveChangesAsync();
-            }
+            _context.Languages.Remove(language);
+            await _context.SaveChangesAsync();
         }
+
+        private Task<bool> LanguageExists(string name)
+        {
+            return _context.Languages.AnyAsync(e => e.Name == name);
+        }
+        
     }
 }

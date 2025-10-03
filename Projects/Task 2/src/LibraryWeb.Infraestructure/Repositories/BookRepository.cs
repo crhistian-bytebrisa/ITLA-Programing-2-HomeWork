@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LibraryWeb.API.Data.LibraryContext;
-using LibraryWeb.API.Entities;
+using LibraryWeb.Infraestructure.Data.LibraryContext;
+using LibraryWeb.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using LibraryWeb.Domain.Interfaces.Repositories;
 
 namespace LibraryWeb.API.Repositories
 {
-    public class BookRepository
+    public class BookRepository : IBookRepository
     {
         private readonly DataContext _context;
         public BookRepository(DataContext context)
@@ -28,16 +29,18 @@ namespace LibraryWeb.API.Repositories
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task AddAsync(Book book)
+        public async Task<Book> AddAsync(Book book)
         {
             await _context.Books.AddAsync(book);
             await _context.SaveChangesAsync();
+            return book;
         }
 
-        public async Task UpdateAsync(Book book)
+        public async Task<Book> UpdateAsync(Book book)
         {
             _context.Books.Update(book);
             await _context.SaveChangesAsync();
+            return book;
         }
 
         public async Task DeleteAsync(int id)
@@ -50,7 +53,7 @@ namespace LibraryWeb.API.Repositories
             }
         }
 
-        public async Task<List<Book>> GetAllBooksWithDetailsAsync()
+        public async Task<List<Book>> GetAllWithDetailsAsync()
         {
             return await _context.Books
                 .Include(b => b.Author)
@@ -59,7 +62,7 @@ namespace LibraryWeb.API.Repositories
                 .ToListAsync();
         }
         
-        public async Task<Book?> GetBookWithDetailsByIdAsync(int id)
+        public async Task<Book?> GetWithDetailsByIdAsync(int id)
         {
             return await _context.Books
                 .Include(b => b.Author)
