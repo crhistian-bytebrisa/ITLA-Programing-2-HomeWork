@@ -2,45 +2,60 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LibraryWeb.API.Entities;
-using LibraryWeb.API.Repositories;
+using LibraryWeb.Application.DTOs.CreateDTO;
+using LibraryWeb.Application.DTOs.EntityDTO;
+using LibraryWeb.Application.Validations;
+using LibraryWeb.Domain.Entities;
+using LibraryWeb.Domain.Interfaces.Repositories;
+using Mapster;
 
-namespace LibraryWeb.API.Services
+namespace LibraryWeb.Application.Services
 {
     public class GenreService
     {
-        private readonly GenreRepository _genreRepository;
+        private readonly IGenreRepository _genreRepository;
 
-        public GenreService(GenreRepository genreRepository)
+        public GenreService(IGenreRepository genreRepository)
         {
             _genreRepository = genreRepository;
         }
 
-        public async Task<List<Genre>> GetAllAsync()
+        public async Task<List<GenreDTO>> GetAllAsync()
         {
-            return await _genreRepository.GetAllAsync();
+            var books = await _genreRepository.GetAllAsync();
+            return books.Adapt<List<GenreDTO>>();
         }
 
-        public async Task<Genre?> GetByIdAsync(int id)
+        public async Task<GenreDTO> GetByIdAsync(int id)
         {
-            return await _genreRepository.GetByIdAsync(id);
+            var book = await _genreRepository.GetByIdAsync(id);
+            return book.Adapt<GenreDTO>();
         }
 
-        public async Task<Genre> AddAsync(Genre genre)
+        public async Task<GenreDTO> AddAsync(CreateGenreDTO CgenreDTO)
         {
+            await ValidateGenre.CheckAdd(CgenreDTO, _genreRepository);
+
+            var genre = CgenreDTO.Adapt<Genre>();
             await _genreRepository.AddAsync(genre);
-            return genre;
+            var genreDTO = genre.Adapt<GenreDTO>();
+            return genreDTO;
         }
 
-        public async Task<Genre> UpdateAsync(Genre genre)
+        public async Task<GenreDTO> UpdateAsync(GenreDTO genreDTO)
         {
+            await ValidateGenre.CheckUpdate(genreDTO, _genreRepository);
+
+            var genre = genreDTO.Adapt<Genre>();
             await _genreRepository.UpdateAsync(genre);
-            return genre;
+            genreDTO = genre.Adapt<GenreDTO>();
+            return genreDTO;
         }
 
         public async Task DeleteAsync(int id)
         {
-            await _genreRepository.DeleteAsync(id);
+            var genre = await ValidateGenre.CheckDelete(id, _genreRepository);
+            await _genreRepository.DeleteAsync(genre);
         }
     }
 }

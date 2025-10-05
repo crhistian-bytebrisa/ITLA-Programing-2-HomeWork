@@ -44,15 +44,15 @@ namespace LibraryWeb.API.Repositories
 
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Author author)
         {
-            var author = await GetByIdAsync(id);
-            if (author != null)
-            {
-                _context.Authors.Remove(author);
-                await _context.SaveChangesAsync();
-            }
+            _context.Authors.Remove(author);
+            await _context.SaveChangesAsync();
         }
         
+        public async Task<Author?> GetByName(string name)
+        {
+            return await _context.Authors.FirstOrDefaultAsync(x => x.Name == name);
+        }
     }
 }

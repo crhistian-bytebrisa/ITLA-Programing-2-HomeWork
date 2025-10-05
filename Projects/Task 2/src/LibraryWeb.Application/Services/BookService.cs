@@ -2,55 +2,70 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LibraryWeb.API.Entities;
-using LibraryWeb.API.Repositories;
+using LibraryWeb.Application.DTOs.CreateDTO;
+using LibraryWeb.Application.DTOs.EntityDTO;
+using LibraryWeb.Application.Validations;
+using LibraryWeb.Domain.Entities;
+using LibraryWeb.Domain.Interfaces.Repositories;
+using Mapster;
 
-namespace LibraryWeb.API.Services
+namespace LibraryWeb.Application.Services
 {
     public class BookService
     {
-        private readonly BookRepository _bookRepository;
+        private readonly IBookRepository _bookRepository;
 
-        public BookService(BookRepository bookRepository)
+        public BookService(IBookRepository bookRepository)
         {
             _bookRepository = bookRepository;
         }
 
-        public async Task<List<Book>> GetAllAsync()
+        public async Task<List<BookDTO>> GetAllAsync()
         {
-            return await _bookRepository.GetAllAsync();
+            var Books = await _bookRepository.GetAllAsync();
+            return Books.Adapt<List<BookDTO>>();
         }
 
-        public async Task<Book?> GetBookByIdAsync(int id)
+        public async Task<BookDTO> GetBookByIdAsync(int id)
         {
-            return await _bookRepository.GetByIdAsync(id);
+            var Book = await _bookRepository.GetByIdAsync(id);
+            return Book.Adapt<BookDTO>();   
         }
 
-        public async Task<Book> AddBookAsync(Book book)
+        public async Task<BookDTO> AddBookAsync(CreateBookDTO CbookDTO)
         {
+            await ValidateBook.CheckAdd(CbookDTO, _bookRepository);
+
+            var book = CbookDTO.Adapt<Book>();
             await _bookRepository.AddAsync(book);
-            return book;
+            return book.Adapt<BookDTO>();
         }
 
-        public async Task<Book> UpdateBookAsync(Book book)
+        public async Task<BookDTO> UpdateBookAsync(BookDTO bookDTO)
         {
+            await ValidateBook.CheckUpdate(bookDTO, _bookRepository);
+
+            var book = bookDTO.Adapt<Book>();
             await _bookRepository.UpdateAsync(book);
-            return book;
+            return book.Adapt<BookDTO>();
         }
 
         public async Task DeleteBookAsync(int id)
         {
-            await _bookRepository.DeleteAsync(id);
+            var book = await ValidateBook.CheckDelete(id, _bookRepository);
+            await _bookRepository.DeleteAsync(book);
         }
 
-        public async Task<List<Book>> GetAllBooksWithDetailsAsync()
+        public async Task<List<BookDTO>> GetAllBooksWithDetailsAsync()
         {
-            return await _bookRepository.GetAllBooksWithDetailsAsync();
+            var books = await _bookRepository.GetAllWithDetailsAsync();
+            return books.Adapt<List<BookDTO>>();
         }
 
-        public async Task<Book?> GetBooksByAuthorIdAsync(int authorId)
+        public async Task<BookDTO> GetBooksByAuthorIdAsync(int authorId)
         {
-            return await _bookRepository.GetBookWithDetailsByIdAsync(authorId);
+            var book = await _bookRepository.GetWithDetailsByIdAsync(authorId);
+            return book.Adapt<BookDTO>();
         }
     }
 }

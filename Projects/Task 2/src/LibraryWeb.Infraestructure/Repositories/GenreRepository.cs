@@ -42,15 +42,16 @@ namespace LibraryWeb.API.Repositories
             return genre;
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Genre genre)
         {
-            var genre = await GetByIdAsync(id);
-            if (genre != null)
-            {
-                _context.Genres.Remove(genre);
-                await _context.SaveChangesAsync();
-            }
+            _context.Genres.Remove(genre);
+            await _context.SaveChangesAsync();
         }
-        
+
+        public async Task<Genre?> GetByName(string name)
+        {
+            return await _context.Genres.FirstOrDefaultAsync(x => x.Name == name);
+        }
+
     }
 }

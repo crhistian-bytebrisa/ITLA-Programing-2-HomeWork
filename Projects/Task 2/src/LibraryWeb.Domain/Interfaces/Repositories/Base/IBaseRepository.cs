@@ -12,6 +12,8 @@ namespace LibraryWeb.Domain.Interfaces.Repositories.Base
         Task<List<T>> GetAllAsync();
         Task<T> AddAsync(T entity);
         Task<T> UpdateAsync(T entity);
-        Task DeleteAsync(int id);
+        Task DeleteAsync(T entity);
+
+        Task<T?> GetByName(string name);
     }
 }

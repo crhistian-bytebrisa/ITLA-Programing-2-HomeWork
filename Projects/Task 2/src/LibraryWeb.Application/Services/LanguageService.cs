@@ -2,58 +2,65 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LibraryWeb.API.Data.LibraryContext;
-using LibraryWeb.API.Entities;
-using Microsoft.EntityFrameworkCore;
+using LibraryWeb.Application.DTOs.CreateDTO;
+using LibraryWeb.Application.DTOs.EntityDTO;
+using LibraryWeb.Application.Validations;
+using LibraryWeb.Domain.Entities;
+using LibraryWeb.Domain.Interfaces.Repositories;
+using Mapster;
 
-namespace LibraryWeb.API.Services
+namespace LibraryWeb.Application.Services
 {
     public class LanguageService
     {
-        private readonly DataContext _context;
+        private readonly ILanguageRepository _languageRepository;
 
-        public LanguageService(DataContext context)
+        public LanguageService(ILanguageRepository languageRepository)
         {
-            _context = context;
+            _languageRepository = languageRepository;
         }
 
-        public async Task<List<Language>> GetAllAsync()
+        public async Task<List<LanguageDTO>> GetAllAsync()
         {
-            return await _context.Languages.Select(x => x).ToListAsync();
+            var languages = await _languageRepository.GetAllAsync();
+            return languages.Adapt<List<LanguageDTO>>(); 
         }
 
-        public async Task<Language?> GetByIdAsync(int id)
+        public async Task<LanguageDTO?> GetByIdAsync(int id)
         {
-            return await _context.Languages.FirstOrDefaultAsync(x => x.Id == id);
+            
+            var language = await _languageRepository.GetByIdAsync(id);    
+            return language.Adapt<LanguageDTO>();
         }
 
-        public async Task AddAsync(Language language)
+        public async Task<LanguageDTO> AddAsync(CreateLanguageDTO ClanguageDTO)
         {
-            if(await LanguageExists(language.Name))
-            {
-                throw new Exception("Existe un lenguaje con el mismo nombre.");
-            }
+            await ValidateLanguage.CheckAdd(ClanguageDTO, _languageRepository);
 
-            await _context.Languages.AddAsync(language);
-            await _context.SaveChangesAsync();
+            var language = ClanguageDTO.Adapt<Language>();
+            await _languageRepository.AddAsync(language);
+            var languageDTO = language.Adapt<LanguageDTO>();
+            return languageDTO;
         }
 
-        public async Task UpdateAsync(Language language)
+        public async Task<LanguageDTO?> UpdateAsync(LanguageDTO languageDTO)
         {
-            _context.Languages.Update(language);
-            await _context.SaveChangesAsync();
+            await ValidateLanguage.CheckUpdate(languageDTO, _languageRepository);
+
+            var language = languageDTO.Adapt<Language>();
+            await _languageRepository.UpdateAsync(language);
+            languageDTO = language.Adapt<LanguageDTO>();
+            return languageDTO;
         }
 
-        public async Task DeleteAsync(Language language)
+        public async Task DeleteAsync(int id)
         {
-            _context.Languages.Remove(language);
-            await _context.SaveChangesAsync();
+            var language = await ValidateLanguage.CheckDelete(id, _languageRepository);
+            
+            await _languageRepository.DeleteAsync(language);
         }
 
-        private Task<bool> LanguageExists(string name)
-        {
-            return _context.Languages.AnyAsync(e => e.Name == name);
-        }
+        
         
     }
 }

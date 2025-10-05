@@ -43,14 +43,15 @@ namespace LibraryWeb.API.Repositories
             return language;
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Language language)
         {
-            var language = await GetByIdAsync(id);
-            if (language != null)
-            {
-                _context.Languages.Remove(language);
-                await _context.SaveChangesAsync();
-            }
+            _context.Languages.Remove(language);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<Language?> GetByName(string name)
+        {
+            return await _context.Languages.FirstOrDefaultAsync(x => x.Name == name);
         }
     }
 }

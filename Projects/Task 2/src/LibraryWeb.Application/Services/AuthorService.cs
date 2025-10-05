@@ -2,10 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LibraryWeb.Application.DTOs.CreateDTO;
+using LibraryWeb.Application.DTOs.EntityDTO;
+using LibraryWeb.Application.Validations;
 using LibraryWeb.Domain.Entities;
 using LibraryWeb.Domain.Interfaces.Repositories;
+using Mapster;
 
-namespace LibraryWeb.API.Services
+namespace LibraryWeb.Application.Services
 {
     public class AuthorService
     {
@@ -16,31 +20,40 @@ namespace LibraryWeb.API.Services
             _authorRepository = authorRepository;
         }
 
-        public async Task<List<Author>> GetAllAsync()
+        public async Task<List<AuthorDTO>> GetAllAsync()
         {
-            return await _authorRepository.GetAllAsync();
+            var Authors = await _authorRepository.GetAllAsync();
+            return Authors.Adapt<List<AuthorDTO>>();
         }
 
-        public async Task<Author?> GetByIdAsync(int id)
+        public async Task<AuthorDTO> GetByIdAsync(int id)
         {
-            return await _authorRepository.GetByIdAsync(id);
+            var Author = await _authorRepository.GetByIdAsync(id);
+            return Author.Adapt<AuthorDTO>();
         }
 
-        public async Task<Author> AddAsync(Author author)
-        {
-            await _authorRepository.AddAsync(author);
-            return author;
+        public async Task<AuthorDTO> AddAsync(CreateAuthorDTO CAuthorDTO)
+        {  
+            await ValidateAuthor.CheckAdd(CAuthorDTO, _authorRepository);
+
+            var Author = CAuthorDTO.Adapt<Author>();
+            await _authorRepository.AddAsync(Author);
+            return Author.Adapt<AuthorDTO>();
         }
 
-        public async Task<Author> UpdateAsync(Author author)
+        public async Task<AuthorDTO> UpdateAsync(AuthorDTO AuthorDTO)
         {
-            await _authorRepository.UpdateAsync(author);
-            return author;
+            await ValidateAuthor.CheckUpdate(AuthorDTO, _authorRepository);
+
+            var Author = AuthorDTO.Adapt<Author>();
+            await _authorRepository.UpdateAsync(Author);
+            return Author.Adapt<AuthorDTO>();
         }
 
         public async Task DeleteAsync(int id)
         {
-            await _authorRepository.DeleteAsync(id);
+            var Author = await ValidateAuthor.CheckDelete(id, _authorRepository);
+            await _authorRepository.DeleteAsync(Author);
         }
 
 

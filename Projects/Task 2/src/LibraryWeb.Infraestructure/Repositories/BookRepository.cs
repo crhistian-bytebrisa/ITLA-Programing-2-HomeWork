@@ -43,14 +43,10 @@ namespace LibraryWeb.API.Repositories
             return book;
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Book book)
         {
-            var book = await GetByIdAsync(id);
-            if (book != null)
-            {
-                _context.Books.Remove(book);
-                await _context.SaveChangesAsync();
-            }
+            _context.Books.Remove(book);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<List<Book>> GetAllWithDetailsAsync()
@@ -69,6 +65,11 @@ namespace LibraryWeb.API.Repositories
                 .Include(b => b.Genres)
                 .Include(b => b.Languages)
                 .FirstOrDefaultAsync(b => b.Id == id);
+        }
+
+        public async Task<Book?> GetByName(string Title)
+        {
+            return await _context.Books.FirstOrDefaultAsync(x => x.Title == Title);
         }
     }
 }
