@@ -2,25 +2,29 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibraryWeb.API.Entities
+namespace LibraryWeb.Domain.Entities
 {
-    [Table("Languages")]
+    [Table("Genres")]
     [Index(nameof(Name), IsUnique = true)]
-    public class Language
+    public class Genre
     {
         [Key]
         public int Id { get; set; }
         [Required]
         public string Name { get; set; } = string.Empty;
+        [Required]
+        public string Description { get; set; } = string.Empty;
 
         //Navegation many to many with Book
         public IEnumerable<Book> Books { get; set; } = new List<Book>();
-        public Language() { }
 
-        public Language(int id, string name)
+        public Genre() { }
+
+        public Genre(int id, string name, string description)
         {
             Id = id;
             Name = name;
+            Description = description;
         }
     }
 }

@@ -2,13 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LibraryWeb.API.Data.LibraryContext;
-using LibraryWeb.API.Entities;
+using LibraryWeb.Infraestructure.Data.LibraryContext;
+using LibraryWeb.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using LibraryWeb.Domain.Interfaces.Repositories.Base;
+using LibraryWeb.Domain.Interfaces.Repositories;
 
 namespace LibraryWeb.API.Repositories
 {
-    public class LanguageRepository
+    public class LanguageRepository : ILanguageRepository
     {
         private readonly DataContext _context;
 
@@ -27,26 +29,29 @@ namespace LibraryWeb.API.Repositories
             return await _context.Languages.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task AddAsync(Language language)
+        public async Task<Language> AddAsync(Language language)
         {
             await _context.Languages.AddAsync(language);
             await _context.SaveChangesAsync();
+            return language;
         }
 
-        public async Task UpdateAsync(Language language)
+        public async Task<Language> UpdateAsync(Language language)
         {
             _context.Languages.Update(language);
             await _context.SaveChangesAsync();
+            return language;
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Language language)
         {
-            var language = await GetByIdAsync(id);
-            if (language != null)
-            {
-                _context.Languages.Remove(language);
-                await _context.SaveChangesAsync();
-            }
+            _context.Languages.Remove(language);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task<Language?> GetByName(string name)
+        {
+            return await _context.Languages.FirstOrDefaultAsync(x => x.Name == name);
         }
     }
 }

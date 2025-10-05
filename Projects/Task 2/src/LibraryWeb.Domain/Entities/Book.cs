@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LibraryWeb.API.Entities
+namespace LibraryWeb.Domain.Entities
 {
     [Table("Books")]
     public class Book

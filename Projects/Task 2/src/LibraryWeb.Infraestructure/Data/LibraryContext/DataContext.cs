@@ -1,7 +1,7 @@
-﻿using LibraryWeb.API.Entities;
+﻿using LibraryWeb.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace LibraryWeb.API.Data.LibraryContext
+namespace LibraryWeb.Infraestructure.Data.LibraryContext
 {
     public class DataContext : DbContext
     {

@@ -2,13 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using LibraryWeb.API.Data.LibraryContext;
-using LibraryWeb.API.Entities;
+using LibraryWeb.Infraestructure.Data.LibraryContext;
+using LibraryWeb.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using LibraryWeb.Domain.Interfaces.Repositories.Base;
+using LibraryWeb.Domain.Interfaces.Repositories;
 
 namespace LibraryWeb.API.Repositories
 {
-    public class GenreRepository
+    public class GenreRepository : IGenreRepository
     {
         private readonly DataContext _context;
         public GenreRepository(DataContext context)
@@ -26,27 +28,30 @@ namespace LibraryWeb.API.Repositories
             return await _context.Genres.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task AddAsync(Genre genre)
+        public async Task<Genre> AddAsync(Genre genre)
         {
             await _context.Genres.AddAsync(genre);
             await _context.SaveChangesAsync();
+            return genre;
         }
 
-        public async Task UpdateAsync(Genre genre)
+        public async Task<Genre> UpdateAsync(Genre genre)
         {
             _context.Genres.Update(genre);
             await _context.SaveChangesAsync();
+            return genre;
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Genre genre)
         {
-            var genre = await GetByIdAsync(id);
-            if (genre != null)
-            {
-                _context.Genres.Remove(genre);
-                await _context.SaveChangesAsync();
-            }
+            _context.Genres.Remove(genre);
+            await _context.SaveChangesAsync();
         }
-        
+
+        public async Task<Genre?> GetByName(string name)
+        {
+            return await _context.Genres.FirstOrDefaultAsync(x => x.Name == name);
+        }
+
     }
 }
