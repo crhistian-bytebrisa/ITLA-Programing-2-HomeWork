@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using LibraryWeb.Application.DTOs.CreateDTO;
 using LibraryWeb.Application.DTOs.EntityDTO;
+using LibraryWeb.Application.Interfaces;
 using LibraryWeb.Application.Validations;
 using LibraryWeb.Domain.Entities;
 using LibraryWeb.Domain.Interfaces.Repositories;
@@ -11,7 +12,7 @@ using Mapster;
 
 namespace LibraryWeb.Application.Services
 {
-    public class LanguageService
+    public class LanguageService : ILanguageService
     {
         private readonly ILanguageRepository _languageRepository;
 
@@ -43,11 +44,10 @@ namespace LibraryWeb.Application.Services
             return languageDTO;
         }
 
-        public async Task<LanguageDTO?> UpdateAsync(LanguageDTO languageDTO)
+        public async Task<LanguageDTO> UpdateAsync(LanguageDTO languageDTO)
         {
-            await ValidateLanguage.CheckUpdate(languageDTO, _languageRepository);
+            var language = await ValidateLanguage.CheckUpdate(languageDTO, _languageRepository);
 
-            var language = languageDTO.Adapt<Language>();
             await _languageRepository.UpdateAsync(language);
             languageDTO = language.Adapt<LanguageDTO>();
             return languageDTO;

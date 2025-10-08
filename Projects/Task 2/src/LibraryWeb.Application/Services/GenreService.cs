@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using LibraryWeb.Application.DTOs.CreateDTO;
 using LibraryWeb.Application.DTOs.EntityDTO;
+using LibraryWeb.Application.Interfaces;
 using LibraryWeb.Application.Validations;
 using LibraryWeb.Domain.Entities;
 using LibraryWeb.Domain.Interfaces.Repositories;
@@ -11,7 +12,7 @@ using Mapster;
 
 namespace LibraryWeb.Application.Services
 {
-    public class GenreService
+    public class GenreService : IGenreService
     {
         private readonly IGenreRepository _genreRepository;
 
@@ -36,6 +37,9 @@ namespace LibraryWeb.Application.Services
         {
             await ValidateGenre.CheckAdd(CgenreDTO, _genreRepository);
 
+            ValidateGenre validate = new ValidateGenre();
+            
+
             var genre = CgenreDTO.Adapt<Genre>();
             await _genreRepository.AddAsync(genre);
             var genreDTO = genre.Adapt<GenreDTO>();
@@ -44,9 +48,8 @@ namespace LibraryWeb.Application.Services
 
         public async Task<GenreDTO> UpdateAsync(GenreDTO genreDTO)
         {
-            await ValidateGenre.CheckUpdate(genreDTO, _genreRepository);
+            var genre = await ValidateGenre.CheckUpdate(genreDTO, _genreRepository);
 
-            var genre = genreDTO.Adapt<Genre>();
             await _genreRepository.UpdateAsync(genre);
             genreDTO = genre.Adapt<GenreDTO>();
             return genreDTO;

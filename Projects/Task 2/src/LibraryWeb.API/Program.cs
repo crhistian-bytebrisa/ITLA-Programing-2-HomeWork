@@ -1,5 +1,9 @@
 
-using LibraryWeb.API.Data.LibraryContext;
+using LibraryWeb.Application.Interfaces;
+using LibraryWeb.Application.Services;
+using LibraryWeb.Domain.Interfaces.Repositories;
+using LibraryWeb.Infraestructure.Data.LibraryContext;
+using LibraryWeb.Infraestructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryWeb.API
@@ -11,8 +15,14 @@ namespace LibraryWeb.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
-
+            builder.Services.AddScoped<ILanguageService, LanguageService>();
+            builder.Services.AddScoped<ILanguageRepository, LanguageRepository>();
+            builder.Services.AddScoped<IGenreService, GenreService>();
+            builder.Services.AddScoped<IGenreRepository, GenreRepository>();
+            builder.Services.AddScoped<IAuthorService, AuthorService>();
+            builder.Services.AddScoped<IAuthorRepository, AuthorRepostory>();
+            builder.Services.AddScoped<IBookService, BookService>();
+            builder.Services.AddScoped<IBookRepository, BookRepository>();
 
             builder.Services.AddDbContext<DataContext>(
                 opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

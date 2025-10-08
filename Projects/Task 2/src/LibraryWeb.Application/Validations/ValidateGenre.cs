@@ -16,9 +16,9 @@ namespace LibraryWeb.Application.Validations
     {
         private static async Task GetName(string name, IGenreRepository repo)
         {
-            var Genre = await repo.GetByName(name);
+            var genre = await repo.GetByName(name);
 
-            if (Genre != null)
+            if (genre != null)
             {
                 throw new ApplicationException("Ya existe este lenguaje.");
             }
@@ -26,26 +26,26 @@ namespace LibraryWeb.Application.Validations
 
         private static async Task<Genre> GetId(int id, IGenreRepository repo)
         {
-            var Genre = await repo.GetByIdAsync(id);
-            if (Genre == null)
+            var genre = await repo.GetByIdAsync(id);
+            if (genre == null)
             {
                 throw new ApplicationException("No existe este lenguaje.");
             }
 
-            return Genre;
+            return genre;
         }
 
-        public static Func<CreateGenreDTO, IGenreRepository, Task<Genre>> CheckAdd = async (CGenreDTO, repo) =>
+        public static Func<CreateGenreDTO, IGenreRepository, Task<Genre>> CheckAdd = async (CgenreDTO, repo) =>
         {
-            await GetName(CGenreDTO.Name, repo);
-            return CGenreDTO.Adapt<Genre>();
+            await GetName(CgenreDTO.Name, repo);
+            return CgenreDTO.Adapt<Genre>();
         };
 
-        public static Func<GenreDTO, IGenreRepository, Task<Genre>> CheckUpdate = async (GenreDTO, repo) =>
+        public static Func<GenreDTO, IGenreRepository, Task<Genre>> CheckUpdate = async (genreDTO, repo) =>
         {
-            await GetName(GenreDTO.Name, repo);
-            await GetId(GenreDTO.Id, repo);
-            return GenreDTO.Adapt<Genre>();
+            await GetName(genreDTO.Name, repo);
+            await GetId(genreDTO.Id, repo);
+            return genreDTO.Adapt<Genre>();
         };
 
         public static Func<int, IGenreRepository, Task<Genre>> CheckDelete = async (id, repo) =>

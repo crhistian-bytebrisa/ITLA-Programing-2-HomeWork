@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using LibraryWeb.Application.DTOs.CreateDTO;
 using LibraryWeb.Application.DTOs.EntityDTO;
+using LibraryWeb.Application.Interfaces;
 using LibraryWeb.Application.Validations;
 using LibraryWeb.Domain.Entities;
 using LibraryWeb.Domain.Interfaces.Repositories;
@@ -11,7 +12,7 @@ using Mapster;
 
 namespace LibraryWeb.Application.Services
 {
-    public class AuthorService
+    public class AuthorService : IAuthorService
     {
         private readonly IAuthorRepository _authorRepository;
 
@@ -42,10 +43,9 @@ namespace LibraryWeb.Application.Services
         }
 
         public async Task<AuthorDTO> UpdateAsync(AuthorDTO AuthorDTO)
-        {
-            await ValidateAuthor.CheckUpdate(AuthorDTO, _authorRepository);
+        {         
+            var Author = await ValidateAuthor.CheckUpdate(AuthorDTO, _authorRepository);
 
-            var Author = AuthorDTO.Adapt<Author>();
             await _authorRepository.UpdateAsync(Author);
             return Author.Adapt<AuthorDTO>();
         }
