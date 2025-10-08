@@ -1,4 +1,5 @@
 
+using GestionTareas.API.Middleware;
 using LibraryWeb.Application.Interfaces;
 using LibraryWeb.Application.Services;
 using LibraryWeb.Domain.Interfaces.Repositories;
@@ -33,6 +34,8 @@ namespace LibraryWeb.API
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+
+            app.UseMiddleware<ExceptionMiddleware>();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
