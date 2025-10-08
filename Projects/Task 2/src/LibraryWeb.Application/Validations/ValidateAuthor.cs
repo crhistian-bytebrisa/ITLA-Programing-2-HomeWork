@@ -16,9 +16,9 @@ namespace LibraryWeb.Application.Validations
     {
         private static async Task GetName(string name, IAuthorRepository repo)
         {
-            var Author = await repo.GetByName(name);
+            var author = await repo.GetByName(name);
 
-            if (Author != null)
+            if (author != null)
             {
                 throw new ApplicationException("Ya existe este lenguaje.");
             }
@@ -26,26 +26,26 @@ namespace LibraryWeb.Application.Validations
 
         private static async Task<Author> GetId(int id, IAuthorRepository repo)
         {
-            var Author = await repo.GetByIdAsync(id);
-            if (Author == null)
+            var author = await repo.GetByIdAsync(id);
+            if (author == null)
             {
                 throw new ApplicationException("No existe este lenguaje.");
             }
 
-            return Author;
+            return author;
         }
 
-        public static Func<CreateAuthorDTO, IAuthorRepository, Task<Author>> CheckAdd = async (CAuthorDTO, repo) =>
+        public static Func<CreateAuthorDTO, IAuthorRepository, Task<Author>> CheckAdd = async (CauthorDTO, repo) =>
         {
-            await GetName(CAuthorDTO.Name, repo);
-            return CAuthorDTO.Adapt<Author>();
+            await GetName(CauthorDTO.Name, repo);
+            return CauthorDTO.Adapt<Author>();
         };
 
-        public static Func<AuthorDTO, IAuthorRepository, Task<Author>> CheckUpdate = async (AuthorDTO, repo) =>
+        public static Func<AuthorDTO, IAuthorRepository, Task<Author>> CheckUpdate = async (authorDTO, repo) =>
         {
-            await GetName(AuthorDTO.Name, repo);
-            await GetId(AuthorDTO.Id, repo);
-            return AuthorDTO.Adapt<Author>();
+            await GetName(authorDTO.Name, repo);
+            await GetId(authorDTO.Id, repo);
+            return authorDTO.Adapt<Author>();
         };
 
         public static Func<int, IAuthorRepository, Task<Author>> CheckDelete = async (id, repo) =>

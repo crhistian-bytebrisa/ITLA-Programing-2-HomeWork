@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using LibraryWeb.Domain.Interfaces.Repositories.Base;
 using LibraryWeb.Domain.Interfaces.Repositories;
 
-namespace LibraryWeb.API.Repositories
+namespace LibraryWeb.Infraestructure.Repositories
 {
     public class AuthorRepostory : IAuthorRepository
     {
@@ -21,12 +21,16 @@ namespace LibraryWeb.API.Repositories
 
         public async Task<List<Author>> GetAllAsync()
         {
-            return await _context.Authors.Select(x => x).ToListAsync();
+            return await _context.Authors
+                .AsNoTracking()
+                .Select(x => x).ToListAsync();
         }
 
         public async Task<Author?> GetByIdAsync(int id)
         {
-            return await _context.Authors.FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Authors
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<Author> AddAsync(Author author)

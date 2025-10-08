@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using LibraryWeb.Domain.Interfaces.Repositories.Base;
 using LibraryWeb.Domain.Interfaces.Repositories;
 
-namespace LibraryWeb.API.Repositories
+namespace LibraryWeb.Infraestructure.Repositories
 {
     public class GenreRepository : IGenreRepository
     {
@@ -20,7 +20,9 @@ namespace LibraryWeb.API.Repositories
 
         public async Task<List<Genre>> GetAllAsync()
         {
-            return await _context.Genres.Select(x => x).ToListAsync();
+            return await _context.Genres
+                .AsNoTracking()
+                .Select(x => x).ToListAsync();
         }
 
         public async Task<Genre?> GetByIdAsync(int id)

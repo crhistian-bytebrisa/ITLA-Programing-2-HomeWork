@@ -21,4 +21,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LibraryWeb.Application\LibraryWeb.Application.csproj" />
+    <ProjectReference Include="..\LibraryWeb.Domain\LibraryWeb.Domain.csproj" />
+    <ProjectReference Include="..\LibraryWeb.Infraestructure\LibraryWeb.Infraestructure.csproj" />
+  </ItemGroup>
+
 </Project>

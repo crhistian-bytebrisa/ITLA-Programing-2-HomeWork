@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using LibraryWeb.Application.DTOs.CreateDTO;
 using LibraryWeb.Application.DTOs.EntityDTO;
+using LibraryWeb.Application.Interfaces;
 using LibraryWeb.Application.Validations;
 using LibraryWeb.Domain.Entities;
 using LibraryWeb.Domain.Interfaces.Repositories;
@@ -11,7 +12,7 @@ using Mapster;
 
 namespace LibraryWeb.Application.Services
 {
-    public class BookService
+    public class BookService : IBookService
     {
         private readonly IBookRepository _bookRepository;
 
@@ -26,13 +27,13 @@ namespace LibraryWeb.Application.Services
             return Books.Adapt<List<BookDTO>>();
         }
 
-        public async Task<BookDTO> GetBookByIdAsync(int id)
+        public async Task<BookDTO> GetByIdAsync(int id)
         {
             var Book = await _bookRepository.GetByIdAsync(id);
             return Book.Adapt<BookDTO>();   
         }
 
-        public async Task<BookDTO> AddBookAsync(CreateBookDTO CbookDTO)
+        public async Task<BookDTO> AddAsync(CreateBookDTO CbookDTO)
         {
             await ValidateBook.CheckAdd(CbookDTO, _bookRepository);
 
@@ -41,30 +42,29 @@ namespace LibraryWeb.Application.Services
             return book.Adapt<BookDTO>();
         }
 
-        public async Task<BookDTO> UpdateBookAsync(BookDTO bookDTO)
+        public async Task<BookDTO> UpdateAsync(BookDTO bookDTO)
         {
-            await ValidateBook.CheckUpdate(bookDTO, _bookRepository);
+            var book = await ValidateBook.CheckUpdate(bookDTO, _bookRepository);
 
-            var book = bookDTO.Adapt<Book>();
             await _bookRepository.UpdateAsync(book);
             return book.Adapt<BookDTO>();
         }
 
-        public async Task DeleteBookAsync(int id)
+        public async Task DeleteAsync(int id)
         {
             var book = await ValidateBook.CheckDelete(id, _bookRepository);
             await _bookRepository.DeleteAsync(book);
         }
 
-        public async Task<List<BookDTO>> GetAllBooksWithDetailsAsync()
+        public async Task<List<BookDTO>> GetAllWithDetailsAsync()
         {
             var books = await _bookRepository.GetAllWithDetailsAsync();
             return books.Adapt<List<BookDTO>>();
         }
 
-        public async Task<BookDTO> GetBooksByAuthorIdAsync(int authorId)
+        public async Task<BookDTO> GetWithDetailsByIdAsync(int id)
         {
-            var book = await _bookRepository.GetWithDetailsByIdAsync(authorId);
+            var book = await _bookRepository.GetWithDetailsByIdAsync(id);
             return book.Adapt<BookDTO>();
         }
     }

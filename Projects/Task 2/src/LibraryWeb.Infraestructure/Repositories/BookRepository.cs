@@ -7,7 +7,7 @@ using LibraryWeb.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using LibraryWeb.Domain.Interfaces.Repositories;
 
-namespace LibraryWeb.API.Repositories
+namespace LibraryWeb.Infraestructure.Repositories
 {
     public class BookRepository : IBookRepository
     {
@@ -20,12 +20,14 @@ namespace LibraryWeb.API.Repositories
         public async Task<List<Book>> GetAllAsync()
         {
             return await _context.Books
+                .AsNoTracking()
                 .Select(x => x).ToListAsync();
         }
 
         public async Task<Book?> GetByIdAsync(int id)
         {
             return await _context.Books
+                .AsNoTracking()
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
 

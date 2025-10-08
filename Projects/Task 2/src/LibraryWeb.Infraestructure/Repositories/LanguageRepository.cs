@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using LibraryWeb.Domain.Interfaces.Repositories.Base;
 using LibraryWeb.Domain.Interfaces.Repositories;
 
-namespace LibraryWeb.API.Repositories
+namespace LibraryWeb.Infraestructure.Repositories
 {
     public class LanguageRepository : ILanguageRepository
     {
@@ -21,12 +21,16 @@ namespace LibraryWeb.API.Repositories
 
         public async Task<List<Language>> GetAllAsync()
         {
-            return await _context.Languages.Select(x => x).ToListAsync();
+            return await _context.Languages
+                .AsNoTracking()
+                .Select(x => x).ToListAsync();
         }
 
-        public async Task<Language?> GetByIdAsync(int id)
+        public async Task<Language> GetByIdAsync(int id)
         {
-            return await _context.Languages.FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Languages
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<Language> AddAsync(Language language)
