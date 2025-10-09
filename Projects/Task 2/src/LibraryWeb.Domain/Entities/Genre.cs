@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace LibraryWeb.API.Entities
+namespace LibraryWeb.Domain.Entities
 {
     [Table("Genres")]
+    [Index(nameof(Name), IsUnique = true)]
     public class Genre
     {
         [Key]
@@ -13,8 +15,8 @@ namespace LibraryWeb.API.Entities
         [Required]
         public string Description { get; set; } = string.Empty;
 
-        //Navegation many to many with Book
-        public IEnumerable<Book> Books { get; set; } = new List<Book>();
+        //Navegation many to many with BookGenres
+        public List<BookGenre> BooksGenres { get; set; } = new();
 
         public Genre() { }
 
