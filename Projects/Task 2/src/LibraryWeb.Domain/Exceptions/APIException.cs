@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionTareas.Domain.Exceptions
+namespace LibraryWeb.Domain.Exceptions
 {
     public class APIException : Exception
     {
