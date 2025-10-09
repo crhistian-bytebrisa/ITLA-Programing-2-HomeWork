@@ -35,13 +35,19 @@ namespace LibraryWeb.Infraestructure.Repositories
         {
             await _context.Books.AddAsync(book);
             await _context.SaveChangesAsync();
+            book = await GetWithDetailsByIdAsync(book.Id);
             return book;
         }
 
         public async Task<Book> UpdateAsync(Book book)
         {
+            _context.BooksGenres.RemoveRange(_context.BooksGenres.Where(bg => bg.BookId == book.Id));
+            _context.BooksLanguages.RemoveRange(_context.BooksLanguages.Where(bl => bl.BookId == book.Id));
+
             _context.Books.Update(book);
             await _context.SaveChangesAsync();
+
+            book = await GetWithDetailsByIdAsync(book.Id);
             return book;
         }
 
@@ -54,18 +60,24 @@ namespace LibraryWeb.Infraestructure.Repositories
         public async Task<List<Book>> GetAllWithDetailsAsync()
         {
             return await _context.Books
+                .AsNoTracking()
                 .Include(b => b.Author)
-                .Include(b => b.Genres)
-                .Include(b => b.Languages)
+                .Include(b => b.BookGenres)
+                .ThenInclude(bg => bg.Genre)
+                .Include(b => b.BookLanguages)
+                .ThenInclude(bl => bl.Language)
                 .ToListAsync();
         }
         
         public async Task<Book?> GetWithDetailsByIdAsync(int id)
         {
             return await _context.Books
+                .AsNoTracking()
                 .Include(b => b.Author)
-                .Include(b => b.Genres)
-                .Include(b => b.Languages)
+                .Include(b => b.BookGenres)
+                .ThenInclude(bg => bg.Genre)
+                .Include(b => b.BookLanguages)
+                .ThenInclude(bl => bl.Language)
                 .FirstOrDefaultAsync(b => b.Id == id);
         }
 

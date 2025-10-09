@@ -44,9 +44,9 @@ namespace LibraryWeb.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateAuthor(int id, AuthorDTO authorDTO)
+        public async Task<IActionResult> UpdateAuthor(int id, CreateAuthorDTO authorDTO)
         {
-            var updatedAuthor = await _authorService.UpdateAsync(authorDTO);
+            var updatedAuthor = await _authorService.UpdateAsync(id, authorDTO);
             return Ok(updatedAuthor);
         }
 

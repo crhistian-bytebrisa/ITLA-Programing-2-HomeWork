@@ -36,23 +36,19 @@ namespace LibraryWeb.Application.Services
         public async Task<GenreDTO> AddAsync(CreateGenreDTO CgenreDTO)
         {
             await ValidateGenre.CheckAdd(CgenreDTO, _genreRepository);
-
-            ValidateGenre validate = new ValidateGenre();
             
-
             var genre = CgenreDTO.Adapt<Genre>();
             await _genreRepository.AddAsync(genre);
-            var genreDTO = genre.Adapt<GenreDTO>();
-            return genreDTO;
+            return genre.Adapt<GenreDTO>();
+            
         }
 
-        public async Task<GenreDTO> UpdateAsync(GenreDTO genreDTO)
+        public async Task<GenreDTO> UpdateAsync(int id,CreateGenreDTO genreDTO)
         {
-            var genre = await ValidateGenre.CheckUpdate(genreDTO, _genreRepository);
+            var genre = await ValidateGenre.CheckUpdate(id,genreDTO, _genreRepository);
 
             await _genreRepository.UpdateAsync(genre);
-            genreDTO = genre.Adapt<GenreDTO>();
-            return genreDTO;
+            return genre.Adapt<GenreDTO>();
         }
 
         public async Task DeleteAsync(int id)

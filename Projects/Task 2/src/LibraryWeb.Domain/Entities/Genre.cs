@@ -15,8 +15,8 @@ namespace LibraryWeb.Domain.Entities
         [Required]
         public string Description { get; set; } = string.Empty;
 
-        //Navegation many to many with Book
-        public IEnumerable<Book> Books { get; set; } = new List<Book>();
+        //Navegation many to many with BookGenres
+        public List<BookGenre> BooksGenres { get; set; } = new();
 
         public Genre() { }
 

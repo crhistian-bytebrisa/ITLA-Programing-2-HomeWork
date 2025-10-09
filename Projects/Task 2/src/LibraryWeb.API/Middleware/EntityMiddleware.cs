@@ -1,4 +1,4 @@
-﻿namespace GestionTareas.API.Middleware
+﻿namespace LibraryWeb.API.Middleware
 {
     public class EntityMiddleware
     {

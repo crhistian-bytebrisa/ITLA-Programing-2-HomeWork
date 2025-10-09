@@ -17,7 +17,7 @@ namespace LibraryWeb.Domain.Entities
         public string LastName { get; set; } = string.Empty;
 
         //Navegation one to many with Book
-        public IEnumerable<Book> Books { get; set; } = new List<Book>();
+        public ICollection<Book> Books { get; set; } = new List<Book>();
         public Author() { }
 
         public Author(int id, string name, string lastName)

@@ -38,15 +38,15 @@ namespace LibraryWeb.Application.Services
             await ValidateBook.CheckAdd(CbookDTO, _bookRepository);
 
             var book = CbookDTO.Adapt<Book>();
-            await _bookRepository.AddAsync(book);
+            book = await _bookRepository.AddAsync(book);
             return book.Adapt<BookDTO>();
         }
 
-        public async Task<BookDTO> UpdateAsync(BookDTO bookDTO)
+        public async Task<BookDTO> UpdateAsync(int id,CreateBookDTO bookDTO)
         {
-            var book = await ValidateBook.CheckUpdate(bookDTO, _bookRepository);
+            var book = await ValidateBook.CheckUpdate(id,bookDTO,_bookRepository);
 
-            await _bookRepository.UpdateAsync(book);
+            book = await _bookRepository.UpdateAsync(book);
             return book.Adapt<BookDTO>();
         }
 

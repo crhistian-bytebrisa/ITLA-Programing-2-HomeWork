@@ -42,9 +42,9 @@ namespace LibraryWeb.Application.Services
             return Author.Adapt<AuthorDTO>();
         }
 
-        public async Task<AuthorDTO> UpdateAsync(AuthorDTO AuthorDTO)
+        public async Task<AuthorDTO> UpdateAsync(int id, CreateAuthorDTO AuthorDTO)
         {         
-            var Author = await ValidateAuthor.CheckUpdate(AuthorDTO, _authorRepository);
+            var Author = await ValidateAuthor.CheckUpdate(id, AuthorDTO, _authorRepository);
 
             await _authorRepository.UpdateAsync(Author);
             return Author.Adapt<AuthorDTO>();

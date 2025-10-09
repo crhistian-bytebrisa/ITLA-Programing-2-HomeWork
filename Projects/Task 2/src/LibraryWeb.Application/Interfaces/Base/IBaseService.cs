@@ -11,7 +11,7 @@ namespace LibraryWeb.Application.Interfaces.Base
         Task<List<TDto>> GetAllAsync();
         Task<TDto?> GetByIdAsync(int id);
         Task<TDto> AddAsync(TCreateDto dto);
-        Task<TDto?> UpdateAsync(TDto dto);
+        Task<TDto?> UpdateAsync(int id,TCreateDto dto);
         Task DeleteAsync(int id);
     }
 

@@ -15,10 +15,10 @@ namespace LibraryWeb.Application.DTOs.CreateDTO
         public int Pages { get; set; }
         public bool IsAvailable { get; set; } = true;
         public int AuthorId { get; set; }
-        IEnumerable<int> Genres { get; set; }
-        IEnumerable<int> Languages { get; set; }
+        public List<int> Genres { get; set; }
+        public List<int> Languages { get; set; }
 
-        public CreateBookDTO(string title, DateTime publishedDate, int pages, bool isAvailable, int authorId, IEnumerable<int> genres, IEnumerable<int> languages)
+        public CreateBookDTO(string title, DateTime publishedDate, int pages, bool isAvailable, int authorId, List<int> genres, List<int> languages)
         {
             Title = title;
             PublishedDate = publishedDate;

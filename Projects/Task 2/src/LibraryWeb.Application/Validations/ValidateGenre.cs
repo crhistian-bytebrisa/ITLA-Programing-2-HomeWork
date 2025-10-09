@@ -20,7 +20,7 @@ namespace LibraryWeb.Application.Validations
 
             if (genre != null)
             {
-                throw new ApplicationException("Ya existe este lenguaje.");
+                throw new ApplicationException("Ya existe este Genero.");
             }
         }
 
@@ -29,7 +29,7 @@ namespace LibraryWeb.Application.Validations
             var genre = await repo.GetByIdAsync(id);
             if (genre == null)
             {
-                throw new ApplicationException("No existe este lenguaje.");
+                throw new ApplicationException("No existe este Genero.");
             }
 
             return genre;
@@ -41,11 +41,13 @@ namespace LibraryWeb.Application.Validations
             return CgenreDTO.Adapt<Genre>();
         };
 
-        public static Func<GenreDTO, IGenreRepository, Task<Genre>> CheckUpdate = async (genreDTO, repo) =>
+        public static Func<int,CreateGenreDTO, IGenreRepository, Task<Genre>> CheckUpdate = async (id,genreDTO, repo) =>
         {
             await GetName(genreDTO.Name, repo);
-            await GetId(genreDTO.Id, repo);
-            return genreDTO.Adapt<Genre>();
+            await GetId(id, repo);
+            var g = genreDTO.Adapt<Genre>();
+            g.Id = id;
+            return g;
         };
 
         public static Func<int, IGenreRepository, Task<Genre>> CheckDelete = async (id, repo) =>

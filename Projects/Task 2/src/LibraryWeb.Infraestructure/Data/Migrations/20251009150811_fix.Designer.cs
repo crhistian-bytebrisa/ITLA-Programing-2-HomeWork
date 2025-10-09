@@ -4,6 +4,7 @@ using LibraryWeb.Infraestructure.Data.LibraryContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryWeb.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20251009150811_fix")]
+    partial class fix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,8 +60,14 @@ namespace LibraryWeb.API.Migrations
                     b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("GenreId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsAvailable")
                         .HasColumnType("bit");
+
+                    b.Property<int?>("LanguageId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Pages")
                         .HasColumnType("int");
@@ -73,6 +82,10 @@ namespace LibraryWeb.API.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
+
+                    b.HasIndex("GenreId");
+
+                    b.HasIndex("LanguageId");
 
                     b.ToTable("Books");
                 });
@@ -159,6 +172,14 @@ namespace LibraryWeb.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("LibraryWeb.Domain.Entities.Genre", null)
+                        .WithMany("Books")
+                        .HasForeignKey("GenreId");
+
+                    b.HasOne("LibraryWeb.Domain.Entities.Language", null)
+                        .WithMany("Books")
+                        .HasForeignKey("LanguageId");
+
                     b.Navigation("Author");
                 });
 
@@ -171,7 +192,7 @@ namespace LibraryWeb.API.Migrations
                         .IsRequired();
 
                     b.HasOne("LibraryWeb.Domain.Entities.Genre", "Genre")
-                        .WithMany("BooksGenres")
+                        .WithMany()
                         .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -190,7 +211,7 @@ namespace LibraryWeb.API.Migrations
                         .IsRequired();
 
                     b.HasOne("LibraryWeb.Domain.Entities.Language", "Language")
-                        .WithMany("BooksLanguages")
+                        .WithMany()
                         .HasForeignKey("LanguageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -214,12 +235,12 @@ namespace LibraryWeb.API.Migrations
 
             modelBuilder.Entity("LibraryWeb.Domain.Entities.Genre", b =>
                 {
-                    b.Navigation("BooksGenres");
+                    b.Navigation("Books");
                 });
 
             modelBuilder.Entity("LibraryWeb.Domain.Entities.Language", b =>
                 {
-                    b.Navigation("BooksLanguages");
+                    b.Navigation("Books");
                 });
 #pragma warning restore 612, 618
         }

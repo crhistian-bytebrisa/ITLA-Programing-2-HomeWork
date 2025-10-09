@@ -41,11 +41,13 @@ namespace LibraryWeb.Application.Validations
             return ClangDTO.Adapt<Language>();
         };
 
-        public static Func<LanguageDTO, ILanguageRepository, Task<Language>> CheckUpdate = async (langDTO, repo) =>
+        public static Func<int,CreateLanguageDTO, ILanguageRepository, Task<Language>> CheckUpdate = async (id, langDTO, repo) =>
         {
             await GetName(langDTO.Name, repo);
-            await GetId(langDTO.Id, repo);
-            return langDTO.Adapt<Language>();
+            await GetId(id, repo);
+            var l = langDTO.Adapt<Language>();
+            l.Id = id;
+            return l;
         };
 
         public static Func<int, ILanguageRepository, Task<Language>> CheckDelete = async (id, repo) =>

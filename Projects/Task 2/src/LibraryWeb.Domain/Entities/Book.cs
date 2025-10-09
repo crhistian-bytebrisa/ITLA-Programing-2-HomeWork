@@ -22,9 +22,9 @@ namespace LibraryWeb.Domain.Entities
         public int AuthorId { get; set; }
         public Author Author { get; set; }
 
-        //Navegation many to many with Genres
-        public IEnumerable<Genre> Genres { get; set; } = new List<Genre>();
-        public IEnumerable<Language> Languages { get; set; } = new List<Language>();
+        //Navegation many to many with BookLanguage and BookGenre   
+        public List<BookLanguage> BookLanguages { get; set; } = new List<BookLanguage>();
+        public List<BookGenre> BookGenres { get; set; } = new List<BookGenre>();    
 
         public Book() { }
 
@@ -38,12 +38,10 @@ namespace LibraryWeb.Domain.Entities
             IsAvailable = isAvailable;
         }
 
-        public Book(int id, string title, Author author, IEnumerable<Genre> genres, IEnumerable<Language> languages, DateTime publishedDate, int pages, bool isAvailable)
+        public Book(int id, string title, Author author, DateTime publishedDate, int pages, bool isAvailable)
             : this(id, title, author.Id, publishedDate, pages, isAvailable)
         {
             Author = author;
-            Genres = genres;
-            Languages = languages;
         }
     }
 }

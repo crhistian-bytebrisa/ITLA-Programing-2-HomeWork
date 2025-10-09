@@ -44,9 +44,9 @@ namespace LibraryWeb.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateGenre(int id, GenreDTO genreDTO)
+        public async Task<IActionResult> UpdateGenre(int id, CreateGenreDTO genreDTO)
         {
-            var updatedGenre = await _genreService.UpdateAsync(genreDTO);
+            var updatedGenre = await _genreService.UpdateAsync(id,genreDTO);
             return Ok(updatedGenre);
         }
 

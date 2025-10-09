@@ -25,7 +25,7 @@ namespace LibraryWeb.API.Controllers
             return Ok(books);
         }
 
-        [HttpGet]
+        [HttpGet("Details")]
         public async Task<IActionResult> GetAllWithDetails()
         {
             var books = await _bookService.GetAllWithDetailsAsync();
@@ -55,13 +55,13 @@ namespace LibraryWeb.API.Controllers
         public async Task<IActionResult> CreateBook(CreateBookDTO createBookDTO)
         {
             var book = await _bookService.AddAsync(createBookDTO);
-            return CreatedAtAction(nameof(GetBookById), new { id = book.Id }, book);
+            return CreatedAtAction(nameof(GetBookWithDetailsById), new { id = book.Id }, book);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateBook(int id, BookDTO bookDTO)
+        public async Task<IActionResult> UpdateBook(int id, CreateBookDTO bookDTO)
         {
-            var updatedBook = await _bookService.UpdateAsync(bookDTO);
+            var updatedBook = await _bookService.UpdateAsync(id,bookDTO);
             return Ok(updatedBook);
         }
 

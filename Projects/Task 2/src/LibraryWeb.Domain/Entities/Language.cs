@@ -13,8 +13,8 @@ namespace LibraryWeb.Domain.Entities
         [Required]
         public string Name { get; set; } = string.Empty;
 
-        //Navegation many to many with Book
-        public IEnumerable<Book> Books { get; set; } = new List<Book>();
+        //Navegation many to many with BookLanguage
+        public List<BookLanguage> BooksLanguages { get; set; } = new ();
         public Language() { }
 
         public Language(int id, string name)

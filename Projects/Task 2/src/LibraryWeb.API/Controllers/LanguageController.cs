@@ -44,9 +44,9 @@ namespace LibraryWeb.API.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateLanguage(int id, LanguageDTO languageDTO)
+        public async Task<IActionResult> UpdateLanguage(int id, CreateLanguageDTO languageDTO)
         {
-            var updatedLanguage = await _languageService.UpdateAsync(languageDTO);
+            var updatedLanguage = await _languageService.UpdateAsync(id, languageDTO);
             return Ok(updatedLanguage);
         }
 

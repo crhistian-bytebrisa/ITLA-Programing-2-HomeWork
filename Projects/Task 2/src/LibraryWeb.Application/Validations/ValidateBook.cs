@@ -14,13 +14,22 @@ namespace LibraryWeb.Application.Validations
 {
     public class ValidateBook
     {
+        private static async Task GetNameUpdate(int id, string name, IBookRepository repo)
+        {
+            var book = await repo.GetByName(name);
+
+            if (book != null && book.Id != id)
+            {
+                throw new ApplicationException("Ya existe este Libro.");
+            }
+        }
         private static async Task GetName(string name, IBookRepository repo)
         {
             var book = await repo.GetByName(name);
 
-            if (book != null)
+            if (book != null )
             {
-                throw new ApplicationException("Ya existe este lenguaje.");
+                throw new ApplicationException("Ya existe este Libro.");
             }
         }
 
@@ -29,7 +38,7 @@ namespace LibraryWeb.Application.Validations
             var book = await repo.GetByIdAsync(id);
             if (book == null)
             {
-                throw new ApplicationException("No existe este lenguaje.");
+                throw new ApplicationException("No existe este Libro.");
             }
 
             return book;
@@ -41,11 +50,14 @@ namespace LibraryWeb.Application.Validations
             return CbookDTO.Adapt<Book>();
         };
 
-        public static Func<BookDTO, IBookRepository, Task<Book>> CheckUpdate = async (bookDTO, repo) =>
+        public static Func<int,CreateBookDTO, IBookRepository, Task<Book>> CheckUpdate = async (id, bookDTO, repo) =>
         {
-            await GetName(bookDTO.Title, repo);
-            await GetId(bookDTO.Id, repo);
-            return bookDTO.Adapt<Book>();
+            await GetNameUpdate(id,bookDTO.Title, repo);
+            var b = await GetId(id, repo);
+            b.Adapt(bookDTO);
+            b.BookGenres = bookDTO.Genres.Select(x=> new BookGenre { GenreId = x }).ToList();
+            b.BookLanguages = bookDTO.Languages.Select(x => new BookLanguage { LanguageId = x }).ToList();
+            return b;
         };
 
         public static Func<int, IBookRepository, Task<Book>> CheckDelete = async (id, repo) =>

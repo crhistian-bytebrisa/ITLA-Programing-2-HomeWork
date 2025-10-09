@@ -40,17 +40,15 @@ namespace LibraryWeb.Application.Services
 
             var language = ClanguageDTO.Adapt<Language>();
             await _languageRepository.AddAsync(language);
-            var languageDTO = language.Adapt<LanguageDTO>();
-            return languageDTO;
+            return language.Adapt<LanguageDTO>();
         }
 
-        public async Task<LanguageDTO> UpdateAsync(LanguageDTO languageDTO)
+        public async Task<LanguageDTO> UpdateAsync(int id,CreateLanguageDTO languageDTO)
         {
-            var language = await ValidateLanguage.CheckUpdate(languageDTO, _languageRepository);
+            var language = await ValidateLanguage.CheckUpdate(id,languageDTO, _languageRepository);
 
             await _languageRepository.UpdateAsync(language);
-            languageDTO = language.Adapt<LanguageDTO>();
-            return languageDTO;
+            return language.Adapt<LanguageDTO>();
         }
 
         public async Task DeleteAsync(int id)

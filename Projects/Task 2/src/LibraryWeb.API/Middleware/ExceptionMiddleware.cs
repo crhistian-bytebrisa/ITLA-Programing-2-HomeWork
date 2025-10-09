@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Security.Cryptography.Xml;
 using System.Text.Json;
 
-namespace GestionTareas.API.Middleware
+namespace LibraryWeb.API.Middleware
 {
     public class ExceptionMiddleware
     {

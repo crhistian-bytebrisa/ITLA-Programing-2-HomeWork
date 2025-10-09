@@ -20,7 +20,7 @@ namespace LibraryWeb.Application.Validations
 
             if (author != null)
             {
-                throw new ApplicationException("Ya existe este lenguaje.");
+                throw new ApplicationException("Ya existe este Autor.");
             }
         }
 
@@ -29,7 +29,7 @@ namespace LibraryWeb.Application.Validations
             var author = await repo.GetByIdAsync(id);
             if (author == null)
             {
-                throw new ApplicationException("No existe este lenguaje.");
+                throw new ApplicationException("No existe este Autor.");
             }
 
             return author;
@@ -41,11 +41,13 @@ namespace LibraryWeb.Application.Validations
             return CauthorDTO.Adapt<Author>();
         };
 
-        public static Func<AuthorDTO, IAuthorRepository, Task<Author>> CheckUpdate = async (authorDTO, repo) =>
+        public static Func<int,CreateAuthorDTO, IAuthorRepository, Task<Author>> CheckUpdate = async (id,authorDTO, repo) =>
         {
             await GetName(authorDTO.Name, repo);
-            await GetId(authorDTO.Id, repo);
-            return authorDTO.Adapt<Author>();
+            await GetId(id, repo);
+            var a = authorDTO.Adapt<Author>();
+            a.Id = id;
+            return a;
         };
 
         public static Func<int, IAuthorRepository, Task<Author>> CheckDelete = async (id, repo) =>
