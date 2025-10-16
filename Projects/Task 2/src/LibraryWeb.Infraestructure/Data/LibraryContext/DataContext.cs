@@ -19,6 +19,11 @@ namespace LibraryWeb.Infraestructure.Data.LibraryContext
             modelBuilder.Entity<BookLanguage>()
                 .HasKey(bl => new { bl.BookId, bl.LanguageId });
 
+
+            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys())) 
+            { 
+                relationship.DeleteBehavior = DeleteBehavior.Restrict;
+            }
         }
 
         public DbSet<Author> Authors { get; set; }

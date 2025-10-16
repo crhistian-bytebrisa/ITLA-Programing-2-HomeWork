@@ -25,7 +25,7 @@ namespace LibraryWeb.API.Controllers
             return Ok(genres);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetGenreById(int id)
         {
             var genre = await _genreService.GetByIdAsync(id);
@@ -43,14 +43,14 @@ namespace LibraryWeb.API.Controllers
             return CreatedAtAction(nameof(GetGenreById), new { id = genre.Id }, genre);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateGenre(int id, CreateGenreDTO genreDTO)
         {
             var updatedGenre = await _genreService.UpdateAsync(id,genreDTO);
             return Ok(updatedGenre);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteGenre(int id)
         {
             await _genreService.DeleteAsync(id);

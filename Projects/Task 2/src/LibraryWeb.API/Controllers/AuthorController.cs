@@ -43,14 +43,14 @@ namespace LibraryWeb.API.Controllers
             return CreatedAtAction(nameof(GetAuthorById), new { id = author.Id }, author);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateAuthor(int id, CreateAuthorDTO authorDTO)
         {
             var updatedAuthor = await _authorService.UpdateAsync(id, authorDTO);
             return Ok(updatedAuthor);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteAuthor(int id)
         {
             await _authorService.DeleteAsync(id);
