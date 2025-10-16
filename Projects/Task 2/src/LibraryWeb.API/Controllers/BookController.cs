@@ -33,7 +33,7 @@ namespace LibraryWeb.API.Controllers
         }
 
 
-        [HttpGet("Details/{id}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetBookById(int id)
         {
             var book = await _bookService.GetByIdAsync(id);
@@ -44,10 +44,15 @@ namespace LibraryWeb.API.Controllers
             return Ok(book);
         }
 
-        [HttpGet("{id}")]
+
+        [HttpGet("Details/{id:int}")]
         public async Task<IActionResult> GetBookWithDetailsById(int id)
         {
             var book = await _bookService.GetWithDetailsByIdAsync(id);
+            if (book == null)
+            {
+                return NotFound();
+            }
             return Ok(book);
         }
 
@@ -58,14 +63,14 @@ namespace LibraryWeb.API.Controllers
             return CreatedAtAction(nameof(GetBookWithDetailsById), new { id = book.Id }, book);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateBook(int id, CreateBookDTO bookDTO)
         {
             var updatedBook = await _bookService.UpdateAsync(id,bookDTO);
             return Ok(updatedBook);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteBook(int id)
         {
             await _bookService.DeleteAsync(id);

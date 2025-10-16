@@ -25,7 +25,7 @@ namespace LibraryWeb.API.Controllers
             return Ok(languages);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetLanguageById(int id)
         {
             var language = await _languageService.GetByIdAsync(id);
@@ -43,14 +43,14 @@ namespace LibraryWeb.API.Controllers
             return CreatedAtAction(nameof(GetLanguageById), new { id = language.Id }, language);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateLanguage(int id, CreateLanguageDTO languageDTO)
         {
             var updatedLanguage = await _languageService.UpdateAsync(id, languageDTO);
             return Ok(updatedLanguage);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteLanguage(int id)
         {
             await _languageService.DeleteAsync(id);

@@ -26,7 +26,6 @@ namespace LibraryWeb.Application.MappingConfig
                 .Map(dest => dest.Genres, src => src.BookGenres.Select(bg => bg.Genre.Adapt<GenreDTO>()).ToList())
                 .Map(dest => dest.Languages, src => src.BookLanguages.Select(bl => bl.Language.Adapt<LanguageDTO>()).ToList());
 
-
             TypeAdapterConfig<List<Book>, List<BookDTO>>.NewConfig()
                 .Map(dest => dest, source => source.Select(book => book.Adapt<BookDTO>()).ToList());
         }
