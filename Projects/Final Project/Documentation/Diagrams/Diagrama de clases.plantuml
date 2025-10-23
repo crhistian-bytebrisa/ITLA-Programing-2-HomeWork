@@ -1,0 +1,153 @@
+@startuml
+
+' Clases principales
+class Paciente {
+    -Id: int
+    -Nombre: string
+    -Apellido: string
+    -Cedula: string
+    -Telefono: string
+    -Correo: string
+    -Fecha_de_nacimiento: Datetime 
+    -SeguroId: int
+    -Tipo_Sanguineo: Sangre
+}
+
+class Seguro {
+    -Id: int
+    -Nombre: string
+}
+
+class TutoresEHijo
+{
+    -TutorId: int
+    -PacineteId: int
+}
+
+class Motivo{
+    -Id: int
+    -Nombre: string
+    -Disponible: bool
+}
+
+class Clinica {
+    -Id: int 
+    -Nombre: string
+    -Direccion: string
+    -Descripcion: string
+}
+
+class DiasDisponibles {
+    -Id: int
+    -ClinicaId: int 
+    -Inicio: Time
+    -Fin: Time 
+    -Fecha: Datetime
+    -Limite: int
+}
+
+class Consulta{
+    -Id: int
+    -MotivoId: int 
+    -PacienteId: int
+    -DiasDisponibleId: int
+    -Clinica: Clinica
+    -Estado: EstadoConsulta
+    -Turno: int
+}
+
+class Recetas {
+    -Id: int
+    -ConsultaId: int
+    -FechaEmitida: Date
+    -Recomendacion: string
+}
+
+class Permisos {
+    -Id: int 
+    -Tipo: string
+    -Descripcion: string
+}
+
+class Medicamentos {
+    -Id: int
+    -Nombre: string
+    -Formato: string
+    -Medida: string
+    -Descripcion: string
+}
+
+class Analisis {
+    -Id: int 
+    -Nombre: string
+    -Tipo: string
+    -Descripcion: string
+}
+
+class RecetaAnalisis{
+    RecetaId: int
+    AnalisisId: Analisis
+}
+
+class RecetaMedicamento {
+    RecetaId: int
+    MedicamentoId: int
+    Docis: int
+    TiempoDocis: string
+    Tiempo: int
+}
+
+class RecetaPermiso {
+    RecetaId: int
+    PermisoId: int
+    Tiempo: string
+}
+
+class NotaConsulta {
+    -Id: int
+    -ConsultaId: int
+    -Nota: string 
+}
+
+class NotaPaciente {
+    -Id: int
+    -Paciente: int
+    -Nota: string
+}
+
+enum Sangre{
+    A+
+    A-
+    B+
+    B-
+    O+
+    O-
+    AB+
+    AB-
+}
+
+enum EstadoConsulta{
+    CANCELADA,
+    AGENDADA,
+    REALIZADA
+}
+
+' Relaciones
+Paciente  <-- TutoresEHijo : Es hijo o tutor
+Paciente "*" --> "1" Seguro : Tiene 
+Paciente "*" --> "1" Sangre : Tiene
+Consulta "*" --> "1" Motivo : Tiene
+Consulta "*" -->  "1" EstadoConsulta : Tiene
+Consulta "*" --> "1" Paciente : Tiene
+Consulta "*" --> "1" DiasDisponibles : Son en  
+NotaConsulta "1" --> "1" Consulta : Tomada  de
+NotaPaciente "1" --> "1" Paciente : Tomada de
+DiasDisponibles "*" --> "1" Clinica : Estan en
+Recetas "1" --> "1" Consulta : Esta con
+RecetaAnalisis "*" --> "1" Recetas : Vinculado con
+RecetaAnalisis "*" --> "1" Analisis : Vinculado con
+RecetaMedicamento "*" --> "1" Recetas : Vinculado con
+RecetaMedicamento "*" --> "1" Medicamentos : Vinculado con
+RecetaPermiso "*" --> "1" Recetas : Vinculado con
+RecetaPermiso "*" --> "1" Permisos : Vinculado con
+@enduml
