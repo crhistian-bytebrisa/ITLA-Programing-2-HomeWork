@@ -483,3 +483,8 @@ FodyWeavers.xsd
 *.sln.iml
 =======
 >>>>>>> 66dc73fe8cd13b5fe5e225fe5c81d420aea000c8
+
+-------
+# Obsidian
+.obsidian/
+

@@ -1,9 +1,10 @@
 ﻿using LibraryWeb.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryWeb.Infraestructure.Data.LibraryContext
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext
     {
         public DataContext() { }
 
@@ -24,6 +25,8 @@ namespace LibraryWeb.Infraestructure.Data.LibraryContext
             { 
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
+
+            base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Author> Authors { get; set; }
