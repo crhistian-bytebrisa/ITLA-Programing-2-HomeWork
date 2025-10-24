@@ -1,16 +1,31 @@
 @startuml
 
 ' Clases principales
-class Paciente {
+class Usuario {
     -Id: int
     -Nombre: string
     -Apellido: string
     -Cedula: string
-    -Telefono: string
-    -Correo: string
+}
+
+enum Rol {
+    PACIENTE,
+    DOCTOR,
+    ADMIN
+}
+
+class Paciente {
+    -Id: int
+    -UsuarioId: int
     -Fecha_de_nacimiento: Datetime 
     -SeguroId: int
     -Tipo_Sanguineo: Sangre
+}
+
+class Doctor {
+    -Id: int
+    -UsuarioId: int
+    -SobreMi: string
 }
 
 class Seguro {
@@ -115,6 +130,7 @@ class NotaPaciente {
     -Nota: string
 }
 
+
 enum Sangre{
     A+
     A-
@@ -150,4 +166,5 @@ RecetaMedicamento "*" --> "1" Recetas : Vinculado con
 RecetaMedicamento "*" --> "1" Medicamentos : Vinculado con
 RecetaPermiso "*" --> "1" Recetas : Vinculado con
 RecetaPermiso "*" --> "1" Permisos : Vinculado con
+Paciente "1" --> "1" Usuario : Tienen
 @enduml

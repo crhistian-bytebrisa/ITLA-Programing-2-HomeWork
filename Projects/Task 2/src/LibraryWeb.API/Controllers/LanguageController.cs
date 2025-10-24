@@ -3,12 +3,14 @@ using LibraryWeb.Application.DTOs.CreateDTO;
 using LibraryWeb.Application.DTOs.EntityDTO;
 using LibraryWeb.Application.Interfaces;
 using LibraryWeb.Domain.Interfaces.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryWeb.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class LanguageController : Controller
     {
         private readonly ILanguageService _languageService;

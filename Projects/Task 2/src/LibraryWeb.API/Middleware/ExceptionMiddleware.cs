@@ -34,7 +34,7 @@ namespace LibraryWeb.API.Middleware
                 _logger.LogWarning(ex, "Error de infraestructura");
                 await ctx.Response.WriteAsJsonAsync(new EntityMiddleware(false, "Error de infraestructura: " + ex.Message, 404));
             }
-            catch (AppException ex)
+            catch (ApplicationException ex)
             {
                 ctx.Response.StatusCode = 404;
                 _logger.LogWarning(ex, "Error de aplicacion");
