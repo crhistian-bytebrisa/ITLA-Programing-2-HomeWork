@@ -13,7 +13,7 @@ namespace MediAgenda.Domain.Entities
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
 
-        public DaysAvailable DaysAvailable { get; set; } = new();
+        public DayAvailable DaysAvailable { get; set; } = new();
         public Clinic() { }
     }
 }

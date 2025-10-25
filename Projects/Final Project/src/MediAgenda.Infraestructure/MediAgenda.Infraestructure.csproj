@@ -17,4 +17,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MediAgenda.Domain\MediAgenda.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

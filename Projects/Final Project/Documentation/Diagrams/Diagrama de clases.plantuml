@@ -29,12 +29,6 @@ class Seguro {
     -Nombre: string
 }
 
-class TutoresEHijo
-{
-    -TutorId: int
-    -PacineteId: int
-}
-
 class Motivo{
     -Id: int
     -Nombre: string
@@ -145,7 +139,6 @@ enum EstadoConsulta{
 }
 
 ' Relaciones
-Paciente  <-- TutoresEHijo : Es hijo o tutor
 Paciente "*" --> "1" Seguro : Tiene 
 Paciente "*" --> "1" Sangre : Tiene
 Consulta "*" --> "1" Motivo : Tiene

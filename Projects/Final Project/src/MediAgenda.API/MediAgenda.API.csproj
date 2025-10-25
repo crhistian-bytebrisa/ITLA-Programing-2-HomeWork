@@ -18,4 +18,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MediAgenda.Application\MediAgenda.Application.csproj" />
+    <ProjectReference Include="..\MediAgenda.Domain\MediAgenda.Domain.csproj" />
+    <ProjectReference Include="..\MediAgenda.Infraestructure\MediAgenda.Infraestructure.csproj" />
+  </ItemGroup>
+
 </Project>
