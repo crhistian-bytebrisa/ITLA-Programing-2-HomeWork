@@ -5,14 +5,8 @@ class Usuario {
     -Id: int
     -Nombre: string
     -Apellido: string
-    -Cedula: string
 }
 
-enum Rol {
-    PACIENTE,
-    DOCTOR,
-    ADMIN
-}
 
 class Paciente {
     -Id: int
@@ -20,11 +14,13 @@ class Paciente {
     -Fecha_de_nacimiento: Datetime 
     -SeguroId: int
     -Tipo_Sanguineo: Sangre
+    -Cedula: string
 }
 
 class Doctor {
     -Id: int
     -UsuarioId: int
+    -Especialidad: string
     -SobreMi: string
 }
 
@@ -167,4 +163,5 @@ RecetaMedicamento "*" --> "1" Medicamentos : Vinculado con
 RecetaPermiso "*" --> "1" Recetas : Vinculado con
 RecetaPermiso "*" --> "1" Permisos : Vinculado con
 Paciente "1" --> "1" Usuario : Tienen
+Doctor  "1" --> "1" Usuario : Tienen
 @enduml
