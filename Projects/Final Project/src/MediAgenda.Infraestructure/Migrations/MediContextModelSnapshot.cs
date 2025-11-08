@@ -22,7 +22,7 @@ namespace MediAgenda.Infraestructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Analysis", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.AnalysisModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,7 +45,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("Analysis");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Clinic", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ClinicModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -73,7 +73,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("Clinics");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Consultation", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ConsultationModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -107,7 +107,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("Consultations");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.DayAvailable", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.DayAvailableModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -118,8 +118,8 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.Property<int>("ClinicId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("date");
 
                     b.Property<TimeOnly>("EndTime")
                         .HasColumnType("time");
@@ -137,7 +137,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("DaysAvailable");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Doctor", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.DoctorModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -167,7 +167,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("Doctors");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Insurance", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.InsuranceModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -185,7 +185,38 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("Insurances");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Medicine", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.MedicalDocumentModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("DocumentType")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FileUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PatientId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PatientId");
+
+                    b.ToTable("MedicalDocuments");
+                });
+
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.MedicineModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -213,7 +244,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("Medicines");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.NoteConsultation", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.NoteConsultationModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -242,12 +273,13 @@ namespace MediAgenda.Infraestructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ConsultationId");
+                    b.HasIndex("ConsultationId")
+                        .IsUnique();
 
                     b.ToTable("NotesConsultations");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.NotePatient", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.NotePatientModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -282,7 +314,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("NotesPatients");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Patient", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.PatientModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -317,7 +349,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("Patients");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Permission", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.PermissionModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -338,7 +370,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("Permissions");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Prescription", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.PrescriptionModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -366,7 +398,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("Prescriptions");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Reason", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ReasonModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -391,7 +423,28 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("Reasons");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.PrescriptionAnalysis", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.CurrentMedicamentsModel", b =>
+                {
+                    b.Property<int>("PatientId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MedicineId")
+                        .HasColumnType("int");
+
+                    b.Property<DateOnly?>("EndMedication")
+                        .HasColumnType("date");
+
+                    b.Property<DateOnly>("StartMedication")
+                        .HasColumnType("date");
+
+                    b.HasKey("PatientId", "MedicineId");
+
+                    b.HasIndex("MedicineId");
+
+                    b.ToTable("CurrentMedicaments");
+                });
+
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.PrescriptionAnalysisModel", b =>
                 {
                     b.Property<int>("PrescriptionId")
                         .HasColumnType("int");
@@ -411,7 +464,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("PrescriptionsAnalysis");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.PrescriptionMedicine", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.PrescriptionMedicineModel", b =>
                 {
                     b.Property<int>("PrescriptionId")
                         .HasColumnType("int");
@@ -431,7 +484,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("PrescriptionsMedicines");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.PrescriptionPermission", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.PrescriptionPermissionModel", b =>
                 {
                     b.Property<int>("PrescriptionId")
                         .HasColumnType("int");
@@ -663,22 +716,22 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("ApplicationUsers");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Consultation", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ConsultationModel", b =>
                 {
-                    b.HasOne("MediAgenda.Infraestructure.Models.DayAvailable", "DayAvailable")
+                    b.HasOne("MediAgenda.Infraestructure.Models.DayAvailableModel", "DayAvailable")
                         .WithMany("Consultations")
                         .HasForeignKey("DayAvailableId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MediAgenda.Infraestructure.Models.Patient", "Patient")
+                    b.HasOne("MediAgenda.Infraestructure.Models.PatientModel", "Patient")
                         .WithMany("Consultations")
                         .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MediAgenda.Infraestructure.Models.Reason", "Reason")
-                        .WithMany()
+                    b.HasOne("MediAgenda.Infraestructure.Models.ReasonModel", "Reason")
+                        .WithMany("Consultations")
                         .HasForeignKey("ReasonId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -690,9 +743,9 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.Navigation("Reason");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.DayAvailable", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.DayAvailableModel", b =>
                 {
-                    b.HasOne("MediAgenda.Infraestructure.Models.Clinic", "Clinic")
+                    b.HasOne("MediAgenda.Infraestructure.Models.ClinicModel", "Clinic")
                         .WithMany("DaysAvailable")
                         .HasForeignKey("ClinicId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -701,42 +754,53 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.Navigation("Clinic");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Doctor", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.DoctorModel", b =>
                 {
                     b.HasOne("MediAgenda.Infraestructure.Models.ApplicationUser", "User")
                         .WithOne("Doctor")
-                        .HasForeignKey("MediAgenda.Infraestructure.Models.Doctor", "UserId")
+                        .HasForeignKey("MediAgenda.Infraestructure.Models.DoctorModel", "UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.NoteConsultation", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.MedicalDocumentModel", b =>
                 {
-                    b.HasOne("MediAgenda.Infraestructure.Models.Consultation", "Consultation")
-                        .WithMany()
-                        .HasForeignKey("ConsultationId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Consultation");
-                });
-
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.NotePatient", b =>
-                {
-                    b.HasOne("MediAgenda.Infraestructure.Models.Patient", "Patient")
-                        .WithOne("NotePatient")
-                        .HasForeignKey("MediAgenda.Infraestructure.Models.NotePatient", "PatientId")
+                    b.HasOne("MediAgenda.Infraestructure.Models.PatientModel", "Patient")
+                        .WithMany("MedicalDocuments")
+                        .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Patient");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Patient", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.NoteConsultationModel", b =>
                 {
-                    b.HasOne("MediAgenda.Infraestructure.Models.Insurance", "Insurance")
+                    b.HasOne("MediAgenda.Infraestructure.Models.ConsultationModel", "Consultation")
+                        .WithOne("Note")
+                        .HasForeignKey("MediAgenda.Infraestructure.Models.NoteConsultationModel", "ConsultationId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Consultation");
+                });
+
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.NotePatientModel", b =>
+                {
+                    b.HasOne("MediAgenda.Infraestructure.Models.PatientModel", "Patient")
+                        .WithOne("NotePatient")
+                        .HasForeignKey("MediAgenda.Infraestructure.Models.NotePatientModel", "PatientId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Patient");
+                });
+
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.PatientModel", b =>
+                {
+                    b.HasOne("MediAgenda.Infraestructure.Models.InsuranceModel", "Insurance")
                         .WithMany("Patients")
                         .HasForeignKey("InsuranceId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -744,7 +808,7 @@ namespace MediAgenda.Infraestructure.Migrations
 
                     b.HasOne("MediAgenda.Infraestructure.Models.ApplicationUser", "User")
                         .WithOne("Patient")
-                        .HasForeignKey("MediAgenda.Infraestructure.Models.Patient", "UserId")
+                        .HasForeignKey("MediAgenda.Infraestructure.Models.PatientModel", "UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -753,10 +817,10 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Prescription", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.PrescriptionModel", b =>
                 {
-                    b.HasOne("MediAgenda.Infraestructure.Models.Consultation", "Consultation")
-                        .WithMany()
+                    b.HasOne("MediAgenda.Infraestructure.Models.ConsultationModel", "Consultation")
+                        .WithMany("Prescriptions")
                         .HasForeignKey("ConsultationId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -764,16 +828,35 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.Navigation("Consultation");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.PrescriptionAnalysis", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.CurrentMedicamentsModel", b =>
                 {
-                    b.HasOne("MediAgenda.Infraestructure.Models.Analysis", "Analysis")
+                    b.HasOne("MediAgenda.Infraestructure.Models.MedicineModel", "Medicine")
+                        .WithMany("CurrentMedicaments")
+                        .HasForeignKey("MedicineId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("MediAgenda.Infraestructure.Models.PatientModel", "Patient")
+                        .WithMany("CurrentMedicaments")
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Medicine");
+
+                    b.Navigation("Patient");
+                });
+
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.PrescriptionAnalysisModel", b =>
+                {
+                    b.HasOne("MediAgenda.Infraestructure.Models.AnalysisModel", "Analysis")
                         .WithMany("PrescriptionAnalyses")
                         .HasForeignKey("AnalysisId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MediAgenda.Infraestructure.Models.Prescription", "Prescription")
-                        .WithMany()
+                    b.HasOne("MediAgenda.Infraestructure.Models.PrescriptionModel", "Prescription")
+                        .WithMany("PrescriptionAnalysis")
                         .HasForeignKey("PrescriptionId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -783,16 +866,16 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.Navigation("Prescription");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.PrescriptionMedicine", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.PrescriptionMedicineModel", b =>
                 {
-                    b.HasOne("MediAgenda.Infraestructure.Models.Medicine", "Medicine")
-                        .WithMany()
+                    b.HasOne("MediAgenda.Infraestructure.Models.MedicineModel", "Medicine")
+                        .WithMany("PrescriptionMedicines")
                         .HasForeignKey("MedicineId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MediAgenda.Infraestructure.Models.Prescription", "Prescription")
-                        .WithMany()
+                    b.HasOne("MediAgenda.Infraestructure.Models.PrescriptionModel", "Prescription")
+                        .WithMany("PrescriptionMedicines")
                         .HasForeignKey("PrescriptionId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -802,16 +885,16 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.Navigation("Prescription");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.PrescriptionPermission", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.PrescriptionPermissionModel", b =>
                 {
-                    b.HasOne("MediAgenda.Infraestructure.Models.Permission", "Permission")
-                        .WithMany()
+                    b.HasOne("MediAgenda.Infraestructure.Models.PermissionModel", "Permission")
+                        .WithMany("PrescriptionPermissions")
                         .HasForeignKey("PermissionId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MediAgenda.Infraestructure.Models.Prescription", "Prescription")
-                        .WithMany()
+                    b.HasOne("MediAgenda.Infraestructure.Models.PrescriptionModel", "Prescription")
+                        .WithMany("PrescriptionPermissions")
                         .HasForeignKey("PrescriptionId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -881,32 +964,70 @@ namespace MediAgenda.Infraestructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Analysis", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.AnalysisModel", b =>
                 {
                     b.Navigation("PrescriptionAnalyses");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Clinic", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ClinicModel", b =>
                 {
                     b.Navigation("DaysAvailable");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.DayAvailable", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ConsultationModel", b =>
+                {
+                    b.Navigation("Note")
+                        .IsRequired();
+
+                    b.Navigation("Prescriptions");
+                });
+
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.DayAvailableModel", b =>
                 {
                     b.Navigation("Consultations");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Insurance", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.InsuranceModel", b =>
                 {
                     b.Navigation("Patients");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Patient", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.MedicineModel", b =>
+                {
+                    b.Navigation("CurrentMedicaments");
+
+                    b.Navigation("PrescriptionMedicines");
+                });
+
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.PatientModel", b =>
                 {
                     b.Navigation("Consultations");
 
+                    b.Navigation("CurrentMedicaments");
+
+                    b.Navigation("MedicalDocuments");
+
                     b.Navigation("NotePatient")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.PermissionModel", b =>
+                {
+                    b.Navigation("PrescriptionPermissions");
+                });
+
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.PrescriptionModel", b =>
+                {
+                    b.Navigation("PrescriptionAnalysis");
+
+                    b.Navigation("PrescriptionMedicines");
+
+                    b.Navigation("PrescriptionPermissions");
+                });
+
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ReasonModel", b =>
+                {
+                    b.Navigation("Consultations");
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.ApplicationUser", b =>

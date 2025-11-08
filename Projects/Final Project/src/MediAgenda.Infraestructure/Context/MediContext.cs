@@ -30,43 +30,48 @@ namespace MediAgenda.Infraestructure.Context
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
 
-            builder.Entity<PrescriptionMedicine>()
+            builder.Entity<PrescriptionMedicineModel>()
                 .HasKey(pm => new { pm.PrescriptionId, pm.MedicineId });
 
-            builder.Entity<PrescriptionAnalysis>()
+            builder.Entity<PrescriptionAnalysisModel>()
                 .HasKey(pa => new { pa.PrescriptionId, pa.AnalysisId });
 
-            builder.Entity<PrescriptionPermission>()
+            builder.Entity<PrescriptionPermissionModel>()
                 .HasKey(pp => new { pp.PrescriptionId, pp.PermissionId });
+
+            builder.Entity<CurrentMedicamentsModel>()
+                .HasKey(cm => new { cm.PatientId, cm.MedicineId });
 
             base.OnModelCreating(builder);
         }
 
         //Users
-        public DbSet<Doctor> Doctors { get; set; }
-        public DbSet<Patient> Patients { get; set; }
+        public DbSet<DoctorModel> Doctors { get; set; }
+        public DbSet<PatientModel> Patients { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         //Clinic
-        public DbSet<Insurance> Insurances { get; set; }
-        public DbSet<Clinic> Clinics { get; set; }
-        public DbSet<DayAvailable> DaysAvailable { get; set; }  
+        public DbSet<InsuranceModel> Insurances { get; set; }
+        public DbSet<ClinicModel> Clinics { get; set; }
+        public DbSet<DayAvailableModel> DaysAvailable { get; set; }
+        public DbSet<CurrentMedicamentsModel> CurrentMedicaments { get; set; }
+        public DbSet<MedicalDocumentModel> MedicalDocuments { get; set; }
 
         //Prescriptions
 
-        public DbSet<Medicine> Medicines { get; set; }
-        public DbSet<Prescription> Prescriptions { get; set; }
-        public DbSet<Analysis> Analyses { get; set; }
-        public DbSet<Permission> Permissions { get; set; }
-        public DbSet<PrescriptionAnalysis> PrescriptionAnalyses { get; set; }
-        public DbSet<PrescriptionMedicine> PrescriptionMedicines { get; set; }
-        public DbSet<PrescriptionPermission> PrescriptionPermissions { get; set; }
+        public DbSet<MedicineModel> Medicines { get; set; }
+        public DbSet<PrescriptionModel> Prescriptions { get; set; }
+        public DbSet<AnalysisModel> Analyses { get; set; }
+        public DbSet<PermissionModel> Permissions { get; set; }
+        public DbSet<PrescriptionAnalysisModel> PrescriptionAnalyses { get; set; }
+        public DbSet<PrescriptionMedicineModel> PrescriptionMedicines { get; set; }
+        public DbSet<PrescriptionPermissionModel> PrescriptionPermissions { get; set; }
 
         //Consultations and notes
 
-        public DbSet<Consultation> Consultations { get; set; }
-        public DbSet<Reason> Reasons { get; set; }
-        public DbSet<NotePatient> NotePatients { get; set; }
-        public DbSet<NoteConsultation> NoteConsultations { get; set; }
+        public DbSet<ConsultationModel> Consultations { get; set; }
+        public DbSet<ReasonModel> Reasons { get; set; }
+        public DbSet<NotePatientModel> NotePatients { get; set; }
+        public DbSet<NoteConsultationModel> NoteConsultations { get; set; }
         }
 }

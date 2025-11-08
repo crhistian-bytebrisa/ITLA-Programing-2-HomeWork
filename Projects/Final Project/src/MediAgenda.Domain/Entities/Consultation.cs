@@ -1,4 +1,5 @@
-﻿using MediAgenda.Domain.Enums;
+﻿using MediAgenda.Domain.Core;
+using MediAgenda.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Domain.Entities
 {
-    public class Consultation
+    public class Consultation : Entity
     {
-        public int Id { get; set; }
         public int PatientId { get; set; }
         public Patient Patient { get; set; }
         public int ReasonId { get; set; }
@@ -18,6 +18,10 @@ namespace MediAgenda.Domain.Entities
         public DayAvailable DayAvailable { get; set; }
         public ConsultationState State { get; set; }
         public int Turn { get; set; }
+
+        //Navegation
+        public NoteConsultation Note { get; set; } = new();
+        public List<Prescription> Prescriptions { get; set; } = new();
 
         public Consultation() { }
     }

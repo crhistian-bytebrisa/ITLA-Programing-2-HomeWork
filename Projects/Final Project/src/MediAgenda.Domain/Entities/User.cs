@@ -14,7 +14,7 @@ namespace MediAgenda.Domain.Entities
         public string Nombre { get; set; }
         public string Apellido { get; set; }
 
-        // Map
+        // Navegation
         public Doctor? Doctor { get; set; } = new();
         public Patient? Patient { get; set; } = new();
 

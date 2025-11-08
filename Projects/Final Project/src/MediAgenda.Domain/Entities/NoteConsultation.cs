@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediAgenda.Domain.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Domain.Entities
 {
-    public class NoteConsultation
+    public class NoteConsultation : Entity
     {
-        public int Id { get; set; }
         public int ConsultationId { get; set; }
         public Consultation Consultation { get; set; }
         public string Title { get; set; }
