@@ -54,17 +54,3 @@ Una app que se encargue de manejar las citas de los pacientes además de las con
 
 - **RNF9:** La **interfaz del sistema** debe ser **intuitiva y fácil de usar** para todo tipo de usuario, priorizando claridad visual y flujo natural de navegación.  
 - **RNF10:** La aplicación debe ser **responsive**, adaptándose correctamente a distintos dispositivos (móvil, tableta y escritorio).  
-
----
-# ⚖️ Leyes
-
-Investigar las siguientes leyes para que sea un software lo mas legal posible y cumpla con varios de los requerimientos antes mencionados.
-
-Ley NO.42-01
-Ley NO.53-07
-Ley NO.87-01
-Ley NO.87-01
-Ley NO.126-02
-Ley NO.136-03
-Ley NO.172-13
-Ley NO.385-05
