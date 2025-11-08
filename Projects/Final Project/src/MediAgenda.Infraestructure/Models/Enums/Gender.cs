@@ -8,5 +8,7 @@ namespace MediAgenda.Infraestructure.Models.Enums
 {
     public enum Gender
     {
+        Male,
+        Female
     }
 }

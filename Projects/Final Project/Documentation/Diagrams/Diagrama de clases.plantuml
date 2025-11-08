@@ -1,160 +1,190 @@
 @startuml
+package "MediAgenda" <<Rectangle>> {
 
-' Clases principales
-class Usuario {
-    -Id: int
-    -Nombre: string
-    -Apellido: string
-}
+    class UsuarioAplicacion #7dc4f6ff {
+        + Nombre: string
+        + Apellido: string
+        + NumeroTelefono: string
+        + NombreUsuario: string (IdentityUser)
+        + Email: string (IdentityUser)
+        + Doctor: Doctor
+        + Paciente: Paciente
+    }
 
+    class Doctor #7dc4f6ff {
+        + Usuario: UsuarioAplicacion
+        + Especialidad: string
+        + SobreMi: string
+    }
 
-class Paciente {
-    -Id: int
-    -UsuarioId: int
-    -Fecha_de_nacimiento: Datetime 
-    -SeguroId: int
-    -Tipo_Sanguineo: Sangre
-    -Cedula: string
-}
+    class Paciente #7dc4f6ff {
+        + Usuario: UsuarioAplicacion
+        + Seguro: Seguro
+        + Identificacion: string
+        + FechaNacimiento: DateTime
+        + TipoSangre: TipoSangre
+        + Genero: Genero
+    }
 
-class Doctor {
-    -Id: int
-    -UsuarioId: int
-    -Especialidad: string
-    -SobreMi: string
-}
+    class Seguro {
+        + Nombre: string
+    }
 
-class Seguro {
-    -Id: int
-    -Nombre: string
-}
+    class Consulta {
+        + Paciente: Paciente
+        + Razon: Razon
+        + DiaDisponible: DiaDisponible
+        + Estado: EstadoConsulta
+        + Turno: int
+    }
 
-class Motivo{
-    -Id: int
-    -Nombre: string
-    -Disponible: bool
-}
+    class Razon {
+        + Titulo: string
+        + Descripcion: string
+        + Disponible: bool
+    }
 
-class Clinica {
-    -Id: int 
-    -Nombre: string
-    -Direccion: string
-    -Descripcion: string
-}
+    class DiaDisponible {
+        + Clinica: Clinica
+        + HoraInicio: TimeOnly
+        + HoraFin: TimeOnly
+        + Fecha: DateOnly
+        + Limite: int
+    }
 
-class DiasDisponibles {
-    -Id: int
-    -ClinicaId: int 
-    -Inicio: Time
-    -Fin: Time 
-    -Fecha: Datetime
-    -Limite: int
-}
+    class Clinica {
+        + Nombre: string
+        + Direccion: string
+        + NumeroTelefono: string
+    }
 
-class Consulta{
-    -Id: int
-    -MotivoId: int 
-    -PacienteId: int
-    -DiasDisponibleId: int
-    -Clinica: Clinica
-    -Estado: EstadoConsulta
-    -Turno: int
-}
+    class NotaConsulta {
+        + Consulta: Consulta
+        + Titulo: string
+        + Contenido: string
+        + CreadoEn: DateTime
+        + ActualizadoEn: DateTime
+    }
 
-class Recetas {
-    -Id: int
-    -ConsultaId: int
-    -FechaEmitida: Date
-    -Recomendacion: string
-}
+    class NotaPaciente {
+        + Paciente: Paciente
+        + Titulo: string
+        + Contenido: string
+        + CreadoEn: DateTime
+        + ActualizadoEn: DateTime
+    }
 
-class Permisos {
-    -Id: int 
-    -Tipo: string
-    -Descripcion: string
-}
+    class Receta {
+        + Consulta: Consulta
+        + RecomendacionesGenerales: string
+        + CreadoEn: DateTime
+        + UltimaImpresion: DateTime
+    }
 
-class Medicamentos {
-    -Id: int
-    -Nombre: string
-    -Formato: string
-    -Medida: string
-    -Descripcion: string
-}
+    class Medicina {
+        + Nombre: string
+        + Descripcion: string
+        + Formato: string
+    }
 
-class Analisis {
-    -Id: int 
-    -Nombre: string
-    -Tipo: string
-    -Descripcion: string
-}
+    class Analisis {
+        + Nombre: string
+        + Descripcion: string
+    }
 
-class RecetaAnalisis{
-    RecetaId: int
-    AnalisisId: Analisis
-}
+    class Permiso {
+        + Nombre: string
+        + Descripcion: string
+    }
 
-class RecetaMedicamento {
-    RecetaId: int
-    MedicamentoId: int
-    Docis: int
-    TiempoDocis: string
-    Tiempo: int
-}
+    class RecetaMedicina #ee9f9fff {
+        + Receta: Receta
+        + Medicina: Medicina
+        + Instrucciones: string
+    }
 
-class RecetaPermiso {
-    RecetaId: int
-    PermisoId: int
-    Tiempo: string
-}
+    class RecetaAnalisis #ee9f9fff {
+        + Receta: Receta
+        + Analisis: Analisis
+        + Recomendaciones: string
+    }
 
-class NotaConsulta {
-    -Id: int
-    -ConsultaId: int
-    -Nota: string 
-}
+    class RecetaPermiso #ee9f9fff {
+        + Receta: Receta
+        + Permiso: Permiso
+    }
 
-class NotaPaciente {
-    -Id: int
-    -Paciente: int
-    -Nota: string
-}
+    class MedicamentosActuales #ee9f9fff {
+        + Paciente: Paciente
+        + Medicina: Medicina
+        + InicioMedicacion: DateOnly
+        + FinMedicacion: DateOnly
+    }
 
+    class DocumentoMedico {
+        + Paciente: Paciente
+        + NombreArchivo: string
+        + UrlArchivo: string
+        + TipoDocumento: string
+    }
 
-enum Sangre{
-    A+
-    A-
-    B+
-    B-
-    O+
-    O-
-    AB+
-    AB-
-}
+    enum TipoSangre {
+        A_Positivo
+        A_Negativo
+        B_Positivo
+        B_Negativo
+        AB_Positivo
+        AB_Negativo
+        O_Positivo
+        O_Negativo
+    }
 
-enum EstadoConsulta{
-    CANCELADA,
-    AGENDADA,
-    REALIZADA
+    enum EstadoConsulta {
+        Pendiente
+        Confirmada
+        Cancelada
+    }
+
+    enum Genero {
+        Masculino
+        Femenino
+    }
 }
 
 ' Relaciones
-Paciente "*" --> "1" Seguro : Tiene 
-Paciente "*" --> "1" Sangre : Tiene
-Consulta "*" --> "1" Motivo : Tiene
-Consulta "*" -->  "1" EstadoConsulta : Tiene
-Consulta "*" --> "1" Paciente : Tiene
-Consulta "*" --> "1" DiasDisponibles : Son en  
-NotaConsulta "1" --> "1" Consulta : Tomada  de
-NotaPaciente "1" --> "1" Paciente : Tomada de
-DiasDisponibles "*" --> "1" Clinica : Estan en
-Recetas "1" --> "1" Consulta : Esta con
-RecetaAnalisis "*" --> "1" Recetas : Vinculado con
-RecetaAnalisis "*" --> "1" Analisis : Vinculado con
-RecetaMedicamento "*" --> "1" Recetas : Vinculado con
-RecetaMedicamento "*" --> "1" Medicamentos : Vinculado con
-RecetaPermiso "*" --> "1" Recetas : Vinculado con
-RecetaPermiso "*" --> "1" Permisos : Vinculado con
-Paciente "1" --> "1" Usuario : Tienen
-Doctor  "1" --> "1" Usuario : Tienen
+
+' Usuario
+UsuarioAplicacion "1" -- "0..1" Doctor
+UsuarioAplicacion "1" -- "0..1" Paciente
+
+' Paciente
+Paciente "1" -- "1" NotaPaciente
+Paciente "*" -- "1" Seguro
+Paciente "1" -- "*" Consulta
+Paciente "1" -- "*" DocumentoMedico
+Paciente "1" -- "*" MedicamentosActuales
+Paciente -- TipoSangre
+Paciente -- Genero
+
+' Consultas
+Consulta "*" -- "1" Razon
+Consulta "*" -- "1" DiaDisponible
+Consulta "1" -- "1" NotaConsulta
+Consulta "1" -- "*" Receta
+Consulta -- EstadoConsulta
+
+' Clínica
+Clinica "1" -- "*" DiaDisponible
+
+' Prescripciones
+Receta "1" -- "*" RecetaMedicina
+Receta "1" -- "*" RecetaAnalisis
+Receta "1" -- "*" RecetaPermiso
+
+' Medicinas y Análisis
+Medicina "1" -- "*" RecetaMedicina
+Medicina "1" -- "*" MedicamentosActuales
+Analisis "1" -- "*" RecetaAnalisis
+Permiso "1" -- "*" RecetaPermiso
+
 @enduml

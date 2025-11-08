@@ -33,6 +33,9 @@ namespace MediAgenda.Infraestructure.Models
         [Required]
         public Bloodtype Bloodtype { get; set; }
 
+        [Required]
+        public Gender Gender { get; set; }
+
         //Navegation
         public NotePatientModel NotePatient { get; set; } = new();
         public List<ConsultationModel> Consultations { get; set; } = new();
