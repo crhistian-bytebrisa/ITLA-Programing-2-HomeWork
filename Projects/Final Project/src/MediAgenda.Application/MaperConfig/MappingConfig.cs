@@ -1,6 +1,6 @@
 ﻿using Mapster;
-using MediAgenda.API.DTOs;
-using MediAgenda.API.DTOs.Relations;
+using MediAgenda.Application.DTOs;
+using MediAgenda.Application.DTOs.Relations;
 using MediAgenda.Domain.Entities;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.Models.Relations;

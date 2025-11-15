@@ -1,4 +1,4 @@
-﻿namespace MediAgenda.API.DTOs.Relations
+﻿namespace MediAgenda.Application.DTOs.Relations
 {
 
     public class PrescriptionAnalysisDTO

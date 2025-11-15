@@ -1,4 +1,6 @@
-﻿namespace MediAgenda.API.DTOs.Relations
+﻿using MediAgenda.Application.DTOs;
+
+namespace MediAgenda.Application.DTOs.Relations
 {
     public class CurrentMedicamentDTO
     {

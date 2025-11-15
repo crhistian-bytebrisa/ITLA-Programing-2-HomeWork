@@ -1,6 +1,6 @@
 ﻿using Mapster;
-using MediAgenda.API.DTOs;
-using MediAgenda.API.DTOs.API;
+using MediAgenda.Application.DTOs;
+using MediAgenda.Application.DTOs.API;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;

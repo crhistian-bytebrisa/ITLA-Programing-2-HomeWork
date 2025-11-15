@@ -1,4 +1,4 @@
-﻿namespace MediAgenda.API.DTOs
+﻿namespace MediAgenda.Application.DTOs
 {
     public class ClinicDTO
     {

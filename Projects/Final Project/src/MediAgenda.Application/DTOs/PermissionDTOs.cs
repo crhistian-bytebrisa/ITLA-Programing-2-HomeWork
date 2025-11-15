@@ -1,23 +1,23 @@
-﻿using MediAgenda.API.DTOs.Relations;
+﻿using MediAgenda.Application.DTOs.Relations;
 
-namespace MediAgenda.API.DTOs
+namespace MediAgenda.Application.DTOs
 {
-    public class AnalysisDTO
+    public class PermissionDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public List<PrescriptionAnalysisDTO> PrescriptionAnalyses { get; set; }
+        public List<PrescriptionPermissionDTO> PrescriptionPermissions { get; set; }
     }
 
-    public class AnalysisSimpleDTO
+    public class PermissionSimpleDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
     }
 
-    public class AnalysisCreateDTO
+    public class PermissionCreateDTO
     {
         public string Name { get; set; }
         public string Description { get; set; }

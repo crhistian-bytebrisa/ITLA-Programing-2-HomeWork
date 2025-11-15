@@ -1,29 +1,29 @@
-﻿namespace MediAgenda.API.DTOs
+﻿namespace MediAgenda.Application.DTOs
 {
-    public class NotePatientDTO
+    public class NoteConsultationDTO
     {
         public int Id { get; set; }
-        public int PatientId { get; set; }
-        public PatientSimpleDTO Patient { get; set; }
+        public int ConsultationId { get; set; }
+        public ConsultationSimpleDTO Consultation { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdateAt { get; set; }
     }
 
-    public class NotePatientSimpleDTO
+    public class NoteConsultationSimpleDTO
     {
         public int Id { get; set; }
-        public int PatientId { get; set; }
+        public int ConsultationId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdateAt { get; set; }
     }
 
-    public class NotePatientCreateDTO
+    public class NoteConsultationCreateDTO
     {
-        public int PatientId { get; set; }
+        public int ConsultationId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
     }

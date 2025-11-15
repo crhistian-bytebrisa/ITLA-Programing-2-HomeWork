@@ -1,6 +1,6 @@
-﻿using MediAgenda.API.DTOs.Enums;
+﻿using MediAgenda.Application.DTOs.Enums;
 
-namespace MediAgenda.API.DTOs
+namespace MediAgenda.Application.DTOs
 {
     public class ConsultationDTO
     {

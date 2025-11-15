@@ -1,6 +1,6 @@
-﻿using MediAgenda.API.DTOs.Relations;
+﻿using MediAgenda.Application.DTOs.Relations;
 
-namespace MediAgenda.API.DTOs
+namespace MediAgenda.Application.DTOs
 {
     public class PrescriptionDTO
     {
