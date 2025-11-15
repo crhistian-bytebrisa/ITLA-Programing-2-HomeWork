@@ -15,6 +15,8 @@
     {
         public int PatientId { get; set; }
         public int MedicineId { get; set; }
+        public string MedicineName { get; set; }
+        public string Format { get; set; }
         public DateOnly StartMedication { get; set; }
         public DateOnly? EndMedication { get; set; }
         public bool IsActive => EndMedication == null || EndMedication >= DateOnly.FromDateTime(DateTime.Today);

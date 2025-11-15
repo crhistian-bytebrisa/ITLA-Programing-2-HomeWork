@@ -3,6 +3,7 @@ using MediAgenda.API.DTOs;
 using MediAgenda.API.DTOs.Relations;
 using MediAgenda.Domain.Entities;
 using MediAgenda.Infraestructure.Models;
+using MediAgenda.Infraestructure.Models.Relations;
 
 namespace MediAgenda.API.MaperConfig
 {
@@ -18,6 +19,10 @@ namespace MediAgenda.API.MaperConfig
 
             TypeAdapterConfig<ApplicationUser, ApplicationUserDTO>.NewConfig()
                 .Map(dest => dest.Id, src => src.Id);
+
+            TypeAdapterConfig<CurrentMedicamentsModel, CurrentMedicamentSimpleDTO>.NewConfig()
+                .Map(dest => dest.MedicineName, src => src.Medicine.Name)
+                .Map(dest => dest.Format, src => src.Medicine.Format);
 
         }
     }

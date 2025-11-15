@@ -16,6 +16,7 @@ namespace MediAgenda.Infraestructure.Core
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
 
+        //Este metodo fue casi robado del profe, gracias profe <3
         protected async Task<(List<T>, int)> PaginateQuery(IQueryable<T> query,BaseRequest request)
         {
             int totalcount = await query.CountAsync();

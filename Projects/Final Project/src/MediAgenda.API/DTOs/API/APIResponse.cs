@@ -1,5 +1,6 @@
 ﻿namespace MediAgenda.API.DTOs.API
 {
+    //Este DTO se hizo con lo aprendido del profe
     public class APIResponse<T> where T : class
     {
         public int Page { get; set; }
