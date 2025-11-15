@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MediAgenda.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,6 +11,8 @@ using System.Threading.Tasks;
 namespace MediAgenda.Infraestructure.Models.Relations
 {
     [Table("PrescriptionsPermisions")]
+
+    [PrimaryKey(nameof(PrescriptionId), nameof(PermissionId))]
     public class PrescriptionPermissionModel
     {
         [Required, ForeignKey("Prescription")]

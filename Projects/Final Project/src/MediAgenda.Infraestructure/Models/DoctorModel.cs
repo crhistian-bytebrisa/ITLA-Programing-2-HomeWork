@@ -16,13 +16,13 @@ namespace MediAgenda.Infraestructure.Models
 
         [Required, ForeignKey("User")]
         public string UserId { get; set; }
-        public ApplicationUser User { get; set; }
+        public ApplicationUserModel User { get; set; }
 
         [Required, MaxLength(200)]
         public string Specialty { get; set; }
 
         [MaxLength(500)]
-        public string AboutMe { get; set; }
+        public string? AboutMe { get; set; }
 
         public DoctorModel()
         {

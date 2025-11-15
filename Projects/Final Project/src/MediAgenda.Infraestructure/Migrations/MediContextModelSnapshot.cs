@@ -146,7 +146,6 @@ namespace MediAgenda.Infraestructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("AboutMe")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -702,19 +701,14 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ApplicationUser", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ApplicationUserModel", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
-                    b.Property<string>("Apellido")
+                    b.Property<string>("NameComplete")
                         .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.ToTable("ApplicationUsers");
                 });
@@ -759,7 +753,7 @@ namespace MediAgenda.Infraestructure.Migrations
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.DoctorModel", b =>
                 {
-                    b.HasOne("MediAgenda.Infraestructure.Models.ApplicationUser", "User")
+                    b.HasOne("MediAgenda.Infraestructure.Models.ApplicationUserModel", "User")
                         .WithOne("Doctor")
                         .HasForeignKey("MediAgenda.Infraestructure.Models.DoctorModel", "UserId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -809,7 +803,7 @@ namespace MediAgenda.Infraestructure.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MediAgenda.Infraestructure.Models.ApplicationUser", "User")
+                    b.HasOne("MediAgenda.Infraestructure.Models.ApplicationUserModel", "User")
                         .WithOne("Patient")
                         .HasForeignKey("MediAgenda.Infraestructure.Models.PatientModel", "UserId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -958,11 +952,11 @@ namespace MediAgenda.Infraestructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ApplicationUser", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ApplicationUserModel", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithOne()
-                        .HasForeignKey("MediAgenda.Infraestructure.Models.ApplicationUser", "Id")
+                        .HasForeignKey("MediAgenda.Infraestructure.Models.ApplicationUserModel", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -1033,7 +1027,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.Navigation("Consultations");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ApplicationUser", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ApplicationUserModel", b =>
                 {
                     b.Navigation("Doctor");
 

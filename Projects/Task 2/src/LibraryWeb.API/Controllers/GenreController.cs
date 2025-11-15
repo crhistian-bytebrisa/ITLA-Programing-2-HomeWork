@@ -10,7 +10,6 @@ namespace LibraryWeb.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
     public class GenreController : Controller
     {
         private readonly IGenreService _genreService;

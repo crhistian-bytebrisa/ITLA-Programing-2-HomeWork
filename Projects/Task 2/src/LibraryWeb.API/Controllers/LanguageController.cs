@@ -10,7 +10,6 @@ namespace LibraryWeb.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
     public class LanguageController : Controller
     {
         private readonly ILanguageService _languageService;

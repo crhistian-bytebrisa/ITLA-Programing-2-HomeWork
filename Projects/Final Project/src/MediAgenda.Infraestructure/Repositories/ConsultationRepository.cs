@@ -2,6 +2,7 @@ using MediAgenda.Infraestructure.Context;
 using MediAgenda.Infraestructure.Core;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
+using MediAgenda.Infraestructure.RequestRepositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,5 +19,66 @@ namespace MediAgenda.Infraestructure.Repositories
         {
         }
 
+        public async Task<(List<ConsultationModel>, int)> GetByRequest(ConsultationRequest request)
+        {
+            IQueryable<ConsultationModel> query = _context.Set<ConsultationModel>();
+
+            if (request.PatientId is not null)
+            {
+                query = query.Where(x => x.PatientId == request.PatientId);
+            }
+
+            if (request.ReasonId is not null)
+            {
+                query = query.Where(x => x.ReasonId == request.ReasonId);
+            }
+
+            if (request.DayAvailableId is not null)
+            {
+                query = query.Where(x => x.DayAvailableId == request.DayAvailableId);
+            }
+
+            if (request.State is not null)
+            {
+                query = query.Where(x => x.State == request.State);
+            }
+
+            if (request.DateFrom is not null)
+            {
+                query = query.Where(x => x.DayAvailable.Date >= request.DateFrom);
+            }
+
+            if (request.DateTo is not null)
+            {
+                query = query.Where(x => x.DayAvailable.Date <= request.DateTo);
+            }
+
+            if (request.IncludeNote is true)
+            {
+                query = query.Include(x => x.Note);
+            }
+
+            if (request.IncludePrescriptions is true)
+            {
+                query = query.Include(x => x.Prescriptions);
+            }
+
+            if (request.IncludePatient is true)
+            {
+                query = query.Include(x => x.Patient);
+            }
+
+            if (request.IncludeReason is true)
+            {
+                query = query.Include(x => x.Reason);
+            }
+
+            if (request.IncludeDayAvailable is true)
+            {
+                query = query.Include(x => x.DayAvailable);
+            }
+
+            return await PaginateQuery(query, request);
+        }
     }
 }

@@ -17,12 +17,6 @@ namespace MediAgenda.Infraestructure.Context
         {
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Persist Security Info=False;Trusted_Connection=True;database=MediAgenda;server=(local);TrustServerCertificate=True;");
-            base.OnConfiguring(optionsBuilder);
-        }
-
         protected override void OnModelCreating(ModelBuilder builder)
         {
             foreach (var relationship in builder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
@@ -30,25 +24,13 @@ namespace MediAgenda.Infraestructure.Context
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
 
-            builder.Entity<PrescriptionMedicineModel>()
-                .HasKey(pm => new { pm.PrescriptionId, pm.MedicineId });
-
-            builder.Entity<PrescriptionAnalysisModel>()
-                .HasKey(pa => new { pa.PrescriptionId, pa.AnalysisId });
-
-            builder.Entity<PrescriptionPermissionModel>()
-                .HasKey(pp => new { pp.PrescriptionId, pp.PermissionId });
-
-            builder.Entity<CurrentMedicamentsModel>()
-                .HasKey(cm => new { cm.PatientId, cm.MedicineId });
-
             base.OnModelCreating(builder);
         }
 
         //Users
         public DbSet<DoctorModel> Doctors { get; set; }
         public DbSet<PatientModel> Patients { get; set; }
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<ApplicationUserModel> ApplicationUsers { get; set; }
 
         //Clinic
         public DbSet<InsuranceModel> Insurances { get; set; }

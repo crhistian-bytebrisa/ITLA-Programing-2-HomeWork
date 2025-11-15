@@ -18,7 +18,7 @@ namespace MediAgenda.Infraestructure.Models
 
         [Required, ForeignKey("User")]
         public string UserId { get; set; }
-        public ApplicationUser User { get; set; }
+        public ApplicationUserModel User { get; set; }
 
         [Required, ForeignKey("Insurance")]
         public int InsuranceId { get; set; }
@@ -37,10 +37,10 @@ namespace MediAgenda.Infraestructure.Models
         public Gender Gender { get; set; }
 
         //Navegation
-        public NotePatientModel NotePatient { get; set; } = new();
-        public List<ConsultationModel> Consultations { get; set; } = new();
-        public List<MedicalDocumentModel> MedicalDocuments { get; set; } = new();
-        public List<CurrentMedicamentsModel> CurrentMedicaments { get; set; } = new();
+        public NotePatientModel? NotePatient { get; set; } 
+        public List<ConsultationModel>? Consultations { get; set; } 
+        public List<MedicalDocumentModel>? MedicalDocuments { get; set; } 
+        public List<CurrentMedicamentsModel>? CurrentMedicaments { get; set; } 
 
         public PatientModel() { }
 

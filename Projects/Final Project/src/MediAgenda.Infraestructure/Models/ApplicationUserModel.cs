@@ -12,21 +12,17 @@ using System.Threading.Tasks;
 namespace MediAgenda.Infraestructure.Models
 {
     [Table("ApplicationUsers")]
-    public class ApplicationUser : IdentityUser, IEntity
+    public class ApplicationUserModel : IdentityUser
     {
-        public int Id { get; set; }
 
-        [Required, MaxLength(100), MinLength(3)]
-        public string Nombre { get; set; }
-
-        [Required, MaxLength(150), MinLength(5)]
-        public string Apellido { get; set; }
+        [Required, MaxLength(200), MinLength(7)]
+        public string NameComplete { get; set; }
 
         // Navegation
-        public DoctorModel? Doctor { get; set; } = new();
-        public PatientModel? Patient { get; set; } = new();
+        public DoctorModel? Doctor { get; set; } 
+        public PatientModel? Patient { get; set; } 
 
-        public ApplicationUser()
+        public ApplicationUserModel()
         {
 
         }

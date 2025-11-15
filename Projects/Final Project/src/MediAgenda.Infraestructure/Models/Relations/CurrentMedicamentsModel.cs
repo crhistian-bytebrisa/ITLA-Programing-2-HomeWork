@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 namespace MediAgenda.Infraestructure.Models.Relations
 {
     [Table("CurrentMedicaments")]
+    [PrimaryKey(nameof(PatientId), nameof(MedicineId))]
     public class CurrentMedicamentsModel
     {
         [Required, ForeignKey("Patient")]

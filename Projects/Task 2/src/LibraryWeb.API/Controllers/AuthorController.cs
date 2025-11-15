@@ -10,7 +10,6 @@ namespace LibraryWeb.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
     public class AuthorController : Controller
     {
         private readonly IAuthorService _authorService;
@@ -25,6 +24,7 @@ namespace LibraryWeb.API.Controllers
         {
             var authors = await _authorService.GetAllAsync();
             return Ok(authors);
+            
         }
 
         [HttpGet("{id}")]
