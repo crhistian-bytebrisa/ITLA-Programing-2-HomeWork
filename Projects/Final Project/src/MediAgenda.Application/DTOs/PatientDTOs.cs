@@ -25,8 +25,8 @@ namespace MediAgenda.Application.DTOs
                 return age;
             }
         }
-        public BloodTypeDTO BloodTypeDTO { get; set; }
-        public GenderDTO GenderDTO { get; set; }
+        public string BloodType { get; set; }
+        public string Gender { get; set; }
         public NotePatientSimpleDTO NotePatient { get; set; }
         public List<ConsultationSimpleDTO> Consultations { get; set; }
         public List<MedicalDocumentSimpleDTO> MedicalDocuments { get; set; }
@@ -54,8 +54,8 @@ namespace MediAgenda.Application.DTOs
                 return age;
             }
         }
-        public BloodTypeDTO BloodTypeDTO { get; set; }
-        public GenderDTO GenderDTO { get; set; }
+        public string BloodType { get; set; }
+        public string Gender { get; set; }
     }
 
     public class PatientCreateDTO

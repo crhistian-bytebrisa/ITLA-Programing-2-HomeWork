@@ -11,7 +11,7 @@ namespace MediAgenda.Application.DTOs
         public ReasonSimpleDTO Reason { get; set; }
         public int DayAvailableId { get; set; }
         public DayAvailableSimpleDTO DayAvailable { get; set; }
-        public ConsultationStateDTO State { get; set; }
+        public string State { get; set; }
         public int Turn { get; set; }
         public NoteConsultationSimpleDTO Note { get; set; }
         public List<PrescriptionSimpleDTO> Prescriptions { get; set; }
@@ -23,7 +23,7 @@ namespace MediAgenda.Application.DTOs
         public int PatientId { get; set; }
         public int ReasonId { get; set; }
         public int DayAvailableId { get; set; }
-        public ConsultationStateDTO State { get; set; }
+        public string State { get; set; }
         public int Turn { get; set; }
     }
 
