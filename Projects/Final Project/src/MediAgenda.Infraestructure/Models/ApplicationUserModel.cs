@@ -1,4 +1,5 @@
-﻿using MediAgenda.Infraestructure.Interfaces;
+﻿using MediAgenda.Domain.Core;
+using MediAgenda.Infraestructure.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 namespace MediAgenda.Infraestructure.Models
 {
     [Table("ApplicationUsers")]
-    public class ApplicationUserModel : IdentityUser
+    public class ApplicationUserModel : IdentityUser, IHasUsername
     {
 
         [Required, MaxLength(200), MinLength(7)]

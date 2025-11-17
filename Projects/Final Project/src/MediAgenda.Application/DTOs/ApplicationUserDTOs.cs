@@ -1,4 +1,6 @@
-﻿namespace MediAgenda.Application.DTOs
+﻿using MediAgenda.Domain.Core;
+
+namespace MediAgenda.Application.DTOs
 {
     public class ApplicationUserDTO
     {
@@ -20,7 +22,7 @@
         public string PhoneNumber { get; set; }
     }
 
-    public class ApplicationUserCreateDTO
+    public class ApplicationUserCreateDTO : IHasUsername
     {
         public string UserName { get; set; }
         public string Email { get; set; }

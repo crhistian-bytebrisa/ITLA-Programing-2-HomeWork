@@ -1,4 +1,6 @@
-﻿namespace MediAgenda.Application.DTOs
+﻿using MediAgenda.Domain.Core;
+
+namespace MediAgenda.Application.DTOs
 {
     public class NoteConsultationDTO
     {
@@ -21,7 +23,7 @@
         public DateTime UpdateAt { get; set; }
     }
 
-    public class NoteConsultationCreateDTO
+    public class NoteConsultationCreateDTO : IHasTitle
     {
         public int ConsultationId { get; set; }
         public string Title { get; set; }

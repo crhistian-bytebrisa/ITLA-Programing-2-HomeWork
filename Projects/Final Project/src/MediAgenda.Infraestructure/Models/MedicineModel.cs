@@ -1,4 +1,5 @@
-﻿using MediAgenda.Infraestructure.Models.Relations;
+﻿using MediAgenda.Domain.Core;
+using MediAgenda.Infraestructure.Models.Relations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 namespace MediAgenda.Infraestructure.Models
 {
     [Table("Medicines")]
-    public class MedicineModel
+    public class MedicineModel : IHasName
     {
         [Key]
         public int Id { get; set; }

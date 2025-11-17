@@ -1,8 +1,9 @@
 ﻿using MediAgenda.Application.DTOs.Relations;
+using MediAgenda.Domain.Core;
 
 namespace MediAgenda.Application.DTOs
 {
-    public class AnalysisDTO
+    public class AnalysisDTO: IHasName
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -10,14 +11,14 @@ namespace MediAgenda.Application.DTOs
         public List<PrescriptionAnalysisDTO> PrescriptionAnalyses { get; set; }
     }
 
-    public class AnalysisSimpleDTO
+    public class AnalysisSimpleDTO : IHasName
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
     }
 
-    public class AnalysisCreateDTO
+    public class AnalysisCreateDTO : IHasName
     {
         public string Name { get; set; }
         public string Description { get; set; }

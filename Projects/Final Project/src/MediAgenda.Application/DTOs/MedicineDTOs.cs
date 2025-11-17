@@ -1,4 +1,5 @@
 ﻿using MediAgenda.Application.DTOs.Relations;
+using MediAgenda.Domain.Core;
 
 namespace MediAgenda.Application.DTOs
 {
@@ -20,7 +21,7 @@ namespace MediAgenda.Application.DTOs
         public string Format { get; set; }
     }
 
-    public class MedicineCreateDTO
+    public class MedicineCreateDTO : IHasName
     {
         public string Name { get; set; }
         public string Description { get; set; }

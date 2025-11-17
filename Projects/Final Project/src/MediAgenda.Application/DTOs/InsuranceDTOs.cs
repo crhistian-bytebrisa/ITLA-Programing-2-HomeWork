@@ -1,4 +1,6 @@
-﻿namespace MediAgenda.Application.DTOs
+﻿using MediAgenda.Domain.Core;
+
+namespace MediAgenda.Application.DTOs
 {
     public class InsuranceDTO
     {
@@ -13,7 +15,7 @@
         public string Name { get; set; }
     }
 
-    public class InsuranceCreateDTO
+    public class InsuranceCreateDTO : IHasName
     {
         public string Name { get; set; }
     }

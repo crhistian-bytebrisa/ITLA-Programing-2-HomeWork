@@ -1,4 +1,5 @@
-﻿using MediAgenda.Infraestructure.Interfaces;
+﻿using MediAgenda.Domain.Core;
+using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models.Relations;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 namespace MediAgenda.Infraestructure.Models
 {
     [Table("Analysis")]
-    public class AnalysisModel : IEntity
+    public class AnalysisModel : IEntity, IHasName
     {
         [Key]
         public int Id { get; set; }

@@ -1,10 +1,14 @@
 
+using FluentValidation;
 using MediAgenda.API.Middleware;
+using MediAgenda.Application.Validations;
+using MediAgenda.Application.Validations.CreateValidations;
 using MediAgenda.Domain.Entities;
 using MediAgenda.Infraestructure.Context;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
 
 namespace MediAgenda.API
 {
@@ -16,6 +20,13 @@ namespace MediAgenda.API
 
             builder.Services.AddDbContext<MediContext>(
                 opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddValidatorsFromAssemblyContaining<AnalysisCreateValidation>();
+            builder.Services.AddFluentValidationAutoValidation();
+
+            builder.Services.AddScoped(typeof(RepoValidation<>));
+
+            
 
             builder.Services.AddScoped<IAnalysisRepository, AnalysisRepository>();
             builder.Services.AddScoped<IApplicationUserRepository, ApplicationUserRepository>();
@@ -32,6 +43,8 @@ namespace MediAgenda.API
             builder.Services.AddScoped<IPermissionRepository, PermissionRepository>();
             builder.Services.AddScoped<IPrescriptionRepository, PrescriptionRepository>();
             builder.Services.AddScoped<IReasonRepository, ReasonRepository>();
+
+       
 
 
             builder.Services.AddControllers();
