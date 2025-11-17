@@ -1,0 +1,6 @@
+[2025-11-17 10:35:06] Request: GET 
+URL: /api/Analyses 
+Query: Response: 200 
+Tiempo: 2686 ms
+
+

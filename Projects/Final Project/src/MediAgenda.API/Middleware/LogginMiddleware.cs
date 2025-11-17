@@ -14,7 +14,7 @@ namespace MediAgenda.API.Middleware
             {
                 string date = DateTime.Now.ToString("yyyy-MM-dd");
                 string fileName = $"Logging-{date}.txt";
-                string directory = "logs";
+                string directory = "Archivos de Logging";
                 string fullPath = Path.Combine(directory, fileName);
 
                 if (!Directory.Exists(directory))
@@ -55,7 +55,7 @@ namespace MediAgenda.API.Middleware
             {
                 watch.Stop();
 
-                string mes = $"Response: {context.Response.StatusCode} \nTiempo: {watch.ElapsedMilliseconds} ms";
+                string mes = $"\nResponse: {context.Response.StatusCode} \nTiempo: {watch.ElapsedMilliseconds} ms";
                 _logger.LogInformation(mes);
 
                 message += mes;
