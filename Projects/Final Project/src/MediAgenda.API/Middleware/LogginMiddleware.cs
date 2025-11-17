@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Azure.Core;
+using System.Diagnostics;
 
 namespace MediAgenda.API.Middleware
 {
@@ -6,6 +7,31 @@ namespace MediAgenda.API.Middleware
     {
         private readonly RequestDelegate _next;
         private readonly ILogger<LogMiddleware> _logger;
+
+        public void SaveLogin(string message)
+        {
+            try
+            {
+                string date = DateTime.Now.ToString("yyyy-MM-dd");
+                string fileName = $"Logging-{date}.txt";
+                string directory = "logs";
+                string fullPath = Path.Combine(directory, fileName);
+
+                if (!Directory.Exists(directory))
+                {
+                    Directory.CreateDirectory(directory);
+                }
+
+                string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                string logEntry = $"[{timestamp}] {message}{Environment.NewLine}";
+
+                File.AppendAllText(fullPath, logEntry);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error guardando log: {ex.Message}");
+            }
+        }
 
         public LogMiddleware(RequestDelegate next, ILogger<LogMiddleware> logger)
         {
@@ -17,12 +43,9 @@ namespace MediAgenda.API.Middleware
         {
             var watch = Stopwatch.StartNew();
 
-            _logger.LogInformation(
-                "Request: {method} \nURL: {url} \nQuery: {query}",
-                context.Request.Method,
-                context.Request.Path,
-                context.Request.QueryString.Value
-            );
+            string message = $"Request: {context.Request.Method} \nURL: {context.Request.Path} \nQuery: {context.Request.QueryString.Value}";
+
+            _logger.LogInformation(message);
 
             try
             {
@@ -31,11 +54,14 @@ namespace MediAgenda.API.Middleware
             finally
             {
                 watch.Stop();
-                _logger.LogInformation(
-                    "Response: {status} \nTiempo: {elapsed} ms",
-                    context.Response.StatusCode,
-                    watch.ElapsedMilliseconds
-                );
+
+                string mes = $"Response: {context.Response.StatusCode} \nTiempo: {watch.ElapsedMilliseconds} ms";
+                _logger.LogInformation(mes);
+
+                message += mes;
+
+                SaveLogin(message+"\n\n");
+
             }
         }
     }
