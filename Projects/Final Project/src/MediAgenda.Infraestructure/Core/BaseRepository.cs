@@ -1,10 +1,6 @@
 ﻿using MediAgenda.Infraestructure.Context;
-using MediAgenda.Infraestructure.Interfaces;
-using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories.Base;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,52 +11,17 @@ namespace MediAgenda.Infraestructure.Core
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
-
-        //Este metodo fue casi robado del profe, gracias profe <3
-        protected async Task<(List<T>, int)> PaginateQuery(IQueryable<T> query,BaseRequest request)
-        {
-            int totalcount = await query.CountAsync();
-
-            int pageSize = 10;
-            int page = 1;
-
-            if (request.PageSize != null)
-            {
-                pageSize = Math.Max(1, request.PageSize.Value);
-            }
-
-            if (request.Page != null)
-            {
-                page = Math.Max(1, request.Page.Value);
-            }
-
-            int totalPages = (int)Math.Ceiling((double)totalcount / pageSize);
-            
-            List<T> list = await query
-                    .Skip((page - 1) * pageSize)
-                    .Take(pageSize)
-                    .AsNoTracking()
-                    .ToListAsync();
-
-            return (list, totalcount);
-        }
+        
 
         protected readonly MediContext _context;
         public BaseRepository(MediContext task)
         {
             _context = task;
         }
-
-        public async Task<T> GetByIdAsync(int id)
+        public async Task<(List<T>, int)> GetAllAsync()
         {
-            var entity = _context.Set<T>().Find(id);
-            return entity;
-        }
-
-        public async Task<List<T>> GetAllAsync()
-        {
-            var entities = await _context.Set<T>().ToListAsync();
-            return entities;
+            var entities = await _context.Set<T>().AsNoTracking().ToListAsync();
+            return (entities, entities.Count);
         }
 
         public async Task<T> AddAsync(T entity)

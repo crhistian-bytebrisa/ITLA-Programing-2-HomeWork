@@ -23,7 +23,7 @@ namespace MediAgenda.Application.DTOs
         public DateTime UpdateAt { get; set; }
     }
 
-    public class NotePatientCreateDTO : IHasTitle
+    public class NotePatientCreateDTO 
     {
         public int PatientId { get; set; }
         public string Title { get; set; }

@@ -30,7 +30,7 @@ namespace MediAgenda.API.Controllers
         }
 
         // GET api/Prescriptions/5
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<PrescriptionDTO>> Get(int id)
         {
             var entity = await _repo.GetByIdAsync(id);
@@ -54,7 +54,7 @@ namespace MediAgenda.API.Controllers
         }
 
         // PUT api/Prescriptions/5
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<ActionResult> PutAsync(int id, [FromBody] PrescriptionCreateDTO entity)
         {
             var model = entity.Adapt<PrescriptionModel>();
@@ -64,7 +64,7 @@ namespace MediAgenda.API.Controllers
         }
 
         // DELETE api/Prescriptions/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
             var entity = await _repo.GetByIdAsync(id);
@@ -78,17 +78,6 @@ namespace MediAgenda.API.Controllers
             return NoContent();
         }
 
-        // GET: api/Prescriptions/ByRequest
-        [HttpGet("ByRequest")]
-        public async Task<ActionResult<List<PrescriptionDTO>>> GetByRequest([FromQuery] PrescriptionRequest request)
-        {
-            var list = await _repo.GetByRequest(request);
-            List<PrescriptionDTO> listdto = list.Item1.Adapt<List<PrescriptionDTO>>();
-            int TotalCount = list.Item2;
-
-            var APIR = new APIResponse<PrescriptionDTO>(listdto, TotalCount, request.Page ?? 1, request.PageSize ?? 10);
-
-            return Ok(APIR);
-        }
+        
     }
 }

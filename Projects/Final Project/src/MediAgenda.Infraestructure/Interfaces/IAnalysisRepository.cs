@@ -1,10 +1,11 @@
-﻿using MediAgenda.Infraestructure.Models;
+﻿using MediAgenda.Infraestructure.Core;
+using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
 
 namespace MediAgenda.Infraestructure.Interfaces
 {
-    public interface IAnalysisRepository : IBaseRepository<AnalysisModel>
+    public interface IAnalysisRepository : IBaseRepositoryIdInt<AnalysisModel>
     {
-        Task<(List<AnalysisModel>, int)> GetByRequest(AnalysisRequest request);
+        Task<(List<AnalysisModel>, int)> GetAllAsync(AnalysisRequest request);
     }
 }

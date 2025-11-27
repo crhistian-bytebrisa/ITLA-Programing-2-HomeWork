@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Infraestructure.Repositories
 {
-    public class DoctorRepository : BaseRepository<DoctorModel> , IDoctorRepository
+    public class DoctorRepository : BaseRepositoryIdInt<DoctorModel> , IDoctorRepository
     {
         public DoctorRepository(MediContext context) : base(context)
         {

@@ -13,13 +13,13 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MediAgenda.Infraestructure.Repositories
 {
-    public class ConsultationRepository : BaseRepository<ConsultationModel>, IConsultationRepository
+    public class ConsultationRepository : BaseRepositoryIdInt<ConsultationModel>, IConsultationRepository
     {
         public ConsultationRepository(MediContext context) : base(context)
         {
         }
 
-        public async Task<(List<ConsultationModel>, int)> GetByRequest(ConsultationRequest request)
+        public async Task<(List<ConsultationModel>, int)> GetAllAsync(ConsultationRequest request)
         {
             IQueryable<ConsultationModel> query = _context.Set<ConsultationModel>();
 
@@ -78,7 +78,7 @@ namespace MediAgenda.Infraestructure.Repositories
                 query = query.Include(x => x.DayAvailable);
             }
 
-            return await PaginateQuery(query, request);
+            return await query.PaginateAsync(request);
         }
     }
 }

@@ -22,10 +22,25 @@
             
         }
 
-        public APIResponse(List<T> data, int totalcount, int page, int pagesize)
+        public APIResponse(List<T> data, int totalcount, int? page, int? pagesize)
         {
-            Page = page;
-            PageSize = pagesize;
+            if(page == null || page <= 0)
+            {
+                Page = 1;
+            }
+            else
+            {
+                Page = page.Value;
+            }
+
+            if (pagesize == null || pagesize <= 0)
+            {
+                PageSize = 10;
+            }
+            else
+            {
+                PageSize = pagesize.Value;
+            }
             TotalCount = totalcount;
             Data = data;
         }

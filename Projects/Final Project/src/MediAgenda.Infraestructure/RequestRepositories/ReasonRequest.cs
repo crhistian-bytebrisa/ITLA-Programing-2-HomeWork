@@ -11,8 +11,5 @@ namespace MediAgenda.Infraestructure.RequestRepositories
     {
         public string? Title { get; set; }
         public bool? Available { get; set; }
-        public bool? IncludeConsultations { get; set; }
-
-
     }
 }

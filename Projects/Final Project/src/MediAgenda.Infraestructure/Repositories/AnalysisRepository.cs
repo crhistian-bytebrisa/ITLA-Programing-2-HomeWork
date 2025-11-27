@@ -13,39 +13,39 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Infraestructure.Repositories
 {
-    public class AnalysisRepository : BaseRepository<AnalysisModel>, IAnalysisRepository
+    public class AnalysisRepository : BaseRepositoryIdInt<AnalysisModel>, IAnalysisRepository
     {
         public AnalysisRepository(MediContext context) : base(context)
         {
 
         }
 
-        public async Task<(List<AnalysisModel>, int)> GetByRequest(AnalysisRequest request)
+        public async Task<(List<AnalysisModel>, int)> GetAllAsync(AnalysisRequest request)
         {
             IQueryable<AnalysisModel> query = _context.Set<AnalysisModel>();
+
+            query = query.Include(x => x.PrescriptionAnalyses)
+                    .ThenInclude(pa => pa.Prescription)
+                    .AsNoTracking();
 
             if (!string.IsNullOrWhiteSpace(request.Name))
             {
                 query = query.Where(x => x.Name.Contains(request.Name));
             }
 
-            if (request.PatientId is not null)
-            {
-                query = query
-                    .Where(x => x.PrescriptionAnalyses
-                    .Any(pa => pa.Prescription.Consultation.PatientId == request.PatientId));
-            }
-
-            if (request.IncludePrescription is true)
-            {
-                query = query.Include(x => x.PrescriptionAnalyses)
-                    .ThenInclude(pa => pa.Prescription);
-            }
-
-            return await PaginateQuery(query, request);
+            return await query.PaginateAsync(request);
 
         }
 
+        public override async Task<AnalysisModel> GetByIdAsync(int id)
+        {
+            var entity = await _context.Set<AnalysisModel>()
+                .Include(x => x.PrescriptionAnalyses)
+                    .ThenInclude(pa => pa.Prescription)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == id);
 
+            return entity;
+        }
     }
 }

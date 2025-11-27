@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Infraestructure.Repositories
 {
-    public class NotePatientRepository : BaseRepository<NotePatientModel>, INotePatientRepository
+    public class NotePatientRepository : BaseRepositoryIdInt<NotePatientModel>, INotePatientRepository
     {
         public NotePatientRepository(MediContext context) : base(context)
         {
         }
 
-        public async Task<(List<NotePatientModel>, int)> GetByRequest(NotePatientRequest request)
+        public async Task<(List<NotePatientModel>, int)> GetAllAsync(NotePatientRequest request)
         {
             IQueryable<NotePatientModel> query = _context.Set<NotePatientModel>();
 
@@ -51,7 +51,7 @@ namespace MediAgenda.Infraestructure.Repositories
                 query = query.Where(x => x.Title.Contains(request.SearchTerm) || x.Content.Contains(request.SearchTerm));
             }
 
-            return await PaginateQuery(query, request);
+            return await query.PaginateAsync(request);
         }
     }
 }

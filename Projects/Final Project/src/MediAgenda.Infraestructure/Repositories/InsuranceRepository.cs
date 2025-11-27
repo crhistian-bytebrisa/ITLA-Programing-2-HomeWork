@@ -12,13 +12,13 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Infraestructure.Repositories
 {
-    public class InsuranceRepository : BaseRepository<InsuranceModel>, IInsuranceRepository
+    public class InsuranceRepository : BaseRepositoryIdInt<InsuranceModel>, IInsuranceRepository
     {
         public InsuranceRepository(MediContext context) : base(context)
         {
         }
 
-        public async Task<(List<InsuranceModel>, int)> GetByRequest(InsuranceRequest request)
+        public async Task<(List<InsuranceModel>, int)> GetAllAsync(InsuranceRequest request)
         {
             IQueryable<InsuranceModel> query = _context.Set<InsuranceModel>();
 
@@ -32,7 +32,7 @@ namespace MediAgenda.Infraestructure.Repositories
                 query = query.Include(x => x.Patients);
             }
 
-            return await PaginateQuery(query, request);
+            return await query.PaginateAsync(request);
         }
     }
 }

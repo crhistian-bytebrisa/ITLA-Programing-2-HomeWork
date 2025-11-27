@@ -13,10 +13,9 @@ using System.Threading.Tasks;
 namespace MediAgenda.Infraestructure.Models
 {
     [Table("ApplicationUsers")]
-    public class ApplicationUserModel : IdentityUser, IHasUsername
+    public class ApplicationUserModel : IdentityUser, IHasUsername, IEntityString, IHasEmail
     {
-
-        [Required, MaxLength(200), MinLength(7)]
+        [Required, MaxLength(200), MinLength(3)]
         public string NameComplete { get; set; }
 
         // Navegation

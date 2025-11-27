@@ -12,15 +12,16 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Infraestructure.Repositories
 {
-    public class ReasonRepository : BaseRepository<ReasonModel>, IReasonRepository
+    public class ReasonRepository : BaseRepositoryIdInt<ReasonModel>, IReasonRepository
     {
         public ReasonRepository(MediContext context) : base(context)
         {
         }
 
-        public async Task<(List<ReasonModel>, int)> GetByRequest(ReasonRequest request)
+        public async Task<(List<ReasonModel>, int)> GetAllAsync(ReasonRequest request)
         {
             IQueryable<ReasonModel> query = _context.Set<ReasonModel>();
+            query = query.Include(x => x.Consultations).AsNoTracking();
 
             if (!string.IsNullOrWhiteSpace(request.Title))
             {
@@ -32,12 +33,17 @@ namespace MediAgenda.Infraestructure.Repositories
                 query = query.Where(x => x.Available == request.Available.Value);
             }
 
-            if (request.IncludeConsultations is true)
-            {
-                query = query.Include(x=> x.Consultations);
-            }
+            return await query.PaginateAsync(request);
+        }
 
-            return await PaginateQuery(query, request);
+        public async override Task<ReasonModel> GetByIdAsync(int id)
+        {
+            var entity = await _context.Set<ReasonModel>()
+                .Include(x => x.Consultations)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            return entity;
         }
     }
 }

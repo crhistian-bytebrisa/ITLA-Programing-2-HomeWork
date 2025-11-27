@@ -10,6 +10,14 @@ namespace MediAgenda.Infraestructure.RequestRepositories
     public class ClinicRequest : BaseRequest
     {
         public string? Name { get; set; }
-        public bool IncludeDayAvalilable { get; set; }
+    }
+
+    public class ClinicDaysAvailableRequest : BaseRequest
+    {
+        public DateOnly? DateFrom { get; set; }
+        public DateOnly? DateTo { get; set; }
+        public bool? OnlyAvailable { get; set; }
+        public TimeOnly? StartTimeFrom { get; set; }
+        public TimeOnly? StartTimeTo { get; set; }
     }
 }

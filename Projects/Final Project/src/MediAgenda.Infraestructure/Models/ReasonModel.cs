@@ -1,4 +1,5 @@
 ﻿using MediAgenda.Domain.Core;
+using MediAgenda.Infraestructure.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 namespace MediAgenda.Infraestructure.Models
 {
     [Table("Reasons")]
-    public class ReasonModel : IHasTitle
+    public class ReasonModel : IHasTitle, IEntityInt
     {
         [Key]
         public int Id { get; set; }

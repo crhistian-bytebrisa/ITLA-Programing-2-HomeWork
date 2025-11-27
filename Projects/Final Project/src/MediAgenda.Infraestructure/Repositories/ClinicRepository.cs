@@ -12,28 +12,68 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Infraestructure.Repositories
 {
-    public class ClinicRepository : BaseRepository<ClinicModel>, IClinicRepository
+    public class ClinicRepository : BaseRepositoryIdInt<ClinicModel>, IClinicRepository
     {
         public ClinicRepository(MediContext context) : base(context)
         {
 
         }
 
-        public async Task<(List<ClinicModel>, int)> GetByRequest(ClinicRequest request)
+        public async Task<(List<ClinicModel>, int)> GetAllAsync(ClinicRequest request)
         {
-            IQueryable<ClinicModel> query = _context.Set<ClinicModel>();
+            IQueryable<ClinicModel> query = _context.Set<ClinicModel>()
+                .Include(x=> x.DaysAvailable).AsNoTracking();
 
             if(!string.IsNullOrWhiteSpace(request.Name))
             {
                 query = query.Where(x => x.Name.Contains(request.Name));
             }
 
-            if(request.IncludeDayAvalilable is true)
+            return await query.PaginateAsync(request);
+        }
+
+        public override async Task<ClinicModel> GetByIdAsync(int id)
+        {
+            var entity = await _context.Set<ClinicModel>()
+                .Include(x => x.DaysAvailable)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            return entity; 
+        }
+
+        public async Task<(List<DayAvailableModel>,int)> GetAllDaysAvailableById(int id, ClinicDaysAvailableRequest request)
+        {
+            IQueryable<DayAvailableModel> query = _context.Set<DayAvailableModel>()
+                .Where(x => x.ClinicId == id)
+                .AsNoTracking();
+
+            if (request.DateFrom is not null)
             {
-                query = query.Include(x => x.DaysAvailable);
+                query = query.Where(x => x.Date >= request.DateFrom);
             }
 
-            return await PaginateQuery(query, request);
+            if (request.DateTo is not null)
+            {
+                query = query.Where(x => x.Date <= request.DateTo);
+            }
+
+            if (request.StartTimeFrom is not null)
+            {
+                query = query.Where(x => x.StartTime >= request.StartTimeFrom);
+            }
+
+            if (request.StartTimeTo is not null)
+            {
+                query = query.Where(x => x.StartTime <= request.StartTimeTo);
+            }
+
+            if (request.OnlyAvailable is true)
+            {
+                query = query.Where(x => x.Consultations.Count < x.Limit);
+            }
+
+            return await query.PaginateAsync(request);
         }
     }
 }

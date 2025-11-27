@@ -12,13 +12,13 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Infraestructure.Repositories
 {
-    public class PrescriptionRepository : BaseRepository<PrescriptionModel>, IPrescriptionRepository
+    public class PrescriptionRepository : BaseRepositoryIdInt<PrescriptionModel>, IPrescriptionRepository
     {
         public PrescriptionRepository(MediContext context) : base(context)
         {
         }
 
-        public async Task<(List<PrescriptionModel>, int)> GetByRequest(PrescriptionRequest request)
+        public async Task<(List<PrescriptionModel>, int)> GetAllAsync(PrescriptionRequest request)
         {
             IQueryable<PrescriptionModel> query = _context.Set<PrescriptionModel>();
 
@@ -75,7 +75,7 @@ namespace MediAgenda.Infraestructure.Repositories
                 query = query.Include(x => x.Consultation);
             }
 
-            return await PaginateQuery(query, request);
+            return await query.PaginateAsync(request);
         }
     }
 }

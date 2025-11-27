@@ -1,6 +1,8 @@
 ﻿using Mapster;
 using MediAgenda.Application.DTOs;
 using MediAgenda.Application.DTOs.API;
+using MediAgenda.Application.Interfaces;
+using MediAgenda.Application.Validations;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
@@ -13,82 +15,95 @@ namespace MediAgenda.API.Controllers
     [ApiController]
     public class ReasonsController : ControllerBase
     {
-        private readonly IReasonRepository _repo;
+        private readonly IReasonsService _service;
 
-        public ReasonsController(IReasonRepository repo)
+        public ReasonsController(IReasonsService service)
         {
-            _repo = repo;
+            _service = service;
         }
 
+        private bool ValidateId(int id)
+        {
+            if (new IdIntValidation().Validate(id).IsValid)
+            {
+                return true;
+            }
+            else
+            {
+                ModelState.AddModelError("Id", "El Id es invalido.");
+                return false;
+            }
+        }
         // GET: api/Reasons
         [HttpGet]
-        public async Task<ActionResult<List<ReasonDTO>>> Get()
+        public async Task<ActionResult<APIResponse<ReasonDTO>>> Get([FromQuery] ReasonRequest request)
         {
-            var list = await _repo.GetAllAsync();
-            List<ReasonDTO> listdto = list.Adapt<List<ReasonDTO>>();
-            return Ok(list);
+            var APIR = await _service.GetAllAsync(request);
+            return Ok(APIR);
         }
 
         // GET api/Reasons/5
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<ReasonDTO>> Get(int id)
         {
-            var entity = await _repo.GetByIdAsync(id);
+            ValidateId(id);
+
+            if (ModelState.ErrorCount > 0)
+            {
+                return ValidationProblem();
+            }
+
+            var entity = await _service.GetByIdAsync(id);
+
             if (entity == null)
             {
                 return NotFound();
             }
+
             ReasonDTO dto = entity.Adapt<ReasonDTO>();
             return Ok(dto);
         }
 
         // POST api/Reasons
         [HttpPost]
-        public async Task<ActionResult<ReasonDTO>> PostAsync([FromBody] ReasonCreateDTO entity)
+        public async Task<ActionResult<ReasonDTO>> PostAsync([FromBody] ReasonCreateDTO dtoc)
         {
-            var model = entity.Adapt<ReasonModel>();
-            await _repo.AddAsync(model);
-            var dto = model.Adapt<ReasonDTO>();
-            return CreatedAtAction(actionName: nameof(Get), routeValues: new {id = model.Id}, value: dto);
-
+            var dto = await _service.AddAsync(dtoc);
+            return CreatedAtAction(actionName: nameof(Get), routeValues: new { id = dto.Id }, value: dto);
         }
 
         // PUT api/Reasons/5
-        [HttpPut("{id}")]
-        public async Task<ActionResult> PutAsync(int id, [FromBody] ReasonCreateDTO entity)
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult> PutAsync(int id, [FromBody] ReasonUpdateDTO dtou)
         {
-            var model = entity.Adapt<ReasonModel>();
-            model.Id = id;
-            await _repo.UpdateAsync(model);
+            ValidateId(id);
+
+            if (id != dtou.Id)
+            {
+                ModelState.AddModelError("Id", "Deben tener el mismo Id.");
+            }
+
+            if (ModelState.ErrorCount > 0)
+            {
+                return ValidationProblem();
+            }
+
+            await _service.UpdateAsync(dtou);
             return NoContent();
         }
 
         // DELETE api/Reasons/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
-            var entity = await _repo.GetByIdAsync(id);
-
-            if (entity is null)
+            var dto = await _service.GetByIdAsync(id);
+            if (dto == null)
             {
                 return NotFound();
             }
-
-            await _repo.DeleteAsync(entity);
+            var model = dto.Adapt<ReasonModel>();
+            await _service.DeleteAsync(model);
             return NoContent();
-        }
-
-        // GET: api/Reasons/ByRequest
-        [HttpGet("ByRequest")]
-        public async Task<ActionResult<List<ReasonDTO>>> GetByRequest([FromQuery] ReasonRequest request)
-        {
-            var list = await _repo.GetByRequest(request);
-            List<ReasonDTO> listdto = list.Item1.Adapt<List<ReasonDTO>>();
-            int TotalCount = list.Item2;
-
-            var APIR = new APIResponse<ReasonDTO>(listdto,TotalCount,request.Page?? 1,request.PageSize?? 10);
-
-            return Ok(APIR);
         }
     }
 }

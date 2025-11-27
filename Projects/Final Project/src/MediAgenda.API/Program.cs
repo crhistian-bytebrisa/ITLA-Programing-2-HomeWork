@@ -1,8 +1,11 @@
 
 using FluentValidation;
 using MediAgenda.API.Middleware;
+using MediAgenda.Application.Interfaces;
+using MediAgenda.Application.Services;
 using MediAgenda.Application.Validations;
 using MediAgenda.Application.Validations.CreateValidations;
+using MediAgenda.Application.Validations.RepoValidations;
 using MediAgenda.Domain.Entities;
 using MediAgenda.Infraestructure.Context;
 using MediAgenda.Infraestructure.Interfaces;
@@ -22,11 +25,15 @@ namespace MediAgenda.API
                 opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddValidatorsFromAssemblyContaining<AnalysisCreateValidation>();
+            builder.Services.AddValidatorsFromAssemblyContaining<IdIntValidation>();
+
             builder.Services.AddFluentValidationAutoValidation();
 
             builder.Services.AddScoped(typeof(RepoValidation<>));
+            builder.Services.AddScoped(typeof(RepoIdIntValidation<>));
+            builder.Services.AddScoped(typeof(RepoIdStringValidation<>));
 
-            
+
 
             builder.Services.AddScoped<IAnalysisRepository, AnalysisRepository>();
             builder.Services.AddScoped<IApplicationUserRepository, ApplicationUserRepository>();
@@ -44,17 +51,19 @@ namespace MediAgenda.API
             builder.Services.AddScoped<IPrescriptionRepository, PrescriptionRepository>();
             builder.Services.AddScoped<IReasonRepository, ReasonRepository>();
 
-       
+            builder.Services.AddScoped<IAnalysesService, AnalysesService>();
+            builder.Services.AddScoped<IReasonsService, ReasonsService>();
+            builder.Services.AddScoped<IApplicationUsersService, ApplicationUsersService>();
+            builder.Services.AddScoped<IClinicsService, ClinicsService>();
+            builder.Services.AddScoped<IDayAvailablesService, DayAvailablesService>();
 
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();

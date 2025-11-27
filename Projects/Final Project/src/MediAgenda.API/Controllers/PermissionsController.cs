@@ -30,7 +30,7 @@ namespace MediAgenda.API.Controllers
         }
 
         // GET api/Permissions/5
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<PermissionDTO>> Get(int id)
         {
             var entity = await _repo.GetByIdAsync(id);
@@ -54,7 +54,7 @@ namespace MediAgenda.API.Controllers
         }
 
         // PUT api/Permissions/5
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<ActionResult> PutAsync(int id, [FromBody] PermissionCreateDTO entity)
         {
             var model = entity.Adapt<PermissionModel>();
@@ -64,7 +64,7 @@ namespace MediAgenda.API.Controllers
         }
 
         // DELETE api/Permissions/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
             var entity = await _repo.GetByIdAsync(id);
@@ -78,17 +78,6 @@ namespace MediAgenda.API.Controllers
             return NoContent();
         }
 
-        // GET: api/Permissions/ByRequest
-        [HttpGet("ByRequest")]
-        public async Task<ActionResult<List<PermissionDTO>>> GetByRequest([FromQuery] PermissionRequest request)
-        {
-            var list = await _repo.GetByRequest(request);
-            List<PermissionDTO> listdto = list.Item1.Adapt<List<PermissionDTO>>();
-            int TotalCount = list.Item2;
-
-            var APIR = new APIResponse<PermissionDTO>(listdto, TotalCount, request.Page ?? 1, request.PageSize ?? 10);
-
-            return Ok(APIR);
-        }
+       
     }
 }

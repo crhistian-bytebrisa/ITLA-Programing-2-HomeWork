@@ -1,10 +1,11 @@
-﻿using MediAgenda.Infraestructure.Models;
+﻿using MediAgenda.Infraestructure.Core;
+using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
 
 namespace MediAgenda.Infraestructure.Interfaces
 {
-    public interface IPrescriptionRepository : IBaseRepository<PrescriptionModel>
+    public interface IPrescriptionRepository : IBaseRepositoryIdInt<PrescriptionModel>
     {
-        Task<(List<PrescriptionModel>, int)> GetByRequest(PrescriptionRequest request);
+        Task<(List<PrescriptionModel>, int)> GetAllAsync(PrescriptionRequest request);
     }
 }

@@ -1,0 +1,168 @@
+[2025-11-21 09:07:25] Request: GET 
+URL: /api/ApplicationUsers 
+Query: 
+Response: 200 
+Tiempo: 3465 ms
+
+
+[2025-11-21 09:19:12] Request: GET 
+URL: /api/ApplicationUsers/4e9e9eae-7622-492d-a5d3-e338971e06d6 
+Query: 
+Response: 200 
+Tiempo: 71 ms
+
+
+[2025-11-21 09:21:51] Request: GET 
+URL: /api/ApplicationUsers 
+Query: ?FullName=4e9e9eae-7622-492d-a5d3-e338971e06d6
+Response: 200 
+Tiempo: 2892 ms
+
+
+[2025-11-21 09:22:03] Request: GET 
+URL: /api/ApplicationUsers/4e9e9eae-7622-492d-a5d3-e338971e06d6 
+Query: 
+Response: 400 
+Tiempo: 82 ms
+
+
+[2025-11-21 09:22:26] Request: GET 
+URL: /api/ApplicationUsers/4e9e9eae-7622-492d-a5d3-e338971e06d6 
+Query: 
+Response: 400 
+Tiempo: 34 ms
+
+
+[2025-11-21 09:27:46] Request: GET 
+URL: /api/ApplicationUsers/4e9e9eae-7622-492d-a5d3-e338971e06d6 
+Query: 
+Response: 200 
+Tiempo: 2634 ms
+
+
+[2025-11-21 09:27:48] Request: GET 
+URL: /api/ApplicationUsers/4e9e9eae-7622-492d-a5d3-e338971e06d 
+Query: 
+Response: 400 
+Tiempo: 47 ms
+
+
+[2025-11-21 09:28:05] Request: GET 
+URL: /api/ApplicationUsers/4e9e9eae-7622-492d-a5d3-e338971ee06d 
+Query: 
+Response: 404 
+Tiempo: 132 ms
+
+
+[2025-11-21 09:28:10] Request: GET 
+URL: /api/ApplicationUsers/4e9e9eae-7622-492d-a5d3-e338971e06d6 
+Query: 
+Response: 200 
+Tiempo: 53 ms
+
+
+[2025-11-21 09:29:40] Request: GET 
+URL: /api/ApplicationUsers/IdStringValidation().Validate(id) 
+Query: 
+Response: 400 
+Tiempo: 17 ms
+
+
+[2025-11-21 10:14:59] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 49 ms
+
+
+[2025-11-21 10:15:21] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 37 ms
+
+
+[2025-11-21 10:16:42] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 40 ms
+
+
+[2025-11-21 10:17:55] Request: GET 
+URL: /api/Consultations 
+Query: 
+Response: 200 
+Tiempo: 2329 ms
+
+
+[2025-11-21 10:18:02] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 445 ms
+
+
+[2025-11-21 10:19:05] Request: GET 
+URL: /api/Clinics/0/Days 
+Query: 
+Response: 400 
+Tiempo: 348 ms
+
+
+[2025-11-21 10:19:38] Request: POST 
+URL: /api/Clinics 
+Query: 
+Response: 201 
+Tiempo: 2564 ms
+
+
+[2025-11-21 10:19:44] Request: GET 
+URL: /api/Clinics/2/Days 
+Query: 
+Response: 200 
+Tiempo: 284 ms
+
+
+[2025-11-21 10:19:54] Request: GET 
+URL: /api/Clinics/2 
+Query: 
+Response: 200 
+Tiempo: 71 ms
+
+
+[2025-11-21 10:23:32] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 3161 ms
+
+
+[2025-11-21 10:23:45] Request: GET 
+URL: /api/Clinics/1/Days 
+Query: 
+Response: 200 
+Tiempo: 247 ms
+
+
+[2025-11-21 10:25:38] Request: GET 
+URL: /api/Clinics/1/Days 
+Query: 
+Response: 200 
+Tiempo: 3147 ms
+
+
+[2025-11-21 14:52:46] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 3304 ms
+
+
+[2025-11-21 14:53:18] Request: GET 
+URL: /api/Clinics/1/Days 
+Query: 
+Response: 200 
+Tiempo: 256 ms
+
+

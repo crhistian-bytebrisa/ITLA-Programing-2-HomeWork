@@ -30,7 +30,7 @@ namespace MediAgenda.API.Controllers
         }
 
         // GET api/Doctors/5
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<DoctorDTO>> Get(int id)
         {
             var entity = await _repo.GetByIdAsync(id);
@@ -54,7 +54,7 @@ namespace MediAgenda.API.Controllers
         }
 
         // PUT api/Doctors/5
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<ActionResult> PutAsync(int id, [FromBody] DoctorCreateDTO entity)
         {
             var model = entity.Adapt<DoctorModel>();
@@ -64,7 +64,7 @@ namespace MediAgenda.API.Controllers
         }
 
         // DELETE api/Doctors/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
             var entity = await _repo.GetByIdAsync(id);

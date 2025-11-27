@@ -1,4 +1,5 @@
-﻿using MediAgenda.Infraestructure.Models.Enums;
+﻿using MediAgenda.Infraestructure.Interfaces;
+using MediAgenda.Infraestructure.Models.Enums;
 using MediAgenda.Infraestructure.Models.Relations;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 namespace MediAgenda.Infraestructure.Models
 {
     [Table("Patients")]
-    public class PatientModel
+    public class PatientModel : IEntityInt
     {
         [Key]
         public int Id { get; set; }

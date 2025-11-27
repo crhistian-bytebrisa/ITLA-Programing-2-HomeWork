@@ -1,6 +1,8 @@
 ﻿using Mapster;
 using MediAgenda.Application.DTOs;
 using MediAgenda.Application.DTOs.API;
+using MediAgenda.Application.Interfaces;
+using MediAgenda.Application.Validations;
 using MediAgenda.Domain.Core;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
@@ -14,80 +16,92 @@ namespace MediAgenda.API.Controllers
     [ApiController]
     public class ApplicationUsersController : ControllerBase
     {
-        private readonly IApplicationUserRepository _repo;
+        private readonly IApplicationUsersService _service;
 
-        public ApplicationUsersController(IApplicationUserRepository repository)
+        public ApplicationUsersController(IApplicationUsersService service)
         {
-            _repo = repository;
+            _service = service;
         }
 
+        private async Task<bool> ValidateId(string id)
+        {
+            if (new IdStringValidation().Validate(id).IsValid)
+            {
+                return true;
+            }
+            else
+            {
+                ModelState.AddModelError("Id", "El Id debe ser un Guid valido.");
+                return false;
+            }
+        }
         // GET: api/ApplicationUsers
         [HttpGet]
-        public async Task<ActionResult<List<ApplicationUserDTO>>> Get()
+        public async Task<ActionResult<APIResponse<ApplicationUserDTO>>> Get([FromQuery] ApplicationUserRequest request)
         {
-            var list = await _repo.GetAllAsync();
-            List<ApplicationUserDTO> listdto = list.Adapt<List<ApplicationUserDTO>>();
-            return Ok(listdto);
+            var APIR = await _service.GetAllAsync(request);
+            return Ok(APIR);
         }
 
-        // GET api/ApplicationUsers/5
+        // GET api/ApplicationUsers/klkm-anig-aaaa
         [HttpGet("{id}")]
-        public async Task<ActionResult<ApplicationUserDTO>> Get(int id)
+        public async Task<ActionResult<ApplicationUserDTO>> Get(string id)
         {
-            var entity = await _repo.GetByIdAsync(id);
+            ValidateId(id);
+            if (ModelState.ErrorCount > 0)
+            {
+                return ValidationProblem();
+            }
+
+            var entity = await _service.GetByIdAsync(id);
+
             if (entity == null)
             {
                 return NotFound();
             }
+
             ApplicationUserDTO dto = entity.Adapt<ApplicationUserDTO>();
             return Ok(dto);
         }
 
         // POST api/ApplicationUsers
         [HttpPost]
-        public async Task<ActionResult<ApplicationUserDTO>> PostAsync([FromBody] ApplicationUserCreateDTO entity)
+        public async Task<ActionResult<ApplicationUserDTO>> PostAsync([FromBody] ApplicationUserCreateDTO dtoc)
         {
-            var model = entity.Adapt<ApplicationUserModel>();
-            await _repo.AddAsync(model);
-            var dto = model.Adapt<ApplicationUserDTO>();
-            return CreatedAtAction(actionName: nameof(Get), routeValues: new { id = model.Id }, value: dto);
+            var dto = await _service.AddAsync(dtoc);
+            return CreatedAtAction(actionName: nameof(Get), routeValues: new { id = dto.Id }, value: dto);
         }
 
-        // PUT api/ApplicationUsers/5
-        [HttpPut("{id}")]
-        public async Task<ActionResult> PutAsync(string id, [FromBody] ApplicationUserCreateDTO value)
+        // PUT api/ApplicationUsers/klkm-anig-aaaa
+        [HttpPut("{ids}")]
+        public async Task<ActionResult> PutAsync(string id, [FromBody] ApplicationUserUpdateDTO dtou)
         {
-            var model = value.Adapt<ApplicationUserModel>();
-            model.Id = id;
-            await _repo.UpdateAsync(model);
+            ValidateId(id);
+            if(id != dtou.Id)
+            {
+                ModelState.AddModelError("Id", "El Id en la URL no coincide con el Id en el cuerpo de la solicitud.");
+            }
+
+            if (ModelState.ErrorCount > 0)
+            {
+                return ValidationProblem();
+            }
+            await _service.UpdateAsync(dtou);
             return NoContent();
         }
 
-        // DELETE api/ApplicationUsers/5
+        // DELETE api/ApplicationUsers/klkm-anig-aaaa
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int id)
+        public async Task<ActionResult> Delete(string id)
         {
-            var entity = await _repo.GetByIdAsync(id);
-            if (entity == null)
+            var dto = await _service.GetByIdAsync(id);
+            if (dto == null)
             {
                 return NotFound();
             }
-            await _repo.DeleteAsync(entity);
+            var model = dto.Adapt<ApplicationUserModel>();
+            await _service.DeleteAsync(model);
             return NoContent();
-        }
-
-
-        // GET api/ApplicationUsers/ByRequest
-        [HttpGet("ByRequest")]
-        public async Task<ActionResult<List<ApplicationUserDTO>>> GetByRequest([FromQuery] ApplicationUserRequest request)
-        {
-            var list = await _repo.GetByRequest(request);
-            List<ApplicationUserDTO> listdto = list.Item1.Adapt<List<ApplicationUserDTO>>();
-            int TotalCount = list.Item2;
-
-            var APIR = new APIResponse<ApplicationUserDTO>(listdto, TotalCount, request.Page ?? 1, request.PageSize ?? 10);
-
-            return Ok(APIR);
         }
     }
 }

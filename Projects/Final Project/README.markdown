@@ -15,18 +15,15 @@ Una app que se encargue de manejar las citas de los pacientes además de las con
 ## 2. Gestión de citas
 
 - **RF6:** El paciente debe poder **agendar consultas** en los días y horarios disponibles del médico, visualizando cuántos cupos quedan.  
-- **RF7:** El paciente debe poder **cancelar o reprogramar citas** según su conveniencia.  
-- **RF8:** El sistema debe **emitir un recordatorio automático** al paciente al menos un día antes de la visita programada.  
-
+- **RF7:** El paciente debe poder **cancelar o reprogramar citas** según su conveniencia. 
 ---
 
 ## 3. Gestión médica
 
-- **RF9:** El médico debe poder **registrar notas clínicas** sobre cada paciente y revisar el historial completo de sus consultas.  
-- **RF10:** El médico debe poder **definir las clínicas** donde ofrece consultas, incluyendo horarios y márgenes para emergencias o consultas sin cita previa.  
-- **RF11:** El médico debe poder **atender distintos tipos de consulta** (consulta general, seguimiento, analítica, referimiento, entre otros).  
-- **RF12:** El médico debe poder **subir archivos PDF u otros documentos** con los resultados clínicos del paciente.  
-- **RF13:** El sistema debe permitir **transferir el historial clínico completo del paciente** a otro médico en caso de referimiento.  
+- **RF8:** El médico debe poder **registrar notas clínicas** sobre cada paciente y revisar el historial completo de sus consultas.  
+- **RF9:** El médico debe poder **definir las clínicas** donde ofrece consultas, incluyendo horarios y márgenes para emergencias o consultas sin cita previa.  
+- **RF10:** El médico debe poder **atender distintos tipos de consulta** (consulta general, seguimiento, analítica, referimiento, entre otros).  
+- **RF11:** El médico debe poder **subir archivos PDF u otros documentos** con los resultados clínicos del paciente.  
 ---  
 
 ---

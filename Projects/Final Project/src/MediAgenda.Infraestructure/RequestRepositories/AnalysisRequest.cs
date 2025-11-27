@@ -10,8 +10,6 @@ namespace MediAgenda.Infraestructure.RequestRepositories
     public class AnalysisRequest : BaseRequest
     {
         public string? Name { get; set; }
-        public int? PatientId { get; set; }
-        public int? PrescriptionId { get; set; }
-        public bool? IncludePrescription { get; set; }
     }
+    
 }

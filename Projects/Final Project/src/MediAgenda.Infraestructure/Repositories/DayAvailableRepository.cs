@@ -13,15 +13,15 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MediAgenda.Infraestructure.Repositories
 {
-    public class DayAvailableRepository : BaseRepository<DayAvailableModel>, IDayAvailableRepository
+    public class DayAvailableRepository : BaseRepositoryIdInt<DayAvailableModel>, IDayAvailableRepository
     {
         public DayAvailableRepository(MediContext context) : base(context)
         {
         }
 
-        public async Task<(List<DayAvailableModel>, int)> GetByRequest(DayAvailableRequest request)
+        public async Task<(List<DayAvailableModel>, int)> GetAllAsync(DayAvailableRequest request)
         {
-            IQueryable<DayAvailableModel> query = _context.Set<DayAvailableModel>();
+            IQueryable<DayAvailableModel> query = _context.Set<DayAvailableModel>().AsNoTracking();
 
             if (request.DateFrom is not null)
             {
@@ -53,17 +53,7 @@ namespace MediAgenda.Infraestructure.Repositories
                 query = query.Where(x => x.Consultations.Count < x.Limit);
             }
 
-            if (request.IncludeConsultations is true)
-            {
-                query = query.Include(x => x.Consultations);
-            }
-
-            if (request.IncludeClinic is true)
-            {
-                query = query.Include(x => x.Clinic);
-            }
-
-            return await PaginateQuery(query, request);
+            return await query.PaginateAsync(request);
         }
     }
 }

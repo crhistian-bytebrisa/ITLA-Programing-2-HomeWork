@@ -1,10 +1,11 @@
-﻿using MediAgenda.Infraestructure.Models;
+﻿using MediAgenda.Infraestructure.Core;
+using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
 
 namespace MediAgenda.Infraestructure.Interfaces
 {
-    public interface IPatientRepository : IBaseRepository<PatientModel>
+    public interface IPatientRepository : IBaseRepositoryIdInt<PatientModel>
     {
-        Task<(List<PatientModel>, int)> GetByRequest(PatientRequest request);
+        Task<(List<PatientModel>, int)> GetAllAsync(PatientRequest request);
     }
 }

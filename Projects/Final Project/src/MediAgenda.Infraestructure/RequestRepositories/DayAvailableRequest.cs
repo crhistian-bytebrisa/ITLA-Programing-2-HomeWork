@@ -15,7 +15,5 @@ namespace MediAgenda.Infraestructure.RequestRepositories
         public bool? OnlyAvailable { get; set; }
         public TimeOnly? StartTimeFrom { get; set; }
         public TimeOnly? StartTimeTo { get; set; }
-        public bool? IncludeConsultations { get; set; } 
-        public bool? IncludeClinic { get; set; } 
     }
 }

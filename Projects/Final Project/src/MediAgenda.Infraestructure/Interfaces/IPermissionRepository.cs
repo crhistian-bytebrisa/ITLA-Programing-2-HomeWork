@@ -1,10 +1,11 @@
-﻿using MediAgenda.Infraestructure.Models;
+﻿using MediAgenda.Infraestructure.Core;
+using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
 
 namespace MediAgenda.Infraestructure.Interfaces
 {
-    public interface IPermissionRepository : IBaseRepository<PermissionModel>
+    public interface IPermissionRepository : IBaseRepositoryIdInt<PermissionModel>
     {
-        Task<(List<PermissionModel>, int)> GetByRequest(PermissionRequest request);
+        Task<(List<PermissionModel>, int)> GetAllAsync(PermissionRequest request);
     }
 }

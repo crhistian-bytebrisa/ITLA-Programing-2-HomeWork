@@ -1,0 +1,175 @@
+[2025-11-22 15:45:31] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 51 ms
+
+
+[2025-11-22 15:49:10] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 3670 ms
+
+
+[2025-11-22 15:50:00] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 86 ms
+
+
+[2025-11-22 15:53:08] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 418 ms
+
+
+[2025-11-22 15:59:28] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 3484 ms
+
+
+[2025-11-22 16:00:11] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 98 ms
+
+
+[2025-11-22 16:01:21] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 201 
+Tiempo: 60263 ms
+
+
+[2025-11-22 16:04:59] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 2167 ms
+
+
+[2025-11-22 16:05:11] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 131 ms
+
+
+[2025-11-22 16:05:13] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 45 ms
+
+
+[2025-11-22 16:05:19] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-11-22 16:08:11] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 298 ms
+
+
+[2025-11-22 16:08:28] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 2235 ms
+
+
+[2025-11-22 16:08:44] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 116 ms
+
+
+[2025-11-22 16:09:45] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 83 ms
+
+
+[2025-11-22 16:09:50] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 8 ms
+
+
+[2025-11-22 16:09:58] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 6 ms
+
+
+[2025-11-22 16:11:03] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 17 ms
+
+
+[2025-11-22 16:11:14] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 16 ms
+
+
+[2025-11-22 16:11:19] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 201 
+Tiempo: 351 ms
+
+
+[2025-11-22 16:11:24] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 7 ms
+
+
+[2025-11-22 16:11:34] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 8 ms
+
+
+[2025-11-22 16:11:51] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?ClinicId=1
+Response: 200 
+Tiempo: 131 ms
+
+
+[2025-11-22 16:13:01] Request: DELETE 
+URL: /api/DaysAvailable/8 
+Query: 
+Response: 204 
+Tiempo: 141 ms
+
+
+[2025-11-22 16:13:09] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?ClinicId=1
+Response: 200 
+Tiempo: 11 ms
+
+

@@ -1,4 +1,5 @@
-﻿using MediAgenda.Infraestructure.Models.Relations;
+﻿using MediAgenda.Infraestructure.Interfaces;
+using MediAgenda.Infraestructure.Models.Relations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 namespace MediAgenda.Infraestructure.Models
 {
     [Table("Prescriptions")]
-    public class PrescriptionModel
+    public class PrescriptionModel : IEntityInt
     {
         [Key]
         public int Id { get; set; }

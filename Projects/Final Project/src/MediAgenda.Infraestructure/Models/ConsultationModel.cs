@@ -1,4 +1,5 @@
 ﻿using MediAgenda.Domain.Entities;
+using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models.Enums;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 namespace MediAgenda.Infraestructure.Models
 {
     [Table("Consultations")]
-    public class ConsultationModel
+    public class ConsultationModel : IEntityInt
     {
         [Key]
         public int Id { get; set; }

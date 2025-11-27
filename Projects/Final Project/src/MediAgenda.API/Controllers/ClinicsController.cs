@@ -1,6 +1,9 @@
 ﻿using Mapster;
 using MediAgenda.Application.DTOs;
 using MediAgenda.Application.DTOs.API;
+using MediAgenda.Application.Interfaces;
+using MediAgenda.Application.Services;
+using MediAgenda.Application.Validations;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
@@ -13,79 +16,114 @@ namespace MediAgenda.API.Controllers
     [ApiController]
     public class ClinicsController : ControllerBase
     {
-        private readonly IClinicRepository _repo;
+        private readonly IClinicsService _service;
 
-        public ClinicsController(IClinicRepository repository)
+        public ClinicsController(IClinicsService service)
         {
-            _repo = repository;
+            _service = service;
         }
 
+        private bool ValidateId(int id)
+        {
+            if (new IdIntValidation().Validate(id).IsValid)
+            {
+                return true;
+            }
+            else
+            {
+                ModelState.AddModelError("Id", "El Id es invalido.");
+                return false;
+            }
+        }
         // GET: api/Clinics
         [HttpGet]
-        public async Task<ActionResult<List<ClinicDTO>>> Get()
+        public async Task<ActionResult<APIResponse<ClinicDTO>>> Get([FromQuery] ClinicRequest request)
         {
-            var list = await _repo.GetAllAsync();
-            List<ClinicDTO> listdto = list.Adapt<List<ClinicDTO>>();
-            return Ok(listdto);
+            var APIR = await _service.GetAllAsync(request);
+            return Ok(APIR);
         }
 
-        // GET: api/Clinics/5
-        [HttpGet("{id}")]
+        // GET api/Clinics/5
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<ClinicDTO>> Get(int id)
         {
-            var entity = await _repo.GetByIdAsync(id);
+            ValidateId(id);
+
+            if (ModelState.ErrorCount > 0)
+            {
+                return ValidationProblem();
+            }
+
+            var entity = await _service.GetByIdAsync(id);
+
             if (entity == null)
             {
                 return NotFound();
             }
+
             ClinicDTO dto = entity.Adapt<ClinicDTO>();
             return Ok(dto);
         }
 
-        // POST: api/Clinics
-        [HttpPost]
-        public async Task<ActionResult<ClinicDTO>> PostAsync([FromBody] ClinicCreateDTO entity)
+        // GET api/Clinics/5/Days
+        [HttpGet("{id:int}/Days")]
+        public async Task<ActionResult<List<DayAvailableDTO>>> GetClinicDays(int id,[FromQuery] ClinicDaysAvailableRequest request)
         {
-            var model = entity.Adapt<ClinicModel>();
-            await _repo.AddAsync(model);
-            var dto = model.Adapt<ClinicDTO>();
-            return CreatedAtAction(actionName: nameof(Get), routeValues: new { id = model.Id }, value: dto);
-        }
-
-        // PUT: api/Clinics/5
-        [HttpPut("{id}")]
-        public async Task<ActionResult> PutAsync(int id, [FromBody] ClinicCreateDTO value)
-        {
-            var model = value.Adapt<ClinicModel>();
-            model.Id = id;
-            await _repo.UpdateAsync(model);
-            return NoContent();
-        }
-
-        // DELETE: api/Clinics/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(int id)
-        {
-            var entity = await _repo.GetByIdAsync(id);
-            if (entity == null)
+            ValidateId(id);
+            if (ModelState.ErrorCount > 0)
+            {
+                return ValidationProblem();
+            }
+            var dto = await _service.GetAllDaysAvailableById(id, request);
+            if (dto == null)
             {
                 return NotFound();
             }
-            await _repo.DeleteAsync(entity);
+            return Ok(dto);
+        }
+
+
+        // POST api/Clinics
+        [HttpPost]
+        public async Task<ActionResult<ClinicDTO>> PostAsync([FromBody] ClinicCreateDTO dtoc)
+        {
+            var dto = await _service.AddAsync(dtoc);
+            return CreatedAtAction(actionName: nameof(Get), routeValues: new { id = dto.Id }, value: dto);
+        }
+
+        // PUT api/Clinics/5
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult> PutAsync(int id, [FromBody] ClinicUpdateDTO dtou)
+        {
+            ValidateId(id);
+
+            if (id != dtou.Id)
+            {
+                ModelState.AddModelError("Id", "Deben tener el mismo Id.");
+            }
+
+            if (ModelState.ErrorCount > 0)
+            {
+                return ValidationProblem();
+            }
+
+            await _service.UpdateAsync(dtou);
             return NoContent();
         }
 
-        // GET: api/Clinics/ByRequest
-        [HttpGet("ByRequest")]
-        public async Task<ActionResult<APIResponse<ClinicDTO>>> GetByRequest([FromQuery] ClinicRequest request)
+        // DELETE api/Clinics/5
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> Delete(int id)
         {
-            var list = await _repo.GetByRequest(request);
-            List<ClinicDTO> listdto = list.Item1.Adapt<List<ClinicDTO>>();
-            int TotalCount = list.Item2;
-
-            var APIR = new APIResponse<ClinicDTO>(listdto, TotalCount, request.Page ?? 1, request.PageSize ?? 10);
-
-            return Ok(APIR);
+            var dto = await _service.GetByIdAsync(id);
+            if (dto == null)
+            {
+                return NotFound();
+            }
+            var model = dto.Adapt<ClinicModel>();
+            await _service.DeleteAsync(model);
+            return NoContent();
         }
+
     }
 }

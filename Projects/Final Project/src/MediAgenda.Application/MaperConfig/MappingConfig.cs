@@ -15,10 +15,11 @@ namespace MediAgenda.API.MaperConfig
         {
             //Analisis
             TypeAdapterConfig<AnalysisModel, AnalysisDTO>.NewConfig()
-                .Map(dest => dest.PrescriptionAnalyses, src => src.PrescriptionAnalyses.Adapt<List<PrescriptionAnalysisDTO>>());
+                .Map(dest => dest.PrescriptionAnalysesCount, src => src.PrescriptionAnalyses.Count);
 
             TypeAdapterConfig<AnalysisModel, AnalysisSimpleDTO>.NewConfig();
             TypeAdapterConfig<AnalysisCreateDTO, AnalysisModel>.NewConfig();
+            TypeAdapterConfig<AnalysisUpdateDTO, AnalysisModel>.NewConfig();
 
             //Usuarios
             TypeAdapterConfig<ApplicationUserModel, ApplicationUserDTO>.NewConfig()
@@ -31,10 +32,10 @@ namespace MediAgenda.API.MaperConfig
 
             //Clinicas
             TypeAdapterConfig<ClinicModel, ClinicDTO>.NewConfig()
-                .Map(dest => dest.DaysAvailable, src => src.DaysAvailable.Adapt<List<DayAvailableSimpleDTO>>());
+                .Map(dest => dest.DaysAvailableCount, src => src.DaysAvailable.Count);
 
-            TypeAdapterConfig<ClinicModel, ClinicSimpleDTO>.NewConfig();
             TypeAdapterConfig<ClinicCreateDTO, ClinicModel>.NewConfig();
+            TypeAdapterConfig<ClinicUpdateDTO, ClinicModel>.NewConfig();
 
             //Consultas
             TypeAdapterConfig<ConsultationModel, ConsultationDTO>.NewConfig()
@@ -53,7 +54,7 @@ namespace MediAgenda.API.MaperConfig
 
             // Dias disponibles
             TypeAdapterConfig<DayAvailableModel, DayAvailableDTO>.NewConfig()
-                .Map(dest => dest.Clinic, src => src.Clinic.Adapt<ClinicSimpleDTO>())
+                .Map(dest => dest.Clinic, src => src.Clinic.Adapt<ClinicDTO>())
                 .Map(dest => dest.Consultations, src => src.Consultations.Adapt<List<ConsultationSimpleDTO>>());
 
             TypeAdapterConfig<DayAvailableModel, DayAvailableSimpleDTO>.NewConfig()
@@ -179,10 +180,11 @@ namespace MediAgenda.API.MaperConfig
 
             // Razones
             TypeAdapterConfig<ReasonModel, ReasonDTO>.NewConfig()
-                .Map(dest => dest.Consultations, src => src.Consultations.Adapt<List<ConsultationSimpleDTO>>());
+                .Map(dest => dest.ConsultationsCount, src => src.Consultations.Count);
 
             TypeAdapterConfig<ReasonModel, ReasonSimpleDTO>.NewConfig();
             TypeAdapterConfig<ReasonCreateDTO, ReasonModel>.NewConfig();
+            TypeAdapterConfig<ReasonUpdateDTO, ReasonModel>.NewConfig();
         }
     }
 }

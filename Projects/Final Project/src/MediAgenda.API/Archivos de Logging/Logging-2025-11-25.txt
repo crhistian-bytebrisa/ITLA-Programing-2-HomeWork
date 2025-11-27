@@ -1,0 +1,56 @@
+[2025-11-25 12:43:26] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 400 
+Tiempo: 2108 ms
+
+
+[2025-11-25 12:43:41] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 400 
+Tiempo: 81 ms
+
+
+[2025-11-25 12:43:51] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 201 
+Tiempo: 554 ms
+
+
+[2025-11-25 12:51:21] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 208 ms
+
+
+[2025-11-25 12:51:30] Request: GET 
+URL: /api/Clinics 
+Query: ?Page=3
+Response: 200 
+Tiempo: 29 ms
+
+
+[2025-11-25 12:51:38] Request: GET 
+URL: /api/Clinics 
+Query: ?Page=1&PageSize=3
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-11-25 12:52:12] Request: GET 
+URL: /api/Clinics/1/Days 
+Query: 
+Response: 200 
+Tiempo: 69 ms
+
+
+[2025-11-25 12:55:11] Request: GET 
+URL: /api/Clinics/1/Days 
+Query: ?DateTo=2025-11-15
+Response: 200 
+Tiempo: 57 ms
+
+

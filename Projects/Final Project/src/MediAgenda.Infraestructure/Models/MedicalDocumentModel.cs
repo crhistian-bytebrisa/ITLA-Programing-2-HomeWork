@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Infraestructure.Models
 {
-    public class MedicalDocumentModel : IEntity
+    public class MedicalDocumentModel : IEntityInt, IFileName
     {
         [Key]
         public int Id { get; set; }

@@ -21,7 +21,7 @@ namespace MediAgenda.Application.DTOs
         public string Format { get; set; }
     }
 
-    public class MedicineCreateDTO : IHasName
+    public class MedicineCreateDTO 
     {
         public string Name { get; set; }
         public string Description { get; set; }

@@ -1,4 +1,5 @@
 ﻿using MediAgenda.Domain.Core;
+using System.ComponentModel.DataAnnotations;
 
 namespace MediAgenda.Application.DTOs
 {
@@ -15,8 +16,10 @@ namespace MediAgenda.Application.DTOs
         public string Name { get; set; }
     }
 
-    public class InsuranceCreateDTO : IHasName
+    public class InsuranceCreateDTO 
     {
+        [Required(ErrorMessage = "El campo de Name es requerido.")]
+
         public string Name { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace MediAgenda.Application.DTOs
         public DateTime UpdateAt { get; set; }
     }
 
-    public class NoteConsultationCreateDTO : IHasTitle
+    public class NoteConsultationCreateDTO 
     {
         public int ConsultationId { get; set; }
         public string Title { get; set; }

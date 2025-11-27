@@ -30,7 +30,7 @@ namespace MediAgenda.API.Controllers
         }
 
         // GET api/NoteConsultations/5
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<NoteConsultationDTO>> Get(int id)
         {
             var entity = await _repo.GetByIdAsync(id);
@@ -54,7 +54,7 @@ namespace MediAgenda.API.Controllers
         }
 
         // PUT api/NoteConsultations/5
-        [HttpPut("{id}")]
+        [HttpPut("{id:int}")]
         public async Task<ActionResult> PutAsync(int id, [FromBody] NoteConsultationCreateDTO entity)
         {
             var model = entity.Adapt<NoteConsultationModel>();
@@ -64,7 +64,7 @@ namespace MediAgenda.API.Controllers
         }
 
         // DELETE api/NoteConsultations/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
             var entity = await _repo.GetByIdAsync(id);
@@ -78,17 +78,6 @@ namespace MediAgenda.API.Controllers
             return NoContent();
         }
 
-        // GET: api/NoteConsultations/ByRequest
-        [HttpGet("ByRequest")]
-        public async Task<ActionResult<List<NoteConsultationDTO>>> GetByRequest([FromQuery] NoteConsultationRequest request)
-        {
-            var list = await _repo.GetByRequest(request);
-            List<NoteConsultationDTO> listdto = list.Item1.Adapt<List<NoteConsultationDTO>>();
-            int TotalCount = list.Item2;
-
-            var APIR = new APIResponse<NoteConsultationDTO>(listdto, TotalCount, request.Page ?? 1, request.PageSize ?? 10);
-
-            return Ok(APIR);
-        }
+       
     }
 }

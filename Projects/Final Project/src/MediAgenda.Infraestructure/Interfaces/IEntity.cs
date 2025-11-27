@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Infraestructure.Interfaces
 {
-    public interface IEntity
+    public interface IEntityInt
     {
         int Id { get; set; }
+    }
+
+    public interface IEntityString
+    {
+        string Id { get; set; }
     }
 }

@@ -11,13 +11,13 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Infraestructure.Repositories
 {
-    public class PermissionRepository : BaseRepository<PermissionModel>, IPermissionRepository
+    public class PermissionRepository : BaseRepositoryIdInt<PermissionModel>, IPermissionRepository
     {
         public PermissionRepository(MediContext context) : base(context)
         {
         }
 
-        public async Task<(List<PermissionModel>, int)> GetByRequest(PermissionRequest request)
+        public async Task<(List<PermissionModel>, int)> GetAllAsync(PermissionRequest request)
         {
             IQueryable<PermissionModel> query = _context.Set<PermissionModel>();
 
@@ -26,7 +26,7 @@ namespace MediAgenda.Infraestructure.Repositories
                 query = query.Where(x => x.Name.Contains(request.Name));
             }
 
-            return await PaginateQuery(query, request);
+            return await query.PaginateAsync(request);
         }
     }
 }

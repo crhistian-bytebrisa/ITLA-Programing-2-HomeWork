@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MediAgenda.Domain.Core;
+using MediAgenda.Infraestructure.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 namespace MediAgenda.Infraestructure.Models
 {
     [Table("Clinics")]
-    public class ClinicModel
+    public class ClinicModel : IEntityInt, IHasName
     {
         [Key]
         public int Id { get; set; }
@@ -20,7 +22,7 @@ namespace MediAgenda.Infraestructure.Models
         [Required, MaxLength(300), MinLength(20)]
         public string Address { get; set; }
 
-        [Required, StringLength(11)]
+        [Required, StringLength(10)]
         public string PhoneNumber { get; set; }
 
         //Navegation

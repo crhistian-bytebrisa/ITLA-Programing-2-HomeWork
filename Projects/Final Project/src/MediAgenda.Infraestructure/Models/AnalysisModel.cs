@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace MediAgenda.Infraestructure.Models
 {
     [Table("Analysis")]
-    public class AnalysisModel : IEntity, IHasName
+    public class AnalysisModel : IEntityInt, IHasName
     {
         [Key]
         public int Id { get; set; }
