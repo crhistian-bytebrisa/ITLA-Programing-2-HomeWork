@@ -21,18 +21,6 @@ namespace MediAgenda.API.Controllers
             _service = service;
         }
 
-        private bool ValidateId(int id)
-        {
-            if (new IdIntValidation().Validate(id).IsValid)
-            {
-                return true;
-            }
-            else
-            {
-                ModelState.AddModelError("Id", "El Id es invalido.");
-                return false;
-            }
-        }
         // GET: api/DaysAvailable
         [HttpGet]
         public async Task<ActionResult<APIResponse<DayAvailableDTO>>> Get([FromQuery] DayAvailableRequest request)
@@ -45,13 +33,6 @@ namespace MediAgenda.API.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<DayAvailableDTO>> Get(int id)
         {
-            ValidateId(id);
-
-            if (ModelState.ErrorCount > 0)
-            {
-                return ValidationProblem();
-            }
-
             var entity = await _service.GetByIdAsync(id);
 
             if (entity == null)
@@ -81,8 +62,6 @@ namespace MediAgenda.API.Controllers
         [HttpPut("{id:int}")]
         public async Task<ActionResult> PutAsync(int id, [FromBody] DayAvailableUpdateDTO dtou)
         {
-            ValidateId(id);
-
             if (id != dtou.Id)
             {
                 ModelState.AddModelError("Id", "Deben tener el mismo Id.");

@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using MediAgenda.Application.DTOs;
-using MediAgenda.Application.Validations.RepoValidations;
+using MediAgenda.Application.Interfaces;
+using MediAgenda.Application.Services;
 using MediAgenda.Infraestructure.Models;
 using System;
 using System.Collections.Generic;
@@ -12,18 +13,16 @@ namespace MediAgenda.Application.Validations.CreateValidations
 {
     public class ApplicationUserCreateValidation : AbstractValidator<ApplicationUserCreateDTO>
     {
-        private readonly RepoIdStringValidation<ApplicationUserModel> _repoValidation;
+        private readonly IValidationService service;
 
-        public ApplicationUserCreateValidation(RepoIdStringValidation<ApplicationUserModel> repoValidation)
+        public ApplicationUserCreateValidation(IValidationService service)
         {
-            _repoValidation = repoValidation;
+            this.service = service;
 
             RuleFor(x => x.UserName)
                 .MustAsync(async (name, ct) =>
-                {
-                    var exists = await _repoValidation.ExitsUserName(name);
-                    return !exists;
-                }).WithMessage("El usuario no es valido.");
+                    !await service.ExistsProperty<ApplicationUserModel, string>("UserName", name)
+                ).WithMessage("El usuario no es valido.");
 
             RuleFor(x => x.Password)
                 .MustAsync(async (password, ct) =>
@@ -41,10 +40,8 @@ namespace MediAgenda.Application.Validations.CreateValidations
 
             RuleFor(x => x.Email)
                 .MustAsync(async (email, ct) =>
-                {
-                    var exists = await _repoValidation.ExitsEmail(email);
-                    return !exists;
-                }).WithMessage("El correo ya esta en uso.");
+                    !await service.ExistsProperty<ApplicationUserModel, string>("Email", email)
+                ).WithMessage("El correo ya esta en uso.");
         }
     }
 }

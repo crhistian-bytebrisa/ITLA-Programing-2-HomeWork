@@ -22,19 +22,6 @@ namespace MediAgenda.API.Controllers
         {
             _service = service;
         }
-
-        private async Task<bool> ValidateId(string id)
-        {
-            if (new IdStringValidation().Validate(id).IsValid)
-            {
-                return true;
-            }
-            else
-            {
-                ModelState.AddModelError("Id", "El Id debe ser un Guid valido.");
-                return false;
-            }
-        }
         // GET: api/ApplicationUsers
         [HttpGet]
         public async Task<ActionResult<APIResponse<ApplicationUserDTO>>> Get([FromQuery] ApplicationUserRequest request)
@@ -45,14 +32,8 @@ namespace MediAgenda.API.Controllers
 
         // GET api/ApplicationUsers/klkm-anig-aaaa
         [HttpGet("{id}")]
-        public async Task<ActionResult<ApplicationUserDTO>> Get(string id)
+        public async Task<ActionResult<ApplicationUserDTO>> Get(Guid id)
         {
-            ValidateId(id);
-            if (ModelState.ErrorCount > 0)
-            {
-                return ValidationProblem();
-            }
-
             var entity = await _service.GetByIdAsync(id);
 
             if (entity == null)
@@ -74,9 +55,8 @@ namespace MediAgenda.API.Controllers
 
         // PUT api/ApplicationUsers/klkm-anig-aaaa
         [HttpPut("{ids}")]
-        public async Task<ActionResult> PutAsync(string id, [FromBody] ApplicationUserUpdateDTO dtou)
+        public async Task<ActionResult> PutAsync(Guid id, [FromBody] ApplicationUserUpdateDTO dtou)
         {
-            ValidateId(id);
             if(id != dtou.Id)
             {
                 ModelState.AddModelError("Id", "El Id en la URL no coincide con el Id en el cuerpo de la solicitud.");
@@ -92,7 +72,7 @@ namespace MediAgenda.API.Controllers
 
         // DELETE api/ApplicationUsers/klkm-anig-aaaa
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(string id)
+        public async Task<ActionResult> Delete(Guid id)
         {
             var dto = await _service.GetByIdAsync(id);
             if (dto == null)

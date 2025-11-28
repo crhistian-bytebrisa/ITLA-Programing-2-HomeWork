@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using MediAgenda.Application.DTOs;
-using MediAgenda.Application.Validations.RepoValidations;
+using MediAgenda.Application.Interfaces;
+using MediAgenda.Application.Services;
 using MediAgenda.Infraestructure.Models;
 using System;
 using System.Collections.Generic;
@@ -12,25 +13,21 @@ namespace MediAgenda.Application.Validations.UpdateValidations
 {
     public class AnalysisUpdateValidation : AbstractValidator<AnalysisUpdateDTO>
     {
-        private readonly RepoIdIntValidation<AnalysisModel> _repoValidation;
+        private readonly IValidationService servie;
 
-        public AnalysisUpdateValidation(RepoIdIntValidation<AnalysisModel> repoValidation)
+        public AnalysisUpdateValidation(IValidationService servie)
         {
-            _repoValidation = repoValidation;
 
+            this.servie = servie;
             RuleFor(x => x.Id)
                 .MustAsync(async (id, ct) =>
-                {
-                    var exists = await _repoValidation.ExistsAsync(id);
-                    return exists;
-                }).WithMessage("El Id no existe.");
+                    await servie.ExistsProperty<AnalysisModel, int>("Id", id)
+                ).WithMessage("El Id no existe.");
 
             RuleFor(x => x.Name)
                 .MustAsync(async (name, ct) =>
-                {
-                    var exists = await _repoValidation.ExistName(name);
-                    return !exists;
-                }).WithMessage("El nombre ya existe.");
+                    !await servie.ExistsProperty<AnalysisModel, string>("Name", name)
+                ).WithMessage("El nombre ya existe.");
         }
     }
 }

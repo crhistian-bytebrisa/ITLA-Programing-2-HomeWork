@@ -10,7 +10,7 @@ namespace MediAgenda.Application.Interfaces
         Task<ApplicationUserDTO> AddAsync(ApplicationUserCreateDTO dtoc);
         Task DeleteAsync(ApplicationUserModel model);
         Task<APIResponse<ApplicationUserDTO>> GetAllAsync(ApplicationUserRequest request);
-        Task<ApplicationUserModel> GetByIdAsync(string id);
+        Task<ApplicationUserModel> GetByIdAsync(Guid id);
         Task UpdateAsync(ApplicationUserUpdateDTO dtou);
     }
 }

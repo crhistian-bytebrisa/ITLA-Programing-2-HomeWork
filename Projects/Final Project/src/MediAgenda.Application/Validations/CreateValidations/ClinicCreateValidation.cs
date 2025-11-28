@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using MediAgenda.Application.DTOs;
-using MediAgenda.Application.Validations.RepoValidations;
+using MediAgenda.Application.Interfaces;
+using MediAgenda.Application.Services;
 using MediAgenda.Infraestructure.Models;
 using System;
 using System.Collections.Generic;
@@ -12,18 +13,15 @@ namespace MediAgenda.Application.Validations.CreateValidations
 {
     public class ClinicCreateValidation : AbstractValidator<ClinicCreateDTO>
     {
-        private readonly RepoValidation<ClinicModel> _repoValidation;
+        private readonly IValidationService service;
 
-        public ClinicCreateValidation(RepoValidation<ClinicModel> repoValidation)
+        public ClinicCreateValidation(IValidationService service)
         {
-            _repoValidation = repoValidation;
-
+            this.service = service;
             RuleFor(x => x.Name)
                 .MustAsync(async (name, ct) =>
-                {
-                    var exists = await _repoValidation.ExistName(name);
-                    return !exists;
-                }).WithMessage("El usuario no es valido.");
+                    !await service.ExistsProperty<ClinicModel, string>("Name", name)
+                ).WithMessage("Ya hay una clinica con ese nombre.");
         }
 
     }

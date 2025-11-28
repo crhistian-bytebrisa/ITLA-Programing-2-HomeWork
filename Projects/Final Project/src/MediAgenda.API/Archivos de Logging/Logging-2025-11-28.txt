@@ -1,0 +1,112 @@
+[2025-11-28 17:15:17] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 13239 ms
+
+
+[2025-11-28 17:16:04] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 400 
+Tiempo: 33475 ms
+
+
+[2025-11-28 17:58:12] Request: GET 
+URL: /api/ApplicationUsers 
+Query: 
+Response: 200 
+Tiempo: 1739 ms
+
+
+[2025-11-28 17:58:26] Request: GET 
+URL: /api/ApplicationUsers/4e9e9eae-7622-492d-a5d3-e338971e06d6 
+Query: 
+Response: 200 
+Tiempo: 110 ms
+
+
+[2025-11-28 17:59:12] Request: POST 
+URL: /api/Doctors 
+Query: 
+Response: 200 
+Tiempo: 66 ms
+
+
+[2025-11-28 18:03:46] Request: POST 
+URL: /api/Doctors 
+Query: 
+Response: 400 
+Tiempo: 1500 ms
+
+
+[2025-11-28 18:03:53] Request: POST 
+URL: /api/Doctors 
+Query: 
+Response: 400 
+Tiempo: 58 ms
+
+
+[2025-11-28 18:04:02] Request: GET 
+URL: /api/ApplicationUsers 
+Query: 
+Response: 200 
+Tiempo: 219 ms
+
+
+[2025-11-28 18:04:15] Request: POST 
+URL: /api/Doctors 
+Query: 
+Response: 201 
+Tiempo: 188 ms
+
+
+[2025-11-28 18:04:36] Request: GET 
+URL: /api/Doctors/3 
+Query: 
+Response: 200 
+Tiempo: 36 ms
+
+
+[2025-11-28 18:12:31] Request: GET 
+URL: /api/Doctors 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-11-28 18:12:50] Request: GET 
+URL: /api/Doctors/3 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-11-28 18:13:14] Request: GET 
+URL: /api/Doctors 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-11-28 18:13:33] Request: GET 
+URL: /api/Consultations 
+Query: 
+Response: 200 
+Tiempo: 1076 ms
+
+
+[2025-11-28 18:13:40] Request: GET 
+URL: /api/Doctors 
+Query: 
+Response: 200 
+Tiempo: 172 ms
+
+
+[2025-11-28 18:13:49] Request: GET 
+URL: /api/Doctors/3 
+Query: 
+Response: 200 
+Tiempo: 174 ms
+
+

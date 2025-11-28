@@ -1,6 +1,7 @@
 ﻿using Mapster;
 using MediAgenda.Application.DTOs;
 using MediAgenda.Application.DTOs.API;
+using MediAgenda.Application.Interfaces;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
@@ -13,53 +14,61 @@ namespace MediAgenda.API.Controllers
     [ApiController]
     public class DoctorsController : ControllerBase
     {
-        private readonly IDoctorRepository _repo;
+        private readonly IDoctorsService _service;
 
-        public DoctorsController(IDoctorRepository repo)
+        public DoctorsController(IDoctorsService service)
         {
-            _repo = repo;
+            _service = service;
         }
+
 
         // GET: api/Doctors
         [HttpGet]
-        public async Task<ActionResult<List<DoctorDTO>>> Get()
+        public async Task<ActionResult<APIResponse<DoctorDTO>>> Get([FromQuery] DoctorRequest request)
         {
-            var list = await _repo.GetAllAsync();
-            List<DoctorDTO> listdto = list.Adapt<List<DoctorDTO>>();
-            return Ok(list);
+            var APIR = await _service.GetAllAsync(request);
+            return Ok(APIR);
         }
 
         // GET api/Doctors/5
         [HttpGet("{id:int}")]
         public async Task<ActionResult<DoctorDTO>> Get(int id)
         {
-            var entity = await _repo.GetByIdAsync(id);
+
+            var entity = await _service.GetByIdAsync(id);
+
             if (entity == null)
             {
                 return NotFound();
             }
+
             DoctorDTO dto = entity.Adapt<DoctorDTO>();
             return Ok(dto);
         }
 
         // POST api/Doctors
         [HttpPost]
-        public async Task<ActionResult<DoctorDTO>> PostAsync([FromBody] DoctorCreateDTO entity)
+        public async Task<ActionResult<DoctorDTO>> PostAsync([FromBody] DoctorCreateDTO dtoc)
         {
-            var model = entity.Adapt<DoctorModel>();
-            await _repo.AddAsync(model);
-            var dto = model.Adapt<DoctorDTO>();
-            return CreatedAtAction(actionName: nameof(Get), routeValues: new { id = model.Id }, value: dto);
-
+            var dto = await _service.AddAsync(dtoc);
+            return CreatedAtAction(actionName: nameof(Get), routeValues: new { id = dto.Id }, value: dto);
         }
 
         // PUT api/Doctors/5
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> PutAsync(int id, [FromBody] DoctorCreateDTO entity)
+        public async Task<ActionResult> PutAsync(int id, [FromBody] DoctorUpdateDTO dtou)
         {
-            var model = entity.Adapt<DoctorModel>();
-            model.Id = id;
-            await _repo.UpdateAsync(model);
+            if (id != dtou.Id)
+            {
+                ModelState.AddModelError("Id", "Deben tener el mismo Id.");
+            }
+
+            if (ModelState.ErrorCount > 0)
+            {
+                return ValidationProblem();
+            }
+
+            await _service.UpdateAsync(dtou);
             return NoContent();
         }
 
@@ -67,14 +76,13 @@ namespace MediAgenda.API.Controllers
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
-            var entity = await _repo.GetByIdAsync(id);
-
-            if (entity is null)
+            var dto = await _service.GetByIdAsync(id);
+            if (dto == null)
             {
                 return NotFound();
             }
-
-            await _repo.DeleteAsync(entity);
+            var model = dto.Adapt<DoctorModel>();
+            await _service.DeleteAsync(model);
             return NoContent();
         }
     }

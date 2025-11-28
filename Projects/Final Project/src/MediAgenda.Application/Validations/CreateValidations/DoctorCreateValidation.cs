@@ -11,17 +11,17 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Application.Validations.CreateValidations
 {
-    public class ReasonCreateValidation : AbstractValidator<ReasonCreateDTO>
+    public class DoctorCreateValidation : AbstractValidator<DoctorCreateDTO>
     {
         private readonly IValidationService service;
 
-        public ReasonCreateValidation(IValidationService service)
+        public DoctorCreateValidation(IValidationService service)
         {
             this.service = service;
-            RuleFor(x => x.Title)
-                .MustAsync(async (name, ct) =>
-                    !await service.ExistsProperty<ReasonModel, string>("Title", name)
-                ).WithMessage("El titulo ya existe.");
+            RuleFor(x => x.UserId)
+                .MustAsync(async (userId, ct) =>
+                    await service.ExistsProperty<ApplicationUserModel, string>("Id", userId)
+                ).WithMessage("El usuario no existe.");
         }
     }
 }

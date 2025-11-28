@@ -5,7 +5,7 @@ using MediAgenda.Application.Interfaces;
 using MediAgenda.Application.Services;
 using MediAgenda.Application.Validations;
 using MediAgenda.Application.Validations.CreateValidations;
-using MediAgenda.Application.Validations.RepoValidations;
+using MediAgenda.Application.Validations.UpdateValidations;
 using MediAgenda.Domain.Entities;
 using MediAgenda.Infraestructure.Context;
 using MediAgenda.Infraestructure.Interfaces;
@@ -24,14 +24,10 @@ namespace MediAgenda.API
             builder.Services.AddDbContext<MediContext>(
                 opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
             builder.Services.AddValidatorsFromAssemblyContaining<AnalysisCreateValidation>();
-            builder.Services.AddValidatorsFromAssemblyContaining<IdIntValidation>();
-
+            builder.Services.AddValidatorsFromAssemblyContaining<ReasonsUpdateValidation>();
             builder.Services.AddFluentValidationAutoValidation();
-
-            builder.Services.AddScoped(typeof(RepoValidation<>));
-            builder.Services.AddScoped(typeof(RepoIdIntValidation<>));
-            builder.Services.AddScoped(typeof(RepoIdStringValidation<>));
 
 
 
@@ -56,7 +52,9 @@ namespace MediAgenda.API
             builder.Services.AddScoped<IApplicationUsersService, ApplicationUsersService>();
             builder.Services.AddScoped<IClinicsService, ClinicsService>();
             builder.Services.AddScoped<IDayAvailablesService, DayAvailablesService>();
+            builder.Services.AddScoped<IDoctorsService, DoctorsService>();
 
+            builder.Services.AddScoped<IValidationService, ValidationService>();
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();

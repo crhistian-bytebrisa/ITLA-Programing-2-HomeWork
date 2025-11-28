@@ -22,19 +22,6 @@ namespace MediAgenda.API.Controllers
         {
             _service = service;
         }
-
-        private bool ValidateId(int id)
-        {
-            if (new IdIntValidation().Validate(id).IsValid)
-            {
-                return true;
-            }
-            else
-            {
-                ModelState.AddModelError("Id", "El Id es invalido.");
-                return false;
-            }
-        }
         // GET: api/Clinics
         [HttpGet]
         public async Task<ActionResult<APIResponse<ClinicDTO>>> Get([FromQuery] ClinicRequest request)
@@ -47,13 +34,6 @@ namespace MediAgenda.API.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<ClinicDTO>> Get(int id)
         {
-            ValidateId(id);
-
-            if (ModelState.ErrorCount > 0)
-            {
-                return ValidationProblem();
-            }
-
             var entity = await _service.GetByIdAsync(id);
 
             if (entity == null)
@@ -69,11 +49,6 @@ namespace MediAgenda.API.Controllers
         [HttpGet("{id:int}/Days")]
         public async Task<ActionResult<List<DayAvailableDTO>>> GetClinicDays(int id,[FromQuery] ClinicDaysAvailableRequest request)
         {
-            ValidateId(id);
-            if (ModelState.ErrorCount > 0)
-            {
-                return ValidationProblem();
-            }
             var dto = await _service.GetAllDaysAvailableById(id, request);
             if (dto == null)
             {
@@ -95,12 +70,6 @@ namespace MediAgenda.API.Controllers
         [HttpPut("{id:int}")]
         public async Task<ActionResult> PutAsync(int id, [FromBody] ClinicUpdateDTO dtou)
         {
-            ValidateId(id);
-
-            if (id != dtou.Id)
-            {
-                ModelState.AddModelError("Id", "Deben tener el mismo Id.");
-            }
 
             if (ModelState.ErrorCount > 0)
             {

@@ -23,9 +23,9 @@ namespace MediAgenda.Application.Services
             _repo = repo;
         }
 
-        public async Task<ApplicationUserModel> GetByIdAsync(string id)
+        public async Task<ApplicationUserModel> GetByIdAsync(Guid id)
         {
-            var entity = await _repo.GetByIdAsync(id);
+            var entity = await _repo.GetByIdAsync(id.ToString());
             return entity;
         }
 
