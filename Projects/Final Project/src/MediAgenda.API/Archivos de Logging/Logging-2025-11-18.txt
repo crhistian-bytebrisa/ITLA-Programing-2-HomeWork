@@ -1,7 +1,0 @@
-[2025-11-18 19:41:39] Request: POST 
-URL: /api/Insurances 
-Query: 
-Response: 400 
-Tiempo: 500 ms
-
-
