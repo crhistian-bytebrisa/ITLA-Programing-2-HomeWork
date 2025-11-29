@@ -489,5 +489,5 @@ FodyWeavers.xsd
 .obsidian/
 
 #Logging y Archivos
-Projects/Final Project/src/MediAgenda.API/Archivos de Logging/
+Projects/Final Project/src/MediAgenda.API/Archivos de Logging
 Projects/Final Project/src/MediAgenda.API/MedicalDocuments
