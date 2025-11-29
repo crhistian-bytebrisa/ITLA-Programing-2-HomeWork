@@ -11,22 +11,22 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Application.Validations.UpdateValidations
 {
-    public class ReasonsUpdateValidation : AbstractValidator<ReasonUpdateDTO>
+    public class InsuranceUpdateValidation : AbstractValidator<InsuranceUpdateDTO>
     {
         private readonly IValidationService service;
 
-        public ReasonsUpdateValidation(IValidationService service)
+        public InsuranceUpdateValidation(IValidationService service)
         {
             this.service = service;
             RuleFor(x => x.Id)
                 .MustAsync(async (id, ct) =>
-                    await service.ExistsProperty<ReasonModel, int>("Id", id)
+                    await service.ExistsProperty<InsuranceModel, int>("Id", id)
                 ).WithMessage("El Id no existe.");
 
-            RuleFor(x => x.Title)
-                .MustAsync(async (model,title, ct) =>
-                    !await service.ExistsProperty<ReasonModel, string, int>("Title", title, model.Id)
-                ).WithMessage("El titulo ya existe.");
+            RuleFor(x => x.Name)
+                .MustAsync(async (model, name, ct) =>
+                    !await service.ExistsProperty<InsuranceModel, string,int>("Name", name, model.Id)
+                ).WithMessage("Ya hay un seguro con ese nombre.");
         }
     }
 }

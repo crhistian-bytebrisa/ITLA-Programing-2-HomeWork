@@ -7,5 +7,6 @@ namespace MediAgenda.Infraestructure.Interfaces
     public interface IMedicalDocumentRepository : IBaseRepositoryIdInt<MedicalDocumentModel>
     {
         Task<(List<MedicalDocumentModel>, int)> GetAllAsync(MedicalDocumentRequest request);
+        Task<string> PatientName(int Id);
     }
 }

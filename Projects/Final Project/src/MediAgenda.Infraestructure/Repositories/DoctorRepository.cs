@@ -22,6 +22,7 @@ namespace MediAgenda.Infraestructure.Repositories
         {
             return _context.Set<DoctorModel>()
                 .Include(d => d.User)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(d => d.Id == id);
         }
         public async Task<(List<DoctorModel>, int)> GetAllAsync(DoctorRequest request)

@@ -52,6 +52,9 @@ namespace MediAgenda.API.MaperConfig
             TypeAdapterConfig<ConsultationCreateDTO, ConsultationModel>.NewConfig()
                 .Map(dest => dest.State, src => src.State.Adapt<ConsultationState>());
 
+            TypeAdapterConfig<ConsultationUpdateDTO, ConsultationModel>.NewConfig()
+                .Map(dest => dest.State, src => src.State.Adapt<ConsultationState>());
+
             // Dias disponibles
             TypeAdapterConfig<DayAvailableModel, DayAvailableDTO>.NewConfig()
                 .Map(dest => dest.Clinic, src => src.Clinic.Adapt<ClinicDTO>())
@@ -61,6 +64,7 @@ namespace MediAgenda.API.MaperConfig
                 .Map(dest => dest.ConsultationsCount, src => src.Consultations.Where(x => x.State == ConsultationState.Pendent || x.State == ConsultationState.Confirmed).Count());
 
             TypeAdapterConfig<DayAvailableCreateDTO, DayAvailableModel>.NewConfig();
+            TypeAdapterConfig<DayAvailableUpdateDTO, DayAvailableModel>.NewConfig();
 
             // Doctores
             TypeAdapterConfig<DoctorModel, DoctorDTO>.NewConfig()
@@ -68,13 +72,15 @@ namespace MediAgenda.API.MaperConfig
 
             TypeAdapterConfig<DoctorModel, DoctorSimpleDTO>.NewConfig();
             TypeAdapterConfig<DoctorCreateDTO, DoctorModel>.NewConfig();
+            TypeAdapterConfig<DoctorUpdateDTO, DoctorModel>.NewConfig();
 
             // Seguros
             TypeAdapterConfig<InsuranceModel, InsuranceDTO>.NewConfig()
-                .Map(dest => dest.Patients, src => src.Patients.Adapt<List<PatientSimpleDTO>>());
+                .Map(dest => dest.PatientsCount, src => src.Patients.Count);
 
             TypeAdapterConfig<InsuranceModel, InsuranceSimpleDTO>.NewConfig();
             TypeAdapterConfig<InsuranceCreateDTO, InsuranceModel>.NewConfig();
+            TypeAdapterConfig<InsuranceUpdateDTO, InsuranceModel>.NewConfig();
 
             // Documentos medicos
             TypeAdapterConfig<MedicalDocumentModel, MedicalDocumentDTO>.NewConfig()

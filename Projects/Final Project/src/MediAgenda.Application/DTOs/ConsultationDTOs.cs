@@ -34,4 +34,9 @@ namespace MediAgenda.Application.DTOs
         public int DayAvailableId { get; set; }
         public ConsultationStateDTO State { get; set; }
     }
+
+    public class ConsultationUpdateDTO : ConsultationCreateDTO
+    {
+        public int Id { get; set; }
+    }
 }

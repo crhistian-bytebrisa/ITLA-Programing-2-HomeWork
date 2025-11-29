@@ -18,6 +18,14 @@ namespace MediAgenda.Infraestructure.Repositories
         {
         }
 
+        public override Task<InsuranceModel> GetByIdAsync(int id)
+        {
+            return _context.Set<InsuranceModel>()
+                .Include(i => i.Patients)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(i => i.Id == id);
+        }
+
         public async Task<(List<InsuranceModel>, int)> GetAllAsync(InsuranceRequest request)
         {
             IQueryable<InsuranceModel> query = _context.Set<InsuranceModel>();
@@ -27,7 +35,7 @@ namespace MediAgenda.Infraestructure.Repositories
                 query = query.Where(x => x.Name.Contains(request.Name));
             }
 
-            if (request.IncludePatient is true)
+            if (request.IncludePatientCount is true)
             {
                 query = query.Include(x => x.Patients);
             }

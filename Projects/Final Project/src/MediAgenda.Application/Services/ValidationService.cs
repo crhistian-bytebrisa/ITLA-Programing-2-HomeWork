@@ -23,6 +23,14 @@ namespace MediAgenda.Application.Services
         {
             var query = context.Set<T>();
 
+            if (typeof(TProperty) == typeof(string))
+            {
+                string stringValue = ((string)(object)property).Trim().ToLower();
+                return await query.AnyAsync(x =>
+                    EF.Property<string>(x, nameproperty).Trim().ToLower() == stringValue
+                );
+            }
+
             var exist = await query.AnyAsync(x => EF.Property<TProperty>(x, nameproperty).Equals(property));
             return exist;
         }
@@ -31,9 +39,40 @@ namespace MediAgenda.Application.Services
             where T : class
         {
             var query = context.Set<T>();
+
+            if (typeof(TProperty) == typeof(string))
+            {
+                string stringValue = ((string)(object)property).Trim().ToLower();
+
+                return await query.AnyAsync(x =>
+                    EF.Property<string>(x, nameproperty).Trim().ToLower() == stringValue
+                    && !EF.Property<TIdType>(x, "Id").Equals(id)
+                );
+            }
+
             var exist = await query.AnyAsync(x => EF.Property<TProperty>(x, nameproperty).Equals(property) && !EF.Property<TIdType>(x, "Id").Equals(id));
             return exist;
         }
+
+        public async Task<bool> ExitsPropertyInSameId<T, TProperty, TIdType>(string nameproperty, TProperty property, string IdName, TIdType id)
+            where T : class
+        {
+            var query = context.Set<T>();
+
+            if (typeof(TProperty) == typeof(string))
+            {
+                string stringValue = ((string)(object)property).Trim().ToLower();
+                return await query.AnyAsync(x =>
+                    EF.Property<string>(x, nameproperty).Trim().ToLower() == stringValue
+                    && EF.Property<TIdType>(x, IdName).Equals(id)
+                );
+            }
+
+            var exist = await query.AnyAsync(x => EF.Property<TProperty>(x, nameproperty).Equals(property) && EF.Property<TIdType>(x, IdName).Equals(id));
+            return exist;
+        }
+
+
 
         public async Task<bool> ExistsEqualDateAndTime<T>(DateOnly date, TimeOnly start, TimeOnly end) where T : class
         {

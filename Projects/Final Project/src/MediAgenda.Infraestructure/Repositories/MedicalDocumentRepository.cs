@@ -37,12 +37,16 @@ namespace MediAgenda.Infraestructure.Repositories
                 query = query.Where(x => x.DocumentType == request.Format);
             }
 
-            if (request.IncludePatient is true)
-            {
-                query = query.Include(x => x.Patient);
-            }
-
             return await query.PaginateAsync(request);
+        }
+
+        public async Task<string> PatientName(int Id)
+        {
+            return await _context.Set<PatientModel>()
+                .Where(p => p.Id == Id)
+                .Select(p => p.User.NameComplete)
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
         }
     }
 }
