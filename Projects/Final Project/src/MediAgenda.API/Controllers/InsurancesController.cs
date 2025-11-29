@@ -1,6 +1,7 @@
 ﻿using Mapster;
 using MediAgenda.Application.DTOs;
 using MediAgenda.Application.DTOs.API;
+using MediAgenda.Application.Interfaces;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
@@ -12,53 +13,61 @@ namespace MediAgenda.API.Controllers
     [ApiController]
     public class InsurancesController : ControllerBase
     {
-        private readonly IInsuranceRepository _repo;
+        private readonly IInsurancesService _service;
 
-        public InsurancesController(IInsuranceRepository repo)
+        public InsurancesController(IInsurancesService service)
         {
-            _repo = repo;
+            _service = service;
         }
+
 
         // GET: api/Insurances
         [HttpGet]
-        public async Task<ActionResult<List<InsuranceDTO>>> Get()
+        public async Task<ActionResult<APIResponse<InsuranceDTO>>> Get([FromQuery] InsuranceRequest request)
         {
-            var list = await _repo.GetAllAsync();
-            List<InsuranceDTO> listdto = list.Adapt<List<InsuranceDTO>>();
-            return Ok(list);
+            var APIR = await _service.GetAllAsync(request);
+            return Ok(APIR);
         }
 
         // GET api/Insurances/5
         [HttpGet("{id:int}")]
         public async Task<ActionResult<InsuranceDTO>> Get(int id)
         {
-            var entity = await _repo.GetByIdAsync(id);
+
+            var entity = await _service.GetByIdAsync(id);
+
             if (entity == null)
             {
                 return NotFound();
             }
+
             InsuranceDTO dto = entity.Adapt<InsuranceDTO>();
             return Ok(dto);
         }
 
         // POST api/Insurances
         [HttpPost]
-        public async Task<ActionResult<InsuranceDTO>> PostAsync([FromBody] InsuranceCreateDTO entity)
+        public async Task<ActionResult<InsuranceDTO>> PostAsync([FromBody] InsuranceCreateDTO dtoc)
         {
-            var model = entity.Adapt<InsuranceModel>();
-            await _repo.AddAsync(model);
-            var dto = model.Adapt<InsuranceDTO>();
-            return CreatedAtAction(actionName: nameof(Get), routeValues: new { id = model.Id }, value: dto);
-
+            var dto = await _service.AddAsync(dtoc);
+            return CreatedAtAction(actionName: nameof(Get), routeValues: new { id = dto.Id }, value: dto);
         }
 
         // PUT api/Insurances/5
         [HttpPut("{id:int}")]
-        public async Task<ActionResult> PutAsync(int id, [FromBody] InsuranceCreateDTO entity)
+        public async Task<ActionResult> PutAsync(int id, [FromBody] InsuranceUpdateDTO dtou)
         {
-            var model = entity.Adapt<InsuranceModel>();
-            model.Id = id;
-            await _repo.UpdateAsync(model);
+            if (id != dtou.Id)
+            {
+                ModelState.AddModelError("Id", "Deben tener el mismo Id.");
+            }
+
+            if (ModelState.ErrorCount > 0)
+            {
+                return ValidationProblem();
+            }
+
+            await _service.UpdateAsync(dtou);
             return NoContent();
         }
 
@@ -66,17 +75,15 @@ namespace MediAgenda.API.Controllers
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
-            var entity = await _repo.GetByIdAsync(id);
-
-            if (entity is null)
+            var dto = await _service.GetByIdAsync(id);
+            if (dto == null)
             {
                 return NotFound();
             }
-
-            await _repo.DeleteAsync(entity);
+            var model = dto.Adapt<InsuranceModel>();
+            await _service.DeleteAsync(model);
             return NoContent();
         }
 
-        
     }
 }
