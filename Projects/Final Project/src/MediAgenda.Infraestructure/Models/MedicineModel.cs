@@ -26,9 +26,12 @@ namespace MediAgenda.Infraestructure.Models
         [Required, MaxLength(50)]
         public string Format { get; set; }
 
+        [Required]
+        public bool IsActive { get; set; } = true;
+
         //Navegation
         public List<PrescriptionMedicineModel> PrescriptionMedicines { get; set; }
-        public List<CurrentMedicamentsModel> CurrentMedicaments { get; set; } = new();
+        public List<CurrentMedicamentsModel> CurrentMedicaments { get; set; } 
 
         public MedicineModel() { }
     }

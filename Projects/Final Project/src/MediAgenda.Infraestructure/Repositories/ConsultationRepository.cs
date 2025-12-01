@@ -55,7 +55,7 @@ namespace MediAgenda.Infraestructure.Repositories
 
             if (request.IncludeNote is true)
             {
-                query = query.Include(x => x.Note);
+                query = query.Include(x => x.Notes);
             }
 
             if (request.IncludePrescriptions is true)

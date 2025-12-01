@@ -10,7 +10,8 @@ namespace MediAgenda.Infraestructure.RequestRepositories
     public class NoteConsultationRequest : BaseRequest
     {
         public string? Title { get; set; }
-        public int? PatientId { get; set; }
+        public int? ConsultationId { get; set; }
+        public bool IncludeConsultation { get; set; }   
         public DateTime? CreatedFrom { get; set; }
         public DateTime? CreatedTo { get; set; }
         public DateTime? UpdatedFrom { get; set; }

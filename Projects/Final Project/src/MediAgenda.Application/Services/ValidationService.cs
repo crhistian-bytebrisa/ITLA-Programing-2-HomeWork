@@ -85,6 +85,17 @@ namespace MediAgenda.Application.Services
             return exist;
         }
 
+        public async Task<bool> ExistsEqualDateAndTimeInDiferentId<T,TIdType>(DateOnly date, TimeOnly start, TimeOnly end, TIdType id) where T : class
+        {
+            var query = context.Set<T>();
+            var exist = await query.AnyAsync(x =>
+                EF.Property<DateOnly>(x, "Date") == date &&
+                (start <= EF.Property<TimeOnly>(x, "EndTime") && EF.Property<TimeOnly>(x, "StartTime") >= start && !EF.Property<TIdType>(x, "Id").Equals(id))
+            );
+
+            return exist;
+        }
+
 
     }
 }

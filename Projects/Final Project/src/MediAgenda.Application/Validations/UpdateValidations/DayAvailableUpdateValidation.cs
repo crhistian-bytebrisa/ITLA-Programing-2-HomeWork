@@ -1,32 +1,36 @@
 ﻿using FluentValidation;
 using MediAgenda.Application.DTOs;
 using MediAgenda.Application.Interfaces;
-using MediAgenda.Application.Services;
 using MediAgenda.Infraestructure.Models;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MediAgenda.Application.Validations.CreateValidations
+namespace MediAgenda.Application.Validations.UpdateValidations
 {
-    public class DayAvailableCreateValidation : AbstractValidator<DayAvailableCreateDTO>
+    public class DayAvailableUpdateValidation : AbstractValidator<DayAvailableUpdateDTO>
     {
         private readonly IValidationService service;
 
-        public DayAvailableCreateValidation(IValidationService service)
+        public DayAvailableUpdateValidation(IValidationService service)
         {
             this.service = service;
+            RuleFor(x => x.Id)
+                .MustAsync(async (id, ct) =>
+                    await service.ExistsProperty<DayAvailableModel, int>("Id", id))
+                .WithMessage("El Id del horario no existe.");
+
+
             RuleFor(x => x.ClinicId)
                 .MustAsync(async (id, ct) =>
-                    !await service.ExistsProperty<DayAvailableModel,int>("ClinicId",id))
+                    await service.ExistsProperty<DayAvailableModel, int>("ClinicId", id))
                 .WithMessage("El Id de la clinica no existe.");
 
             RuleFor(x => x)
                 .MustAsync(async (entity, validationContext, ct) =>
-                    !await service.ExistsEqualDateAndTime<DayAvailableModel>(entity.Date, entity.StartTime, entity.EndTime))
+                    !await service.ExistsEqualDateAndTimeInDiferentId<DayAvailableModel,int>(entity.Date, entity.StartTime, entity.EndTime, entity.Id))
                 .WithMessage(x => $"El horario seleccionado tiene choque con algunos horarios.");
         }
     }

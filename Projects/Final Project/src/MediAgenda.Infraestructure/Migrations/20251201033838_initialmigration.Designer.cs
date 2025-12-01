@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MediAgenda.Infraestructure.Migrations
 {
     [DbContext(typeof(MediContext))]
-    [Migration("20251115135833_eliminarid")]
-    partial class eliminarid
+    [Migration("20251201033838_initialmigration")]
+    partial class initialmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,170 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Analysis");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Prueba para ver tus niveles de globulos rojos y blancos ademas de otros datos, no duele.",
+                            Name = "Prueba de sangre"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Un estandar para ver infecciones.",
+                            Name = "Analisis de orina"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Imagen para ver fracturas o anomalias a nivel oseo.",
+                            Name = "Radiografia"
+                        });
+                });
+
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ApplicationUserModel", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NameComplete")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "7bd25c44-f324-41f7-aae9-43a2f744ef46",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "doctor-concurrency-001",
+                            Email = "dr.martinez@mediagenda.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NameComplete = "Carlos Martínez Pérez",
+                            NormalizedEmail = "DR.MARTINEZ@MEDIAGENDA.COM",
+                            NormalizedUserName = "DR.MARTINEZ@MEDIAGENDA.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEO6wwBvPFDvL8ZtmHuLxxm92JC0+LnLYNVEnNmUhLyBn3fDPJV1AhvVGwJcG5FxJg==",
+                            PhoneNumber = "8091234567",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "DOCTOR-SECURITY-STAMP-001",
+                            TwoFactorEnabled = false,
+                            UserName = "dr.martinez@mediagenda.com"
+                        },
+                        new
+                        {
+                            Id = "1ebe636e-b277-47ea-a2f8-6502cd988476",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "pedro-concurrency-002",
+                            Email = "pedro@mediagenda.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NameComplete = "Pedro Alcachofa",
+                            NormalizedEmail = "PEDRO@MEDIAGENDA.COM",
+                            NormalizedUserName = "PEDRO@MEDIAGENDA.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKpB0X8LqNkHXdXJ7c4VnM8WfQ3jqY6P5rZ9K2mT1vU4xW7sY8pL3gH9nR5tA6bC2w==",
+                            PhoneNumber = "8093454567",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "PEDRO-SECURITY-STAMP-002",
+                            TwoFactorEnabled = false,
+                            UserName = "pedro@mediagenda.com"
+                        },
+                        new
+                        {
+                            Id = "12e6b0e1-1eb6-4a4b-8b57-d1a00b31cb46",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "alva-concurrency-003",
+                            Email = "alva@mediagenda.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NameComplete = "Alva Alcachofa",
+                            NormalizedEmail = "ALVA@MEDIAGENDA.COM",
+                            NormalizedUserName = "ALVA@MEDIAGENDA.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAELmN4Y9QrS6tH2XkP8fV1nW7jY3mZ5pK9rL4xT8vU2wQ6sA7cB1dE3gF5hI9jK0lMn==",
+                            PhoneNumber = "8093543337",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "ALVA-SECURITY-STAMP-003",
+                            TwoFactorEnabled = false,
+                            UserName = "alva@mediagenda.com"
+                        },
+                        new
+                        {
+                            Id = "12e6b0e1-1eb6-4a4b-8b57-a7d8adf78sdf",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "rufino-concurrency-004",
+                            Email = "rufino@mediagenda.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NameComplete = "Rufino Alcachofa",
+                            NormalizedEmail = "RUFINO@MEDIAGENDA.COM",
+                            NormalizedUserName = "RUFINO@MEDIAGENDA.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPzC8Y3RsT7uI9YmQ1gW2oX8kZ4nA6qM0sL5yU9xV3wR7tB2eC4fD6hG8iJ1kL3mNo==",
+                            PhoneNumber = "8491782495",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "RUFINO-SECURITY-STAMP-004",
+                            TwoFactorEnabled = false,
+                            UserName = "rufino@mediagenda.com"
+                        });
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.ClinicModel", b =>
@@ -68,12 +232,21 @@ namespace MediAgenda.Infraestructure.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasMaxLength(11)
-                        .HasColumnType("nvarchar(11)");
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Clinics");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "KM 9 de la Autopista Duarte",
+                            Name = "Clinica 9",
+                            PhoneNumber = "8095475432"
+                        });
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.ConsultationModel", b =>
@@ -108,6 +281,17 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.HasIndex("ReasonId");
 
                     b.ToTable("Consultations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DayAvailableId = 1,
+                            PatientId = 1,
+                            ReasonId = 1,
+                            State = 0,
+                            Turn = 1
+                        });
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.DayAvailableModel", b =>
@@ -138,6 +322,17 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.HasIndex("ClinicId");
 
                     b.ToTable("DaysAvailable");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ClinicId = 1,
+                            Date = new DateOnly(2025, 10, 21),
+                            EndTime = new TimeOnly(16, 0, 0),
+                            Limit = 15,
+                            StartTime = new TimeOnly(8, 0, 0)
+                        });
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.DoctorModel", b =>
@@ -167,6 +362,15 @@ namespace MediAgenda.Infraestructure.Migrations
                         .IsUnique();
 
                     b.ToTable("Doctors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AboutMe = "Especialista en cardiologia con 10 años de experiencia.",
+                            Specialty = "Cardiologia",
+                            UserId = "7bd25c44-f324-41f7-aae9-43a2f744ef46"
+                        });
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.InsuranceModel", b =>
@@ -185,6 +389,13 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Insurances");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Humano"
+                        });
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.MedicalDocumentModel", b =>
@@ -236,6 +447,9 @@ namespace MediAgenda.Infraestructure.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -244,6 +458,32 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Medicines");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "An analgesic and antipyretic medication used to treat pain and fever.",
+                            Format = "Tablet",
+                            IsActive = true,
+                            Name = "Paracetamol"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "A nonsteroidal anti-inflammatory drug (NSAID) used to reduce inflammation, pain, and fever.",
+                            Format = "Capsule",
+                            IsActive = true,
+                            Name = "Ibuprofen"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "A penicillin-type antibiotic used to treat a variety of bacterial infections.",
+                            Format = "Tablet",
+                            IsActive = true,
+                            Name = "Amoxicillin"
+                        });
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.NoteConsultationModel", b =>
@@ -275,8 +515,7 @@ namespace MediAgenda.Infraestructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ConsultationId")
-                        .IsUnique();
+                    b.HasIndex("ConsultationId");
 
                     b.ToTable("NotesConsultations");
                 });
@@ -310,8 +549,7 @@ namespace MediAgenda.Infraestructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PatientId")
-                        .IsUnique();
+                    b.HasIndex("PatientId");
 
                     b.ToTable("NotesPatients");
                 });
@@ -352,6 +590,38 @@ namespace MediAgenda.Infraestructure.Migrations
                         .IsUnique();
 
                     b.ToTable("Patients");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Bloodtype = 6,
+                            DateOfBirth = new DateTime(2004, 1, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Gender = 0,
+                            Identification = "40214353345",
+                            InsuranceId = 1,
+                            UserId = "1ebe636e-b277-47ea-a2f8-6502cd988476"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Bloodtype = 7,
+                            DateOfBirth = new DateTime(2004, 5, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Gender = 1,
+                            Identification = "40243453345",
+                            InsuranceId = 1,
+                            UserId = "12e6b0e1-1eb6-4a4b-8b57-d1a00b31cb46"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Bloodtype = 0,
+                            DateOfBirth = new DateTime(2000, 3, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Gender = 0,
+                            Identification = "40234533343",
+                            InsuranceId = 1,
+                            UserId = "12e6b0e1-1eb6-4a4b-8b57-a7d8adf78sdf"
+                        });
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.PermissionModel", b =>
@@ -426,6 +696,38 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Reasons");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Available = true,
+                            Title = "Consulta"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Available = true,
+                            Title = "Primera vez"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Available = true,
+                            Title = "Permiso"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Available = true,
+                            Title = "Referimiento"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Available = true,
+                            Title = "Entrega de Estudios"
+                        });
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.CurrentMedicamentsModel", b =>
@@ -529,6 +831,29 @@ namespace MediAgenda.Infraestructure.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "admin-role-id",
+                            ConcurrencyStamp = "admin-role-stamp-001",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "doctor-role-id",
+                            ConcurrencyStamp = "doctor-role-stamp-002",
+                            Name = "Doctor",
+                            NormalizedName = "DOCTOR"
+                        },
+                        new
+                        {
+                            Id = "user-role-id",
+                            ConcurrencyStamp = "user-role-stamp-003",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -554,73 +879,6 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetRoleClaims", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("AccessFailedCount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("SecurityStamp")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.ToTable("AspNetUsers", (string)null);
-
-                    b.UseTptMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -683,6 +941,28 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "7bd25c44-f324-41f7-aae9-43a2f744ef46",
+                            RoleId = "doctor-role-id"
+                        },
+                        new
+                        {
+                            UserId = "1ebe636e-b277-47ea-a2f8-6502cd988476",
+                            RoleId = "user-role-id"
+                        },
+                        new
+                        {
+                            UserId = "12e6b0e1-1eb6-4a4b-8b57-d1a00b31cb46",
+                            RoleId = "user-role-id"
+                        },
+                        new
+                        {
+                            UserId = "12e6b0e1-1eb6-4a4b-8b57-a7d8adf78sdf",
+                            RoleId = "user-role-id"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -702,18 +982,6 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ApplicationUserModel", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<string>("NameComplete")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.ToTable("ApplicationUsers");
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.ConsultationModel", b =>
@@ -779,8 +1047,8 @@ namespace MediAgenda.Infraestructure.Migrations
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.NoteConsultationModel", b =>
                 {
                     b.HasOne("MediAgenda.Infraestructure.Models.ConsultationModel", "Consultation")
-                        .WithOne("Note")
-                        .HasForeignKey("MediAgenda.Infraestructure.Models.NoteConsultationModel", "ConsultationId")
+                        .WithMany("Notes")
+                        .HasForeignKey("ConsultationId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -790,8 +1058,8 @@ namespace MediAgenda.Infraestructure.Migrations
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.NotePatientModel", b =>
                 {
                     b.HasOne("MediAgenda.Infraestructure.Models.PatientModel", "Patient")
-                        .WithOne("NotePatient")
-                        .HasForeignKey("MediAgenda.Infraestructure.Models.NotePatientModel", "PatientId")
+                        .WithMany("Notes")
+                        .HasForeignKey("PatientId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -915,7 +1183,7 @@ namespace MediAgenda.Infraestructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("MediAgenda.Infraestructure.Models.ApplicationUserModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -924,7 +1192,7 @@ namespace MediAgenda.Infraestructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("MediAgenda.Infraestructure.Models.ApplicationUserModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -939,7 +1207,7 @@ namespace MediAgenda.Infraestructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("MediAgenda.Infraestructure.Models.ApplicationUserModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -948,18 +1216,9 @@ namespace MediAgenda.Infraestructure.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("MediAgenda.Infraestructure.Models.ApplicationUserModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ApplicationUserModel", b =>
-                {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
-                        .WithOne()
-                        .HasForeignKey("MediAgenda.Infraestructure.Models.ApplicationUserModel", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -969,6 +1228,13 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.Navigation("PrescriptionAnalyses");
                 });
 
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ApplicationUserModel", b =>
+                {
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Patient");
+                });
+
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.ClinicModel", b =>
                 {
                     b.Navigation("DaysAvailable");
@@ -976,8 +1242,7 @@ namespace MediAgenda.Infraestructure.Migrations
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.ConsultationModel", b =>
                 {
-                    b.Navigation("Note")
-                        .IsRequired();
+                    b.Navigation("Notes");
 
                     b.Navigation("Prescriptions");
                 });
@@ -1007,8 +1272,7 @@ namespace MediAgenda.Infraestructure.Migrations
 
                     b.Navigation("MedicalDocuments");
 
-                    b.Navigation("NotePatient")
-                        .IsRequired();
+                    b.Navigation("Notes");
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.PermissionModel", b =>
@@ -1028,13 +1292,6 @@ namespace MediAgenda.Infraestructure.Migrations
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.ReasonModel", b =>
                 {
                     b.Navigation("Consultations");
-                });
-
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.ApplicationUserModel", b =>
-                {
-                    b.Navigation("Doctor");
-
-                    b.Navigation("Patient");
                 });
 #pragma warning restore 612, 618
         }

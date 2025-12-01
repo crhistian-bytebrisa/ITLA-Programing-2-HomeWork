@@ -3,6 +3,7 @@ using MediAgenda.Infraestructure.Core;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,14 @@ namespace MediAgenda.Infraestructure.Repositories
         {
         }
 
+        public override Task<NoteConsultationModel> GetByIdAsync(int id)
+        {
+            return _context.Set<NoteConsultationModel>()
+                .Include(x => x.Consultation)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == id);
+        }
+
         public async Task<(List<NoteConsultationModel>, int)> GetAllAsync(NoteConsultationRequest request)
         {
             IQueryable<NoteConsultationModel> query = _context.Set<NoteConsultationModel>();
@@ -26,9 +35,14 @@ namespace MediAgenda.Infraestructure.Repositories
                 query = query.Where(x => x.Title.Contains(request.Title));
             }
 
-            if (request.PatientId is not null)
+            if (request.ConsultationId is not null)
             {
-                query = query.Where(x => x.Consultation.PatientId == request.PatientId);
+                query = query.Where(x => x.Consultation.Id == request.ConsultationId);
+            }
+
+            if (request.IncludeConsultation)
+            {
+                query = query.Include(x => x.Consultation);
             }
 
             if (request.CreatedFrom is not null)

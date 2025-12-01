@@ -55,6 +55,9 @@ namespace MediAgenda.API
             builder.Services.AddScoped<IDoctorsService, DoctorsService>();
             builder.Services.AddScoped<IInsurancesService, InsurancesService>();
             builder.Services.AddScoped<IMedicalDocumentsService, MedicalDocumentsService>();
+            builder.Services.AddScoped<IMedicinesService, MedicinesService>();
+            builder.Services.AddScoped<INotesConsultationService, NotesConsultationService>();
+            builder.Services.AddScoped<INotesPatientsService, NotesPatientsService>();
 
             builder.Services.AddScoped<IValidationService, ValidationService>();
 

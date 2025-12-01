@@ -38,7 +38,7 @@ namespace MediAgenda.Infraestructure.Models
         public Gender Gender { get; set; }
 
         //Navegation
-        public NotePatientModel? NotePatient { get; set; } 
+        public List<NotePatientModel> Notes { get; set; } 
         public List<ConsultationModel>? Consultations { get; set; } 
         public List<MedicalDocumentModel>? MedicalDocuments { get; set; } 
         public List<CurrentMedicamentsModel>? CurrentMedicaments { get; set; } 

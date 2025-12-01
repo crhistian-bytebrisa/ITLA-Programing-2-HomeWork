@@ -1,4 +1,5 @@
-﻿using MediAgenda.Infraestructure.Models;
+﻿using MediAgenda.Infraestructure.Context.SeedsData;
+using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.Models.Relations;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.Infraestructure.Context
 {
-    public class MediContext : IdentityDbContext
+    public class MediContext : IdentityDbContext<ApplicationUserModel>
     {
         public MediContext() { }
         public MediContext(DbContextOptions<MediContext> options) : base(options)   
@@ -23,6 +24,19 @@ namespace MediAgenda.Infraestructure.Context
             {
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
+
+            builder.ApplyConfiguration(new AnalysisSeed());
+            builder.ApplyConfiguration(new ApplicationUserSeed());
+            builder.ApplyConfiguration(new ClinicSeed());
+            builder.ApplyConfiguration(new DoctorSeed());
+            builder.ApplyConfiguration(new DayAvailableSeed());
+            builder.ApplyConfiguration(new InsuranceSeed());
+            builder.ApplyConfiguration(new MedicineSeed());
+            builder.ApplyConfiguration(new PatientSeed());
+            builder.ApplyConfiguration(new ReasonSeed());
+            builder.ApplyConfiguration(new RoleSeed());
+            builder.ApplyConfiguration(new UserRoleSeed());
+            builder.ApplyConfiguration(new ConsultationSeed());
 
             base.OnModelCreating(builder);
         }

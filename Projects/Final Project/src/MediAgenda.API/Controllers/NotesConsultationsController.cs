@@ -10,30 +10,31 @@ using System.Threading.Tasks;
 
 namespace MediAgenda.API.Controllers
 {
-    [Route("api/Medicines")]
+    [Route("api/NotesConsultations")]
     [ApiController]
-    public class MedicinesController : ControllerBase
+    public class NotesConsultationsController : ControllerBase
     {
-        private readonly IMedicinesService _service;
+        private readonly INotesConsultationService _service;
 
-        public MedicinesController(IMedicinesService service)
+        public NotesConsultationsController(INotesConsultationService service)
         {
             _service = service;
         }
 
 
-        // GET: api/Medicines
+        // GET: api/NoteConsultations
         [HttpGet]
-        public async Task<ActionResult<APIResponse<MedicineDTO>>> Get([FromQuery] MedicineRequest request)
+        public async Task<ActionResult<APIResponse<NoteConsultationDTO>>> Get([FromQuery] NoteConsultationRequest request)
         {
             var APIR = await _service.GetAllAsync(request);
             return Ok(APIR);
         }
 
-        // GET api/Medicines/5
+        // GET api/NoteConsultations/5
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<MedicineDTO>> Get(int id)
+        public async Task<ActionResult<NoteConsultationDTO>> Get(int id)
         {
+
             var entity = await _service.GetByIdAsync(id);
 
             if (entity == null)
@@ -41,39 +42,37 @@ namespace MediAgenda.API.Controllers
                 return NotFound();
             }
 
-            MedicineDTO dto = entity.Adapt<MedicineDTO>();
+            NoteConsultationDTO dto = entity.Adapt<NoteConsultationDTO>();
             return Ok(dto);
         }
 
-        // POST api/Medicines
+        // POST api/NoteConsultations
         [HttpPost]
-        public async Task<ActionResult<MedicineDTO>> PostAsync([FromBody] MedicineCreateDTO dtoc)
+        public async Task<ActionResult<NoteConsultationDTO>> PostAsync([FromBody] NoteConsultationCreateDTO dtoc)
         {
             var dto = await _service.AddAsync(dtoc);
             return CreatedAtAction(actionName: nameof(Get), routeValues: new { id = dto.Id }, value: dto);
         }
 
-        // PUT api/Medicines/5/Activate
-        [HttpPut("{id:int}/Activate")]
-        public async Task<ActionResult> ActivateAsync(int id)
+        // PUT api/NoteConsultations/5
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult> PutAsync(int id, [FromBody] NoteConsultationUpdateDTO dtou)
         {
-            var dtou = new MedicineUpdateDTO { Id = id, IsActive = true };
+            if (id != dtou.Id)
+            {
+                ModelState.AddModelError("Id", "Deben tener el mismo Id.");
+            }
+
+            if (ModelState.ErrorCount > 0)
+            {
+                return ValidationProblem();
+            }
 
             await _service.UpdateAsync(dtou);
             return NoContent();
         }
 
-        // PUT api/Medicines/5/Disactivate
-        [HttpPut("{id:int}/Disactivate")]
-        public async Task<ActionResult> DisativateAsync(int id)
-        {
-            var dtou = new MedicineUpdateDTO { Id = id, IsActive = false };
-
-            await _service.UpdateAsync(dtou);
-            return NoContent();
-        }
-
-        // DELETE api/Medicines/5
+        // DELETE api/NoteConsultations/5
         [HttpDelete("{id:int}")]
         public async Task<ActionResult> Delete(int id)
         {
@@ -82,7 +81,7 @@ namespace MediAgenda.API.Controllers
             {
                 return NotFound();
             }
-            var model = dto.Adapt<MedicineModel>();
+            var model = dto.Adapt<NoteConsultationModel>();
             await _service.DeleteAsync(model);
             return NoContent();
         }

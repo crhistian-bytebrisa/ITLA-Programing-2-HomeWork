@@ -18,6 +18,15 @@ namespace MediAgenda.Infraestructure.Repositories
         {
         }
 
+        public override Task<MedicineModel> GetByIdAsync(int id)
+        {
+            return _context.Set<MedicineModel>()
+                .Include(x => x.PrescriptionMedicines)
+                .Include(x => x.CurrentMedicaments)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == id);
+        }
+
         public async Task<(List<MedicineModel>, int)> GetAllAsync(MedicineRequest request)
         {
             IQueryable<MedicineModel> query = _context.Set<MedicineModel>();
@@ -32,18 +41,12 @@ namespace MediAgenda.Infraestructure.Repositories
                 query = query.Where(x => x.Format == request.Format);
             }
 
-            if (request.PatientId is not null)
+            if (request.IncludePrescriptionsCount is true)
             {
-                query = query.Where(x => x.CurrentMedicaments.Any(cm => cm.PatientId == request.PatientId));
+                query = query.Include(x => x.PrescriptionMedicines);
             }
 
-            if (request.IncludePrescriptions is true)
-            {
-                query = query.Include(x => x.PrescriptionMedicines)
-                    .ThenInclude(pm => pm.Prescription);
-            }
-
-            if (request.IncludeCurrentMedicaments is true)
+            if (request.IncludeCurrentMedicamentsCount is true)
             {
                 query = query.Include(x => x.CurrentMedicaments);
             }

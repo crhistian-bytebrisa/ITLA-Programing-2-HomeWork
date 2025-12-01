@@ -37,8 +37,8 @@ namespace MediAgenda.Infraestructure.Models
         public int Turn { get; set; }
 
         //Navegation
-        public NoteConsultationModel Note { get; set; } = new();
-        public List<PrescriptionModel> Prescriptions { get; set; } = new();
+        public List<NoteConsultationModel> Notes { get; set; }
+        public List<PrescriptionModel> Prescriptions { get; set; }
 
         public ConsultationModel() { }
     }

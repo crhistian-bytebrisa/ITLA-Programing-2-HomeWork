@@ -27,7 +27,7 @@ namespace MediAgenda.Application.DTOs
         }
         public string BloodType { get; set; }
         public string Gender { get; set; }
-        public NotePatientSimpleDTO NotePatient { get; set; }
+        public List<NotePatientSimpleDTO> Notes { get; set; }
         public List<ConsultationSimpleDTO> Consultations { get; set; }
         public List<MedicalDocumentSimpleDTO> MedicalDocuments { get; set; }
         public List<CurrentMedicamentSimpleDTO> CurrentMedicaments { get; set; }

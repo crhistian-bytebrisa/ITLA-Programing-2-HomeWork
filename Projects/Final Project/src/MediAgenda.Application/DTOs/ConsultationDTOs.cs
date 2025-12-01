@@ -1,4 +1,5 @@
 ﻿using MediAgenda.Application.DTOs.Enums;
+using System.Collections.Generic;
 
 namespace MediAgenda.Application.DTOs
 {
@@ -13,7 +14,7 @@ namespace MediAgenda.Application.DTOs
         public DayAvailableSimpleDTO DayAvailable { get; set; }
         public string State { get; set; }
         public int Turn { get; set; }
-        public NoteConsultationSimpleDTO Note { get; set; }
+        public List<NoteConsultationSimpleDTO> Notes { get; set; }
         public List<PrescriptionSimpleDTO> Prescriptions { get; set; }
     }
 

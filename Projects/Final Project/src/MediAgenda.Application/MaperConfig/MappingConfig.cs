@@ -43,7 +43,7 @@ namespace MediAgenda.API.MaperConfig
                 .Map(dest => dest.Patient, src => src.Patient.Adapt<PatientSimpleDTO>())
                 .Map(dest => dest.Reason, src => src.Reason.Adapt<ReasonSimpleDTO>())
                 .Map(dest => dest.DayAvailable, src => src.DayAvailable.Adapt<DayAvailableSimpleDTO>())
-                .Map(dest => dest.Note, src => src.Note.Adapt<NoteConsultationSimpleDTO>())
+                .Map(dest => dest.Notes, src => src.Notes.Adapt<List<NoteConsultationSimpleDTO>>())
                 .Map(dest => dest.Prescriptions, src => src.Prescriptions.Adapt<List<PrescriptionSimpleDTO>>());
 
             TypeAdapterConfig<ConsultationModel, ConsultationSimpleDTO>.NewConfig()
@@ -91,8 +91,8 @@ namespace MediAgenda.API.MaperConfig
 
             // Medicinas
             TypeAdapterConfig<MedicineModel, MedicineDTO>.NewConfig()
-                .Map(dest => dest.PrescriptionMedicines, src => src.PrescriptionMedicines.Adapt<List<PrescriptionMedicineDTO>>())
-                .Map(dest => dest.CurrentMedicaments, src => src.CurrentMedicaments.Adapt<List<CurrentMedicamentSimpleDTO>>());
+                .Map(dest => dest.PrescriptionMedicinesCount, src => src.PrescriptionMedicines.Count)
+                .Map(dest => dest.CurrentMedicamentsCount, src => src.CurrentMedicaments.Count);
 
             TypeAdapterConfig<MedicineModel, MedicineSimpleDTO>.NewConfig();
             TypeAdapterConfig<MedicineCreateDTO, MedicineModel>.NewConfig();
@@ -117,7 +117,7 @@ namespace MediAgenda.API.MaperConfig
                 .Map(dest => dest.Gender, src => src.Gender.ToString())
                 .Map(dest => dest.User, src => src.User.Adapt<ApplicationUserSimpleDTO>())
                 .Map(dest => dest.Insurance, src => src.Insurance.Adapt<InsuranceSimpleDTO>())
-                .Map(dest => dest.NotePatient, src => src.NotePatient.Adapt<NotePatientSimpleDTO>())
+                .Map(dest => dest.Notes, src => src.Notes.Adapt<List<NotePatientSimpleDTO>>())
                 .Map(dest => dest.Consultations, src => src.Consultations.Adapt<List<ConsultationSimpleDTO>>())
                 .Map(dest => dest.MedicalDocuments, src => src.MedicalDocuments.Adapt<List<MedicalDocumentSimpleDTO>>())
                 .Map(dest => dest.CurrentMedicaments, src => src.CurrentMedicaments.Adapt<List<CurrentMedicamentSimpleDTO>>());
