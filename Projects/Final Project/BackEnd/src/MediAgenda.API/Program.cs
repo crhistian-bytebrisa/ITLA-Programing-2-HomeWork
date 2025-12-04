@@ -25,6 +25,16 @@ namespace MediAgenda.API
             builder.Services.AddDbContext<MediContext>(
                 opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", policy =>
+                {
+                    policy.AllowAnyOrigin()      // Permite cualquier origen
+                          .AllowAnyMethod()      // Permite cualquier método (GET, POST, PUT, DELETE)
+                          .AllowAnyHeader();     // Permite cualquier header
+                });
+            });
+
             builder.Services.AddControllers().AddNewtonsoftJson(options =>
             {
                 // Esto hace que JsonPatch respete el [JsonIgnore] para que no cambien los Id en los patch
@@ -66,6 +76,7 @@ namespace MediAgenda.API
             builder.Services.AddScoped<INotesConsultationService, NotesConsultationService>();
             builder.Services.AddScoped<INotesPatientsService, NotesPatientsService>();
             builder.Services.AddScoped<IPatientsService, PatientsService>();
+            builder.Services.AddScoped<IPermissionsService, PermissionsService>();
 
             builder.Services.AddScoped<IValidationService, ValidationService>();
             builder.Services.AddScoped<IValidator<ReasonPatchDTO>, ReasonsPatchValidation>();
@@ -76,11 +87,9 @@ namespace MediAgenda.API
 
             var app = builder.Build();
 
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+            app.UseSwagger();
+            app.UseSwaggerUI();
+            
 
             app.UseLogMiddleware();
 
