@@ -1,0 +1,154 @@
+[2025-11-30 21:14:21] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 2868 ms
+
+
+[2025-11-30 23:12:19] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 1531 ms
+
+
+[2025-11-30 23:12:38] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 72 ms
+
+
+[2025-11-30 23:12:47] Request: GET 
+URL: /api/Doctors 
+Query: 
+Response: 200 
+Tiempo: 40 ms
+
+
+[2025-11-30 23:12:57] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-11-30 23:13:08] Request: GET 
+URL: /api/Patients/1 
+Query: 
+Response: 200 
+Tiempo: 61 ms
+
+
+[2025-11-30 23:13:49] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 40 ms
+
+
+[2025-11-30 23:14:25] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 98 ms
+
+
+[2025-11-30 23:14:38] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 59 ms
+
+
+[2025-11-30 23:14:46] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 8 ms
+
+
+[2025-11-30 23:15:44] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 201 
+Tiempo: 1342 ms
+
+
+[2025-11-30 23:16:11] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 200 
+Tiempo: 153 ms
+
+
+[2025-11-30 23:17:38] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 400 
+Tiempo: 127 ms
+
+
+[2025-11-30 23:22:31] Request: GET 
+URL: /api/Consultations 
+Query: 
+Response: 200 
+Tiempo: 1437 ms
+
+
+[2025-11-30 23:22:44] Request: GET 
+URL: /api/Consultations/1 
+Query: 
+Response: 404 
+Tiempo: 187 ms
+
+
+[2025-11-30 23:22:57] Request: GET 
+URL: /api/Consultations/2 
+Query: 
+Response: 200 
+Tiempo: 56 ms
+
+
+[2025-11-30 23:39:31] Request: GET 
+URL: /api/Consultations 
+Query: 
+Response: 200 
+Tiempo: 1350 ms
+
+
+[2025-11-30 23:40:12] Request: POST 
+URL: /api/NotesConsultations 
+Query: 
+Response: 201 
+Tiempo: 271 ms
+
+
+[2025-11-30 23:41:22] Request: GET 
+URL: /api/NotesConsultations 
+Query: 
+Response: 200 
+Tiempo: 129 ms
+
+
+[2025-11-30 23:41:42] Request: PUT 
+URL: /api/NotesConsultations/1 
+Query: 
+Response: 204 
+Tiempo: 29 ms
+
+
+[2025-11-30 23:41:48] Request: GET 
+URL: /api/NotesConsultations 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-11-30 23:42:00] Request: GET 
+URL: /api/NotesConsultations 
+Query: 
+Response: 200 
+Tiempo: 8 ms
+
+

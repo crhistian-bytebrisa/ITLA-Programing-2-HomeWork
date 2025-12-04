@@ -1,0 +1,21 @@
+[2025-11-29 11:15:50] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 3510 ms
+
+
+[2025-11-29 11:16:22] Request: POST 
+URL: /api/Medicines 
+Query: 
+Response: 201 
+Tiempo: 457 ms
+
+
+[2025-11-29 11:34:13] Request: GET 
+URL: /api/Consultations 
+Query: 
+Response: 200 
+Tiempo: 2122 ms
+
+
