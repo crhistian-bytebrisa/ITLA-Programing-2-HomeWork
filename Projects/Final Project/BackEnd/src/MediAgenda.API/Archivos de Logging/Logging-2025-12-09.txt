@@ -1,0 +1,161 @@
+[2025-12-09 18:17:03] Request: POST 
+URL: /api/Auth/Register 
+Query: 
+Response: 400 
+Tiempo: 705 ms
+
+
+[2025-12-09 18:17:18] Request: POST 
+URL: /api/Auth/Register 
+Query: 
+Response: 400 
+Tiempo: 45 ms
+
+
+[2025-12-09 18:17:33] Request: POST 
+URL: /api/Auth/Register 
+Query: 
+Response: 400 
+Tiempo: 3051 ms
+
+
+[2025-12-09 18:17:41] Request: POST 
+URL: /api/Auth/Register 
+Query: 
+Response: 200 
+Tiempo: 972 ms
+
+
+[2025-12-09 18:18:02] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 403 
+Tiempo: 10 ms
+
+
+[2025-12-09 18:18:18] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 403 
+Tiempo: 2 ms
+
+
+[2025-12-09 18:18:44] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 403 
+Tiempo: 13 ms
+
+
+[2025-12-09 20:21:08] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 401 
+Tiempo: 18 ms
+
+
+[2025-12-09 20:21:28] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 4756 ms
+
+
+[2025-12-09 20:21:32] Request: GET 
+URL: /.well-known/appspecific/com.chrome.devtools.json 
+Query: 
+Response: 404 
+Tiempo: 0 ms
+
+
+[2025-12-09 20:22:01] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 401 
+Tiempo: 4 ms
+
+
+[2025-12-09 20:22:04] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 401 
+Tiempo: 3 ms
+
+
+[2025-12-09 20:22:32] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 401 
+Tiempo: 20 ms
+
+
+[2025-12-09 20:24:39] Request: GET 
+URL: /.well-known/appspecific/com.chrome.devtools.json 
+Query: 
+Response: 404 
+Tiempo: 121 ms
+
+
+[2025-12-09 20:24:54] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 3848 ms
+
+
+[2025-12-09 20:26:39] Request: PUT 
+URL: /api/Auth/Logout 
+Query: 
+Response: 204 
+Tiempo: 391 ms
+
+
+[2025-12-09 20:26:41] Request: GET 
+URL: /.well-known/appspecific/com.chrome.devtools.json 
+Query: 
+Response: 404 
+Tiempo: 2 ms
+
+
+[2025-12-09 20:26:56] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 3524 ms
+
+
+[2025-12-09 20:27:13] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 309 ms
+
+
+[2025-12-09 20:27:29] Request: GET 
+URL: /api/Consultations 
+Query: 
+Response: 403 
+Tiempo: 35 ms
+
+
+[2025-12-09 20:27:35] Request: GET 
+URL: /api/Consultations 
+Query: ?PatientId=1
+Response: 403 
+Tiempo: 3 ms
+
+
+[2025-12-09 20:28:20] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 178 ms
+
+
+[2025-12-09 20:28:26] Request: GET 
+URL: /api/Consultations 
+Query: ?PatientId=1
+Response: 200 
+Tiempo: 151 ms
+
+

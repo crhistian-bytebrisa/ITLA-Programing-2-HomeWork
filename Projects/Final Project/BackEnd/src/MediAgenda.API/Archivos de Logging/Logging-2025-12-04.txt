@@ -1,0 +1,343 @@
+[2025-12-04 08:53:22] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 3896 ms
+
+
+[2025-12-04 08:55:54] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 143 ms
+
+
+[2025-12-04 08:56:20] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 79 ms
+
+
+[2025-12-04 08:56:20] Request: GET 
+URL: /favicon.ico 
+Query: 
+Response: 404 
+Tiempo: 0 ms
+
+
+[2025-12-04 08:58:13] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 2781 ms
+
+
+[2025-12-04 08:58:53] Request: GET 
+URL: /.well-known/appspecific/com.chrome.devtools.json 
+Query: 
+Response: 404 
+Tiempo: 0 ms
+
+
+[2025-12-04 09:00:47] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 131 ms
+
+
+[2025-12-04 09:01:21] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 42 ms
+
+
+[2025-12-04 13:22:07] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=1&Name=
+Response: 200 
+Tiempo: 38 ms
+
+
+[2025-12-04 13:22:09] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-04 13:22:22] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 43 ms
+
+
+[2025-12-04 13:22:54] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-04 13:23:45] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 201 
+Tiempo: 166 ms
+
+
+[2025-12-04 13:24:09] Request: GET 
+URL: /api/Analyses 
+Query: ?page=1&pageSize=&Name=
+Response: 200 
+Tiempo: 15 ms
+
+
+[2025-12-04 13:24:10] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-04 13:24:26] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-04 13:24:30] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-04 13:24:33] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=k
+Response: 200 
+Tiempo: 38 ms
+
+
+[2025-12-04 13:24:33] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=kl
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-04 13:24:33] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=klk
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-04 13:24:40] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 400 
+Tiempo: 24 ms
+
+
+[2025-12-04 13:26:30] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 400 
+Tiempo: 1230 ms
+
+
+[2025-12-04 13:26:32] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 400 
+Tiempo: 50 ms
+
+
+[2025-12-04 13:27:45] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 400 
+Tiempo: 18 ms
+
+
+[2025-12-04 13:28:01] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 400 
+Tiempo: 3 ms
+
+
+[2025-12-04 13:28:44] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 400 
+Tiempo: 6 ms
+
+
+[2025-12-04 13:29:02] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 400 
+Tiempo: 3 ms
+
+
+[2025-12-04 13:31:27] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 400 
+Tiempo: 6 ms
+
+
+[2025-12-04 13:32:41] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 400 
+Tiempo: 5 ms
+
+
+[2025-12-04 18:08:47] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 3715 ms
+
+
+[2025-12-04 18:08:58] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 102 ms
+
+
+[2025-12-04 18:08:59] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 31 ms
+
+
+[2025-12-04 18:10:12] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 47 ms
+
+
+[2025-12-04 18:10:19] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 39 ms
+
+
+[2025-12-04 18:11:32] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 27 ms
+
+
+[2025-12-04 18:11:40] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-12-04 18:11:41] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-04 18:11:42] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-04 18:11:54] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-12-04 18:15:08] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 42 ms
+
+
+[2025-12-04 18:15:31] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-04 18:15:32] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-04 18:15:36] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-04 18:16:35] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 89 ms
+
+
+[2025-12-04 18:16:39] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-04 18:17:25] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-04 18:17:41] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 201 
+Tiempo: 397 ms
+
+
+[2025-12-04 18:18:55] Request: POST 
+URL: /api/Analyses 
+Query: 
+Response: 400 
+Tiempo: 42 ms
+
+
+[2025-12-04 18:18:55] Request: GET 
+URL: /api/Analyses 
+Query: ?page=&pageSize=&Name=
+Response: 200 
+Tiempo: 30 ms
+
+

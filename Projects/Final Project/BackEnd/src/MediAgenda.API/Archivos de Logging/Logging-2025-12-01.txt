@@ -1,0 +1,175 @@
+[2025-12-01 19:29:05] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 3306 ms
+
+
+[2025-12-01 19:29:18] Request: PUT 
+URL: /api/Medicines/3/Disactivate 
+Query: 
+Response: 200 
+Tiempo: 371 ms
+
+
+[2025-12-01 19:32:34] Request: PUT 
+URL: /api/Medicines/1/Activate 
+Query: 
+Response: 204 
+Tiempo: 2769 ms
+
+
+[2025-12-01 19:32:44] Request: PUT 
+URL: /api/Medicines/1/Disactivate 
+Query: 
+Response: 204 
+Tiempo: 126 ms
+
+
+[2025-12-01 19:32:51] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 255 ms
+
+
+[2025-12-01 21:25:08] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 2425 ms
+
+
+[2025-12-01 21:27:50] Request: PATCH 
+URL: /api/Reasons/1 
+Query: 
+Response: 204 
+Tiempo: 42324 ms
+
+
+[2025-12-01 21:28:19] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 9084 ms
+
+
+[2025-12-01 21:29:23] Request: PATCH 
+URL: /api/Reasons/1 
+Query: 
+Response: 204 
+Tiempo: 33035 ms
+
+
+[2025-12-01 21:29:30] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-01 21:55:41] Request: GET 
+URL: /api/Reasons/1 
+Query: 
+Response: 200 
+Tiempo: 1572 ms
+
+
+[2025-12-01 21:56:28] Request: PATCH 
+URL: /api/Reasons/1 
+Query: 
+Response: 200 
+Tiempo: 280 ms
+
+
+[2025-12-01 22:03:46] Request: PATCH 
+URL: /api/Reasons/1 
+Query: 
+Response: 400 
+Tiempo: 1447 ms
+
+
+[2025-12-01 22:03:54] Request: PATCH 
+URL: /api/Reasons/1 
+Query: 
+Response: 400 
+Tiempo: 74 ms
+
+
+[2025-12-01 22:04:00] Request: PATCH 
+URL: /api/Reasons/1 
+Query: 
+Response: 204 
+Tiempo: 180 ms
+
+
+[2025-12-01 22:04:05] Request: GET 
+URL: /api/Reasons/1 
+Query: 
+Response: 200 
+Tiempo: 15 ms
+
+
+[2025-12-01 22:04:33] Request: PATCH 
+URL: /api/Reasons/1 
+Query: 
+Response: 204 
+Tiempo: 19 ms
+
+
+[2025-12-01 22:04:37] Request: GET 
+URL: /api/Reasons/1 
+Query: 
+Response: 200 
+Tiempo: 2 ms
+
+
+[2025-12-01 22:04:48] Request: PUT 
+URL: /api/Reasons/1 
+Query: 
+Response: 400 
+Tiempo: 13 ms
+
+
+[2025-12-01 22:05:03] Request: PUT 
+URL: /api/Reasons/1 
+Query: 
+Response: 400 
+Tiempo: 2 ms
+
+
+[2025-12-01 22:05:09] Request: PUT 
+URL: /api/Reasons/1 
+Query: 
+Response: 400 
+Tiempo: 1 ms
+
+
+[2025-12-01 22:05:14] Request: GET 
+URL: /api/Reasons/1 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-01 22:05:24] Request: PATCH 
+URL: /api/Reasons/1 
+Query: 
+Response: 204 
+Tiempo: 16 ms
+
+
+[2025-12-01 22:05:38] Request: PATCH 
+URL: /api/Reasons/1 
+Query: 
+Response: 204 
+Tiempo: 12 ms
+
+
+[2025-12-01 22:05:47] Request: PATCH 
+URL: /api/Reasons/1 
+Query: 
+Response: 400 
+Tiempo: 6 ms
+
+

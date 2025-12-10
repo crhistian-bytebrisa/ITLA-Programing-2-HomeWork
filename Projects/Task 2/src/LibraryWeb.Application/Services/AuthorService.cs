@@ -56,6 +56,10 @@ namespace LibraryWeb.Application.Services
             await _authorRepository.DeleteAsync(Author);
         }
 
+        public void KLK()
+        {
+
+        }
 
     }
 }
