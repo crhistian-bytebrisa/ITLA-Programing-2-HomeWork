@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace MediAgenda.Application.Services
 {
@@ -18,6 +19,20 @@ namespace MediAgenda.Application.Services
         {
             this.context = context;
         }
+
+        public async Task<TProperty?> GetPropertyById<T, IdType, TProperty>(string nameProperty, IdType id, string idPropertyName = "Id")
+            where T : class
+        {
+            var query = context.Set<T>();
+            var propertyValue = await query
+                .Where(x => EF.Property<IdType>(x, idPropertyName).Equals(id))
+                .AsNoTracking()
+                .Select(x => EF.Property<TProperty>(x, nameProperty))
+                .FirstOrDefaultAsync();
+
+            return propertyValue;
+        }
+
         public async Task<bool> ExistsProperty<T, TProperty>(string nameproperty, TProperty property)
             where T : class
         {
@@ -51,6 +66,15 @@ namespace MediAgenda.Application.Services
             }
 
             var exist = await query.AnyAsync(x => EF.Property<TProperty>(x, nameproperty).Equals(property) && !EF.Property<TIdType>(x, "Id").Equals(id));
+            return exist;
+        }
+
+        public async Task<bool> ExistsPropertyAndOtherProperty<T, TProperty1, TProperty2>(string property1name, string property2name, TProperty1 P1, TProperty2 P2) 
+            where T : class
+        {
+            var query = context.Set<T>();
+
+            var exist = await query.AnyAsync(x => EF.Property<TProperty1>(x, property1name).Equals(P1) && EF.Property<TProperty2>(x, property2name).Equals(P2));
             return exist;
         }
 
@@ -94,6 +118,27 @@ namespace MediAgenda.Application.Services
             return exist;
         }
 
+        public async Task<bool> ExistsPropertyAndOtherPropertyExcludingId<T, TProperty1, TProperty2, TIdType>(string property1Name, string property2Name, TProperty1 P1, TProperty2 P2, TIdType idToExclude)
+        where T : class
+        {
+            var query = context.Set<T>();
+
+            if (typeof(TProperty1) == typeof(string))
+            {
+                string stringValue = ((string)(object)P1!).Trim().ToLower();
+                return await query.AnyAsync(x =>
+                    EF.Property<string>(x, property1Name).Trim().ToLower() == stringValue
+                    && EF.Property<TProperty2>(x, property2Name).Equals(P2)
+                    && !EF.Property<TIdType>(x, "Id").Equals(idToExclude)
+                );
+            }
+
+            return await query.AnyAsync(x =>
+                EF.Property<TProperty1>(x, property1Name).Equals(P1)
+                && EF.Property<TProperty2>(x, property2Name).Equals(P2)
+                && !EF.Property<TIdType>(x, "Id").Equals(idToExclude)
+            );
+        }
 
     }
 }

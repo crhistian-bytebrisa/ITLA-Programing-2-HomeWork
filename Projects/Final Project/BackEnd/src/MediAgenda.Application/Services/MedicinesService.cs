@@ -46,7 +46,8 @@ namespace MediAgenda.Application.Services
 
         public async Task UpdateAsync(MedicineUpdateDTO dtou)
         {
-            var model = dtou.Adapt<MedicineModel>();
+            var model = await GetByIdAsync(dtou.Id);
+            model.IsActive = dtou.IsActive;
             await _repo.UpdateAsync(model);
         }
 

@@ -5,6 +5,7 @@ using MediAgenda.Application.Interfaces;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -12,6 +13,8 @@ namespace MediAgenda.API.Controllers
 {
     [Route("api/Doctors")]
     [ApiController]
+    [Authorize]
+    [Authorize(Roles = "Doctor,Admin")]
     public class DoctorsController : ControllerBase
     {
         private readonly IDoctorsService _service;
@@ -24,6 +27,7 @@ namespace MediAgenda.API.Controllers
 
         // GET: api/Doctors
         [HttpGet]
+
         public async Task<ActionResult<APIResponse<DoctorDTO>>> Get([FromQuery] DoctorRequest request)
         {
             var APIR = await _service.GetAllAsync(request);

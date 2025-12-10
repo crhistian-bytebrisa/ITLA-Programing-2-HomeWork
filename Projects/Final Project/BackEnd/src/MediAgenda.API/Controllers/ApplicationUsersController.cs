@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using MediAgenda.API.Filters;
 using MediAgenda.Application.DTOs;
 using MediAgenda.Application.DTOs.API;
 using MediAgenda.Application.Interfaces;
@@ -7,6 +8,7 @@ using MediAgenda.Domain.Core;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -14,6 +16,7 @@ namespace MediAgenda.API.Controllers
 {
     [Route("api/ApplicationUsers")]
     [ApiController]
+    [Authorize]
     public class ApplicationUsersController : ControllerBase
     {
         private readonly IApplicationUsersService _service;
@@ -24,6 +27,7 @@ namespace MediAgenda.API.Controllers
         }
         // GET: api/ApplicationUsers
         [HttpGet]
+        [Authorize(Roles = "Doctor,Admin")]
         public async Task<ActionResult<APIResponse<ApplicationUserDTO>>> Get([FromQuery] ApplicationUserRequest request)
         {
             var APIR = await _service.GetAllAsync(request);
@@ -32,6 +36,7 @@ namespace MediAgenda.API.Controllers
 
         // GET api/ApplicationUsers/klkm-anig-aaaa
         [HttpGet("{id}")]
+        [AuthorizeSameUserOrRoles("id","Admin")]
         public async Task<ActionResult<ApplicationUserDTO>> Get(Guid id)
         {
             var entity = await _service.GetByIdAsync(id);
@@ -47,6 +52,7 @@ namespace MediAgenda.API.Controllers
 
         // POST api/ApplicationUsers
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<ApplicationUserDTO>> PostAsync([FromBody] ApplicationUserCreateDTO dtoc)
         {
             var dto = await _service.AddAsync(dtoc);
@@ -55,6 +61,7 @@ namespace MediAgenda.API.Controllers
 
         // PUT api/ApplicationUsers/klkm-anig-aaaa
         [HttpPut("{ids}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> PutAsync(Guid id, [FromBody] ApplicationUserUpdateDTO dtou)
         {
             if(id != dtou.Id)
@@ -72,6 +79,7 @@ namespace MediAgenda.API.Controllers
 
         // DELETE api/ApplicationUsers/klkm-anig-aaaa
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> Delete(Guid id)
         {
             var dto = await _service.GetByIdAsync(id);

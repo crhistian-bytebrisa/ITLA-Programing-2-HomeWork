@@ -5,12 +5,15 @@ using MediAgenda.Application.Interfaces;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediAgenda.API.Controllers
 {
     [Route("api/Insurances")]
     [ApiController]
+    [Authorize]
+    [Authorize(Roles = "Doctor,Admin")]
     public class InsurancesController : ControllerBase
     {
         private readonly IInsurancesService _service;

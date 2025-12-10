@@ -6,12 +6,15 @@ using MediAgenda.Application.Validations;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediAgenda.API.Controllers
 {
     [Route("api/DaysAvailable")]
     [ApiController]
+    [Authorize]
+    [Authorize(Roles = "Doctor,Admin")]
     public class DaysAvailableController : ControllerBase
     {
         private readonly IDayAvailablesService _service;

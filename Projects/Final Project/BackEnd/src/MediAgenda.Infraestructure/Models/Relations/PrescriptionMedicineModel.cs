@@ -18,12 +18,14 @@ namespace MediAgenda.Infraestructure.Models.Relations
         [Required, ForeignKey("Prescription")]
         public int PrescriptionId { get; set; }
         public PrescriptionModel Prescription { get; set; }
-
         
         [Required, ForeignKey("Medicine")]
         public int MedicineId { get; set; }
         public MedicineModel Medicine { get; set; }
-
+        [Required]
+        public DateOnly StartDosage { get; set; }
+        [Required]
+        public DateOnly EndDosage { get; set; }
 
         [Required, MaxLength(300), MinLength(10)]
         public string Instructions { get; set; }

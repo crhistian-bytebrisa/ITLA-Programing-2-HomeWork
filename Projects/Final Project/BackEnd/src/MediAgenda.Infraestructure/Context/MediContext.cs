@@ -50,7 +50,7 @@ namespace MediAgenda.Infraestructure.Context
         public DbSet<InsuranceModel> Insurances { get; set; }
         public DbSet<ClinicModel> Clinics { get; set; }
         public DbSet<DayAvailableModel> DaysAvailable { get; set; }
-        public DbSet<CurrentMedicamentsModel> CurrentMedicaments { get; set; }
+        public DbSet<HistoryMedicamentsModel> CurrentMedicaments { get; set; }
         public DbSet<MedicalDocumentModel> MedicalDocuments { get; set; }
 
         //Prescriptions

@@ -44,7 +44,7 @@ namespace MediAgenda.API.MaperConfig
                 .Map(dest => dest.Reason, src => src.Reason.Adapt<ReasonSimpleDTO>())
                 .Map(dest => dest.DayAvailable, src => src.DayAvailable.Adapt<DayAvailableSimpleDTO>())
                 .Map(dest => dest.NotesCount, src => src.Notes.Count)
-                .Map(dest => dest.PrescriptionsCount, src => src.Prescriptions.Count);
+                .Map(dest => dest.Prescription, src => src.Prescription.Adapt<PrescriptionSimpleDTO>());
 
             TypeAdapterConfig<ConsultationModel, ConsultationSimpleDTO>.NewConfig()
                 .Map(dest => dest.State, src => src.State.ToString());
@@ -145,9 +145,9 @@ namespace MediAgenda.API.MaperConfig
             //Prescripciones
             TypeAdapterConfig<PrescriptionModel, PrescriptionDTO>.NewConfig()
                 .Map(dest => dest.Consultation, src => src.Consultation.Adapt<ConsultationSimpleDTO>())
-                .Map(dest => dest.PrescriptionPermissions, src => src.PrescriptionPermissions.Adapt<List<PrescriptionPermissionDTO>>())
-                .Map(dest => dest.PrescriptionMedicines, src => src.PrescriptionMedicines.Adapt<List<PrescriptionMedicineDTO>>())
-                .Map(dest => dest.PrescriptionAnalysis, src => src.PrescriptionAnalysis.Adapt<List<PrescriptionAnalysisDTO>>());
+                .Map(dest => dest.PermissionsCount, src => src.PrescriptionPermissions != null ? src.PrescriptionPermissions.Count : 0)
+                .Map(dest => dest.MedicinesCount, src => src.PrescriptionMedicines != null ? src.PrescriptionMedicines.Count : 0)
+                .Map(dest => dest.AnalysisCount, src => src.PrescriptionAnalysis != null ? src.PrescriptionAnalysis.Count : 0);
 
             TypeAdapterConfig<PrescriptionModel, PrescriptionSimpleDTO>.NewConfig();
             TypeAdapterConfig<PrescriptionCreateDTO, PrescriptionModel>.NewConfig();
@@ -157,6 +157,8 @@ namespace MediAgenda.API.MaperConfig
                 .Map(dest => dest.Prescription, src => src.Prescription.Adapt<PrescriptionSimpleDTO>())
                 .Map(dest => dest.Analysis, src => src.Analysis.Adapt<AnalysisSimpleDTO>());
 
+            TypeAdapterConfig<PrescriptionAnalysisCUDTO, PrescriptionAnalysisDTO>.NewConfig();
+
             TypeAdapterConfig<PrescriptionAnalysisModel, PrescriptionAnalysisSimpleDTO>.NewConfig()
                 .Map(dest => dest.AnalysisName, src => src.Analysis.Name);
 
@@ -164,6 +166,9 @@ namespace MediAgenda.API.MaperConfig
             TypeAdapterConfig<PrescriptionMedicineModel, PrescriptionMedicineDTO>.NewConfig()
                 .Map(dest => dest.Prescription, src => src.Prescription.Adapt<PrescriptionSimpleDTO>())
                 .Map(dest => dest.Medicine, src => src.Medicine.Adapt<MedicineSimpleDTO>());
+
+            TypeAdapterConfig<PrescriptionMedicineCUDTO, PrescriptionMedicineDTO>.NewConfig();
+            TypeAdapterConfig<PrescriptionMedicineDTO, PrescriptionMedicineDTO>.NewConfig();
 
             TypeAdapterConfig<PrescriptionMedicineModel, PrescriptionMedicineSimpleDTO>.NewConfig()
                 .Map(dest => dest.MedicineName, src => src.Medicine.Name)
@@ -174,19 +179,23 @@ namespace MediAgenda.API.MaperConfig
                 .Map(dest => dest.Prescription, src => src.Prescription.Adapt<PrescriptionSimpleDTO>())
                 .Map(dest => dest.Permission, src => src.Permission.Adapt<PermissionSimpleDTO>());
 
+            TypeAdapterConfig<PrescriptionPermissionCUDTO, PrescriptionPermissionDTO>.NewConfig();
+
             TypeAdapterConfig<PrescriptionPermissionModel, PrescriptionPermissionSimpleDTO>.NewConfig()
                 .Map(dest => dest.PermissionName, src => src.Permission.Name);
 
             // medicamentos actuales
-            TypeAdapterConfig<CurrentMedicamentsModel, CurrentMedicamentDTO>.NewConfig()
+            TypeAdapterConfig<HistoryMedicamentsModel, CurrentMedicamentDTO>.NewConfig()
                 .Map(dest => dest.Patient, src => src.Patient.Adapt<PatientSimpleDTO>())
                 .Map(dest => dest.Medicine, src => src.Medicine.Adapt<MedicineSimpleDTO>());
 
-            TypeAdapterConfig<CurrentMedicamentsModel, CurrentMedicamentSimpleDTO>.NewConfig()
+            TypeAdapterConfig<HistoryMedicamentsModel, CurrentMedicamentSimpleDTO>.NewConfig()
                 .Map(dest => dest.MedicineName, src => src.Medicine.Name)
                 .Map(dest => dest.Format, src => src.Medicine.Format);
 
-            TypeAdapterConfig<CurrentMedicamentCreateDTO, CurrentMedicamentsModel>.NewConfig();
+            TypeAdapterConfig<CurrentMedicamentCreateDTO, HistoryMedicamentsModel>.NewConfig();
+
+            TypeAdapterConfig<CurrentMedicamentCreateDTO, CurrentMedicamentDTO>.NewConfig();
 
             // Razones
             TypeAdapterConfig<ReasonModel, ReasonDTO>.NewConfig()

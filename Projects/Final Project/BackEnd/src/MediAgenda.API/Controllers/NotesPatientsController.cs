@@ -5,6 +5,7 @@ using MediAgenda.Application.Interfaces;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -12,6 +13,8 @@ namespace MediAgenda.API.Controllers
 {
     [Route("api/NotesPatients")]
     [ApiController]
+    [Authorize]
+    [Authorize(Roles = "Admin,Doctor")]
     public class NotesPatientsController : ControllerBase
     {
         private readonly INotesPatientsService _service;

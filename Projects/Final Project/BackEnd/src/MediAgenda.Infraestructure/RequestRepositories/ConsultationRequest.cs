@@ -17,9 +17,18 @@ namespace MediAgenda.Infraestructure.RequestRepositories
         public DateOnly? DateFrom { get; set; }
         public DateOnly? DateTo { get; set; }
         public bool? IncludeNote { get; set; }
-        public bool? IncludePrescriptions { get; set; }
+        public bool? IncludePrescription { get; set; }
         public bool? IncludePatient { get; set; }
         public bool? IncludeReason { get; set; }
         public bool? IncludeDayAvailable { get; set; }
+    }
+
+    public class ConsultationNoteRequest : BaseRequest
+    {
+        public DateTime? CreatedFrom { get; set; }
+        public DateTime? CreatedTo { get; set; }
+        public DateTime? UpdatedFrom { get; set; }
+        public DateTime? UpdatedTo { get; set; }
+        public string? Title { get; set; }
     }
 }

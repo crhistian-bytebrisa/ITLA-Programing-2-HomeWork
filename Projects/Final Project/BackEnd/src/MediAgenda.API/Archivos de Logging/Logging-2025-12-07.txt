@@ -1,0 +1,301 @@
+[2025-12-07 11:42:10] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 3254 ms
+
+
+[2025-12-07 11:43:46] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 2949 ms
+
+
+[2025-12-07 11:44:29] Request: POST 
+URL: /api/Patients 
+Query: 
+Response: 400 
+Tiempo: 432 ms
+
+
+[2025-12-07 11:44:50] Request: POST 
+URL: /api/Patients 
+Query: 
+Response: 400 
+Tiempo: 49 ms
+
+
+[2025-12-07 11:44:58] Request: POST 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 347 ms
+
+
+[2025-12-07 11:48:04] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 3181 ms
+
+
+[2025-12-07 11:48:29] Request: POST 
+URL: /api/Patients 
+Query: 
+Response: 400 
+Tiempo: 354 ms
+
+
+[2025-12-07 11:49:48] Request: POST 
+URL: /api/Patients 
+Query: 
+Response: 400 
+Tiempo: 2693 ms
+
+
+[2025-12-07 11:50:33] Request: POST 
+URL: /api/Patients 
+Query: 
+Response: 400 
+Tiempo: 130 ms
+
+
+[2025-12-07 11:50:45] Request: GET 
+URL: /api/ApplicationUsers 
+Query: 
+Response: 200 
+Tiempo: 402 ms
+
+
+[2025-12-07 11:51:22] Request: POST 
+URL: /api/ApplicationUsers 
+Query: 
+Response: 400 
+Tiempo: 111 ms
+
+
+[2025-12-07 11:51:30] Request: POST 
+URL: /api/ApplicationUsers 
+Query: 
+Response: 400 
+Tiempo: 10 ms
+
+
+[2025-12-07 11:51:40] Request: POST 
+URL: /api/ApplicationUsers 
+Query: 
+Response: 201 
+Tiempo: 413 ms
+
+
+[2025-12-07 11:52:04] Request: POST 
+URL: /api/Patients 
+Query: 
+Response: 201 
+Tiempo: 223 ms
+
+
+[2025-12-07 11:53:13] Request: PUT 
+URL: /api/Patients/1 
+Query: 
+Response: 400 
+Tiempo: 2567 ms
+
+
+[2025-12-07 11:53:32] Request: PUT 
+URL: /api/Patients/1 
+Query: 
+Response: 200 
+Tiempo: 492 ms
+
+
+[2025-12-07 11:56:40] Request: PUT 
+URL: /api/Patients/1 
+Query: 
+Response: 204 
+Tiempo: 3639 ms
+
+
+[2025-12-07 11:56:51] Request: GET 
+URL: /api/Patients/1 
+Query: 
+Response: 200 
+Tiempo: 211 ms
+
+
+[2025-12-07 12:15:01] Request: GET 
+URL: /api/Consultations 
+Query: 
+Response: 200 
+Tiempo: 2416 ms
+
+
+[2025-12-07 12:18:42] Request: GET 
+URL: /api/Consultations 
+Query: 
+Response: 200 
+Tiempo: 2657 ms
+
+
+[2025-12-07 12:19:05] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 493 ms
+
+
+[2025-12-07 12:19:23] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 201 
+Tiempo: 440 ms
+
+
+[2025-12-07 12:20:08] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 2721 ms
+
+
+[2025-12-07 12:20:22] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 623 ms
+
+
+[2025-12-07 12:20:28] Request: DELETE 
+URL: /api/Prescriptions/2 
+Query: 
+Response: 204 
+Tiempo: 453 ms
+
+
+[2025-12-07 12:23:55] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePrescriptions=true
+Response: 200 
+Tiempo: 2998 ms
+
+
+[2025-12-07 12:24:26] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePrescription=true
+Response: 200 
+Tiempo: 253 ms
+
+
+[2025-12-07 12:24:50] Request: GET 
+URL: /api/Consultations/2 
+Query: 
+Response: 200 
+Tiempo: 94 ms
+
+
+[2025-12-07 12:28:44] Request: GET 
+URL: /api/Consultations/2 
+Query: 
+Response: 200 
+Tiempo: 3140 ms
+
+
+[2025-12-07 16:33:39] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 200 
+Tiempo: 1546 ms
+
+
+[2025-12-07 16:36:26] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 400 
+Tiempo: 1494 ms
+
+
+[2025-12-07 16:36:42] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 201 
+Tiempo: 374 ms
+
+
+[2025-12-07 16:37:19] Request: PUT 
+URL: /api/Consultations/3 
+Query: 
+Response: 200 
+Tiempo: 73 ms
+
+
+[2025-12-07 16:39:52] Request: PUT 
+URL: /api/Consultations/3 
+Query: 
+Response: 204 
+Tiempo: 1515 ms
+
+
+[2025-12-07 16:40:10] Request: PUT 
+URL: /api/Consultations/3 
+Query: 
+Response: 400 
+Tiempo: 107 ms
+
+
+[2025-12-07 16:40:16] Request: PUT 
+URL: /api/Consultations/3 
+Query: 
+Response: 204 
+Tiempo: 47 ms
+
+
+[2025-12-07 16:40:21] Request: GET 
+URL: /api/Consultations/3 
+Query: 
+Response: 200 
+Tiempo: 170 ms
+
+
+[2025-12-07 16:47:25] Request: GET 
+URL: /api/Consultations 
+Query: 
+Response: 200 
+Tiempo: 1418 ms
+
+
+[2025-12-07 16:53:05] Request: GET 
+URL: /api/Consultations 
+Query: 
+Response: 200 
+Tiempo: 1247 ms
+
+
+[2025-12-07 16:53:23] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 400 
+Tiempo: 225 ms
+
+
+[2025-12-07 16:53:30] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 201 
+Tiempo: 242 ms
+
+
+[2025-12-07 16:53:36] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 400 
+Tiempo: 9 ms
+
+
+[2025-12-07 16:53:42] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 400 
+Tiempo: 19 ms
+
+

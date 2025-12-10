@@ -1,4 +1,6 @@
 ﻿using MediAgenda.Infraestructure.Interfaces;
+using MediAgenda.Infraestructure.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace MediAgenda.Infraestructure.Core
 {

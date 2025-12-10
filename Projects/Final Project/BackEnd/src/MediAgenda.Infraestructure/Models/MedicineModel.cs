@@ -31,7 +31,7 @@ namespace MediAgenda.Infraestructure.Models
 
         //Navegation
         public List<PrescriptionMedicineModel> PrescriptionMedicines { get; set; }
-        public List<CurrentMedicamentsModel> CurrentMedicaments { get; set; } 
+        public List<HistoryMedicamentsModel> CurrentMedicaments { get; set; } 
 
         public MedicineModel() { }
     }

@@ -727,7 +727,7 @@ namespace MediAgenda.Infraestructure.Migrations
                         });
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.CurrentMedicamentsModel", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.HistoryMedicamentsModel", b =>
                 {
                     b.Property<int>("PatientId")
                         .HasColumnType("int");
@@ -738,6 +738,9 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.Property<DateOnly?>("EndMedication")
                         .HasColumnType("date");
 
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
                     b.Property<DateOnly>("StartMedication")
                         .HasColumnType("date");
 
@@ -745,7 +748,7 @@ namespace MediAgenda.Infraestructure.Migrations
 
                     b.HasIndex("MedicineId");
 
-                    b.ToTable("CurrentMedicaments");
+                    b.ToTable("HistoryMedicaments");
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.PrescriptionAnalysisModel", b =>
@@ -776,10 +779,16 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.Property<int>("MedicineId")
                         .HasColumnType("int");
 
+                    b.Property<DateOnly>("EndDosage")
+                        .HasColumnType("date");
+
                     b.Property<string>("Instructions")
                         .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
+
+                    b.Property<DateOnly>("StartDosage")
+                        .HasColumnType("date");
 
                     b.HasKey("PrescriptionId", "MedicineId");
 
@@ -1093,7 +1102,7 @@ namespace MediAgenda.Infraestructure.Migrations
                     b.Navigation("Consultation");
                 });
 
-            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.CurrentMedicamentsModel", b =>
+            modelBuilder.Entity("MediAgenda.Infraestructure.Models.Relations.HistoryMedicamentsModel", b =>
                 {
                     b.HasOne("MediAgenda.Infraestructure.Models.MedicineModel", "Medicine")
                         .WithMany("CurrentMedicaments")

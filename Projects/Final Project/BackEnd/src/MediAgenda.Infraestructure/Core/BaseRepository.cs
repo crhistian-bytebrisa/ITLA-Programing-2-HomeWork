@@ -11,7 +11,6 @@ namespace MediAgenda.Infraestructure.Core
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
-        
 
         protected readonly MediContext _context;
         public BaseRepository(MediContext task)
@@ -24,7 +23,7 @@ namespace MediAgenda.Infraestructure.Core
             return (entities, entities.Count);
         }
 
-        public async Task<T> AddAsync(T entity)
+        public virtual async Task<T> AddAsync(T entity)
         {
             _context.Set<T>().Add(entity);
             _context.SaveChanges();

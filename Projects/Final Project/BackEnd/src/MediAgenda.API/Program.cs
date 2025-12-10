@@ -1,18 +1,24 @@
-
+﻿
 using FluentValidation;
+using MediAgenda.API.MaperConfig;
 using MediAgenda.API.Middleware;
 using MediAgenda.Application.DTOs;
 using MediAgenda.Application.Interfaces;
 using MediAgenda.Application.Services;
 using MediAgenda.Application.Validations;
-using MediAgenda.Application.Validations.UpdateValidations;
 using MediAgenda.Domain.Entities;
 using MediAgenda.Infraestructure.Context;
 using MediAgenda.Infraestructure.Interfaces;
+using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 using SharpGrip.FluentValidation.AutoValidation.Mvc.Extensions;
+using System.Text;
 
 namespace MediAgenda.API
 {
@@ -22,16 +28,19 @@ namespace MediAgenda.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddDbContext<MediContext>(
+			MappingConfig.RegisterMappings();
+
+			builder.Services.AddDbContext<MediContext>(
                 opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll", policy =>
                 {
-                    policy.AllowAnyOrigin()      // Permite cualquier origen
-                          .AllowAnyMethod()      // Permite cualquier m�todo (GET, POST, PUT, DELETE)
-                          .AllowAnyHeader();     // Permite cualquier header
+                    policy.AllowAnyMethod()      // Permite cualquier método (GET, POST, PUT, DELETE)
+                          .AllowAnyHeader()      // Permite cualquier header
+                          .AllowCredentials();   // Permitir cookies
+                            
                 });
             });
 
@@ -68,6 +77,7 @@ namespace MediAgenda.API
             builder.Services.AddScoped<IReasonsService, ReasonsService>();
             builder.Services.AddScoped<IApplicationUsersService, ApplicationUsersService>();
             builder.Services.AddScoped<IClinicsService, ClinicsService>();
+            builder.Services.AddScoped<IConsultationsService, ConsultationsService>();
             builder.Services.AddScoped<IDayAvailablesService, DayAvailablesService>();
             builder.Services.AddScoped<IDoctorsService, DoctorsService>();
             builder.Services.AddScoped<IInsurancesService, InsurancesService>();
@@ -77,9 +87,35 @@ namespace MediAgenda.API
             builder.Services.AddScoped<INotesPatientsService, NotesPatientsService>();
             builder.Services.AddScoped<IPatientsService, PatientsService>();
             builder.Services.AddScoped<IPermissionsService, PermissionsService>();
+            builder.Services.AddScoped<IPrescriptionsService, PrescriptionsService>();
+            builder.Services.AddScoped<IAuthService, AuthService>();
 
             builder.Services.AddScoped<IValidationService, ValidationService>();
             builder.Services.AddScoped<IValidator<ReasonPatchDTO>, ReasonsPatchValidation>();
+
+            builder.Services.AddIdentity<ApplicationUserModel, IdentityRole>()
+                .AddEntityFrameworkStores<MediContext>()
+                .AddDefaultTokenProviders();
+
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true, // datos a validar
+                        ValidateAudience = true,
+                        ValidateLifetime = true, // el tiempo de vida
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                        ValidAudience = builder.Configuration["Jwt:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(
+                            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])), //contraseña
+                        ClockSkew = TimeSpan.Zero 
+                    };
+                });
 
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
@@ -89,13 +125,29 @@ namespace MediAgenda.API
 
             app.UseSwagger();
             app.UseSwaggerUI();
-            
+
+            //Aplicar configuracion de CORS
+            app.UseCors("AllowAll");
+
+            //Revisa el context de la peticion
+            app.Use(async (context, next) =>
+            {
+                //Busca una cookie con el nombre jwt
+                var token = context.Request.Cookies["jwt"];
+                if (!string.IsNullOrEmpty(token))
+                {
+                    context.Request.Headers.Add("Authorization", $"Bearer {token}");
+                }
+                await next();
+            });
 
             app.UseLogMiddleware();
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseAuthentication();
+
+            app.UseAuthorization();           
 
             app.MapControllers();
 

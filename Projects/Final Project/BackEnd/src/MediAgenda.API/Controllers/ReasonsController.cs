@@ -6,15 +6,20 @@ using MediAgenda.Application.Validations;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace MediAgenda.API.Controllers
 {
     [Route("api/Reasons")]
     [ApiController]
+    [Authorize]
+    [Authorize]
+    [Authorize(Roles = "Admin,Doctor")]
     public class ReasonsController : ControllerBase
     {
         private readonly IReasonsService _service;

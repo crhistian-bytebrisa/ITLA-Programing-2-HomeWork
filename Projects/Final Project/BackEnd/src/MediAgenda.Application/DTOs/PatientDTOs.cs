@@ -100,6 +100,5 @@ namespace MediAgenda.Application.DTOs
         [Required(ErrorMessage = "El campo {0} es requerido.")]
         public GenderDTO GenderDTO { get; set; }
     }
-
     
 }

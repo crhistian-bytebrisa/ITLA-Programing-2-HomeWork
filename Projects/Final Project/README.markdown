@@ -9,7 +9,6 @@ Una app que se encargue de manejar las citas de los pacientes además de las con
 - **RF3:** El sistema debe **mostrar el historial clínico del paciente**, incluyendo consultas anteriores, recetas, referimientos y copias digitales de los documentos emitidos.  
 - **RF4:** Los pacientes tendrán datos médicos básicos ingresados por el médico, tales como **medicamentos actuales del paciente y tipo de sangre**.  
 - **RF5:** El sistema debe permitir **registrar los medicamentos actuales del paciente**, actualizados por el médico en cada consulta.  
-
 ---
 
 ## 2. Gestión de citas

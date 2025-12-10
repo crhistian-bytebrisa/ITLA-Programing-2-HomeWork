@@ -4,6 +4,7 @@ using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
 using MediAgenda.Infraestructure.RequestRepositories.Base;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,12 @@ namespace MediAgenda.Infraestructure.Repositories
 {
     public class ApplicationUserRepository : BaseRepositoryIdString<ApplicationUserModel>, IApplicationUserRepository
     {
+        private readonly UserManager<ApplicationUserModel> _userManager;
 
-        public ApplicationUserRepository(MediContext context) : base(context)
+        public ApplicationUserRepository(MediContext context, UserManager<ApplicationUserModel> userManager)
+            : base(context)
         {
+            _userManager = userManager;
         }
 
         public async Task<(List<ApplicationUserModel>, int)> GetAllAsync(ApplicationUserRequest request)
@@ -51,6 +55,31 @@ namespace MediAgenda.Infraestructure.Repositories
             return entity;
         }
 
+        public async Task<ApplicationUserModel> GetUserByEmailAsync(string email)
+        {
+            return await _context.Set<ApplicationUserModel>()
+                .Include(x => x.Doctor)
+                .Include(x => x.Patient)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Email == email);
+        }
+
+        public async Task<List<IdentityRole>> GetRolesByUserIdAsync(string userId)
+        {
+            var roleIds = await _context.UserRoles
+                .Where(x => x.UserId == userId)
+                .Select(x => x.RoleId)
+                .ToListAsync();
+
+            return await _context.Roles
+                .Where(r => roleIds.Contains(r.Id))
+                .ToListAsync();
+        }
+
+        public async Task<bool> CheckPasswordAsync(ApplicationUserModel user, string password)
+        {
+            return await _userManager.CheckPasswordAsync(user, password);
+        }
 
     }
 }

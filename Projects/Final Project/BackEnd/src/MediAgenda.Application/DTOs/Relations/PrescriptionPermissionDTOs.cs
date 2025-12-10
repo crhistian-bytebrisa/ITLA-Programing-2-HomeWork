@@ -15,7 +15,7 @@
         public string PermissionName { get; set; }
     }
 
-    public class PrescriptionPermissionCreateDTO
+    public class PrescriptionPermissionCUDTO
     {
         public int PrescriptionId { get; set; }
         public int PermissionId { get; set; }

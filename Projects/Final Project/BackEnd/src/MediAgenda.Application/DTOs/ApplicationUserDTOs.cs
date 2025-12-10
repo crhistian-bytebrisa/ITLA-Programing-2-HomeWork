@@ -6,7 +6,6 @@ namespace MediAgenda.Application.DTOs
     public class ApplicationUserDTO
     {
         public string Id { get; set; }
-        public string UserName { get; set; }
         public string Email { get; set; }
         public string NameComplete { get; set; }
         public string PhoneNumber { get; set; }
@@ -17,18 +16,13 @@ namespace MediAgenda.Application.DTOs
     public class ApplicationUserSimpleDTO
     {
         public string Id { get; set; }
-        public string UserName { get; set; }
         public string Email { get; set; }
         public string NameComplete { get; set; }
         public string PhoneNumber { get; set; }
     }
 
-    public class ApplicationUserCreateDTO : IHasUsername
+    public class ApplicationUserCreateDTO
     {
-        [Required(ErrorMessage = "El campo {0} es requerido.")]
-        [MaxLength(30, ErrorMessage = "No puedes tener mas de {1} caracteres en {0}.")]
-        [MinLength(3, ErrorMessage = "Debes tener al menos {1} caracteres en {0}.")]
-        public string UserName { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido.")]
         [EmailAddress(ErrorMessage = "El campo {0} debe ser un correo electronico valido.")]
@@ -50,7 +44,7 @@ namespace MediAgenda.Application.DTOs
 
     }
 
-    public class ApplicationUserUpdateDTO : ApplicationUserCreateDTO,IHasUsername 
+    public class ApplicationUserUpdateDTO : ApplicationUserCreateDTO
     {
         [Required(ErrorMessage = "El campo {0} es requerido.")]
         public Guid Id { get; set; }

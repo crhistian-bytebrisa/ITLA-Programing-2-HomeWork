@@ -15,7 +15,7 @@ namespace MediAgenda.Application.DTOs
         public string State { get; set; }
         public int Turn { get; set; }
         public int NotesCount { get; set; }
-        public int PrescriptionsCount { get; set; }
+        public PrescriptionSimpleDTO Prescription { get; set; }
     }
 
     public class ConsultationSimpleDTO

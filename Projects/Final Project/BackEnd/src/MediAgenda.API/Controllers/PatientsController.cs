@@ -1,16 +1,19 @@
 ﻿using Mapster;
+using MediAgenda.API.Filters;
 using MediAgenda.Application.DTOs;
 using MediAgenda.Application.DTOs.API;
 using MediAgenda.Application.Interfaces;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MediAgenda.API.Controllers
 {
     [Route("api/Patients")]
     [ApiController]
+    [Authorize]
     public class PatientsController : ControllerBase
     {
         private readonly IPatientsService _service;
@@ -21,6 +24,7 @@ namespace MediAgenda.API.Controllers
         }
         // GET: api/Patients
         [HttpGet]
+        [Authorize(Roles = "Doctor,Admin")]
         public async Task<ActionResult<APIResponse<PatientDTO>>> Get([FromQuery] PatientRequest request)
         {
             var APIR = await _service.GetAllAsync(request);
@@ -29,6 +33,7 @@ namespace MediAgenda.API.Controllers
 
         // GET api/Patients/5
         [HttpGet("{id:int}")]
+        [AuthorizeSamePatientIdOrRoles("id","Doctor","Admin")]
         public async Task<ActionResult<PatientDTO>> Get(int id)
         {
             var entity = await _service.GetByIdAsync(id);
@@ -44,7 +49,8 @@ namespace MediAgenda.API.Controllers
 
         // GET api/Patients/5/Notes
         [HttpGet("{id:int}/Notes")]
-        public async Task<ActionResult<APIResponse<NotePatientDTO>>> GetPatientDays(int id, [FromQuery] PatientNoteRequest request)
+        [Authorize(Roles = "Doctor,Admin")]
+        public async Task<ActionResult<APIResponse<NotePatientDTO>>> GetNotes(int id, [FromQuery] PatientNoteRequest request)
         {
             var dto = await _service.GetAllNotes(id, request);
             if (dto == null)
@@ -56,7 +62,8 @@ namespace MediAgenda.API.Controllers
 
         // GET api/Patients/5/Consultations
         [HttpGet("{id:int}/Consultations")]
-        public async Task<ActionResult<APIResponse<ConsultationDTO>>> GetPatientDays(int id, [FromQuery] PatientConsultationRequest request)
+        [AuthorizeSamePatientIdOrRoles("id", "Doctor", "Admin")]
+        public async Task<ActionResult<APIResponse<ConsultationDTO>>> GetConsultations(int id, [FromQuery] PatientConsultationRequest request)
         {
             var dto = await _service.GetAllConsultations(id, request);
             if (dto == null)
@@ -68,7 +75,8 @@ namespace MediAgenda.API.Controllers
 
         // GET api/Patients/5/Documents
         [HttpGet("{id:int}/Documents")]
-        public async Task<ActionResult<APIResponse<MedicalDocumentDTO>>> GetPatientDays(int id, [FromQuery] PatientMedicalDocumentRequest request)
+        [AuthorizeSamePatientIdOrRoles("id", "Doctor", "Admin")]
+        public async Task<ActionResult<APIResponse<MedicalDocumentDTO>>> GetDocuments(int id, [FromQuery] PatientMedicalDocumentRequest request)
         {
             var dto = await _service.GetAllMedicalDocuments(id, request);
             if (dto == null)
@@ -80,7 +88,8 @@ namespace MediAgenda.API.Controllers
 
         // GET api/Patients/5/Medicines
         [HttpGet("{id:int}/Medicines")]
-        public async Task<ActionResult<APIResponse<MedicineDTO>>> GetPatientDays(int id, [FromQuery] PatientMedicamentRequest request)
+        [AuthorizeSamePatientIdOrRoles("id", "Doctor", "Admin")]
+        public async Task<ActionResult<APIResponse<MedicineDTO>>> GetMedicines(int id, [FromQuery] PatientMedicamentRequest request)
         {
             var dto = await _service.GetAllMedicaments(id, request);
             if (dto == null)
@@ -92,6 +101,7 @@ namespace MediAgenda.API.Controllers
 
         // POST api/Patients
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<PatientDTO>> PostAsync([FromBody] PatientCreateDTO dtoc)
         {
             var dto = await _service.AddAsync(dtoc);
@@ -100,6 +110,7 @@ namespace MediAgenda.API.Controllers
 
         // PUT api/Patients/5
         [HttpPut("{id:int}")]
+        [AuthorizeSamePatientIdOrRoles("id", "Doctor", "Admin")]
         public async Task<ActionResult> PutAsync(int id, [FromBody] PatientUpdateDTO dtou)
         {
 
@@ -114,6 +125,7 @@ namespace MediAgenda.API.Controllers
 
         // DELETE api/Patients/5
         [HttpDelete("{id:int}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult> Delete(int id)
         {
             var dto = await _service.GetByIdAsync(id);

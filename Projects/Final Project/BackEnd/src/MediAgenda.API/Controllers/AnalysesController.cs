@@ -8,6 +8,7 @@ using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.Repositories;
 using MediAgenda.Infraestructure.RequestRepositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.Host;
 using NuGet.Protocol;
@@ -17,6 +18,8 @@ namespace MediAgenda.API.Controllers
 {
     [Route("api/Analyses")]
     [ApiController]
+    [Authorize]
+    [Authorize(Roles = "Doctor,Admin")]
     public class AnalysesController : ControllerBase
     {
         private readonly IAnalysesService _service;
@@ -26,7 +29,7 @@ namespace MediAgenda.API.Controllers
             _service = service;
         }
 
-        
+
         // GET: api/Analyses
         [HttpGet]
         public async Task<ActionResult<APIResponse<AnalysisDTO>>> Get([FromQuery] AnalysisRequest request)
@@ -36,6 +39,7 @@ namespace MediAgenda.API.Controllers
         }
 
         // GET api/Analyses/5
+        [Authorize()]
         [HttpGet("{id:int}")]
         public async Task<ActionResult<AnalysisDTO>> Get(int id)
         {

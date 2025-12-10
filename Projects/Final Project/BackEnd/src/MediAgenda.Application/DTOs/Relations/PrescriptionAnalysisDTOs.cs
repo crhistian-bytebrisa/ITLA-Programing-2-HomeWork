@@ -18,7 +18,7 @@
         public string Recomendations { get; set; }
     }
 
-    public class PrescriptionAnalysisCreateDTO
+    public class PrescriptionAnalysisCUDTO
     {
         public int PrescriptionId { get; set; }
         public int AnalysisId { get; set; }

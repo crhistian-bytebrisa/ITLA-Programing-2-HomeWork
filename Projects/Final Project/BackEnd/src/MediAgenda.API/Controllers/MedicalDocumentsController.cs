@@ -2,11 +2,12 @@
 using MediAgenda.Application.DTOs;
 using MediAgenda.Application.DTOs.API;
 using MediAgenda.Application.Interfaces;
-using MediAgenda.Application.Validations.CreateValidations;
+using MediAgenda.Application.Validations;
 using MediAgenda.Domain.Entities;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 
@@ -14,6 +15,8 @@ namespace MediAgenda.API.Controllers
 {
     [Route("api/MedicalDocuments")]
     [ApiController]
+    [Authorize]
+    [Authorize(Roles = "Doctor,Admin")]
     public class MedicalDocumentsController : ControllerBase
     {
         private readonly IMedicalDocumentsService _service;

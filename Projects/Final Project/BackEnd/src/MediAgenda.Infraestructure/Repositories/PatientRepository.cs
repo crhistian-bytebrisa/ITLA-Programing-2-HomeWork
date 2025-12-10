@@ -85,7 +85,7 @@ namespace MediAgenda.Infraestructure.Repositories
                 .Include(x => x.Reason)
                 .Include(x => x.DayAvailable)
                 .Include(x => x.Notes)
-                .Include(x => x.Prescriptions)
+                .Include(x => x.Prescription)
                 .AsNoTracking();
 
             if (request.State is not null)

@@ -7,6 +7,7 @@ using MediAgenda.Application.Validations;
 using MediAgenda.Infraestructure.Interfaces;
 using MediAgenda.Infraestructure.Models;
 using MediAgenda.Infraestructure.RequestRepositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -14,6 +15,7 @@ namespace MediAgenda.API.Controllers
 {
     [Route("api/Clinics")]
     [ApiController]
+    [Authorize]
     public class ClinicsController : ControllerBase
     {
         private readonly IClinicsService _service;
@@ -24,6 +26,7 @@ namespace MediAgenda.API.Controllers
         }
         // GET: api/Clinics
         [HttpGet]
+        [Authorize(Roles = "Doctor,Admin,Patient")]
         public async Task<ActionResult<APIResponse<ClinicDTO>>> Get([FromQuery] ClinicRequest request)
         {
             var APIR = await _service.GetAllAsync(request);
@@ -32,6 +35,7 @@ namespace MediAgenda.API.Controllers
 
         // GET api/Clinics/5
         [HttpGet("{id:int}")]
+        [Authorize(Roles = "Doctor,Admin,Patient")]
         public async Task<ActionResult<ClinicDTO>> Get(int id)
         {
             var entity = await _service.GetByIdAsync(id);
@@ -47,6 +51,7 @@ namespace MediAgenda.API.Controllers
 
         // GET api/Clinics/5/Days
         [HttpGet("{id:int}/Days")]
+        [Authorize(Roles = "Doctor,Admin,Patient")]
         public async Task<ActionResult<List<DayAvailableDTO>>> GetClinicDays(int id,[FromQuery] ClinicDaysAvailableRequest request)
         {
             var dto = await _service.GetAllDaysAvailableById(id, request);
@@ -60,6 +65,7 @@ namespace MediAgenda.API.Controllers
 
         // POST api/Clinics
         [HttpPost]
+        [Authorize(Roles = "Doctor,Admin")]
         public async Task<ActionResult<ClinicDTO>> PostAsync([FromBody] ClinicCreateDTO dtoc)
         {
             var dto = await _service.AddAsync(dtoc);
@@ -68,6 +74,7 @@ namespace MediAgenda.API.Controllers
 
         // PUT api/Clinics/5
         [HttpPut("{id:int}")]
+        [Authorize(Roles = "Doctor,Admin")]
         public async Task<ActionResult> PutAsync(int id, [FromBody] ClinicUpdateDTO dtou)
         {
 
@@ -82,6 +89,7 @@ namespace MediAgenda.API.Controllers
 
         // DELETE api/Clinics/5
         [HttpDelete("{id:int}")]
+        [Authorize(Roles = "Doctor,Admin")]
         public async Task<ActionResult> Delete(int id)
         {
             var dto = await _service.GetByIdAsync(id);

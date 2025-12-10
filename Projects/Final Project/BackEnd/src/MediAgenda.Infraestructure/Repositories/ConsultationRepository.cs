@@ -19,6 +19,24 @@ namespace MediAgenda.Infraestructure.Repositories
         {
         }
 
+        public override async Task<ConsultationModel> AddAsync(ConsultationModel entity)
+        {
+            var day = await _context.DaysAvailable.FirstOrDefaultAsync(x => x.Id == entity.DayAvailableId);
+            entity.Turn = day.Consultations.Count + 1;
+            return await base.AddAsync(entity);
+        }
+
+        public override async Task<ConsultationModel> GetByIdAsync(int id)
+        {
+            return await _context.Set<ConsultationModel>()
+                .Include(x => x.Prescription)
+                .Include(x => x.Notes)
+                .Include(x => x.Patient)
+                .Include(x => x.DayAvailable)
+                .Include(x => x.Reason)
+                .FirstOrDefaultAsync(x => x.Id == id);
+        }
+
         public async Task<(List<ConsultationModel>, int)> GetAllAsync(ConsultationRequest request)
         {
             IQueryable<ConsultationModel> query = _context.Set<ConsultationModel>();
@@ -58,9 +76,9 @@ namespace MediAgenda.Infraestructure.Repositories
                 query = query.Include(x => x.Notes);
             }
 
-            if (request.IncludePrescriptions is true)
+            if (request.IncludePrescription is true)
             {
-                query = query.Include(x => x.Prescriptions);
+                query = query.Include(x => x.Prescription);
             }
 
             if (request.IncludePatient is true)
@@ -76,6 +94,40 @@ namespace MediAgenda.Infraestructure.Repositories
             if (request.IncludeDayAvailable is true)
             {
                 query = query.Include(x => x.DayAvailable);
+            }
+
+            return await query.PaginateAsync(request);
+        }
+
+        public async Task<(List<NoteConsultationModel>, int)> GetAllNotesById(int id, ConsultationNoteRequest request)
+        {
+            var query = _context.Set<NoteConsultationModel>()
+                .Where(x => x.ConsultationId == id)
+                .AsNoTracking();
+
+            if (!string.IsNullOrWhiteSpace(request.Title))
+            {
+                query = query.Where(x => x.Title.Contains(request.Title));
+            }
+
+            if (request.CreatedFrom is not null)
+            {
+                query = query.Where(x => x.CreatedAt >= request.CreatedFrom);
+            }
+
+            if (request.CreatedTo is not null)
+            {
+                query = query.Where(x => x.CreatedAt <= request.CreatedTo);
+            }
+
+            if (request.UpdatedFrom is not null)
+            {
+                query = query.Where(x => x.UpdateAt >= request.UpdatedFrom);
+            }
+
+            if (request.UpdatedTo is not null)
+            {
+                query = query.Where(x => x.UpdateAt <= request.UpdatedTo);
             }
 
             return await query.PaginateAsync(request);

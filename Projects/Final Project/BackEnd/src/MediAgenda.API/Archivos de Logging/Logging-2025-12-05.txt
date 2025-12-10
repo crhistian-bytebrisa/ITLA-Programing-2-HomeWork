@@ -1,0 +1,189 @@
+[2025-12-05 18:48:33] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 3823 ms
+
+
+[2025-12-05 18:48:58] Request: GET 
+URL: /api/Consultations 
+Query: 
+Response: 200 
+Tiempo: 150 ms
+
+
+[2025-12-05 18:49:19] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 201 
+Tiempo: 499 ms
+
+
+[2025-12-05 18:49:25] Request: GET 
+URL: /api/Consultations 
+Query: 
+Response: 200 
+Tiempo: 17 ms
+
+
+[2025-12-05 18:50:52] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 201 
+Tiempo: 143 ms
+
+
+[2025-12-05 18:56:29] Request: POST 
+URL: /Medicines 
+Query: 
+Response: 200 
+Tiempo: 2404 ms
+
+
+[2025-12-05 18:56:45] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 809 ms
+
+
+[2025-12-05 18:56:52] Request: GET 
+URL: /api/Prescriptions 
+Query: ?IncludeMedicines=true
+Response: 200 
+Tiempo: 275 ms
+
+
+[2025-12-05 18:56:57] Request: GET 
+URL: /api/Prescriptions 
+Query: ?IncludeMedicines=true
+Response: 200 
+Tiempo: 42 ms
+
+
+[2025-12-05 18:56:59] Request: GET 
+URL: /api/Prescriptions 
+Query: ?IncludeMedicines=true
+Response: 200 
+Tiempo: 23 ms
+
+
+[2025-12-05 19:01:34] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 4082 ms
+
+
+[2025-12-05 19:02:30] Request: POST 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 28242 ms
+
+
+[2025-12-05 19:04:53] Request: POST 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 2956 ms
+
+
+[2025-12-05 19:05:12] Request: POST 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 219 ms
+
+
+[2025-12-05 19:09:50] Request: GET 
+URL: /api/Prescriptions 
+Query: ?IncludeMedicines=true
+Response: 200 
+Tiempo: 2914 ms
+
+
+[2025-12-05 19:10:13] Request: GET 
+URL: /api/Prescriptions 
+Query: ?IncludeMedicines=true&IncludeAnalysis=true&IncludePermissions=true
+Response: 200 
+Tiempo: 281 ms
+
+
+[2025-12-05 19:10:15] Request: GET 
+URL: /api/Prescriptions 
+Query: ?IncludeMedicines=true&IncludeAnalysis=true&IncludePermissions=true
+Response: 200 
+Tiempo: 82 ms
+
+
+[2025-12-05 19:12:11] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 2989 ms
+
+
+[2025-12-05 19:18:28] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 320617 ms
+
+
+[2025-12-05 19:38:33] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 2023 ms
+
+
+[2025-12-05 19:40:06] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 1633 ms
+
+
+[2025-12-05 19:43:14] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 1583 ms
+
+
+[2025-12-05 19:47:57] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 2006 ms
+
+
+[2025-12-05 19:49:39] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 202 ms
+
+
+[2025-12-05 19:55:56] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 2107 ms
+
+
+[2025-12-05 19:57:28] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 1819 ms
+
+
+[2025-12-05 20:00:03] Request: GET 
+URL: /api/Prescriptions 
+Query: ?IncludeConsultation=true
+Response: 200 
+Tiempo: 195 ms
+
+

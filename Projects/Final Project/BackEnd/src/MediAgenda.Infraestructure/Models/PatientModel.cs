@@ -41,7 +41,7 @@ namespace MediAgenda.Infraestructure.Models
         public List<NotePatientModel>? Notes { get; set; } 
         public List<ConsultationModel>? Consultations { get; set; } 
         public List<MedicalDocumentModel>? MedicalDocuments { get; set; } 
-        public List<CurrentMedicamentsModel>? CurrentMedicaments { get; set; } 
+        public List<HistoryMedicamentsModel>? CurrentMedicaments { get; set; } 
 
         public PatientModel() { }
 
