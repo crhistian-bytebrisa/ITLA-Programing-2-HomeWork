@@ -25,7 +25,7 @@ namespace MediAgenda.Infraestructure.Context.SeedsData
                     NameComplete = "Carlos Martínez Pérez",
                     PhoneNumber = "8091234567",
                     EmailConfirmed = true,
-                    PasswordHash = hasher.HashPassword(new ApplicationUserModel(), "Doctor123!"),
+                    PasswordHash = "AQAAAAIAAYagAAAAEMYtGJF/SM5CogXcBNxMt7wjuA8/1by854I67fOXznLB9REB7YSpdV6xE4RIs0Q8Eg==", //contraseña123!
                     SecurityStamp = "DOCTOR-SECURITY-STAMP-001",
                     ConcurrencyStamp = "doctor-concurrency-001"
                 },
@@ -37,7 +37,7 @@ namespace MediAgenda.Infraestructure.Context.SeedsData
                     NameComplete = "Pedro Alcachofa",
                     PhoneNumber = "8093454567",
                     EmailConfirmed = true,
-                    PasswordHash = hasher.HashPassword(new ApplicationUserModel(), "MiClaveNueva123!"),
+                    PasswordHash = "AQAAAAIAAYagAAAAEMYtGJF/SM5CogXcBNxMt7wjuA8/1by854I67fOXznLB9REB7YSpdV6xE4RIs0Q8Eg==", //contraseña123!
                     SecurityStamp = "PEDRO-SECURITY-STAMP-002",
                     ConcurrencyStamp = "pedro-concurrency-002"
                 },
@@ -49,7 +49,7 @@ namespace MediAgenda.Infraestructure.Context.SeedsData
                     NameComplete = "Alva Alcachofa",
                     PhoneNumber = "8093543337",
                     EmailConfirmed = true,
-                    PasswordHash = hasher.HashPassword(new ApplicationUserModel(), "MiClaveNueva123!"), 
+                    PasswordHash = "AQAAAAIAAYagAAAAEMYtGJF/SM5CogXcBNxMt7wjuA8/1by854I67fOXznLB9REB7YSpdV6xE4RIs0Q8Eg==", //contraseña123!
                     SecurityStamp = "ALVA-SECURITY-STAMP-003",
                     ConcurrencyStamp = "alva-concurrency-003"
                 },
@@ -61,7 +61,7 @@ namespace MediAgenda.Infraestructure.Context.SeedsData
                     NameComplete = "Rufino Alcachofa",
                     PhoneNumber = "8491782495",
                     EmailConfirmed = true,
-                    PasswordHash = hasher.HashPassword(new ApplicationUserModel(), "MiClaveNueva123!"), 
+                    PasswordHash = "AQAAAAIAAYagAAAAEMYtGJF/SM5CogXcBNxMt7wjuA8/1by854I67fOXznLB9REB7YSpdV6xE4RIs0Q8Eg==", //contraseña123!
                     SecurityStamp = "RUFINO-SECURITY-STAMP-004",
                     ConcurrencyStamp = "rufino-concurrency-004"
                 }

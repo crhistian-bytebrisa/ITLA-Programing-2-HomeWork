@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace MediAgenda.Infraestructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initialmigration : Migration
+    public partial class MigracionFinalConTodo : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -356,25 +356,26 @@ namespace MediAgenda.Infraestructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CurrentMedicaments",
+                name: "HistoryMedicaments",
                 columns: table => new
                 {
                     PatientId = table.Column<int>(type: "int", nullable: false),
                     MedicineId = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false),
                     StartMedication = table.Column<DateOnly>(type: "date", nullable: false),
                     EndMedication = table.Column<DateOnly>(type: "date", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CurrentMedicaments", x => new { x.PatientId, x.MedicineId });
+                    table.PrimaryKey("PK_HistoryMedicaments", x => new { x.PatientId, x.MedicineId });
                     table.ForeignKey(
-                        name: "FK_CurrentMedicaments_Medicines_MedicineId",
+                        name: "FK_HistoryMedicaments_Medicines_MedicineId",
                         column: x => x.MedicineId,
                         principalTable: "Medicines",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_CurrentMedicaments_Patients_PatientId",
+                        name: "FK_HistoryMedicaments_Patients_PatientId",
                         column: x => x.PatientId,
                         principalTable: "Patients",
                         principalColumn: "Id",
@@ -502,6 +503,8 @@ namespace MediAgenda.Infraestructure.Migrations
                 {
                     PrescriptionId = table.Column<int>(type: "int", nullable: false),
                     MedicineId = table.Column<int>(type: "int", nullable: false),
+                    StartDosage = table.Column<DateOnly>(type: "date", nullable: false),
+                    EndDosage = table.Column<DateOnly>(type: "date", nullable: false),
                     Instructions = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false)
                 },
                 constraints: table =>
@@ -570,10 +573,10 @@ namespace MediAgenda.Infraestructure.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NameComplete", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "12e6b0e1-1eb6-4a4b-8b57-a7d8adf78sdf", 0, "rufino-concurrency-004", "rufino@mediagenda.com", true, false, null, "Rufino Alcachofa", "RUFINO@MEDIAGENDA.COM", "RUFINO@MEDIAGENDA.COM", "AQAAAAIAAYagAAAAEPzC8Y3RsT7uI9YmQ1gW2oX8kZ4nA6qM0sL5yU9xV3wR7tB2eC4fD6hG8iJ1kL3mNo==", "8491782495", false, "RUFINO-SECURITY-STAMP-004", false, "rufino@mediagenda.com" },
-                    { "12e6b0e1-1eb6-4a4b-8b57-d1a00b31cb46", 0, "alva-concurrency-003", "alva@mediagenda.com", true, false, null, "Alva Alcachofa", "ALVA@MEDIAGENDA.COM", "ALVA@MEDIAGENDA.COM", "AQAAAAIAAYagAAAAELmN4Y9QrS6tH2XkP8fV1nW7jY3mZ5pK9rL4xT8vU2wQ6sA7cB1dE3gF5hI9jK0lMn==", "8093543337", false, "ALVA-SECURITY-STAMP-003", false, "alva@mediagenda.com" },
-                    { "1ebe636e-b277-47ea-a2f8-6502cd988476", 0, "pedro-concurrency-002", "pedro@mediagenda.com", true, false, null, "Pedro Alcachofa", "PEDRO@MEDIAGENDA.COM", "PEDRO@MEDIAGENDA.COM", "AQAAAAIAAYagAAAAEKpB0X8LqNkHXdXJ7c4VnM8WfQ3jqY6P5rZ9K2mT1vU4xW7sY8pL3gH9nR5tA6bC2w==", "8093454567", false, "PEDRO-SECURITY-STAMP-002", false, "pedro@mediagenda.com" },
-                    { "7bd25c44-f324-41f7-aae9-43a2f744ef46", 0, "doctor-concurrency-001", "dr.martinez@mediagenda.com", true, false, null, "Carlos Martínez Pérez", "DR.MARTINEZ@MEDIAGENDA.COM", "DR.MARTINEZ@MEDIAGENDA.COM", "AQAAAAIAAYagAAAAEO6wwBvPFDvL8ZtmHuLxxm92JC0+LnLYNVEnNmUhLyBn3fDPJV1AhvVGwJcG5FxJg==", "8091234567", false, "DOCTOR-SECURITY-STAMP-001", false, "dr.martinez@mediagenda.com" }
+                    { "12e6b0e1-1eb6-4a4b-8b57-a7d8adf78sdf", 0, "rufino-concurrency-004", "rufino@mediagenda.com", true, false, null, "Rufino Alcachofa", "RUFINO@MEDIAGENDA.COM", null, "AQAAAAIAAYagAAAAEMYtGJF/SM5CogXcBNxMt7wjuA8/1by854I67fOXznLB9REB7YSpdV6xE4RIs0Q8Eg==", "8491782495", false, "RUFINO-SECURITY-STAMP-004", false, null },
+                    { "12e6b0e1-1eb6-4a4b-8b57-d1a00b31cb46", 0, "alva-concurrency-003", "alva@mediagenda.com", true, false, null, "Alva Alcachofa", "ALVA@MEDIAGENDA.COM", null, "AQAAAAIAAYagAAAAEMYtGJF/SM5CogXcBNxMt7wjuA8/1by854I67fOXznLB9REB7YSpdV6xE4RIs0Q8Eg==", "8093543337", false, "ALVA-SECURITY-STAMP-003", false, null },
+                    { "1ebe636e-b277-47ea-a2f8-6502cd988476", 0, "pedro-concurrency-002", "pedro@mediagenda.com", true, false, null, "Pedro Alcachofa", "PEDRO@MEDIAGENDA.COM", null, "AQAAAAIAAYagAAAAEMYtGJF/SM5CogXcBNxMt7wjuA8/1by854I67fOXznLB9REB7YSpdV6xE4RIs0Q8Eg==", "8093454567", false, "PEDRO-SECURITY-STAMP-002", false, null },
+                    { "7bd25c44-f324-41f7-aae9-43a2f744ef46", 0, "doctor-concurrency-001", "dr.martinez@mediagenda.com", true, false, null, "Carlos Martínez Pérez", "DR.MARTINEZ@MEDIAGENDA.COM", null, "AQAAAAIAAYagAAAAEMYtGJF/SM5CogXcBNxMt7wjuA8/1by854I67fOXznLB9REB7YSpdV6xE4RIs0Q8Eg==", "8091234567", false, "DOCTOR-SECURITY-STAMP-001", false, null }
                 });
 
             migrationBuilder.InsertData(
@@ -699,11 +702,6 @@ namespace MediAgenda.Infraestructure.Migrations
                 column: "ReasonId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CurrentMedicaments_MedicineId",
-                table: "CurrentMedicaments",
-                column: "MedicineId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_DaysAvailable_ClinicId",
                 table: "DaysAvailable",
                 column: "ClinicId");
@@ -713,6 +711,11 @@ namespace MediAgenda.Infraestructure.Migrations
                 table: "Doctors",
                 column: "UserId",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_HistoryMedicaments_MedicineId",
+                table: "HistoryMedicaments",
+                column: "MedicineId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MedicalDocuments_PatientId",
@@ -743,7 +746,8 @@ namespace MediAgenda.Infraestructure.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Prescriptions_ConsultationId",
                 table: "Prescriptions",
-                column: "ConsultationId");
+                column: "ConsultationId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_PrescriptionsAnalysis_AnalysisId",
@@ -780,10 +784,10 @@ namespace MediAgenda.Infraestructure.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "CurrentMedicaments");
+                name: "Doctors");
 
             migrationBuilder.DropTable(
-                name: "Doctors");
+                name: "HistoryMedicaments");
 
             migrationBuilder.DropTable(
                 name: "MedicalDocuments");

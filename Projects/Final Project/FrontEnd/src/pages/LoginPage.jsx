@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import FloatingCard from '../components/FloatingCard'
 
 function Login() {
   // ⭐ Estados para guardar lo que el usuario escribe
@@ -22,7 +23,9 @@ function Login() {
     navigate('/paciente/dashboard')
   }
 
+  const [isCardOpen, setIsCardOpen] = useState(false)
   return (
+    
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-md-6">
@@ -74,8 +77,17 @@ function Login() {
                   ¿No tienes cuenta?{' '}
                   <a href="/register">Regístrate aquí</a>
                 </p>
-              </form>
+                <button 
+                className="btn btn-primary btn-lg mt-4"
+                onClick={() => setIsCardOpen(true)}
+                >
 
+                </button>
+              </form>
+            <FloatingCard 
+              isOpen={isCardOpen}
+              onClose={() => setIsCardOpen(false)}
+            />
             </div>
           </div>
         </div>

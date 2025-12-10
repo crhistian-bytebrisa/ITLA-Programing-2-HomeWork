@@ -159,3 +159,17 @@ Response: 200
 Tiempo: 151 ms
 
 
+[2025-12-09 20:45:35] Request: POST 
+URL: /api/Auth/Register 
+Query: 
+Response: 200 
+Tiempo: 15235 ms
+
+
+[2025-12-09 20:47:01] Request: POST 
+URL: /api/Auth/Register 
+Query: 
+Response: 400 
+Tiempo: 987 ms
+
+
