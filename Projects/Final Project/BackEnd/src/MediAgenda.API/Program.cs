@@ -14,6 +14,7 @@ using MediAgenda.Infraestructure.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
@@ -33,14 +34,17 @@ namespace MediAgenda.API
 			builder.Services.AddDbContext<MediContext>(
                 opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            builder.Services.AddCors(options =>
+            var origins = builder.Configuration.GetSection("origins").Get<string[]>();
+           
+
+            builder.Services.AddCors(opciones =>
             {
-                options.AddPolicy("AllowAll", policy =>
+                opciones.AddDefaultPolicy(optionsCORS =>
                 {
-                    policy.AllowAnyMethod()      // Permite cualquier método (GET, POST, PUT, DELETE)
-                          .AllowAnyHeader()      // Permite cualquier header
-                          .AllowCredentials();   // Permitir cookies
-                            
+                    optionsCORS.WithOrigins(origins)
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials();
                 });
             });
 
@@ -123,11 +127,11 @@ namespace MediAgenda.API
 
             var app = builder.Build();
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+
             app.UseSwagger();
             app.UseSwaggerUI();
-
-            //Aplicar configuracion de CORS
-            app.UseCors("AllowAll");
 
             //Revisa el context de la peticion
             app.Use(async (context, next) =>
@@ -141,15 +145,21 @@ namespace MediAgenda.API
                 await next();
             });
 
+
+            
             app.UseLogMiddleware();
 
             app.UseHttpsRedirection();
+
+            app.UseCors();
 
             app.UseAuthentication();
 
             app.UseAuthorization();           
 
             app.MapControllers();
+
+            app.MapFallbackToFile("index.html");
 
             app.Run();
         }

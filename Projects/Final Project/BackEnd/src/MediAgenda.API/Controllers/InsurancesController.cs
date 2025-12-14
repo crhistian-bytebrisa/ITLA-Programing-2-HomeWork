@@ -13,7 +13,6 @@ namespace MediAgenda.API.Controllers
     [Route("api/Insurances")]
     [ApiController]
     [Authorize]
-    [Authorize(Roles = "Doctor,Admin")]
     public class InsurancesController : ControllerBase
     {
         private readonly IInsurancesService _service;

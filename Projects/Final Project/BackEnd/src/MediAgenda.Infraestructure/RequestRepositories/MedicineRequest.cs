@@ -11,7 +11,5 @@ namespace MediAgenda.Infraestructure.RequestRepositories
     {
         public string? Name { get; set; }
         public string? Format { get; set; }
-        public bool? IncludePrescriptionsCount { get; set; } 
-        public bool? IncludeCurrentMedicamentsCount { get; set; } 
     }
 }

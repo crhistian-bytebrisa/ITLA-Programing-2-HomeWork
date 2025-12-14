@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using MediAgenda.Application.DTOs.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace MediAgenda.Application.DTOs
 {
@@ -12,7 +13,7 @@ namespace MediAgenda.Application.DTOs
         public DateOnly Date { get; set; }
         public int Limit { get; set; }
         public List<ConsultationSimpleDTO> Consultations { get; set; }
-        public int AvailableSlots => Limit - (Consultations?.Count ?? 0);
+        public int AvailableSlots => Limit - (Consultations.Where(x => x.State != ConsultationStateDTO.Cancelled.ToString()).Count());
         public bool IsAvailable => AvailableSlots > 0;
     }
 
@@ -20,6 +21,7 @@ namespace MediAgenda.Application.DTOs
     {
         public int Id { get; set; }
         public int ClinicId { get; set; }
+        public string ClinicName { get; set; }
         public TimeOnly StartTime { get; set; }
         public TimeOnly EndTime { get; set; }
         public DateOnly Date { get; set; }
@@ -38,7 +40,6 @@ namespace MediAgenda.Application.DTOs
         public TimeOnly StartTime { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido.")]
-        [Range(typeof(TimeOnly), "00:00", "23:59", ErrorMessage = "El campo {0} debe estar entre {1} y {2}.")]
         public TimeOnly EndTime { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido.")]

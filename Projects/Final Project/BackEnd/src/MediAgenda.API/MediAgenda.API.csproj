@@ -29,4 +29,13 @@
     <ProjectReference Include="..\MediAgenda.Infraestructure\MediAgenda.Infraestructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\index-qjEqmvtN.js" />
+    <None Include="wwwroot\index.html" />
+  </ItemGroup>
+
 </Project>

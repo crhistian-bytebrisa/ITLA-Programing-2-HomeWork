@@ -19,19 +19,19 @@ namespace MediAgenda.API.Controllers
         }
 
         [HttpPost("Login")]
-        public async Task<ActionResult<ApplicationUserDTO>> Login(LoginDTO dto)
+        public async Task<ActionResult<APIJWTResponse>> Login(LoginDTO dto)
         {
             var token = await _service.Login(dto);
             SetTokenCookie(token.Token, token.ExpirationToken);
-            return token.User;
+            return new APIJWTResponse(token.User, token.Roles);
         }
 
         [HttpPost("Register")]
-        public async Task<ActionResult<ApplicationUserDTO>> Register(RegisterDTO dto)
+        public async Task<ActionResult<APIJWTResponse>> Register(RegisterDTO dto)
         {
             var token = await _service.Register(dto);
             SetTokenCookie(token.Token, token.ExpirationToken);
-            return token.User;
+            return new APIJWTResponse(token.User,token.Roles);
         }
 
         [HttpPut("Logout")]
@@ -46,9 +46,10 @@ namespace MediAgenda.API.Controllers
             var cookieOptions = new CookieOptions
             {
                 HttpOnly = true,  // Protección XSS
-                Secure = false,    // Si permite http o https
-                SameSite = SameSiteMode.Strict, // Protección CSRF
-                Expires = expiration // la fecha en la que expira
+                Secure = true,    // Si permite http o https
+                SameSite = SameSiteMode.None, // Para que se mantenga aun luego de cambiar de paginas
+                Expires = expiration,
+                Path = "/"
             };
 
             //jwt es el nombre, token el valor y las opciones las opciones

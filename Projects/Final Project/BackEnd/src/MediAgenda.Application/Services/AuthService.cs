@@ -49,7 +49,6 @@ namespace MediAgenda.Application.Services
                 throw new UnauthorizedAccessException("Credenciales inválidas");
             }
 
-
             var roles = await _userRepo.GetRolesByUserIdAsync(user.Id);
 
 
@@ -61,6 +60,7 @@ namespace MediAgenda.Application.Services
             var response = new JWTResponse
             {
                 Token = token,
+                Roles = roles.Select(x => x.Name).ToList(),
                 User = user.Adapt<ApplicationUserDTO>(),
                 ExpirationToken = expiresAt
             };
@@ -81,6 +81,8 @@ namespace MediAgenda.Application.Services
             };
 
             var user = await _userRepo.AddAsync(UserCreateModel);
+
+            await _userRepo.AddRolePatientInUser(user);
 
             var PatientCreateModel = new PatientModel
             {
@@ -105,6 +107,7 @@ namespace MediAgenda.Application.Services
             var response = new JWTResponse
             {
                 Token = token,
+                Roles = roles.Select(x => x.Name).ToList(),
                 User = user.Adapt<ApplicationUserDTO>(),
                 ExpirationToken = expiresAt
             };

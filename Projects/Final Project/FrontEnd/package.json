@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "mediagendafront",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "bootstrap": "^5.3.8",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.10.1"
@@ -19,7 +18,7 @@
     "@eslint/js": "^9.39.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react-swc": "^4.2.2",
+    "@vitejs/plugin-react": "^5.1.1",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",

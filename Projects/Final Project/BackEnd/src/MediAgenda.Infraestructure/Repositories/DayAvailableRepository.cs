@@ -21,7 +21,11 @@ namespace MediAgenda.Infraestructure.Repositories
 
         public async Task<(List<DayAvailableModel>, int)> GetAllAsync(DayAvailableRequest request)
         {
-            IQueryable<DayAvailableModel> query = _context.Set<DayAvailableModel>().AsNoTracking();
+            IQueryable<DayAvailableModel> query = _context.Set<DayAvailableModel>()
+                .AsNoTracking()
+                .Include(x => x.Consultations)
+                .Include(x => x.Clinic);
+
 
             if (request.DateFrom is not null)
             {

@@ -61,7 +61,8 @@ namespace MediAgenda.API.MaperConfig
                 .Map(dest => dest.Consultations, src => src.Consultations.Adapt<List<ConsultationSimpleDTO>>());
 
             TypeAdapterConfig<DayAvailableModel, DayAvailableSimpleDTO>.NewConfig()
-                .Map(dest => dest.ConsultationsCount, src => src.Consultations.Where(x => x.State == ConsultationState.Pendent || x.State == ConsultationState.Confirmed).Count());
+                .Map(dest => dest.ConsultationsCount, src => src.Consultations.Where(x => x.State == ConsultationState.Pendent || x.State == ConsultationState.Confirmed).Count())
+                .Map(dest => dest.ClinicName, src => src.Clinic.Name);
 
             TypeAdapterConfig<DayAvailableCreateDTO, DayAvailableModel>.NewConfig();
             TypeAdapterConfig<DayAvailableUpdateDTO, DayAvailableModel>.NewConfig();
@@ -124,6 +125,7 @@ namespace MediAgenda.API.MaperConfig
                 .Map(dest => dest.ConsultationsCount, src => src.Consultations != null? src.Consultations.Count : 0)
                 .Map(dest => dest.MedicalDocumentsCount, src => src.MedicalDocuments != null? src.MedicalDocuments.Count : 0) 
                 .Map(dest => dest.CurrentMedicamentsCount, src => src.CurrentMedicaments != null? src.CurrentMedicaments.Count : 0);
+                
 
             TypeAdapterConfig<PatientModel, PatientSimpleDTO>.NewConfig()
                 .Map(dest => dest.FullName, src => src.User.NameComplete)
@@ -136,7 +138,7 @@ namespace MediAgenda.API.MaperConfig
 
             //Permisos
             TypeAdapterConfig<PermissionModel, PermissionDTO>.NewConfig()
-                .Map(dest => dest.PrescriptionPermissions, src => src.PrescriptionPermissions.Adapt<List<PrescriptionPermissionDTO>>());
+                .Map(dest => dest.PrescriptionsCount, src => src.PrescriptionPermissions.Count);
 
             TypeAdapterConfig<PermissionModel, PermissionSimpleDTO>.NewConfig();
             TypeAdapterConfig<PermissionCreateDTO, PermissionModel>.NewConfig();

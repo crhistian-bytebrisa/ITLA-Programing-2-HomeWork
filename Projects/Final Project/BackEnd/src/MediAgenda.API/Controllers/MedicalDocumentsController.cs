@@ -1,4 +1,5 @@
 ﻿using Mapster;
+using MediAgenda.API.Filters;
 using MediAgenda.Application.DTOs;
 using MediAgenda.Application.DTOs.API;
 using MediAgenda.Application.Interfaces;
@@ -16,7 +17,7 @@ namespace MediAgenda.API.Controllers
     [Route("api/MedicalDocuments")]
     [ApiController]
     [Authorize]
-    [Authorize(Roles = "Doctor,Admin")]
+    [Authorize(Roles = "User,Doctor,Admin")]
     public class MedicalDocumentsController : ControllerBase
     {
         private readonly IMedicalDocumentsService _service;

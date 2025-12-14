@@ -55,7 +55,7 @@ namespace MediAgenda.Application.Services
         public async Task<List<MedicineDTO>> GetAllMedicine(int prescriptionid)
         {
             var list = await _repo.GetMedicineInPrescription(prescriptionid);
-            return list.Adapt<List<MedicineDTO>>();
+            return list.Item1.Adapt<List<MedicineDTO>>();
         }
 
         public async Task<PrescriptionMedicineDTO> AddMedicineAsync(PrescriptionMedicineCUDTO dtocu)
@@ -85,7 +85,7 @@ namespace MediAgenda.Application.Services
         public async Task<List<AnalysisDTO>> GetAllAnalysis(int prescriptionid)
         {
             var list = await _repo.GetAnalysisInPrescription(prescriptionid);
-            return list.Adapt<List<AnalysisDTO>>();
+            return list.Item1.Adapt<List<AnalysisDTO>>();
         }
 
 
@@ -115,7 +115,7 @@ namespace MediAgenda.Application.Services
         public async Task<List<PermissionDTO>> GetAllPermission(int prescriptionid)
         {
             var list = await _repo.GetPermissionInPrescription(prescriptionid);
-            return list.Adapt<List<PermissionDTO>>();
+            return list.Item1.Adapt<List<PermissionDTO>>();
         }
 
 

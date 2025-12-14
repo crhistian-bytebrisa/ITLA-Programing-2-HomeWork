@@ -9,7 +9,7 @@ namespace MediAgenda.Application.DTOs.Enums
     public enum ConsultationStateDTO
     {
         Pendent,
-        Confirmed,
+        Completed,
         Cancelled
     }
 }

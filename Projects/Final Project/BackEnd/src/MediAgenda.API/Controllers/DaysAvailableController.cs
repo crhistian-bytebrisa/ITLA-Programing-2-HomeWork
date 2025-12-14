@@ -14,7 +14,7 @@ namespace MediAgenda.API.Controllers
     [Route("api/DaysAvailable")]
     [ApiController]
     [Authorize]
-    [Authorize(Roles = "Doctor,Admin")]
+    [Authorize(Roles = "Doctor,Admin,User")]
     public class DaysAvailableController : ControllerBase
     {
         private readonly IDayAvailablesService _service;

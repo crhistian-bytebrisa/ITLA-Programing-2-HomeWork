@@ -1,0 +1,9247 @@
+[2025-12-13 12:46:20] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 12:46:25] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 4643 ms
+
+
+[2025-12-13 12:51:01] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 1 ms
+
+
+[2025-12-13 12:51:02] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 499 ms
+
+
+[2025-12-13 12:51:02] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 46 ms
+
+
+[2025-12-13 12:51:09] Request: OPTIONS 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:51:09] Request: OPTIONS 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:51:09] Request: GET 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 200 
+Tiempo: 294 ms
+
+
+[2025-12-13 12:51:09] Request: GET 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 12:51:11] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:51:11] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:51:11] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 12:51:11] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 12:51:39] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:51:39] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:51:39] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 66 ms
+
+
+[2025-12-13 12:51:39] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-12-13 12:53:45] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:53:45] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:53:45] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 122 ms
+
+
+[2025-12-13 12:53:45] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 12:53:56] Request: OPTIONS 
+URL: /api/Medicines/1 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:53:56] Request: PUT 
+URL: /api/Medicines/1 
+Query: 
+Response: 204 
+Tiempo: 296 ms
+
+
+[2025-12-13 12:53:56] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:53:56] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 12:53:56] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 12:54:30] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:54:30] Request: POST 
+URL: /api/Medicines 
+Query: 
+Response: 201 
+Tiempo: 144 ms
+
+
+[2025-12-13 12:54:30] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 18 ms
+
+
+[2025-12-13 12:57:18] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:57:18] Request: GET 
+URL: /api/clinics 
+Query: 
+Response: 200 
+Tiempo: 80 ms
+
+
+[2025-12-13 12:57:18] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 80 ms
+
+
+[2025-12-13 12:57:18] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 12:57:21] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 12:59:27] Request: OPTIONS 
+URL: /api/Patients 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:59:27] Request: OPTIONS 
+URL: /api/Patients 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:59:27] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 241 ms
+
+
+[2025-12-13 12:59:27] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 12:59:32] Request: OPTIONS 
+URL: /api/Insurances 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:59:32] Request: OPTIONS 
+URL: /api/Insurances 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:59:32] Request: GET 
+URL: /api/Insurances 
+Query: 
+Response: 200 
+Tiempo: 71 ms
+
+
+[2025-12-13 12:59:32] Request: GET 
+URL: /api/Insurances 
+Query: 
+Response: 200 
+Tiempo: 27 ms
+
+
+[2025-12-13 12:59:35] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:59:35] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:59:35] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-13 12:59:35] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 12:59:40] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:59:40] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:59:40] Request: OPTIONS 
+URL: /api/clinics 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:59:40] Request: OPTIONS 
+URL: /api/clinics 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:59:40] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 12:59:40] Request: GET 
+URL: /api/clinics 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 12:59:40] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 12:59:40] Request: GET 
+URL: /api/clinics 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 12:59:47] Request: OPTIONS 
+URL: /api/clinics 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:59:47] Request: OPTIONS 
+URL: /api/clinics 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:59:47] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 12:59:47] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 12:59:47] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 12:59:47] Request: GET 
+URL: /api/clinics 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 13:00:54] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:00:54] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 154 ms
+
+
+[2025-12-13 13:01:15] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:16] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 139 ms
+
+
+[2025-12-13 13:01:17] Request: OPTIONS 
+URL: /api/Patients/1002/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:17] Request: OPTIONS 
+URL: /api/Patients/1002/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:17] Request: GET 
+URL: /api/Patients/1002/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 93 ms
+
+
+[2025-12-13 13:01:17] Request: GET 
+URL: /api/Patients/1002/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 13:01:20] Request: OPTIONS 
+URL: /api/Patients/1002/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:20] Request: GET 
+URL: /api/Patients/1002/Medicines 
+Query: 
+Response: 200 
+Tiempo: 51 ms
+
+
+[2025-12-13 13:01:20] Request: GET 
+URL: /api/Patients/1002/Medicines 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 13:01:21] Request: OPTIONS 
+URL: /api/Patients/1002/Documents 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:21] Request: GET 
+URL: /api/Patients/1002/Documents 
+Query: 
+Response: 200 
+Tiempo: 56 ms
+
+
+[2025-12-13 13:01:21] Request: GET 
+URL: /api/Patients/1002/Documents 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 13:01:30] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:30] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 126 ms
+
+
+[2025-12-13 13:01:31] Request: OPTIONS 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:31] Request: OPTIONS 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:31] Request: GET 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-13 13:01:31] Request: GET 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 13:01:35] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:35] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:35] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-13 13:01:35] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 13:01:39] Request: OPTIONS 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:39] Request: OPTIONS 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:39] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 13:01:39] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 13:01:49] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:49] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 13:01:49] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 13:01:57] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:57] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:01:57] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 13:01:57] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 13:02:55] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:02:55] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 163 ms
+
+
+[2025-12-13 13:02:56] Request: OPTIONS 
+URL: /api/DayAvailable 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:02:56] Request: OPTIONS 
+URL: /api/DayAvailable 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:02:56] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:02:56] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 13:02:56] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 13:02:56] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 13:02:56] Request: GET 
+URL: /api/DayAvailable 
+Query: 
+Response: 200 
+Tiempo: 56 ms
+
+
+[2025-12-13 13:03:26] Request: OPTIONS 
+URL: /api/DayAvailable 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:03:26] Request: POST 
+URL: /api/DayAvailable 
+Query: 
+Response: 405 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:03:28] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:03:28] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 13:03:28] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 13:03:29] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 13:03:29] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-12-13 13:05:26] Request: OPTIONS 
+URL: /api/DayAvailable 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:05:26] Request: POST 
+URL: /api/DayAvailable 
+Query: 
+Response: 405 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:06:02] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:06:02] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:06:02] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:06:02] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 13:06:02] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 13:06:02] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 15 ms
+
+
+[2025-12-13 13:06:02] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 13:07:00] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 13:07:03] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 3498 ms
+
+
+[2025-12-13 13:07:03] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 865 ms
+
+
+[2025-12-13 13:07:03] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 15 ms
+
+
+[2025-12-13 13:07:03] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 13:07:26] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:07:27] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 97 ms
+
+
+[2025-12-13 13:07:27] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 10 ms
+
+
+[2025-12-13 13:07:28] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:07:28] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 13:07:28] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 13:07:29] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-12-13 13:09:32] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 8 ms
+
+
+[2025-12-13 13:09:33] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 876 ms
+
+
+[2025-12-13 13:09:36] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 3178 ms
+
+
+[2025-12-13 13:11:46] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 13:11:46] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 23 ms
+
+
+[2025-12-13 13:11:47] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 29 ms
+
+
+[2025-12-13 13:11:47] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 555 ms
+
+
+[2025-12-13 13:11:47] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 75 ms
+
+
+[2025-12-13 13:11:47] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 375 ms
+
+
+[2025-12-13 13:11:47] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 13:12:22] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 13:12:22] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 9 ms
+
+
+[2025-12-13 13:13:12] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 13:13:12] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 9 ms
+
+
+[2025-12-13 13:14:26] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 13:14:26] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 13:14:26] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 76 ms
+
+
+[2025-12-13 13:14:26] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 80 ms
+
+
+[2025-12-13 13:14:28] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 104 ms
+
+
+[2025-12-13 14:36:24] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 14:36:25] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 238 ms
+
+
+[2025-12-13 14:36:25] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 31 ms
+
+
+[2025-12-13 14:37:32] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 14:37:32] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 48 ms
+
+
+[2025-12-13 14:37:32] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 58 ms
+
+
+[2025-12-13 14:38:33] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 10 ms
+
+
+[2025-12-13 14:38:56] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 84 ms
+
+
+[2025-12-13 14:39:07] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 17 ms
+
+
+[2025-12-13 14:39:27] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 400 
+Tiempo: 12 ms
+
+
+[2025-12-13 14:39:56] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 4062 ms
+
+
+[2025-12-13 14:40:41] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 8 ms
+
+
+[2025-12-13 14:40:45] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 3983 ms
+
+
+[2025-12-13 14:40:45] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 170 ms
+
+
+[2025-12-13 14:40:45] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 170 ms
+
+
+[2025-12-13 14:40:45] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 14:40:55] Request: GET 
+URL: /api/Doctor 
+Query: 
+Response: 200 
+Tiempo: 10481 ms
+
+
+[2025-12-13 14:41:02] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 91 ms
+
+
+[2025-12-13 14:41:02] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 151 ms
+
+
+[2025-12-13 14:41:02] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 58 ms
+
+
+[2025-12-13 14:41:06] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 10531 ms
+
+
+[2025-12-13 14:41:06] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 4320 ms
+
+
+[2025-12-13 14:41:06] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 20959 ms
+
+
+[2025-12-13 14:41:06] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 4239 ms
+
+
+[2025-12-13 14:41:06] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 402 ms
+
+
+[2025-12-13 14:41:11] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 5051 ms
+
+
+[2025-12-13 14:41:29] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 201 
+Tiempo: 8478 ms
+
+
+[2025-12-13 14:42:02] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-13 14:42:02] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 201 
+Tiempo: 51 ms
+
+
+[2025-12-13 14:42:02] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 31 ms
+
+
+[2025-12-13 14:42:11] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 28 ms
+
+
+[2025-12-13 14:42:11] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 9 ms
+
+
+[2025-12-13 14:42:11] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 49 ms
+
+
+[2025-12-13 14:42:11] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 61 ms
+
+
+[2025-12-13 14:42:11] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 14:42:11] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 30 ms
+
+
+[2025-12-13 14:42:11] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 59 ms
+
+
+[2025-12-13 14:42:11] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 100 ms
+
+
+[2025-12-13 14:42:11] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 127 ms
+
+
+[2025-12-13 14:42:11] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 96 ms
+
+
+[2025-12-13 14:42:55] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 35 ms
+
+
+[2025-12-13 14:42:55] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 14:42:55] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 102 ms
+
+
+[2025-12-13 14:42:55] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 63 ms
+
+
+[2025-12-13 14:44:23] Request: OPTIONS 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 14:44:23] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 400 
+Tiempo: 80 ms
+
+
+[2025-12-13 14:44:23] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 14:44:23] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 29 ms
+
+
+[2025-12-13 14:44:24] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 30 ms
+
+
+[2025-12-13 14:44:24] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 38 ms
+
+
+[2025-12-13 14:44:24] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 46 ms
+
+
+[2025-12-13 14:44:24] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 70 ms
+
+
+[2025-12-13 14:44:24] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 175 ms
+
+
+[2025-12-13 14:44:27] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 400 
+Tiempo: 9 ms
+
+
+[2025-12-13 14:44:27] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 91 ms
+
+
+[2025-12-13 14:44:27] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 131 ms
+
+
+[2025-12-13 14:44:27] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 131 ms
+
+
+[2025-12-13 14:44:38] Request: OPTIONS 
+URL: /api/DaysAvailable/1001 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 14:44:38] Request: PUT 
+URL: /api/DaysAvailable/1001 
+Query: 
+Response: 400 
+Tiempo: 9 ms
+
+
+[2025-12-13 14:44:38] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-13 14:44:38] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 8 ms
+
+
+[2025-12-13 14:44:38] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 68 ms
+
+
+[2025-12-13 14:44:38] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 99 ms
+
+
+[2025-12-13 14:44:38] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 133 ms
+
+
+[2025-12-13 14:44:38] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 196 ms
+
+
+[2025-12-13 14:44:38] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 99 ms
+
+
+[2025-12-13 14:44:38] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 135 ms
+
+
+[2025-12-13 14:44:38] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 34 ms
+
+
+[2025-12-13 14:46:44] Request: OPTIONS 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 14:46:44] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 400 
+Tiempo: 9 ms
+
+
+[2025-12-13 14:46:44] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 14:46:44] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 54 ms
+
+
+[2025-12-13 14:46:50] Request: OPTIONS 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 14:46:50] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 400 
+Tiempo: 10 ms
+
+
+[2025-12-13 14:46:50] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 7 ms
+
+
+[2025-12-13 14:46:50] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 20 ms
+
+
+[2025-12-13 14:47:39] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 181 ms
+
+
+[2025-12-13 14:47:45] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 5 ms
+
+
+[2025-12-13 14:47:45] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 14:47:45] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 7 ms
+
+
+[2025-12-13 14:47:45] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 31 ms
+
+
+[2025-12-13 14:47:45] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 30 ms
+
+
+[2025-12-13 14:47:45] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 47 ms
+
+
+[2025-12-13 14:47:45] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 136 ms
+
+
+[2025-12-13 14:47:45] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 74 ms
+
+
+[2025-12-13 14:47:45] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 75 ms
+
+
+[2025-12-13 14:47:51] Request: OPTIONS 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 14:47:51] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 400 
+Tiempo: 8 ms
+
+
+[2025-12-13 14:47:51] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 14:47:51] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 20 ms
+
+
+[2025-12-13 14:47:54] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 40 ms
+
+
+[2025-12-13 14:47:54] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 96 ms
+
+
+[2025-12-13 14:47:54] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 58 ms
+
+
+[2025-12-13 14:47:54] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 98 ms
+
+
+[2025-12-13 14:47:54] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 237 ms
+
+
+[2025-12-13 14:47:54] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 34 ms
+
+
+[2025-12-13 14:47:54] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 64 ms
+
+
+[2025-12-13 14:47:54] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 64 ms
+
+
+[2025-12-13 14:48:27] Request: OPTIONS 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 14:48:27] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 400 
+Tiempo: 7 ms
+
+
+[2025-12-13 14:48:27] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 14:48:27] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 32 ms
+
+
+[2025-12-13 14:49:19] Request: OPTIONS 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 14:49:19] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 400 
+Tiempo: 7 ms
+
+
+[2025-12-13 14:49:19] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 26 ms
+
+
+[2025-12-13 14:49:19] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 22 ms
+
+
+[2025-12-13 14:50:32] Request: OPTIONS 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 14:50:32] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 44 ms
+
+
+[2025-12-13 14:50:37] Request: OPTIONS 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 14:50:37] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 50 ms
+
+
+[2025-12-13 14:50:41] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 14:50:41] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 14:50:41] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 37 ms
+
+
+[2025-12-13 14:50:41] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-13 14:50:41] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 10 ms
+
+
+[2025-12-13 14:50:42] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 155 ms
+
+
+[2025-12-13 14:50:42] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 155 ms
+
+
+[2025-12-13 14:50:42] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 59 ms
+
+
+[2025-12-13 14:50:47] Request: OPTIONS 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 14:50:47] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 38 ms
+
+
+[2025-12-13 14:50:50] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-13 14:50:50] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 8 ms
+
+
+[2025-12-13 14:50:50] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 14:50:50] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 5 ms
+
+
+[2025-12-13 14:50:50] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 20 ms
+
+
+[2025-12-13 14:50:50] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 24 ms
+
+
+[2025-12-13 14:50:50] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 42 ms
+
+
+[2025-12-13 14:50:50] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 214 ms
+
+
+[2025-12-13 14:51:09] Request: OPTIONS 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 14:51:09] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 26 ms
+
+
+[2025-12-13 14:51:12] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 14:51:12] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 7 ms
+
+
+[2025-12-13 14:51:12] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-13 14:51:12] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 16 ms
+
+
+[2025-12-13 14:51:12] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 5 ms
+
+
+[2025-12-13 14:51:12] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 149 ms
+
+
+[2025-12-13 14:51:12] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 74 ms
+
+
+[2025-12-13 14:51:17] Request: OPTIONS 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 14:51:17] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 32 ms
+
+
+[2025-12-13 14:51:19] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 14:51:20] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 28 ms
+
+
+[2025-12-13 14:51:20] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 31 ms
+
+
+[2025-12-13 14:51:20] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 7 ms
+
+
+[2025-12-13 14:51:20] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 27 ms
+
+
+[2025-12-13 14:51:20] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 105 ms
+
+
+[2025-12-13 14:51:20] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 14:51:20] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 133 ms
+
+
+[2025-12-13 14:51:20] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 16 ms
+
+
+[2025-12-13 14:51:20] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 21 ms
+
+
+[2025-12-13 15:03:16] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 15:03:16] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 15:03:16] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-13 15:03:16] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 36 ms
+
+
+[2025-12-13 15:03:16] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 7 ms
+
+
+[2025-12-13 15:03:16] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 271 ms
+
+
+[2025-12-13 15:03:16] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 139 ms
+
+
+[2025-12-13 15:03:25] Request: OPTIONS 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 15:03:25] Request: PUT 
+URL: /api/DaysAvailable/1 
+Query: 
+Response: 204 
+Tiempo: 33 ms
+
+
+[2025-12-13 19:27:16] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 39 ms
+
+
+[2025-12-13 19:27:16] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 47 ms
+
+
+[2025-12-13 19:27:16] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 34 ms
+
+
+[2025-12-13 19:27:16] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 19:27:16] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 99 ms
+
+
+[2025-12-13 19:27:17] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 401 
+Tiempo: 60 ms
+
+
+[2025-12-13 19:27:17] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 401 
+Tiempo: 6 ms
+
+
+[2025-12-13 19:27:19] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 401 
+Tiempo: 40 ms
+
+
+[2025-12-13 19:27:19] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 401 
+Tiempo: 3 ms
+
+
+[2025-12-13 19:27:19] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 401 
+Tiempo: 3 ms
+
+
+[2025-12-13 19:27:33] Request: OPTIONS 
+URL: /api/Insurances 
+Query: 
+Response: 204 
+Tiempo: 50 ms
+
+
+[2025-12-13 19:27:33] Request: OPTIONS 
+URL: /api/Insurances 
+Query: 
+Response: 204 
+Tiempo: 50 ms
+
+
+[2025-12-13 19:27:33] Request: GET 
+URL: /api/Insurances 
+Query: 
+Response: 401 
+Tiempo: 4 ms
+
+
+[2025-12-13 19:27:33] Request: GET 
+URL: /api/Insurances 
+Query: 
+Response: 401 
+Tiempo: 4 ms
+
+
+[2025-12-13 19:27:35] Request: GET 
+URL: /api/Insurances 
+Query: 
+Response: 401 
+Tiempo: 2 ms
+
+
+[2025-12-13 19:27:35] Request: GET 
+URL: /api/Insurances 
+Query: 
+Response: 401 
+Tiempo: 3 ms
+
+
+[2025-12-13 19:27:48] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 34 ms
+
+
+[2025-12-13 19:27:48] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 667 ms
+
+
+[2025-12-13 19:27:50] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 34 ms
+
+
+[2025-12-13 19:27:50] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 32 ms
+
+
+[2025-12-13 19:27:50] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 27 ms
+
+
+[2025-12-13 19:27:50] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 68 ms
+
+
+[2025-12-13 19:27:50] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 60 ms
+
+
+[2025-12-13 19:27:50] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 191 ms
+
+
+[2025-12-13 19:27:50] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 87 ms
+
+
+[2025-12-13 19:27:50] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 22 ms
+
+
+[2025-12-13 19:27:50] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 120 ms
+
+
+[2025-12-13 19:27:50] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-13 19:27:57] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 37 ms
+
+
+[2025-12-13 19:27:57] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-13 19:27:57] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 18 ms
+
+
+[2025-12-13 19:27:57] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 25 ms
+
+
+[2025-12-13 19:27:57] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 61 ms
+
+
+[2025-12-13 19:27:57] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 109 ms
+
+
+[2025-12-13 19:27:57] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 51 ms
+
+
+[2025-12-13 19:27:57] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 22 ms
+
+
+[2025-12-13 19:28:18] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 19:28:19] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 221 ms
+
+
+[2025-12-13 19:28:32] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 28 ms
+
+
+[2025-12-13 19:28:32] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 62 ms
+
+
+[2025-12-13 19:28:32] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 201 ms
+
+
+[2025-12-13 19:28:32] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 15 ms
+
+
+[2025-12-13 19:42:44] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 19:42:44] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 403 
+Tiempo: 153 ms
+
+
+[2025-12-13 19:42:44] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 403 
+Tiempo: 6 ms
+
+
+[2025-12-13 19:43:29] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 19:43:30] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 403 
+Tiempo: 135 ms
+
+
+[2025-12-13 19:43:30] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 403 
+Tiempo: 5 ms
+
+
+[2025-12-13 19:43:36] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:43:36] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:43:36] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:43:36] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:43:36] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 403 
+Tiempo: 1 ms
+
+
+[2025-12-13 19:43:36] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 403 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:43:36] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 403 
+Tiempo: 1 ms
+
+
+[2025-12-13 19:43:36] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 403 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:44:18] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 19:44:22] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 4028 ms
+
+
+[2025-12-13 19:44:22] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 200 
+Tiempo: 4034 ms
+
+
+[2025-12-13 19:44:22] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 210 ms
+
+
+[2025-12-13 19:44:22] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 200 
+Tiempo: 211 ms
+
+
+[2025-12-13 19:44:37] Request: OPTIONS 
+URL: /api/Consultations 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:44:37] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 403 
+Tiempo: 17 ms
+
+
+[2025-12-13 19:44:38] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:44:38] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 200 
+Tiempo: 53 ms
+
+
+[2025-12-13 19:44:42] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:44:42] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 25 ms
+
+
+[2025-12-13 19:44:42] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 200 
+Tiempo: 32 ms
+
+
+[2025-12-13 19:44:42] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 19:44:46] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:44:47] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 35 ms
+
+
+[2025-12-13 19:44:47] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 200 
+Tiempo: 37 ms
+
+
+[2025-12-13 19:44:47] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 19:44:53] Request: OPTIONS 
+URL: /api/Consultations 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:44:53] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 403 
+Tiempo: 1 ms
+
+
+[2025-12-13 19:44:55] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:44:55] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 200 
+Tiempo: 28 ms
+
+
+[2025-12-13 19:45:16] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?DateFrom=2025-12-13&OnlyAvailable=true
+Response: 200 
+Tiempo: 52 ms
+
+
+[2025-12-13 19:45:41] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:45:41] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:45:41] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:45:41] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:45:42] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 19:45:42] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 200 
+Tiempo: 24 ms
+
+
+[2025-12-13 19:45:42] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 19:45:42] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 15 ms
+
+
+[2025-12-13 19:45:57] Request: OPTIONS 
+URL: /api/Consultations 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:45:57] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 403 
+Tiempo: 1 ms
+
+
+[2025-12-13 19:46:01] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 19:46:01] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 200 
+Tiempo: 22 ms
+
+
+[2025-12-13 19:46:46] Request: OPTIONS 
+URL: /api/Consultations 
+Query: 
+Response: 204 
+Tiempo: 10 ms
+
+
+[2025-12-13 19:46:46] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 403 
+Tiempo: 298 ms
+
+
+[2025-12-13 19:46:48] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 204 
+Tiempo: 5 ms
+
+
+[2025-12-13 19:46:52] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true&DateFrom=2025-12-13
+Response: 200 
+Tiempo: 4215 ms
+
+
+[2025-12-13 19:47:36] Request: OPTIONS 
+URL: /api/Consultations 
+Query: 
+Response: 204 
+Tiempo: 73 ms
+
+
+[2025-12-13 19:47:36] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 403 
+Tiempo: 10 ms
+
+
+[2025-12-13 19:48:31] Request: OPTIONS 
+URL: /api/Consultations 
+Query: 
+Response: 204 
+Tiempo: 9 ms
+
+
+[2025-12-13 19:48:40] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 201 
+Tiempo: 9071 ms
+
+
+[2025-12-13 19:48:42] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 19:48:42] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 402 ms
+
+
+[2025-12-13 19:48:51] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 114 ms
+
+
+[2025-12-13 19:48:51] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 8 ms
+
+
+[2025-12-13 19:48:51] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 72 ms
+
+
+[2025-12-13 19:48:51] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 75 ms
+
+
+[2025-12-13 19:48:51] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 232 ms
+
+
+[2025-12-13 19:48:52] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 63 ms
+
+
+[2025-12-13 19:49:17] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 72 ms
+
+
+[2025-12-13 19:49:30] Request: GET 
+URL: /api/Consultations 
+Query: 
+Response: 403 
+Tiempo: 16 ms
+
+
+[2025-12-13 19:49:44] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 19:49:45] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 477 ms
+
+
+[2025-12-13 19:49:49] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 19:49:49] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 19:49:49] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 128 ms
+
+
+[2025-12-13 19:49:49] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 18 ms
+
+
+[2025-12-13 19:49:53] Request: OPTIONS 
+URL: /api/Consultations/1001 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 204 
+Tiempo: 67 ms
+
+
+[2025-12-13 19:49:53] Request: GET 
+URL: /api/Consultations/1001 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 200 
+Tiempo: 179 ms
+
+
+[2025-12-13 19:49:53] Request: GET 
+URL: /api/Consultations/1001 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 200 
+Tiempo: 10 ms
+
+
+[2025-12-13 19:49:55] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 28 ms
+
+
+[2025-12-13 19:49:55] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 35 ms
+
+
+[2025-12-13 19:49:55] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 34 ms
+
+
+[2025-12-13 19:51:34] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 61 ms
+
+
+[2025-12-13 19:51:34] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 33 ms
+
+
+[2025-12-13 19:51:34] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 35 ms
+
+
+[2025-12-13 19:52:34] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 15 ms
+
+
+[2025-12-13 19:52:39] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 4797 ms
+
+
+[2025-12-13 19:52:39] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 157 ms
+
+
+[2025-12-13 19:52:53] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 7 ms
+
+
+[2025-12-13 19:52:53] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 98 ms
+
+
+[2025-12-13 19:52:53] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 22 ms
+
+
+[2025-12-13 19:53:44] Request: OPTIONS 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 204 
+Tiempo: 41 ms
+
+
+[2025-12-13 19:53:44] Request: OPTIONS 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 19:53:45] Request: GET 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 200 
+Tiempo: 457 ms
+
+
+[2025-12-13 19:53:45] Request: GET 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 200 
+Tiempo: 12 ms
+
+
+[2025-12-13 19:53:58] Request: OPTIONS 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 204 
+Tiempo: 29 ms
+
+
+[2025-12-13 19:53:58] Request: GET 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 200 
+Tiempo: 27 ms
+
+
+[2025-12-13 19:53:58] Request: GET 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 200 
+Tiempo: 15 ms
+
+
+[2025-12-13 19:54:42] Request: OPTIONS 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 204 
+Tiempo: 14 ms
+
+
+[2025-12-13 19:54:47] Request: GET 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 200 
+Tiempo: 5089 ms
+
+
+[2025-12-13 19:54:47] Request: GET 
+URL: /api/Consultations/1 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 200 
+Tiempo: 137 ms
+
+
+[2025-12-13 19:54:51] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 57 ms
+
+
+[2025-12-13 19:54:51] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 311 ms
+
+
+[2025-12-13 19:54:51] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 44 ms
+
+
+[2025-12-13 19:54:56] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 38 ms
+
+
+[2025-12-13 19:54:56] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 98 ms
+
+
+[2025-12-13 19:54:56] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 32 ms
+
+
+[2025-12-13 19:54:56] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 37 ms
+
+
+[2025-12-13 19:54:56] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 29 ms
+
+
+[2025-12-13 19:54:56] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 213 ms
+
+
+[2025-12-13 19:54:56] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 215 ms
+
+
+[2025-12-13 19:54:56] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 83 ms
+
+
+[2025-12-13 19:54:56] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 25 ms
+
+
+[2025-12-13 19:55:04] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 73 ms
+
+
+[2025-12-13 19:55:04] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 75 ms
+
+
+[2025-12-13 19:55:04] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 73 ms
+
+
+[2025-12-13 19:55:04] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 225 ms
+
+
+[2025-12-13 19:55:05] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 89 ms
+
+
+[2025-12-13 19:55:05] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 162 ms
+
+
+[2025-12-13 19:55:05] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 80 ms
+
+
+[2025-12-13 19:55:05] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 23 ms
+
+
+[2025-12-13 19:56:21] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 53 ms
+
+
+[2025-12-13 19:56:26] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 3563 ms
+
+
+[2025-12-13 19:56:26] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 5263 ms
+
+
+[2025-12-13 19:56:26] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 3739 ms
+
+
+[2025-12-13 19:56:26] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 389 ms
+
+
+[2025-12-13 19:56:37] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 19:56:37] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 687 ms
+
+
+[2025-12-13 19:56:39] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 40 ms
+
+
+[2025-12-13 19:56:39] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 40 ms
+
+
+[2025-12-13 19:56:39] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 7 ms
+
+
+[2025-12-13 19:56:39] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 60 ms
+
+
+[2025-12-13 19:56:39] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 171 ms
+
+
+[2025-12-13 19:56:39] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 53 ms
+
+
+[2025-12-13 19:56:39] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 258 ms
+
+
+[2025-12-13 19:56:39] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 16 ms
+
+
+[2025-12-13 20:01:39] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 102 ms
+
+
+[2025-12-13 20:01:39] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 253 ms
+
+
+[2025-12-13 20:01:39] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 20:01:43] Request: OPTIONS 
+URL: /api/Consultations/1 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:01:43] Request: PUT 
+URL: /api/Consultations/1 
+Query: 
+Response: 403 
+Tiempo: 15 ms
+
+
+[2025-12-13 20:01:44] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:01:44] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 44 ms
+
+
+[2025-12-13 20:01:45] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 40 ms
+
+
+[2025-12-13 20:01:45] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 20:02:34] Request: OPTIONS 
+URL: /api/Consultations/1 
+Query: 
+Response: 204 
+Tiempo: 66 ms
+
+
+[2025-12-13 20:02:34] Request: PUT 
+URL: /api/Consultations/1 
+Query: 
+Response: 403 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:02:37] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 11 ms
+
+
+[2025-12-13 20:02:37] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 36 ms
+
+
+[2025-12-13 20:03:23] Request: OPTIONS 
+URL: /api/Consultations/1 
+Query: 
+Response: 204 
+Tiempo: 13 ms
+
+
+[2025-12-13 20:03:23] Request: PUT 
+URL: /api/Consultations/1 
+Query: 
+Response: 403 
+Tiempo: 294 ms
+
+
+[2025-12-13 20:03:25] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 30 ms
+
+
+[2025-12-13 20:03:29] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 4217 ms
+
+
+[2025-12-13 20:03:54] Request: PUT 
+URL: /api/Consultations/1 
+Query: 
+Response: 403 
+Tiempo: 74 ms
+
+
+[2025-12-13 20:04:50] Request: PUT 
+URL: /api/Consultations/1 
+Query: 
+Response: 403 
+Tiempo: 339 ms
+
+
+[2025-12-13 20:05:20] Request: PUT 
+URL: /api/Consultations/1 
+Query: 
+Response: 204 
+Tiempo: 5053 ms
+
+
+[2025-12-13 20:05:25] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 9 ms
+
+
+[2025-12-13 20:05:26] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 544 ms
+
+
+[2025-12-13 20:05:26] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 82 ms
+
+
+[2025-12-13 20:05:28] Request: OPTIONS 
+URL: /api/Consultations/1001 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:05:29] Request: PUT 
+URL: /api/Consultations/1001 
+Query: 
+Response: 204 
+Tiempo: 78 ms
+
+
+[2025-12-13 20:05:29] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 46 ms
+
+
+[2025-12-13 20:05:38] Request: OPTIONS 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 28 ms
+
+
+[2025-12-13 20:05:38] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 107 ms
+
+
+[2025-12-13 20:05:38] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-13 20:05:47] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 29 ms
+
+
+[2025-12-13 20:05:47] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 104 ms
+
+
+[2025-12-13 20:05:47] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 53 ms
+
+
+[2025-12-13 20:05:50] Request: OPTIONS 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 29 ms
+
+
+[2025-12-13 20:05:50] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 33 ms
+
+
+[2025-12-13 20:05:50] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 30 ms
+
+
+[2025-12-13 20:05:52] Request: OPTIONS 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:05:52] Request: OPTIONS 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 204 
+Tiempo: 7 ms
+
+
+[2025-12-13 20:05:52] Request: GET 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 200 
+Tiempo: 83 ms
+
+
+[2025-12-13 20:05:52] Request: GET 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-13 20:06:09] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 33 ms
+
+
+[2025-12-13 20:06:09] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 37 ms
+
+
+[2025-12-13 20:06:09] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 35 ms
+
+
+[2025-12-13 20:06:09] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 46 ms
+
+
+[2025-12-13 20:06:09] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 184 ms
+
+
+[2025-12-13 20:06:10] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 43 ms
+
+
+[2025-12-13 20:06:10] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 285 ms
+
+
+[2025-12-13 20:06:10] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 39 ms
+
+
+[2025-12-13 20:08:59] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 51 ms
+
+
+[2025-12-13 20:09:04] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 4775 ms
+
+
+[2025-12-13 20:09:04] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 4821 ms
+
+
+[2025-12-13 20:09:05] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 242 ms
+
+
+[2025-12-13 20:09:05] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 292 ms
+
+
+[2025-12-13 20:09:32] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 47 ms
+
+
+[2025-12-13 20:09:32] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 47 ms
+
+
+[2025-12-13 20:09:36] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 4241 ms
+
+
+[2025-12-13 20:09:36] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 4246 ms
+
+
+[2025-12-13 20:09:36] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 188 ms
+
+
+[2025-12-13 20:09:36] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 187 ms
+
+
+[2025-12-13 20:09:43] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 96 ms
+
+
+[2025-12-13 20:10:38] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 59 ms
+
+
+[2025-12-13 20:10:38] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:10:38] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 91 ms
+
+
+[2025-12-13 20:10:38] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 74 ms
+
+
+[2025-12-13 20:10:38] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 90 ms
+
+
+[2025-12-13 20:10:38] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 104 ms
+
+
+[2025-12-13 20:10:38] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 41 ms
+
+
+[2025-12-13 20:10:44] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 57 ms
+
+
+[2025-12-13 20:10:44] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 59 ms
+
+
+[2025-12-13 20:10:44] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:10:44] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 27 ms
+
+
+[2025-12-13 20:10:44] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 41 ms
+
+
+[2025-12-13 20:10:44] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 64 ms
+
+
+[2025-12-13 20:10:44] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 41 ms
+
+
+[2025-12-13 20:10:57] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 64 ms
+
+
+[2025-12-13 20:10:57] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 63 ms
+
+
+[2025-12-13 20:10:57] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 63 ms
+
+
+[2025-12-13 20:10:57] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 62 ms
+
+
+[2025-12-13 20:10:57] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 91 ms
+
+
+[2025-12-13 20:10:58] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 62 ms
+
+
+[2025-12-13 20:10:58] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 99 ms
+
+
+[2025-12-13 20:11:06] Request: OPTIONS 
+URL: /api/Consultations 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:11:06] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 400 
+Tiempo: 349 ms
+
+
+[2025-12-13 20:11:07] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:11:07] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 35 ms
+
+
+[2025-12-13 20:11:09] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 7 ms
+
+
+[2025-12-13 20:11:09] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-13 20:11:09] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 31 ms
+
+
+[2025-12-13 20:11:09] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 228 ms
+
+
+[2025-12-13 20:11:15] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:11:15] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 183 ms
+
+
+[2025-12-13 20:11:15] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 17 ms
+
+
+[2025-12-13 20:11:17] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 46 ms
+
+
+[2025-12-13 20:11:17] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 20:11:20] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 38 ms
+
+
+[2025-12-13 20:11:20] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 35 ms
+
+
+[2025-12-13 20:11:20] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 61 ms
+
+
+[2025-12-13 20:11:21] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 62 ms
+
+
+[2025-12-13 20:11:21] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 237 ms
+
+
+[2025-12-13 20:11:21] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 66 ms
+
+
+[2025-12-13 20:11:21] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 59 ms
+
+
+[2025-12-13 20:11:24] Request: OPTIONS 
+URL: /api/Consultations 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:11:24] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 400 
+Tiempo: 50 ms
+
+
+[2025-12-13 20:11:25] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 35 ms
+
+
+[2025-12-13 20:11:28] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:11:28] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 11 ms
+
+
+[2025-12-13 20:11:28] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 40 ms
+
+
+[2025-12-13 20:11:28] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 16 ms
+
+
+[2025-12-13 20:11:40] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 9 ms
+
+
+[2025-12-13 20:11:40] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 9 ms
+
+
+[2025-12-13 20:11:40] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 51 ms
+
+
+[2025-12-13 20:11:40] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 37 ms
+
+
+[2025-12-13 20:11:40] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 87 ms
+
+
+[2025-12-13 20:11:41] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 121 ms
+
+
+[2025-12-13 20:11:41] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 81 ms
+
+
+[2025-12-13 20:11:49] Request: OPTIONS 
+URL: /api/Consultations 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:11:49] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 400 
+Tiempo: 47 ms
+
+
+[2025-12-13 20:11:52] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:11:52] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 39 ms
+
+
+[2025-12-13 20:11:58] Request: OPTIONS 
+URL: /api/Consultations 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:11:59] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 201 
+Tiempo: 591 ms
+
+
+[2025-12-13 20:12:00] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:12:00] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 32 ms
+
+
+[2025-12-13 20:12:22] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:12:22] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 49 ms
+
+
+[2025-12-13 20:12:22] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 20:12:38] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:12:38] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 427 ms
+
+
+[2025-12-13 20:12:38] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 195 ms
+
+
+[2025-12-13 20:12:41] Request: OPTIONS 
+URL: /api/Patients 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:12:42] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 263 ms
+
+
+[2025-12-13 20:12:42] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-13 20:12:44] Request: OPTIONS 
+URL: /api/Patients/1/Notes 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:12:44] Request: OPTIONS 
+URL: /api/Patients/1 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-13 20:12:44] Request: OPTIONS 
+URL: /api/Patients/1 
+Query: 
+Response: 204 
+Tiempo: 42 ms
+
+
+[2025-12-13 20:12:44] Request: OPTIONS 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 204 
+Tiempo: 44 ms
+
+
+[2025-12-13 20:12:44] Request: OPTIONS 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 30 ms
+
+
+[2025-12-13 20:12:44] Request: OPTIONS 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 12 ms
+
+
+[2025-12-13 20:12:44] Request: OPTIONS 
+URL: /api/Patients/1/Notes 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-13 20:12:44] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: 
+Response: 204 
+Tiempo: 158 ms
+
+
+[2025-12-13 20:12:44] Request: OPTIONS 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 204 
+Tiempo: 157 ms
+
+
+[2025-12-13 20:12:44] Request: GET 
+URL: /api/Patients/1/Notes 
+Query: 
+Response: 200 
+Tiempo: 333 ms
+
+
+[2025-12-13 20:12:44] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 342 ms
+
+
+[2025-12-13 20:12:44] Request: GET 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 200 
+Tiempo: 345 ms
+
+
+[2025-12-13 20:12:44] Request: GET 
+URL: /api/Patients/1/Notes 
+Query: 
+Response: 200 
+Tiempo: 127 ms
+
+
+[2025-12-13 20:12:44] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 130 ms
+
+
+[2025-12-13 20:12:44] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: 
+Response: 200 
+Tiempo: 477 ms
+
+
+[2025-12-13 20:12:44] Request: GET 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 200 
+Tiempo: 186 ms
+
+
+[2025-12-13 20:12:44] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: 
+Response: 200 
+Tiempo: 64 ms
+
+
+[2025-12-13 20:12:44] Request: GET 
+URL: /api/Patients/1 
+Query: 
+Response: 200 
+Tiempo: 650 ms
+
+
+[2025-12-13 20:12:45] Request: GET 
+URL: /api/Patients/1 
+Query: 
+Response: 200 
+Tiempo: 37 ms
+
+
+[2025-12-13 20:13:07] Request: OPTIONS 
+URL: /api/Patients 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:13:07] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 43 ms
+
+
+[2025-12-13 20:13:07] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 49 ms
+
+
+[2025-12-13 20:13:13] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 38 ms
+
+
+[2025-12-13 20:13:13] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:13:13] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 32 ms
+
+
+[2025-12-13 20:13:13] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 75 ms
+
+
+[2025-12-13 20:13:13] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 82 ms
+
+
+[2025-12-13 20:13:13] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 91 ms
+
+
+[2025-12-13 20:13:13] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 52 ms
+
+
+[2025-12-13 20:13:13] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 49 ms
+
+
+[2025-12-13 20:13:13] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 141 ms
+
+
+[2025-12-13 20:13:13] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 15 ms
+
+
+[2025-12-13 20:21:24] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 26 ms
+
+
+[2025-12-13 20:21:24] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 218 ms
+
+
+[2025-12-13 20:21:26] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 5 ms
+
+
+[2025-12-13 20:21:26] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 30 ms
+
+
+[2025-12-13 20:21:26] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:21:26] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 44 ms
+
+
+[2025-12-13 20:21:26] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 41 ms
+
+
+[2025-12-13 20:21:26] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 34 ms
+
+
+[2025-12-13 20:21:26] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 76 ms
+
+
+[2025-12-13 20:21:26] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 119 ms
+
+
+[2025-12-13 20:21:26] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 56 ms
+
+
+[2025-12-13 20:21:26] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 21 ms
+
+
+[2025-12-13 20:21:29] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 70 ms
+
+
+[2025-12-13 20:21:29] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 162 ms
+
+
+[2025-12-13 20:21:29] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 198 ms
+
+
+[2025-12-13 20:21:42] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-13 20:21:42] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 5 ms
+
+
+[2025-12-13 20:21:42] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 83 ms
+
+
+[2025-12-13 20:21:42] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 83 ms
+
+
+[2025-12-13 20:21:42] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 148 ms
+
+
+[2025-12-13 20:21:42] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 68 ms
+
+
+[2025-12-13 20:21:42] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 39 ms
+
+
+[2025-12-13 20:21:42] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 21 ms
+
+
+[2025-12-13 20:21:42] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 53 ms
+
+
+[2025-12-13 20:22:33] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:22:33] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:22:33] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:22:33] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 63 ms
+
+
+[2025-12-13 20:22:33] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 37 ms
+
+
+[2025-12-13 20:22:34] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 152 ms
+
+
+[2025-12-13 20:22:34] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 95 ms
+
+
+[2025-12-13 20:22:34] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 56 ms
+
+
+[2025-12-13 20:22:34] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 87 ms
+
+
+[2025-12-13 20:22:48] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:22:48] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:22:48] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-13 20:22:48] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:22:48] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 158 ms
+
+
+[2025-12-13 20:22:48] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 164 ms
+
+
+[2025-12-13 20:22:48] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 46 ms
+
+
+[2025-12-13 20:22:48] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 20:23:16] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:23:16] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:23:16] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 59 ms
+
+
+[2025-12-13 20:23:16] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 58 ms
+
+
+[2025-12-13 20:23:16] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 31 ms
+
+
+[2025-12-13 20:23:16] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 40 ms
+
+
+[2025-12-13 20:23:16] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 81 ms
+
+
+[2025-12-13 20:23:16] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 86 ms
+
+
+[2025-12-13 20:23:16] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 61 ms
+
+
+[2025-12-13 20:23:31] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:23:31] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:23:31] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:23:31] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 54 ms
+
+
+[2025-12-13 20:23:31] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 84 ms
+
+
+[2025-12-13 20:23:31] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 38 ms
+
+
+[2025-12-13 20:23:31] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 47 ms
+
+
+[2025-12-13 20:23:32] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 133 ms
+
+
+[2025-12-13 20:23:48] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 7 ms
+
+
+[2025-12-13 20:23:48] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 116 ms
+
+
+[2025-12-13 20:23:48] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-13 20:23:55] Request: OPTIONS 
+URL: /api/Consultations/1002 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 204 
+Tiempo: 24 ms
+
+
+[2025-12-13 20:23:55] Request: GET 
+URL: /api/Consultations/1002 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 200 
+Tiempo: 283 ms
+
+
+[2025-12-13 20:23:55] Request: GET 
+URL: /api/Consultations/1002 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true/undefined
+Response: 200 
+Tiempo: 45 ms
+
+
+[2025-12-13 20:23:58] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:23:58] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:23:58] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 51 ms
+
+
+[2025-12-13 20:23:58] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-13 20:26:06] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 27 ms
+
+
+[2025-12-13 20:26:06] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 29 ms
+
+
+[2025-12-13 20:26:06] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 110 ms
+
+
+[2025-12-13 20:26:06] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 75 ms
+
+
+[2025-12-13 20:26:11] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:26:11] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 32 ms
+
+
+[2025-12-13 20:26:11] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 13 ms
+
+
+[2025-12-13 20:26:11] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 14 ms
+
+
+[2025-12-13 20:26:11] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 64 ms
+
+
+[2025-12-13 20:26:11] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 79 ms
+
+
+[2025-12-13 20:26:11] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 86 ms
+
+
+[2025-12-13 20:26:11] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 53 ms
+
+
+[2025-12-13 20:26:29] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:26:29] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 201 
+Tiempo: 116 ms
+
+
+[2025-12-13 20:26:29] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-13 20:26:36] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:26:36] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 168 ms
+
+
+[2025-12-13 20:26:38] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:26:38] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:26:38] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 9 ms
+
+
+[2025-12-13 20:26:38] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 21 ms
+
+
+[2025-12-13 20:26:38] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 88 ms
+
+
+[2025-12-13 20:26:38] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 51 ms
+
+
+[2025-12-13 20:26:38] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 83 ms
+
+
+[2025-12-13 20:26:47] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:26:47] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 5 ms
+
+
+[2025-12-13 20:26:47] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:26:47] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 8 ms
+
+
+[2025-12-13 20:26:47] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 82 ms
+
+
+[2025-12-13 20:26:47] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 131 ms
+
+
+[2025-12-13 20:26:47] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 161 ms
+
+
+[2025-12-13 20:26:53] Request: OPTIONS 
+URL: /api/Consultations 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:26:53] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 201 
+Tiempo: 75 ms
+
+
+[2025-12-13 20:26:54] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:26:54] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-13 20:27:01] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:27:01] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 10 ms
+
+
+[2025-12-13 20:27:01] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 35 ms
+
+
+[2025-12-13 20:27:01] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-13 20:27:13] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:27:14] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 188 ms
+
+
+[2025-12-13 20:27:14] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 5 ms
+
+
+[2025-12-13 20:27:14] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:27:14] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 42 ms
+
+
+[2025-12-13 20:27:14] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-13 20:27:17] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 5 ms
+
+
+[2025-12-13 20:27:17] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 37 ms
+
+
+[2025-12-13 20:27:17] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-13 20:27:21] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 5 ms
+
+
+[2025-12-13 20:27:21] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 5 ms
+
+
+[2025-12-13 20:27:21] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:27:21] Request: OPTIONS 
+URL: /api/Clinics 
+Query: 
+Response: 204 
+Tiempo: 8 ms
+
+
+[2025-12-13 20:27:21] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 38 ms
+
+
+[2025-12-13 20:27:21] Request: OPTIONS 
+URL: /api/Doctor 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:27:21] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 93 ms
+
+
+[2025-12-13 20:27:21] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 98 ms
+
+
+[2025-12-13 20:27:21] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 69 ms
+
+
+[2025-12-13 20:27:21] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 39 ms
+
+
+[2025-12-13 20:27:47] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: 
+Response: 204 
+Tiempo: 1 ms
+
+
+[2025-12-13 20:27:47] Request: POST 
+URL: /api/DaysAvailable 
+Query: 
+Response: 201 
+Tiempo: 30 ms
+
+
+[2025-12-13 20:27:48] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-13 20:27:54] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:27:54] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 158 ms
+
+
+[2025-12-13 20:27:57] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:27:57] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 8 ms
+
+
+[2025-12-13 20:27:57] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 34 ms
+
+
+[2025-12-13 20:27:57] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 30 ms
+
+
+[2025-12-13 20:27:57] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 50 ms
+
+
+[2025-12-13 20:27:57] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 58 ms
+
+
+[2025-12-13 20:27:57] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 47 ms
+
+
+[2025-12-13 20:27:57] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 22 ms
+
+
+[2025-12-13 20:28:07] Request: OPTIONS 
+URL: /api/Consultations 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:28:07] Request: POST 
+URL: /api/Consultations 
+Query: 
+Response: 201 
+Tiempo: 54 ms
+
+
+[2025-12-13 20:28:07] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 20:28:07] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 12 ms
+
+
+[2025-12-13 20:28:13] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:28:13] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 139 ms
+
+
+[2025-12-13 20:28:15] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:28:15] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 20:28:15] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 37 ms
+
+
+[2025-12-13 20:28:15] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-13 20:30:17] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 13 ms
+
+
+[2025-12-13 20:30:22] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 4705 ms
+
+
+[2025-12-13 20:30:22] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 117 ms
+
+
+[2025-12-13 20:32:48] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 14 ms
+
+
+[2025-12-13 20:32:53] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 4716 ms
+
+
+[2025-12-13 20:32:53] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 137 ms
+
+
+[2025-12-13 20:33:28] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 23 ms
+
+
+[2025-12-13 20:33:28] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 83 ms
+
+
+[2025-12-13 20:33:28] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 16 ms
+
+
+[2025-12-13 20:34:46] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 31 ms
+
+
+[2025-12-13 20:34:46] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 76 ms
+
+
+[2025-12-13 20:34:46] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 18 ms
+
+
+[2025-12-13 20:34:47] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 7 ms
+
+
+[2025-12-13 20:34:47] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 10 ms
+
+
+[2025-12-13 20:34:47] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 72 ms
+
+
+[2025-12-13 20:34:47] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 71 ms
+
+
+[2025-12-13 20:34:47] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 114 ms
+
+
+[2025-12-13 20:34:47] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 30 ms
+
+
+[2025-12-13 20:34:47] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 30 ms
+
+
+[2025-12-13 20:34:48] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 284 ms
+
+
+[2025-12-13 20:34:48] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 66 ms
+
+
+[2025-12-13 20:34:48] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 528 ms
+
+
+[2025-12-13 20:34:48] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-13 20:34:48] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 610 ms
+
+
+[2025-12-13 20:34:48] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 53 ms
+
+
+[2025-12-13 20:34:48] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 858 ms
+
+
+[2025-12-13 20:34:48] Request: OPTIONS 
+URL: /api/Prescriptions 
+Query: 
+Response: 204 
+Tiempo: 26 ms
+
+
+[2025-12-13 20:34:48] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 73 ms
+
+
+[2025-12-13 20:34:48] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 266 ms
+
+
+[2025-12-13 20:35:05] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 63 ms
+
+
+[2025-12-13 20:35:05] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 94 ms
+
+
+[2025-12-13 20:35:05] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:35:05] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:35:05] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 71 ms
+
+
+[2025-12-13 20:35:05] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 70 ms
+
+
+[2025-12-13 20:35:05] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 94 ms
+
+
+[2025-12-13 20:35:05] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 63 ms
+
+
+[2025-12-13 20:35:05] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 226 ms
+
+
+[2025-12-13 20:35:05] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 266 ms
+
+
+[2025-12-13 20:35:05] Request: OPTIONS 
+URL: /api/Prescriptions 
+Query: 
+Response: 204 
+Tiempo: 30 ms
+
+
+[2025-12-13 20:35:05] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 202 ms
+
+
+[2025-12-13 20:35:06] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 313 ms
+
+
+[2025-12-13 20:35:06] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 507 ms
+
+
+[2025-12-13 20:35:06] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 202 ms
+
+
+[2025-12-13 20:35:06] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 162 ms
+
+
+[2025-12-13 20:35:06] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 313 ms
+
+
+[2025-12-13 20:35:06] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 469 ms
+
+
+[2025-12-13 20:55:34] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 20:55:37] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 2990 ms
+
+
+[2025-12-13 20:55:37] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 2990 ms
+
+
+[2025-12-13 20:55:37] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 3034 ms
+
+
+[2025-12-13 20:55:37] Request: OPTIONS 
+URL: /api/Prescriptions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 20:55:37] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 140 ms
+
+
+[2025-12-13 20:55:37] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 98 ms
+
+
+[2025-12-13 20:55:37] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 131 ms
+
+
+[2025-12-13 20:55:37] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 196 ms
+
+
+[2025-12-13 21:03:19] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:03:19] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:03:19] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:03:19] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 62 ms
+
+
+[2025-12-13 21:03:19] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 60 ms
+
+
+[2025-12-13 21:03:19] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 72 ms
+
+
+[2025-12-13 21:03:19] Request: OPTIONS 
+URL: /api/Prescriptions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:03:19] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 80 ms
+
+
+[2025-12-13 21:03:19] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 43 ms
+
+
+[2025-12-13 21:05:05] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:05:05] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:05:05] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:05:05] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 21:05:05] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 28 ms
+
+
+[2025-12-13 21:05:05] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 21:05:05] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 32 ms
+
+
+[2025-12-13 21:05:05] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 21:05:05] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 21:05:05] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:05:05] Request: OPTIONS 
+URL: /api/Prescriptions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:05:05] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 13 ms
+
+
+[2025-12-13 21:05:05] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 6 ms
+
+
+[2025-12-13 21:07:01] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:07:01] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:07:01] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:07:01] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:07:01] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-13 21:07:01] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 23 ms
+
+
+[2025-12-13 21:07:01] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:07:01] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 27 ms
+
+
+[2025-12-13 21:07:01] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:07:01] Request: OPTIONS 
+URL: /api/Prescriptions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:07:01] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 9 ms
+
+
+[2025-12-13 21:08:04] Request: OPTIONS 
+URL: /api/Prescriptions/undefined/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:08:04] Request: POST 
+URL: /api/Prescriptions/undefined/Medicines 
+Query: 
+Response: 404 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:08:04] Request: OPTIONS 
+URL: /api/Prescriptions/undefined/Analysis 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:08:04] Request: GET 
+URL: /api/Prescriptions/undefined/Permissions 
+Query: 
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-13 21:08:14] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:08:14] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:08:14] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:08:14] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:08:14] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 24 ms
+
+
+[2025-12-13 21:08:14] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 24 ms
+
+
+[2025-12-13 21:08:14] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 32 ms
+
+
+[2025-12-13 21:08:14] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 21:08:14] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:08:14] Request: OPTIONS 
+URL: /api/Prescriptions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:08:14] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 8 ms
+
+
+[2025-12-13 21:08:26] Request: OPTIONS 
+URL: /api/Prescriptions/undefined/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:08:26] Request: POST 
+URL: /api/Prescriptions/undefined/Medicines 
+Query: 
+Response: 404 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:08:26] Request: OPTIONS 
+URL: /api/Prescriptions/undefined/Analysis 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:08:26] Request: OPTIONS 
+URL: /api/Prescriptions/undefined/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:11:19] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:11:19] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:11:19] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 16 ms
+
+
+[2025-12-13 21:11:19] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:11:19] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 23 ms
+
+
+[2025-12-13 21:11:19] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 24 ms
+
+
+[2025-12-13 21:11:19] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:11:19] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:11:19] Request: OPTIONS 
+URL: /api/Prescriptions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:11:19] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 9 ms
+
+
+[2025-12-13 21:11:20] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:11:20] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:11:20] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:11:20] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:11:20] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:11:20] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:11:20] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:11:20] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:11:20] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:11:20] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:12:04] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:12:04] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:12:04] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:12:04] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:12:04] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:12:04] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:12:04] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 21:12:04] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:12:04] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:12:04] Request: OPTIONS 
+URL: /api/Prescriptions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:12:04] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:12:04] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 400 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:12:58] Request: POST 
+URL: /api/Prescriptions 
+Query: 
+Response: 201 
+Tiempo: 139 ms
+
+
+[2025-12-13 21:13:11] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:13:11] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:13:11] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:13:11] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:13:11] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 21:13:11] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 18 ms
+
+
+[2025-12-13 21:13:11] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:13:11] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:13:11] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 36 ms
+
+
+[2025-12-13 21:13:11] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 41 ms
+
+
+[2025-12-13 21:13:11] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:13:11] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:13:11] Request: OPTIONS 
+URL: /api/Prescriptions/1 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:13:12] Request: GET 
+URL: /api/Prescriptions/1 
+Query: 
+Response: 200 
+Tiempo: 110 ms
+
+
+[2025-12-13 21:13:12] Request: GET 
+URL: /api/Prescriptions/1 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:13:12] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:13:12] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:13:12] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:13:12] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 75 ms
+
+
+[2025-12-13 21:13:12] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:14:05] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 18 ms
+
+
+[2025-12-13 21:16:26] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:16:26] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:16:26] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:16:26] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:16:26] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 10 ms
+
+
+[2025-12-13 21:16:26] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:16:26] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 21:16:26] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 21 ms
+
+
+[2025-12-13 21:16:26] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 24 ms
+
+
+[2025-12-13 21:16:26] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 46 ms
+
+
+[2025-12-13 21:16:26] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:16:26] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 47 ms
+
+
+[2025-12-13 21:16:26] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 21:16:26] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 12 ms
+
+
+[2025-12-13 21:16:26] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 2 ms
+
+
+[2025-12-13 21:16:26] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 2 ms
+
+
+[2025-12-13 21:16:39] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:16:39] Request: POST 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 60 ms
+
+
+[2025-12-13 21:16:39] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:16:39] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:16:39] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 21:16:39] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 10 ms
+
+
+[2025-12-13 21:16:39] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 21 ms
+
+
+[2025-12-13 21:16:42] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:16:42] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:16:42] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:16:42] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:16:42] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-12-13 21:16:42] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:16:42] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 21 ms
+
+
+[2025-12-13 21:16:42] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 23 ms
+
+
+[2025-12-13 21:16:42] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 25 ms
+
+
+[2025-12-13 21:16:42] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:16:42] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:16:42] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 21:16:42] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 10 ms
+
+
+[2025-12-13 21:16:42] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-13 21:16:42] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:16:42] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:17:06] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 94 ms
+
+
+[2025-12-13 21:17:14] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 2 ms
+
+
+[2025-12-13 21:17:33] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:17:33] Request: POST 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 47 ms
+
+
+[2025-12-13 21:17:33] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:17:33] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:17:33] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:17:33] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 2 ms
+
+
+[2025-12-13 21:18:19] Request: POST 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 15 ms
+
+
+[2025-12-13 21:19:09] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 21:20:16] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:20:57] Request: POST 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 40659 ms
+
+
+[2025-12-13 21:20:57] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 38 ms
+
+
+[2025-12-13 21:20:57] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 41 ms
+
+
+[2025-12-13 21:21:01] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 3657 ms
+
+
+[2025-12-13 21:21:01] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 3773 ms
+
+
+[2025-12-13 21:21:05] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 21:21:05] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 11 ms
+
+
+[2025-12-13 21:21:05] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:21:06] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 110 ms
+
+
+[2025-12-13 21:21:06] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 80 ms
+
+
+[2025-12-13 21:21:06] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 385 ms
+
+
+[2025-12-13 21:21:06] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 77 ms
+
+
+[2025-12-13 21:21:06] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 591 ms
+
+
+[2025-12-13 21:21:06] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 604 ms
+
+
+[2025-12-13 21:21:06] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 138 ms
+
+
+[2025-12-13 21:21:06] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 155 ms
+
+
+[2025-12-13 21:21:07] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 916 ms
+
+
+[2025-12-13 21:21:07] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 39 ms
+
+
+[2025-12-13 21:21:07] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 39 ms
+
+
+[2025-12-13 21:21:07] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 66 ms
+
+
+[2025-12-13 21:21:07] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 142 ms
+
+
+[2025-12-13 21:21:07] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 196 ms
+
+
+[2025-12-13 21:21:07] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 196 ms
+
+
+[2025-12-13 21:21:07] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 161 ms
+
+
+[2025-12-13 21:21:07] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 161 ms
+
+
+[2025-12-13 21:21:21] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 28 ms
+
+
+[2025-12-13 21:22:19] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 72 ms
+
+
+[2025-12-13 21:22:19] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 30 ms
+
+
+[2025-12-13 21:22:19] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 36 ms
+
+
+[2025-12-13 21:22:19] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 66 ms
+
+
+[2025-12-13 21:22:19] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 68 ms
+
+
+[2025-12-13 21:22:20] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 291 ms
+
+
+[2025-12-13 21:22:20] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 291 ms
+
+
+[2025-12-13 21:22:20] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 413 ms
+
+
+[2025-12-13 21:22:20] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 476 ms
+
+
+[2025-12-13 21:22:20] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 62 ms
+
+
+[2025-12-13 21:22:20] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 63 ms
+
+
+[2025-12-13 21:22:20] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 576 ms
+
+
+[2025-12-13 21:22:20] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 638 ms
+
+
+[2025-12-13 21:22:23] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 2883 ms
+
+
+[2025-12-13 21:22:26] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 6431 ms
+
+
+[2025-12-13 21:22:26] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 32 ms
+
+
+[2025-12-13 21:22:26] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 93 ms
+
+
+[2025-12-13 21:22:26] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 6267 ms
+
+
+[2025-12-13 21:22:27] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 200 ms
+
+
+[2025-12-13 21:22:27] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 200 ms
+
+
+[2025-12-13 21:23:10] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 46066 ms
+
+
+[2025-12-13 21:23:17] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 37244 ms
+
+
+[2025-12-13 21:23:49] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 33 ms
+
+
+[2025-12-13 21:23:49] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 61 ms
+
+
+[2025-12-13 21:23:49] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:23:49] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:23:49] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 21:23:49] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 21:23:49] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 111 ms
+
+
+[2025-12-13 21:23:50] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 261 ms
+
+
+[2025-12-13 21:23:50] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 291 ms
+
+
+[2025-12-13 21:23:50] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 291 ms
+
+
+[2025-12-13 21:23:50] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 47 ms
+
+
+[2025-12-13 21:23:50] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 62 ms
+
+
+[2025-12-13 21:23:50] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 93 ms
+
+
+[2025-12-13 21:24:00] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 10095 ms
+
+
+[2025-12-13 21:24:00] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 29 ms
+
+
+[2025-12-13 21:24:00] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 60 ms
+
+
+[2025-12-13 21:24:00] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 89 ms
+
+
+[2025-12-13 21:24:00] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 10078 ms
+
+
+[2025-12-13 21:24:00] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 10130 ms
+
+
+[2025-12-13 21:24:01] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 11016 ms
+
+
+[2025-12-13 21:24:01] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 11017 ms
+
+
+[2025-12-13 21:24:02] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 11989 ms
+
+
+[2025-12-13 21:24:02] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 238 ms
+
+
+[2025-12-13 21:24:02] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 1072 ms
+
+
+[2025-12-13 21:24:09] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 2847 ms
+
+
+[2025-12-13 21:24:09] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 2854 ms
+
+
+[2025-12-13 21:24:09] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 8 ms
+
+
+[2025-12-13 21:24:09] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 2904 ms
+
+
+[2025-12-13 21:24:09] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 2905 ms
+
+
+[2025-12-13 21:24:09] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 2908 ms
+
+
+[2025-12-13 21:24:09] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 135 ms
+
+
+[2025-12-13 21:24:09] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 212 ms
+
+
+[2025-12-13 21:24:09] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 60 ms
+
+
+[2025-12-13 21:24:09] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 62 ms
+
+
+[2025-12-13 21:24:09] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 325 ms
+
+
+[2025-12-13 21:24:09] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 218 ms
+
+
+[2025-12-13 21:24:10] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 378 ms
+
+
+[2025-12-13 21:24:10] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 308 ms
+
+
+[2025-12-13 21:24:10] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 315 ms
+
+
+[2025-12-13 21:24:10] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 532 ms
+
+
+[2025-12-13 21:24:10] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 486 ms
+
+
+[2025-12-13 21:24:10] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 267 ms
+
+
+[2025-12-13 21:24:10] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 139 ms
+
+
+[2025-12-13 21:25:01] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 72 ms
+
+
+[2025-12-13 21:25:39] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-13 21:25:39] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 35 ms
+
+
+[2025-12-13 21:25:39] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 7 ms
+
+
+[2025-12-13 21:25:39] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 58 ms
+
+
+[2025-12-13 21:25:39] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 21:25:39] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 29 ms
+
+
+[2025-12-13 21:25:39] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 62 ms
+
+
+[2025-12-13 21:25:39] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 38 ms
+
+
+[2025-12-13 21:25:39] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 56 ms
+
+
+[2025-12-13 21:25:39] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 131 ms
+
+
+[2025-12-13 21:25:39] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:25:39] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 31 ms
+
+
+[2025-12-13 21:25:39] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 166 ms
+
+
+[2025-12-13 21:25:39] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 227 ms
+
+
+[2025-12-13 21:25:39] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 124 ms
+
+
+[2025-12-13 21:25:39] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 491 ms
+
+
+[2025-12-13 21:25:40] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 359 ms
+
+
+[2025-12-13 21:25:40] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 569 ms
+
+
+[2025-12-13 21:25:40] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 580 ms
+
+
+[2025-12-13 21:25:40] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 513 ms
+
+
+[2025-12-13 21:26:34] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:26:36] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 1644 ms
+
+
+[2025-12-13 21:26:36] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 1672 ms
+
+
+[2025-12-13 21:26:36] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:26:36] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 83 ms
+
+
+[2025-12-13 21:26:36] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 64 ms
+
+
+[2025-12-13 21:26:36] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 101 ms
+
+
+[2025-12-13 21:26:36] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 124 ms
+
+
+[2025-12-13 21:26:36] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 132 ms
+
+
+[2025-12-13 21:26:36] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-13 21:26:36] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 142 ms
+
+
+[2025-12-13 21:26:36] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 21:26:36] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-13 21:26:47] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:26:47] Request: PUT 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 219 ms
+
+
+[2025-12-13 21:26:50] Request: OPTIONS 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:26:51] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 98 ms
+
+
+[2025-12-13 21:26:51] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 24 ms
+
+
+[2025-12-13 21:27:04] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:27:04] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:27:04] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-12-13 21:27:04] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:27:04] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 21:27:04] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 23 ms
+
+
+[2025-12-13 21:27:04] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:27:04] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:27:04] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:27:04] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 21:27:04] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 10 ms
+
+
+[2025-12-13 21:27:04] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:27:04] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 21 ms
+
+
+[2025-12-13 21:27:04] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 10 ms
+
+
+[2025-12-13 21:28:14] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 21:28:25] Request: GET 
+URL: /api/Prescriptions 
+Query: 
+Response: 200 
+Tiempo: 97 ms
+
+
+[2025-12-13 21:31:21] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:21] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:21] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:21] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:21] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:21] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-12-13 21:31:21] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:21] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:21] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:21] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 21:31:21] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 18 ms
+
+
+[2025-12-13 21:31:21] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 21:31:21] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 32 ms
+
+
+[2025-12-13 21:31:21] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 12 ms
+
+
+[2025-12-13 21:31:21] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 16 ms
+
+
+[2025-12-13 21:31:21] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 21:31:21] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-12-13 21:31:21] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-13 21:31:21] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 12 ms
+
+
+[2025-12-13 21:31:41] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:41] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:41] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:41] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:41] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 21:31:41] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-13 21:31:41] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-13 21:31:41] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:41] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:41] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:31:41] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:31:41] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:31:41] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 22 ms
+
+
+[2025-12-13 21:31:41] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:31:41] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 10 ms
+
+
+[2025-12-13 21:31:41] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 10 ms
+
+
+[2025-12-13 21:31:41] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 12 ms
+
+
+[2025-12-13 21:31:42] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:33:19] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:33:19] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:33:19] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:33:19] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:33:19] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 10 ms
+
+
+[2025-12-13 21:33:19] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-13 21:33:19] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 21:33:19] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:33:19] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:33:19] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:33:19] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 24 ms
+
+
+[2025-12-13 21:33:19] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:33:19] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:33:19] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-13 21:33:19] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-13 21:33:20] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-13 21:33:20] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 5 ms
+
+
+[2025-12-13 21:33:20] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:34:02] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:02] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:02] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:02] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:02] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:02] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:03] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 10 ms
+
+
+[2025-12-13 21:34:03] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 21:34:03] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:03] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 21 ms
+
+
+[2025-12-13 21:34:03] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:03] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:03] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 21:34:03] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 36 ms
+
+
+[2025-12-13 21:34:03] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 15 ms
+
+
+[2025-12-13 21:34:03] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 16 ms
+
+
+[2025-12-13 21:34:03] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 21:34:03] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 21:34:03] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-13 21:34:03] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-13 21:34:54] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines/undefined 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:54] Request: DELETE 
+URL: /api/Prescriptions/1/Medicines/undefined 
+Query: 
+Response: 404 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:54] Request: OPTIONS 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:54] Request: OPTIONS 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:54] Request: OPTIONS 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:54] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-12-13 21:34:55] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:55] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:55] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:55] Request: OPTIONS 
+URL: /api/Permissions 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:55] Request: OPTIONS 
+URL: /api/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 9 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Consultations/1004 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 24 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 10 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Prescriptions/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Prescriptions/1/Analysis 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 21:34:55] Request: GET 
+URL: /api/Prescriptions/1/Permissions 
+Query: 
+Response: 200 
+Tiempo: 7 ms
+
+
+[2025-12-13 21:34:58] Request: OPTIONS 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:34:58] Request: PUT 
+URL: /api/Consultations/1004 
+Query: 
+Response: 204 
+Tiempo: 20 ms
+
+
+[2025-12-13 21:35:05] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:05] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 191 ms
+
+
+[2025-12-13 21:35:07] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:07] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 60 ms
+
+
+[2025-12-13 21:35:07] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 19 ms
+
+
+[2025-12-13 21:35:12] Request: OPTIONS 
+URL: /api/Consultations/1003 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:12] Request: PUT 
+URL: /api/Consultations/1003 
+Query: 
+Response: 204 
+Tiempo: 17 ms
+
+
+[2025-12-13 21:35:13] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:13] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-13 21:35:14] Request: OPTIONS 
+URL: /api/Consultations/1002 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:14] Request: PUT 
+URL: /api/Consultations/1002 
+Query: 
+Response: 204 
+Tiempo: 22 ms
+
+
+[2025-12-13 21:35:15] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 12 ms
+
+
+[2025-12-13 21:35:17] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:17] Request: OPTIONS 
+URL: /api/Reasons 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:17] Request: OPTIONS 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:17] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 104 ms
+
+
+[2025-12-13 21:35:17] Request: GET 
+URL: /api/Reasons 
+Query: 
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:35:17] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 162 ms
+
+
+[2025-12-13 21:35:17] Request: GET 
+URL: /api/DaysAvailable 
+Query: ?OnlyAvailable=true
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:35:20] Request: OPTIONS 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:20] Request: OPTIONS 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:20] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 33 ms
+
+
+[2025-12-13 21:35:20] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:35:21] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-13 21:35:21] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 2 ms
+
+
+[2025-12-13 21:35:22] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:22] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 51 ms
+
+
+[2025-12-13 21:35:22] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 4 ms
+
+
+[2025-12-13 21:35:34] Request: OPTIONS 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:34] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 10 ms
+
+
+[2025-12-13 21:35:34] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:35:37] Request: OPTIONS 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:37] Request: OPTIONS 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-13 21:35:37] Request: GET 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 200 
+Tiempo: 35 ms
+
+
+[2025-12-13 21:35:37] Request: GET 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 200 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:38:27] Request: OPTIONS 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 21:38:29] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 1598 ms
+
+
+[2025-12-13 21:38:29] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: ?State=Pendent&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 53 ms
+
+
+[2025-12-13 21:41:06] Request: OPTIONS 
+URL: /api/Insurances 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-13 21:41:07] Request: GET 
+URL: /api/Insurances 
+Query: 
+Response: 200 
+Tiempo: 1386 ms
+
+
+[2025-12-13 21:41:07] Request: GET 
+URL: /api/Insurances 
+Query: 
+Response: 200 
+Tiempo: 53 ms
+
+
+[2025-12-13 21:44:30] Request: GET 
+URL: / 
+Query: 
+Response: 200 
+Tiempo: 117 ms
+
+
+[2025-12-13 21:44:30] Request: GET 
+URL: /vite.svg 
+Query: 
+Response: 404 
+Tiempo: 3 ms
+
+
+[2025-12-13 21:52:34] Request: GET 
+URL: /home 
+Query: 
+Response: 200 
+Tiempo: 70 ms
+
+
+[2025-12-13 21:52:34] Request: GET 
+URL: /src/Assets//MediAgenda.png 
+Query: 
+Response: 404 
+Tiempo: 2 ms
+
+
+[2025-12-13 21:52:42] Request: GET 
+URL: /login 
+Query: 
+Response: 200 
+Tiempo: 2 ms
+
+
+[2025-12-13 21:52:52] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 353 ms
+
+
+[2025-12-13 21:52:55] Request: GET 
+URL: /api/Consultations 
+Query: ?DateFrom=2025-12-14&DateTo=2025-12-14&IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 177 ms
+
+
+[2025-12-13 21:52:57] Request: GET 
+URL: /api/Doctor 
+Query: 
+Response: 200 
+Tiempo: 1 ms
+
+
+[2025-12-13 21:52:57] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 89 ms
+
+
+[2025-12-13 21:52:57] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 109 ms
+
+
+[2025-12-13 21:53:00] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-13 21:53:05] Request: GET 
+URL: /api/Clinics 
+Query: 
+Response: 200 
+Tiempo: 8 ms
+
+
+[2025-12-13 21:53:05] Request: GET 
+URL: /api/DaysAvailable 
+Query: 
+Response: 200 
+Tiempo: 18 ms
+
+
+[2025-12-13 21:53:09] Request: GET 
+URL: /api/Consultations 
+Query: ?IncludePatient=true&IncludeReason=true&IncludeDayAvailable=true
+Response: 200 
+Tiempo: 61 ms
+
+
+[2025-12-13 21:53:14] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 102 ms
+
+
+[2025-12-13 21:53:18] Request: GET 
+URL: /api/Patients/1/Notes 
+Query: 
+Response: 200 
+Tiempo: 40 ms
+
+
+[2025-12-13 21:53:18] Request: GET 
+URL: /api/Patients/1/Documents 
+Query: 
+Response: 200 
+Tiempo: 46 ms
+
+
+[2025-12-13 21:53:18] Request: GET 
+URL: /api/Patients/1/Medicines 
+Query: 
+Response: 200 
+Tiempo: 51 ms
+
+
+[2025-12-13 21:53:18] Request: GET 
+URL: /api/Patients/1/Consultations 
+Query: 
+Response: 200 
+Tiempo: 77 ms
+
+
+[2025-12-13 21:53:18] Request: GET 
+URL: /api/Patients/1 
+Query: 
+Response: 200 
+Tiempo: 98 ms
+
+
+[2025-12-13 21:53:24] Request: GET 
+URL: /api/Patients 
+Query: 
+Response: 200 
+Tiempo: 6 ms
+
+
+[2025-12-13 21:53:26] Request: GET 
+URL: /api/Insurances 
+Query: 
+Response: 200 
+Tiempo: 40 ms
+
+
+[2025-12-13 21:53:28] Request: GET 
+URL: /api/Permissions 
+Query: 
+Response: 200 
+Tiempo: 46 ms
+
+
+[2025-12-13 21:53:31] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 53 ms
+
+
+[2025-12-13 21:53:33] Request: GET 
+URL: /api/Medicines 
+Query: 
+Response: 200 
+Tiempo: 52 ms
+
+
