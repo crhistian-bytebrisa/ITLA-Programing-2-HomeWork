@@ -145,13 +145,11 @@ namespace MediAgenda.Infraestructure.Migrations
                             LockoutEnabled = false,
                             NameComplete = "Carlos Martínez Pérez",
                             NormalizedEmail = "DR.MARTINEZ@MEDIAGENDA.COM",
-                            NormalizedUserName = "DR.MARTINEZ@MEDIAGENDA.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEO6wwBvPFDvL8ZtmHuLxxm92JC0+LnLYNVEnNmUhLyBn3fDPJV1AhvVGwJcG5FxJg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMYtGJF/SM5CogXcBNxMt7wjuA8/1by854I67fOXznLB9REB7YSpdV6xE4RIs0Q8Eg==",
                             PhoneNumber = "8091234567",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "DOCTOR-SECURITY-STAMP-001",
-                            TwoFactorEnabled = false,
-                            UserName = "dr.martinez@mediagenda.com"
+                            TwoFactorEnabled = false
                         },
                         new
                         {
@@ -163,13 +161,11 @@ namespace MediAgenda.Infraestructure.Migrations
                             LockoutEnabled = false,
                             NameComplete = "Pedro Alcachofa",
                             NormalizedEmail = "PEDRO@MEDIAGENDA.COM",
-                            NormalizedUserName = "PEDRO@MEDIAGENDA.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKpB0X8LqNkHXdXJ7c4VnM8WfQ3jqY6P5rZ9K2mT1vU4xW7sY8pL3gH9nR5tA6bC2w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMYtGJF/SM5CogXcBNxMt7wjuA8/1by854I67fOXznLB9REB7YSpdV6xE4RIs0Q8Eg==",
                             PhoneNumber = "8093454567",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "PEDRO-SECURITY-STAMP-002",
-                            TwoFactorEnabled = false,
-                            UserName = "pedro@mediagenda.com"
+                            TwoFactorEnabled = false
                         },
                         new
                         {
@@ -181,13 +177,11 @@ namespace MediAgenda.Infraestructure.Migrations
                             LockoutEnabled = false,
                             NameComplete = "Alva Alcachofa",
                             NormalizedEmail = "ALVA@MEDIAGENDA.COM",
-                            NormalizedUserName = "ALVA@MEDIAGENDA.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAELmN4Y9QrS6tH2XkP8fV1nW7jY3mZ5pK9rL4xT8vU2wQ6sA7cB1dE3gF5hI9jK0lMn==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMYtGJF/SM5CogXcBNxMt7wjuA8/1by854I67fOXznLB9REB7YSpdV6xE4RIs0Q8Eg==",
                             PhoneNumber = "8093543337",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "ALVA-SECURITY-STAMP-003",
-                            TwoFactorEnabled = false,
-                            UserName = "alva@mediagenda.com"
+                            TwoFactorEnabled = false
                         },
                         new
                         {
@@ -199,13 +193,11 @@ namespace MediAgenda.Infraestructure.Migrations
                             LockoutEnabled = false,
                             NameComplete = "Rufino Alcachofa",
                             NormalizedEmail = "RUFINO@MEDIAGENDA.COM",
-                            NormalizedUserName = "RUFINO@MEDIAGENDA.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPzC8Y3RsT7uI9YmQ1gW2oX8kZ4nA6qM0sL5yU9xV3wR7tB2eC4fD6hG8iJ1kL3mNo==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMYtGJF/SM5CogXcBNxMt7wjuA8/1by854I67fOXznLB9REB7YSpdV6xE4RIs0Q8Eg==",
                             PhoneNumber = "8491782495",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "RUFINO-SECURITY-STAMP-004",
-                            TwoFactorEnabled = false,
-                            UserName = "rufino@mediagenda.com"
+                            TwoFactorEnabled = false
                         });
                 });
 
@@ -665,7 +657,8 @@ namespace MediAgenda.Infraestructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ConsultationId");
+                    b.HasIndex("ConsultationId")
+                        .IsUnique();
 
                     b.ToTable("Prescriptions");
                 });
@@ -1094,8 +1087,8 @@ namespace MediAgenda.Infraestructure.Migrations
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.PrescriptionModel", b =>
                 {
                     b.HasOne("MediAgenda.Infraestructure.Models.ConsultationModel", "Consultation")
-                        .WithMany("Prescriptions")
-                        .HasForeignKey("ConsultationId")
+                        .WithOne("Prescription")
+                        .HasForeignKey("MediAgenda.Infraestructure.Models.PrescriptionModel", "ConsultationId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -1250,7 +1243,8 @@ namespace MediAgenda.Infraestructure.Migrations
                 {
                     b.Navigation("Notes");
 
-                    b.Navigation("Prescriptions");
+                    b.Navigation("Prescription")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("MediAgenda.Infraestructure.Models.DayAvailableModel", b =>

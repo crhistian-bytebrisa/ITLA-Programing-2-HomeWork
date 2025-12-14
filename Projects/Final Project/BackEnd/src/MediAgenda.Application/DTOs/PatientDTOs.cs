@@ -40,6 +40,7 @@ namespace MediAgenda.Application.DTOs
         public string UserId { get; set; }
         public string FullName { get; set; }
         public int InsuranceId { get; set; }
+        public InsuranceSimpleDTO Insurance { get; set; }
         public string Identification { get; set; }
         public DateTime DateOfBirth { get; set; }
         public int Age

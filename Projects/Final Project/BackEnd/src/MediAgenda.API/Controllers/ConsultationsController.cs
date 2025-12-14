@@ -64,7 +64,7 @@ namespace MediAgenda.API.Controllers
 
         // POST api/Consultations
         [HttpPost]
-        [AuthorizeSamePatientIdOrRoles("PatientId","Doctor","Admin")]
+        [Authorize(Roles = "User,Admin,Doctor")]
         public async Task<ActionResult<ConsultationDTO>> PostAsync([FromBody] ConsultationCreateDTO dtoc)
         {
             var dto = await _service.AddAsync(dtoc);
@@ -73,7 +73,7 @@ namespace MediAgenda.API.Controllers
 
         // PUT api/Consultations/5
         [HttpPut("{id:int}")]
-        [AuthorizeSamePatientIdOrRoles("PatientId", "Doctor", "Admin")]
+        [Authorize(Roles = "User,Admin,Doctor")]
         public async Task<ActionResult> PutAsync(int id, [FromBody] ConsultationUpdateDTO dtou)
         {
             if (ModelState.ErrorCount > 0)

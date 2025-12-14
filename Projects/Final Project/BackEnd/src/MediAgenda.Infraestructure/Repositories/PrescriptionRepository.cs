@@ -1,5 +1,6 @@
 using MediAgenda.Domain.Core;
 using MediAgenda.Domain.Entities;
+using MediAgenda.Domain.Entities.Relations;
 using MediAgenda.Infraestructure.Context;
 using MediAgenda.Infraestructure.Core;
 using MediAgenda.Infraestructure.Interfaces;
@@ -86,6 +87,14 @@ namespace MediAgenda.Infraestructure.Repositories
             _context.Set<PrescriptionMedicineModel>()
                 .Add(entity);
 
+            var cm = new HistoryMedicamentsModel
+            {
+                PatientId = entity.Prescription.Consultation.PatientId,
+                MedicineId = entity.MedicineId,
+                StartMedication = entity.StartDosage,
+                EndMedication = entity.EndDosage                
+            };
+            _context.CurrentMedicaments.Add(cm);
             await _context.SaveChangesAsync();
 
             return entity;

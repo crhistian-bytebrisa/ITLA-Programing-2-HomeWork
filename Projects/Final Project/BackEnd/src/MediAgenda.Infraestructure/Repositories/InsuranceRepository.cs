@@ -30,14 +30,11 @@ namespace MediAgenda.Infraestructure.Repositories
         {
             IQueryable<InsuranceModel> query = _context.Set<InsuranceModel>();
 
+            query = query.Include(x => x.Patients);
+
             if (!string.IsNullOrWhiteSpace(request.Name))
             {
                 query = query.Where(x => x.Name.Contains(request.Name));
-            }
-
-            if (request.IncludePatientCount is true)
-            {
-                query = query.Include(x => x.Patients);
             }
 
             return await query.PaginateAsync(request);

@@ -21,7 +21,6 @@ namespace MediAgenda.Infraestructure.Repositories
         public override Task<NotePatientModel> GetByIdAsync(int id)
         {
             return _context.Set<NotePatientModel>()
-                .Include(x => x.Patient)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(x => x.Id == id);
         }

@@ -32,6 +32,7 @@ namespace MediAgenda.Infraestructure.Repositories
                 .Include(x => x.Prescription)
                 .Include(x => x.Notes)
                 .Include(x => x.Patient)
+                .ThenInclude(x => x.User)
                 .Include(x => x.DayAvailable)
                 .Include(x => x.Reason)
                 .FirstOrDefaultAsync(x => x.Id == id);
@@ -83,7 +84,7 @@ namespace MediAgenda.Infraestructure.Repositories
 
             if (request.IncludePatient is true)
             {
-                query = query.Include(x => x.Patient);
+                query = query.Include(x => x.Patient).ThenInclude(x => x.User).Include(x => x.Patient);
             }
 
             if (request.IncludeReason is true)
@@ -93,7 +94,7 @@ namespace MediAgenda.Infraestructure.Repositories
 
             if (request.IncludeDayAvailable is true)
             {
-                query = query.Include(x => x.DayAvailable);
+                query = query.Include(x => x.DayAvailable).ThenInclude(x => x.Clinic).Include(x => x.DayAvailable);
             }
 
             return await query.PaginateAsync(request);

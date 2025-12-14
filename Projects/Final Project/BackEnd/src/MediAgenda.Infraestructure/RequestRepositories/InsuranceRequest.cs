@@ -10,7 +10,5 @@ namespace MediAgenda.Infraestructure.RequestRepositories
     public class InsuranceRequest : BaseRequest
     {
         public string? Name { get; set; }
-
-        public bool? IncludePatientCount { get; set; }
     }
 }

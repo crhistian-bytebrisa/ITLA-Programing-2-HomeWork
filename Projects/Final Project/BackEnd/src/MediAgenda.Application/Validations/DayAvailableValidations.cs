@@ -21,7 +21,7 @@ namespace MediAgenda.Application.Validations
             this.service = service;
             RuleFor(x => x.ClinicId)
                 .MustAsync(async (id, ct) =>
-                    !await service.ExistsProperty<DayAvailableModel,int>("ClinicId",id))
+                    await service.ExistsProperty<DayAvailableModel,int>("ClinicId",id))
                 .WithMessage("El Id de la clinica no existe.");
 
             RuleFor(x => x)

@@ -11,5 +11,6 @@ namespace MediAgenda.Infraestructure.Interfaces
         Task<ApplicationUserModel> GetUserByEmailAsync(string email);
         Task<List<IdentityRole>> GetRolesByUserIdAsync(string userId);
         Task<bool> CheckPasswordAsync(ApplicationUserModel user, string password);
+        Task AddRolePatientInUser(ApplicationUserModel user);
     }
 }

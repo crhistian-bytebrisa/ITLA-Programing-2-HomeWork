@@ -8,7 +8,7 @@ namespace MediAgenda.Application.DTOs
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public List<PrescriptionPermissionDTO> PrescriptionPermissions { get; set; }
+        public int PrescriptionsCount { get; set; }
     }
 
     public class PermissionSimpleDTO

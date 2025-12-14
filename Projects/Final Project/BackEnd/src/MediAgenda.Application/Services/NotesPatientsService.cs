@@ -51,6 +51,7 @@ namespace MediAgenda.Application.Services
             var d = await _repo.GetByIdAsync(dtou.Id);
 
             var model = dtou.Adapt<NotePatientModel>();
+            model.PatientId = d.PatientId;
             model.UpdateAt = DateTime.UtcNow;
             model.CreatedAt = d.CreatedAt;
             await _repo.UpdateAsync(model);

@@ -19,7 +19,7 @@ namespace MediAgenda.API.Controllers
     [ApiController]
     [Authorize]
     [Authorize]
-    [Authorize(Roles = "Admin,Doctor")]
+    [Authorize(Roles = "Admin,Doctor,User")]
     public class ReasonsController : ControllerBase
     {
         private readonly IReasonsService _service;

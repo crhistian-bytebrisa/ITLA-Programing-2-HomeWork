@@ -60,6 +60,8 @@ namespace MediAgenda.Infraestructure.Repositories
             return await _context.Set<ApplicationUserModel>()
                 .Include(x => x.Doctor)
                 .Include(x => x.Patient)
+                .ThenInclude(x => x.Insurance)
+                .Include(x => x.Patient)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(x => x.Email == email);
         }
@@ -79,6 +81,11 @@ namespace MediAgenda.Infraestructure.Repositories
         public async Task<bool> CheckPasswordAsync(ApplicationUserModel user, string password)
         {
             return await _userManager.CheckPasswordAsync(user, password);
+        }
+
+        public async Task AddRolePatientInUser(ApplicationUserModel user)
+        {
+            await _userManager.AddToRoleAsync(user, "User");
         }
 
     }

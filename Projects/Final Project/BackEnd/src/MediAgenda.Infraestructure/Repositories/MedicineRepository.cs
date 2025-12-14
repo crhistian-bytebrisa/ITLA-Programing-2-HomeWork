@@ -31,6 +31,10 @@ namespace MediAgenda.Infraestructure.Repositories
         {
             IQueryable<MedicineModel> query = _context.Set<MedicineModel>();
 
+            query = query
+                .Include(x => x.PrescriptionMedicines)
+                .Include(x => x.CurrentMedicaments);
+
             if (!string.IsNullOrWhiteSpace(request.Name))
             {
                 query = query.Where(x => x.Name.Contains(request.Name));
@@ -40,16 +44,7 @@ namespace MediAgenda.Infraestructure.Repositories
             {
                 query = query.Where(x => x.Format == request.Format);
             }
-
-            if (request.IncludePrescriptionsCount is true)
-            {
-                query = query.Include(x => x.PrescriptionMedicines);
-            }
-
-            if (request.IncludeCurrentMedicamentsCount is true)
-            {
-                query = query.Include(x => x.CurrentMedicaments);
-            }
+                       
 
             return await query.PaginateAsync(request);
         }

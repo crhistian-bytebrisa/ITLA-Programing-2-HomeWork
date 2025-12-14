@@ -57,31 +57,18 @@ namespace MediAgenda.API.Controllers
         }
 
         // PUT api/Medicines/5/Activate
-        [HttpPut("{id:int}/Activate")]
-        public async Task<ActionResult> ActivateAsync(int id)
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult> ActivateAsync(int id, [FromBody] MedicineUpdateDTO dtou)
         {
-            var dto = await _service.GetByIdAsync(id);
-            if (dto == null)
+            if (id != dtou.Id)
             {
-                return NotFound();
+                ModelState.AddModelError("Id", "Deben tener el mismo Id.");
             }
-            var dtou = dto.Adapt<MedicineUpdateDTO>();
-            dtou.IsActive = true;
-            await _service.UpdateAsync(dtou);
-            return NoContent();
-        }
 
-        // PUT api/Medicines/5/Disactivate
-        [HttpPut("{id:int}/Disactivate")]
-        public async Task<ActionResult> DisativateAsync(int id)
-        {
-            var dto = await _service.GetByIdAsync(id);
-            if (dto == null)
+            if (ModelState.ErrorCount > 0)
             {
-                return NotFound();
+                return ValidationProblem();
             }
-            var dtou = dto.Adapt<MedicineUpdateDTO>();
-            dtou.IsActive = false;
             await _service.UpdateAsync(dtou);
             return NoContent();
         }

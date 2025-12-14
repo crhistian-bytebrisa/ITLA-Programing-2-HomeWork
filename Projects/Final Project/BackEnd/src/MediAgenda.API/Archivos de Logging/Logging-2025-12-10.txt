@@ -1,0 +1,280 @@
+[2025-12-10 15:55:50] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 3293 ms
+
+
+[2025-12-10 15:56:13] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 685 ms
+
+
+[2025-12-10 21:24:30] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 405 
+Tiempo: 88 ms
+
+
+[2025-12-10 21:26:03] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 6 ms
+
+
+[2025-12-10 21:26:06] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 2206 ms
+
+
+[2025-12-10 21:26:30] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 4 ms
+
+
+[2025-12-10 21:26:30] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 136 ms
+
+
+[2025-12-10 21:26:35] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 41 ms
+
+
+[2025-12-10 21:26:38] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-10 21:26:38] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-10 21:26:40] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 15 ms
+
+
+[2025-12-10 21:26:44] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-10 21:26:44] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 27 ms
+
+
+[2025-12-10 21:26:54] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-10 21:26:54] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 22 ms
+
+
+[2025-12-10 21:27:08] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-10 21:27:08] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 12 ms
+
+
+[2025-12-10 21:27:15] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-10 21:27:15] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 14 ms
+
+
+[2025-12-10 21:27:22] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-10 21:27:22] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-10 21:27:29] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 27 ms
+
+
+[2025-12-10 21:27:29] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-10 21:29:49] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 5 ms
+
+
+[2025-12-10 21:29:49] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 61 ms
+
+
+[2025-12-10 21:29:53] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 32 ms
+
+
+[2025-12-10 21:30:00] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-10 21:30:00] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 15 ms
+
+
+[2025-12-10 21:30:27] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-10 21:30:27] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 23 ms
+
+
+[2025-12-10 21:30:30] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 11 ms
+
+
+[2025-12-10 21:31:03] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 2 ms
+
+
+[2025-12-10 21:31:03] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 32 ms
+
+
+[2025-12-10 21:31:19] Request: OPTIONS 
+URL: /api/Analyses 
+Query: 
+Response: 204 
+Tiempo: 1 ms
+
+
+[2025-12-10 21:31:19] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 23 ms
+
+
+[2025-12-10 21:31:23] Request: GET 
+URL: /api/Analyses 
+Query: 
+Response: 200 
+Tiempo: 13 ms
+
+
+[2025-12-10 23:33:48] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 3 ms
+
+
+[2025-12-10 23:33:52] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 905 ms
+
+
+[2025-12-10 23:33:55] Request: OPTIONS 
+URL: /api/Auth/Login 
+Query: 
+Response: 204 
+Tiempo: 0 ms
+
+
+[2025-12-10 23:33:55] Request: POST 
+URL: /api/Auth/Login 
+Query: 
+Response: 200 
+Tiempo: 222 ms
+
+
